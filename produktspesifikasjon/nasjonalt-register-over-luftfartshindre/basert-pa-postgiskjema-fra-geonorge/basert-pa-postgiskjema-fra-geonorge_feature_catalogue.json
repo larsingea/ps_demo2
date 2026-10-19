@@ -1,0 +1,823 @@
+[
+  {
+    "name": "NrlFlate",
+    "description": "",
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "1"
+      },
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "navnerom",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "versjonid",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "verifisertrapporteringsnoyaktighet",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "registreringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "navn",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "vertikalavstand",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "luftfartshindermerking",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "luftfartshinderlyssetting",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "materiale",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "datafangstdato",
+        "type": "date",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetode",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighet",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetodehoyde",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighethoyde",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "hoydereferanse",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "informasjon",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "flatetype",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "omrade_ell",
+        "type": "GM_Surface",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "omrade_egm",
+        "type": "GM_Surface",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "omrade_nn2",
+        "type": "GM_Surface",
+        "cardinality": "0..1"
+      }
+    ],
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  },
+  {
+    "name": "NrlLinje",
+    "description": "",
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "1"
+      },
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "navnerom",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "versjonid",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "verifisertrapporteringsnoyaktighet",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "registreringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "navn",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "vertikalavstand",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "luftfartshindermerking",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "luftfartshinderlyssetting",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "materiale",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "datafangstdato",
+        "type": "date",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetode",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighet",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetodehoyde",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighethoyde",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "hoydereferanse",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "informasjon",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "linjetype",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "anleggsbredde",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "beliggenhet_ell",
+        "type": "GM_Curve",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "beliggenhet_egm",
+        "type": "GM_Curve",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "beliggenhet_nn2",
+        "type": "GM_Curve",
+        "cardinality": "0..1"
+      }
+    ],
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  },
+  {
+    "name": "NrlLuftspenn",
+    "description": "",
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "1"
+      },
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "navnerom",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "versjonid",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "verifisertrapporteringsnoyaktighet",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "registreringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "navn",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "vertikalavstand",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "luftfartshindermerking",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "luftfartshinderlyssetting",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "materiale",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "datafangstdato",
+        "type": "date",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetode",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighet",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetodehoyde",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighethoyde",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "hoydereferanse",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "informasjon",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "luftspenntype",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "farligspenn",
+        "type": "boolean",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "farligspennmerknad",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "anleggsbredde",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "beliggenhet_ell",
+        "type": "GM_Curve",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "beliggenhet_egm",
+        "type": "GM_Curve",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "beliggenhet_nn2",
+        "type": "GM_Curve",
+        "cardinality": "0..1"
+      }
+    ],
+    "relationships": {
+      "inheritance": [],
+      "associations": [
+        {
+          "target": "NrlMast",
+          "cardinality": "0..*",
+          "sourceCardinality": "0..*"
+        }
+      ]
+    }
+  },
+  {
+    "name": "NrlMast",
+    "description": "",
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "1"
+      },
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "navnerom",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "versjonid",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "verifisertrapporteringsnoyaktighet",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "registreringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "navn",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "vertikalavstand",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "luftfartshindermerking",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "luftfartshinderlyssetting",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "materiale",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "datafangstdato",
+        "type": "date",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetode",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighet",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetodehoyde",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighethoyde",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "hoydereferanse",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "informasjon",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "masttype",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "horisontalavstand",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "posisjon_ell",
+        "type": "GM_Point",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "posisjon_egm",
+        "type": "GM_Point",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "posisjon_nn2",
+        "type": "GM_Point",
+        "cardinality": "0..1"
+      }
+    ],
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  },
+  {
+    "name": "NrlPunkt",
+    "description": "",
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "1"
+      },
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "navnerom",
+        "type": "string",
+        "cardinality": "1"
+      },
+      {
+        "name": "versjonid",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "verifisertrapporteringsnoyaktighet",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "registreringsdato",
+        "type": "dateTime",
+        "cardinality": "1"
+      },
+      {
+        "name": "navn",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "vertikalavstand",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "luftfartshindermerking",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "luftfartshinderlyssetting",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "materiale",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "datafangstdato",
+        "type": "date",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetode",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighet",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "datafangstmetodehoyde",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "noyaktighethoyde",
+        "type": "integer",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "hoydereferanse",
+        "type": "string",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "informasjon",
+        "type": "string",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "punkttype",
+        "type": "string",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": []
+        }
+      },
+      {
+        "name": "horisontalavstand",
+        "type": "number",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "posisjon_ell",
+        "type": "GM_Point",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "posisjon_egm",
+        "type": "GM_Point",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "posisjon_nn2",
+        "type": "GM_Point",
+        "cardinality": "0..1"
+      }
+    ],
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  }
+]

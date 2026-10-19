@@ -1,0 +1,177 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Nasjonalt register over luftfartshindre - Basert pa postgiskjema fra geonorge - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class NrlFlate <<featureType>> {
+    + objid [1] : Integer
+    + lokalid [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonid [0..1] : CharacterString
+    + oppdateringsdato [1] : Date
+    + status [1] : CharacterString
+    + verifisertrapporteringsnoyaktighet [1] : CharacterString
+    + registreringsdato [1] : Date
+    + navn [0..1] : CharacterString
+    + vertikalavstand [0..1] : Real
+    + luftfartshindermerking [0..1] : CharacterString
+    + luftfartshinderlyssetting [0..1] : CharacterString
+    + materiale [0..1] : CharacterString
+    + datafangstdato [0..1] : Date
+    + datafangstmetode [0..1] : CharacterString
+    + noyaktighet [0..1] : Integer
+    + datafangstmetodehoyde [0..1] : CharacterString
+    + noyaktighethoyde [0..1] : Integer
+    + hoydereferanse [0..1] : CharacterString
+    + informasjon [0..1] : CharacterString
+    + flatetype [1] : CharacterString
+    + omrade_ell [0..1] : GM_Surface
+    + omrade_egm [0..1] : GM_Surface
+    + omrade_nn2 [0..1] : GM_Surface
+  }
+
+  class NrlLinje <<featureType>> {
+    + objid [1] : Integer
+    + lokalid [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonid [0..1] : CharacterString
+    + oppdateringsdato [1] : Date
+    + status [1] : CharacterString
+    + verifisertrapporteringsnoyaktighet [1] : CharacterString
+    + registreringsdato [1] : Date
+    + navn [0..1] : CharacterString
+    + vertikalavstand [0..1] : Real
+    + luftfartshindermerking [0..1] : CharacterString
+    + luftfartshinderlyssetting [0..1] : CharacterString
+    + materiale [0..1] : CharacterString
+    + datafangstdato [0..1] : Date
+    + datafangstmetode [0..1] : CharacterString
+    + noyaktighet [0..1] : Integer
+    + datafangstmetodehoyde [0..1] : CharacterString
+    + noyaktighethoyde [0..1] : Integer
+    + hoydereferanse [0..1] : CharacterString
+    + informasjon [0..1] : CharacterString
+    + linjetype [1] : CharacterString
+    + anleggsbredde [0..1] : Real
+    + beliggenhet_ell [0..1] : GM_Curve
+    + beliggenhet_egm [0..1] : GM_Curve
+    + beliggenhet_nn2 [0..1] : GM_Curve
+  }
+
+  class NrlLuftspenn <<featureType>> {
+    + objid [1] : Integer
+    + lokalid [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonid [0..1] : CharacterString
+    + oppdateringsdato [1] : Date
+    + status [1] : CharacterString
+    + verifisertrapporteringsnoyaktighet [1] : CharacterString
+    + registreringsdato [1] : Date
+    + navn [0..1] : CharacterString
+    + vertikalavstand [0..1] : Real
+    + luftfartshindermerking [0..1] : CharacterString
+    + luftfartshinderlyssetting [0..1] : CharacterString
+    + materiale [0..1] : CharacterString
+    + datafangstdato [0..1] : Date
+    + datafangstmetode [0..1] : CharacterString
+    + noyaktighet [0..1] : Integer
+    + datafangstmetodehoyde [0..1] : CharacterString
+    + noyaktighethoyde [0..1] : Integer
+    + hoydereferanse [0..1] : CharacterString
+    + informasjon [0..1] : CharacterString
+    + luftspenntype [1] : CharacterString
+    + farligspenn [0..1] : Boolean
+    + farligspennmerknad [0..1] : CharacterString
+    + anleggsbredde [0..1] : Real
+    + beliggenhet_ell [0..1] : GM_Curve
+    + beliggenhet_egm [0..1] : GM_Curve
+    + beliggenhet_nn2 [0..1] : GM_Curve
+  }
+
+  class NrlMast <<featureType>> {
+    + objid [1] : Integer
+    + lokalid [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonid [0..1] : CharacterString
+    + oppdateringsdato [1] : Date
+    + status [1] : CharacterString
+    + verifisertrapporteringsnoyaktighet [1] : CharacterString
+    + registreringsdato [1] : Date
+    + navn [0..1] : CharacterString
+    + vertikalavstand [0..1] : Real
+    + luftfartshindermerking [0..1] : CharacterString
+    + luftfartshinderlyssetting [0..1] : CharacterString
+    + materiale [0..1] : CharacterString
+    + datafangstdato [0..1] : Date
+    + datafangstmetode [0..1] : CharacterString
+    + noyaktighet [0..1] : Integer
+    + datafangstmetodehoyde [0..1] : CharacterString
+    + noyaktighethoyde [0..1] : Integer
+    + hoydereferanse [0..1] : CharacterString
+    + informasjon [0..1] : CharacterString
+    + masttype [1] : CharacterString
+    + horisontalavstand [0..1] : Real
+    + posisjon_ell [0..1] : GM_Point
+    + posisjon_egm [0..1] : GM_Point
+    + posisjon_nn2 [0..1] : GM_Point
+  }
+
+  class NrlPunkt <<featureType>> {
+    + objid [1] : Integer
+    + lokalid [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonid [0..1] : CharacterString
+    + oppdateringsdato [1] : Date
+    + status [1] : CharacterString
+    + verifisertrapporteringsnoyaktighet [1] : CharacterString
+    + registreringsdato [1] : Date
+    + navn [0..1] : CharacterString
+    + vertikalavstand [0..1] : Real
+    + luftfartshindermerking [0..1] : CharacterString
+    + luftfartshinderlyssetting [0..1] : CharacterString
+    + materiale [0..1] : CharacterString
+    + datafangstdato [0..1] : Date
+    + datafangstmetode [0..1] : CharacterString
+    + noyaktighet [0..1] : Integer
+    + datafangstmetodehoyde [0..1] : CharacterString
+    + noyaktighethoyde [0..1] : Integer
+    + hoydereferanse [0..1] : CharacterString
+    + informasjon [0..1] : CharacterString
+    + punkttype [1] : CharacterString
+    + horisontalavstand [0..1] : Real
+    + posisjon_ell [0..1] : GM_Point
+    + posisjon_egm [0..1] : GM_Point
+    + posisjon_nn2 [0..1] : GM_Point
+  }
+}
+
+  NrlLuftspenn --> NrlMast : [0..*]
+
+@enduml
