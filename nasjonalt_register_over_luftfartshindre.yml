@@ -1,0 +1,9 @@
+metadataId: 28c896d0-8a0d-4209-bf31-4931033b1082
+output_directory: produktspesifikasjon
+product_slug: nasjonalt_register_over_luftfartshindre
+updated: '2026-10-19'
+scopes:
+- name: Basert pa postgiskjema fra geonorge
+  url: inputs/nasjonalt-register-over-luftfartshindre/postgis.schema.sql
+  generator: postgis
+  description: Fra DBeaver postgisdump fra Distribusjonsbasen
