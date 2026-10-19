@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<model identifier="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" xmlns="http://www.opengroup.org/xsd/archimate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate http://www.opengroup.org/xsd/archimate/archimate_v2p1.xsd">
+	<name>Tettsted-20261001</name>
+	<documentation>Applikasjonsskjema for Tettsteder og Sentrumssoner</documentation>
+	<properties>
+		<property identifierref="EAID_PD000000_01A4_4d78_BCA4_15599E617ED4">
+			<value>sosi</value>
+		</property>
+		<property identifierref="EAID_PD000001_01A4_4d78_BCA4_15599E617ED4">
+			<value>tettsted.xsd</value>
+		</property>
+		<property identifierref="EAID_PD000002_01A4_4d78_BCA4_15599E617ED4">
+			<value>app</value>
+		</property>
+		<property identifierref="EAID_PD000003_01A4_4d78_BCA4_15599E617ED4">
+			<value>20261001</value>
+		</property>
+		<property identifierref="EAID_PD000004_01A4_4d78_BCA4_15599E617ED4">
+			<value>http://skjema.geonorge.no/SOSI/produktspesifikasjon/Tettsted/20261001</value>
+		</property>
+		<property identifierref="EAID_PD000005_01A4_4d78_BCA4_15599E617ED4">
+			<value>5.0</value>
+		</property>
+		<property identifierref="EAID_PD000006_01A4_4d78_BCA4_15599E617ED4">
+			<value>produktspesifikasjon</value>
+		</property>
+		<property identifierref="EAID_PD000007_01A4_4d78_BCA4_15599E617ED4">
+			<value>SSB</value>
+		</property>
+		<property identifierref="EAID_PD000008_01A4_4d78_BCA4_15599E617ED4">
+			<value>Tettsteder</value>
+		</property>
+		<property identifierref="EAID_PD000009_01A4_4d78_BCA4_15599E617ED4">
+			<value>gyldig</value>
+		</property>
+		<property identifierref="EAID_PD000010_01A4_4d78_BCA4_15599E617ED4">
+			<value>Tettsted</value>
+		</property>
+		<property identifierref="EAID_PD000011_01A4_4d78_BCA4_15599E617ED4">
+			<value>Tettsted</value>
+		</property>
+		<property identifierref="EAID_PD000012_01A4_4d78_BCA4_15599E617ED4">
+			<value></value>
+		</property>
+		<property identifierref="EAID_PD000013_01A4_4d78_BCA4_15599E617ED4">
+			<value>no</value>
+		</property>
+		<property identifierref="EAID_PD000014_01A4_4d78_BCA4_15599E617ED4">
+			<value>"Built-up area"@en</value>
+		</property>
+		<property identifierref="EAID_PD000015_01A4_4d78_BCA4_15599E617ED4">
+			<value>"Område hvor det bor minst 200 personer, og avstanden mellom husene normalt ikke overstiger 50 meter"@no</value>
+		</property>
+		<property identifierref="EAID_PD000016_01A4_4d78_BCA4_15599E617ED4">
+			<value>"An area where at least 200 people live and the distance between houses normally does not exceed 50 meters"@en</value>
+		</property>
+		<property identifierref="EAID_PD000017_01A4_4d78_BCA4_15599E617ED4">
+			<value></value>
+		</property>
+	</properties>
+	<elements/>
+	<propertydefs>
+		<propertydef identifier="EAID_PD000000_01A4_4d78_BCA4_15599E617ED4" name="xsdEncodingRule" type="string"/>
+		<propertydef identifier="EAID_PD000001_01A4_4d78_BCA4_15599E617ED4" name="xsdDocument" type="string"/>
+		<propertydef identifier="EAID_PD000002_01A4_4d78_BCA4_15599E617ED4" name="xmlns" type="string"/>
+		<propertydef identifier="EAID_PD000003_01A4_4d78_BCA4_15599E617ED4" name="version" type="number"/>
+		<propertydef identifier="EAID_PD000004_01A4_4d78_BCA4_15599E617ED4" name="targetNamespace" type="string"/>
+		<propertydef identifier="EAID_PD000005_01A4_4d78_BCA4_15599E617ED4" name="SOSI_versjon" type="number"/>
+		<propertydef identifier="EAID_PD000006_01A4_4d78_BCA4_15599E617ED4" name="SOSI_spesifikasjonstype" type="string"/>
+		<propertydef identifier="EAID_PD000007_01A4_4d78_BCA4_15599E617ED4" name="SOSI_produktgruppe" type="string"/>
+		<propertydef identifier="EAID_PD000008_01A4_4d78_BCA4_15599E617ED4" name="SOSI_presentasjonsnavn" type="string"/>
+		<propertydef identifier="EAID_PD000009_01A4_4d78_BCA4_15599E617ED4" name="SOSI_modellstatus" type="string"/>
+		<propertydef identifier="EAID_PD000010_01A4_4d78_BCA4_15599E617ED4" name="SOSI_langnavn" type="string"/>
+		<propertydef identifier="EAID_PD000011_01A4_4d78_BCA4_15599E617ED4" name="SOSI_kortnavn" type="string"/>
+		<propertydef identifier="EAID_PD000012_01A4_4d78_BCA4_15599E617ED4" name="SOSI_bildeAvModellelement" type="string"/>
+		<propertydef identifier="EAID_PD000013_01A4_4d78_BCA4_15599E617ED4" name="language" type="string"/>
+		<propertydef identifier="EAID_PD000014_01A4_4d78_BCA4_15599E617ED4" name="designation" type="string"/>
+		<propertydef identifier="EAID_PD000015_01A4_4d78_BCA4_15599E617ED4" name="description" type="string"/>
+		<propertydef identifier="EAID_PD000016_01A4_4d78_BCA4_15599E617ED4" name="definition" type="string"/>
+		<propertydef identifier="EAID_PD000017_01A4_4d78_BCA4_15599E617ED4" name="catalogue-entry" type="string"/>
+	</propertydefs>
+</model>
