@@ -1,6 +1,6 @@
 ---
 title: "Tettsteder"
-updated: "2026-10-19"
+updated: "2026-10-20"
 organization: "Statistisk sentralbyrå"
 logo: "https://register.geonorge.no/data/organizations/971526920_SSB_liten.png"
 ---
