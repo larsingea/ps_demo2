@@ -1,82 +1,1642 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<model identifier="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" xmlns="http://www.opengroup.org/xsd/archimate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate http://www.opengroup.org/xsd/archimate/archimate_v2p1.xsd">
-	<name>Tettsted-20261001</name>
-	<documentation>Applikasjonsskjema for Tettsteder og Sentrumssoner</documentation>
-	<properties>
-		<property identifierref="EAID_PD000000_01A4_4d78_BCA4_15599E617ED4">
-			<value>sosi</value>
-		</property>
-		<property identifierref="EAID_PD000001_01A4_4d78_BCA4_15599E617ED4">
-			<value>tettsted.xsd</value>
-		</property>
-		<property identifierref="EAID_PD000002_01A4_4d78_BCA4_15599E617ED4">
-			<value>app</value>
-		</property>
-		<property identifierref="EAID_PD000003_01A4_4d78_BCA4_15599E617ED4">
-			<value>20261001</value>
-		</property>
-		<property identifierref="EAID_PD000004_01A4_4d78_BCA4_15599E617ED4">
-			<value>http://skjema.geonorge.no/SOSI/produktspesifikasjon/Tettsted/20261001</value>
-		</property>
-		<property identifierref="EAID_PD000005_01A4_4d78_BCA4_15599E617ED4">
-			<value>5.0</value>
-		</property>
-		<property identifierref="EAID_PD000006_01A4_4d78_BCA4_15599E617ED4">
-			<value>produktspesifikasjon</value>
-		</property>
-		<property identifierref="EAID_PD000007_01A4_4d78_BCA4_15599E617ED4">
-			<value>SSB</value>
-		</property>
-		<property identifierref="EAID_PD000008_01A4_4d78_BCA4_15599E617ED4">
-			<value>Tettsteder</value>
-		</property>
-		<property identifierref="EAID_PD000009_01A4_4d78_BCA4_15599E617ED4">
-			<value>gyldig</value>
-		</property>
-		<property identifierref="EAID_PD000010_01A4_4d78_BCA4_15599E617ED4">
-			<value>Tettsted</value>
-		</property>
-		<property identifierref="EAID_PD000011_01A4_4d78_BCA4_15599E617ED4">
-			<value>Tettsted</value>
-		</property>
-		<property identifierref="EAID_PD000012_01A4_4d78_BCA4_15599E617ED4">
-			<value></value>
-		</property>
-		<property identifierref="EAID_PD000013_01A4_4d78_BCA4_15599E617ED4">
-			<value>no</value>
-		</property>
-		<property identifierref="EAID_PD000014_01A4_4d78_BCA4_15599E617ED4">
-			<value>"Built-up area"@en</value>
-		</property>
-		<property identifierref="EAID_PD000015_01A4_4d78_BCA4_15599E617ED4">
-			<value>"Område hvor det bor minst 200 personer, og avstanden mellom husene normalt ikke overstiger 50 meter"@no</value>
-		</property>
-		<property identifierref="EAID_PD000016_01A4_4d78_BCA4_15599E617ED4">
-			<value>"An area where at least 200 people live and the distance between houses normally does not exceed 50 meters"@en</value>
-		</property>
-		<property identifierref="EAID_PD000017_01A4_4d78_BCA4_15599E617ED4">
-			<value></value>
-		</property>
-	</properties>
-	<elements/>
-	<propertydefs>
-		<propertydef identifier="EAID_PD000000_01A4_4d78_BCA4_15599E617ED4" name="xsdEncodingRule" type="string"/>
-		<propertydef identifier="EAID_PD000001_01A4_4d78_BCA4_15599E617ED4" name="xsdDocument" type="string"/>
-		<propertydef identifier="EAID_PD000002_01A4_4d78_BCA4_15599E617ED4" name="xmlns" type="string"/>
-		<propertydef identifier="EAID_PD000003_01A4_4d78_BCA4_15599E617ED4" name="version" type="number"/>
-		<propertydef identifier="EAID_PD000004_01A4_4d78_BCA4_15599E617ED4" name="targetNamespace" type="string"/>
-		<propertydef identifier="EAID_PD000005_01A4_4d78_BCA4_15599E617ED4" name="SOSI_versjon" type="number"/>
-		<propertydef identifier="EAID_PD000006_01A4_4d78_BCA4_15599E617ED4" name="SOSI_spesifikasjonstype" type="string"/>
-		<propertydef identifier="EAID_PD000007_01A4_4d78_BCA4_15599E617ED4" name="SOSI_produktgruppe" type="string"/>
-		<propertydef identifier="EAID_PD000008_01A4_4d78_BCA4_15599E617ED4" name="SOSI_presentasjonsnavn" type="string"/>
-		<propertydef identifier="EAID_PD000009_01A4_4d78_BCA4_15599E617ED4" name="SOSI_modellstatus" type="string"/>
-		<propertydef identifier="EAID_PD000010_01A4_4d78_BCA4_15599E617ED4" name="SOSI_langnavn" type="string"/>
-		<propertydef identifier="EAID_PD000011_01A4_4d78_BCA4_15599E617ED4" name="SOSI_kortnavn" type="string"/>
-		<propertydef identifier="EAID_PD000012_01A4_4d78_BCA4_15599E617ED4" name="SOSI_bildeAvModellelement" type="string"/>
-		<propertydef identifier="EAID_PD000013_01A4_4d78_BCA4_15599E617ED4" name="language" type="string"/>
-		<propertydef identifier="EAID_PD000014_01A4_4d78_BCA4_15599E617ED4" name="designation" type="string"/>
-		<propertydef identifier="EAID_PD000015_01A4_4d78_BCA4_15599E617ED4" name="description" type="string"/>
-		<propertydef identifier="EAID_PD000016_01A4_4d78_BCA4_15599E617ED4" name="definition" type="string"/>
-		<propertydef identifier="EAID_PD000017_01A4_4d78_BCA4_15599E617ED4" name="catalogue-entry" type="string"/>
-	</propertydefs>
-</model>
+<?xml  version='1.0' encoding='UTF-8' ?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:SOSI="http://www.sparxsystems.com/profiles/SOSI/1.0" xmlns:SOSI-UML-profil_5.1="http://www.sparxsystems.com/profiles/SOSI-UML-profil_5.1/1.0" xmlns:SOSI_UML_profil_5.0="http://www.sparxsystems.com/profiles/SOSI_UML_profil_5.0/5.0.RC1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1622"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" name="Tettsted-20261001" visibility="public">
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C307964B_B97E_4384_8B46_E09E5A348668" name="SOSI_Fellesegenskaper" visibility="public" isAbstract="true">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E356AD10_6545_43a4_A97C_D1E53F444892" name="identifikasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001_6545_43a4_A97C_D1E53F444892" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000002_6545_43a4_A97C_D1E53F444892" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_DD489A43_7581_49a6_8294_29A5E9736C9E" name="kvalitet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003_7581_49a6_8294_29A5E9736C9E" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000004_7581_49a6_8294_29A5E9736C9E" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D0F4AB7E_C481_4b0b_8BD8_C6DDA6306590" name="oppdateringsdato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005_C481_4b0b_8BD8_C6DDA6306590" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000006_C481_4b0b_8BD8_C6DDA6306590" value="1"/>
+					<type xmi:idref="EAnone_DateTime"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2084600D_61B7_41ae_B483_D34A16B35F86" name="opphav" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007_61B7_41ae_B483_D34A16B35F86" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000008_61B7_41ae_B483_D34A16B35F86" value="1"/>
+					<type xmi:idref="EAnone_CharacterString"/>
+				</ownedAttribute>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_7CE73A93_239B_4b59_A3C0_73DC99463CF7" general="EAID_C01DD65F_7316_4988_924A_87336870F4D6" isSubstitutable="true"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" name="Tettsted" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_20C588E1_0F39_4ca3_9C04_2E407A57206E" name="areal" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009_0F39_4ca3_9C04_2E407A57206E" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000010_0F39_4ca3_9C04_2E407A57206E" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_634EE170_DD21_42da_9F8D_D842AAEF116B" name="befolkningsTetthet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000011_DD21_42da_9F8D_D842AAEF116B" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000012_DD21_42da_9F8D_D842AAEF116B" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9526B8D9_35CB_40ee_B317_CD189DE71CD6" name="område" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_298674ED_BFB7_41af_853C_E04B41F8FF1C"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000013_35CB_40ee_B317_CD189DE71CD6" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000014_35CB_40ee_B317_CD189DE71CD6" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E1D6974A_770C_49e8_8901_F1C94B8F80FB" name="statistikkÅr" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#Integer"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000015_770C_49e8_8901_F1C94B8F80FB" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000016_770C_49e8_8901_F1C94B8F80FB" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_F3267CBA_43C7_4bd0_9823_A602D4598933" name="tettstedId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_B77D59A2_4077_445b_97C7_373C192189F5"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000017_43C7_4bd0_9823_A602D4598933" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000018_43C7_4bd0_9823_A602D4598933" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_EC2E17E8_8CC8_486e_9921_AC8EBFF6D6BF" name="totalBefolkning" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#Integer"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000019_8CC8_486e_9921_AC8EBFF6D6BF" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000020_8CC8_486e_9921_AC8EBFF6D6BF" value="1"/>
+				</ownedAttribute>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_7AE89DBC_01C3_49d9_A1C4_ED4A23F30403" general="EAID_C307964B_B97E_4384_8B46_E09E5A348668" isSubstitutable="true"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_C6501868_47AE_42ce_80CC_1DB93573CA34" visibility="public" supplier="EAID_0F6389C4_A887_45dc_A276_40ED771459F1" client="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8" name="Identifikasjon" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6877DB83_7104_45d6_8C69_46835D868327" name="lokalId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000021_7104_45d6_8C69_46835D868327" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000022_7104_45d6_8C69_46835D868327" value="1"/>
+					<type xmi:idref="EAJava_CharacterString"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_C5F86213_3497_4777_A503_3212F836AF3B" name="navnerom" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000023_3497_4777_A503_3212F836AF3B" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000024_3497_4777_A503_3212F836AF3B" value="1"/>
+					<type xmi:idref="EAJava_CharacterString"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_64AC92DA_966F_487d_83CE_92392D5FCEAF" name="versjonId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000025_966F_487d_83CE_92392D5FCEAF" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000026_966F_487d_83CE_92392D5FCEAF" value="1"/>
+					<type xmi:idref="EAJava_CharacterString"/>
+				</ownedAttribute>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_2E7B0C61_2A71_4cea_861A_1F2913B190E4" general="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76" isSubstitutable="true"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D" name="Posisjonskvalitet" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_AA0DC74F_620E_40e3_BB81_ABFC15B212E0" name="målemetode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000027_620E_40e3_BB81_ABFC15B212E0" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000028_620E_40e3_BB81_ABFC15B212E0" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2CE1AE4F_5A8E_434f_881D_05F6F6C443DD" name="nøyaktighet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_992C4B6C_785C_48a4_81A2_5F957E9C8A6B"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000029_5A8E_434f_881D_05F6F6C443DD" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000030_5A8E_434f_881D_05F6F6C443DD" value="1"/>
+				</ownedAttribute>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_0A64D407_4D9F_46e3_8977_8D860A2E6375" general="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474" isSubstitutable="true"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_B77D59A2_4077_445b_97C7_373C192189F5" name="TettstedId" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_254F56A0_310F_4bff_9D1E_4B3EB7CF471C" name="tettstednavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000031_310F_4bff_9D1E_4B3EB7CF471C" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000032_310F_4bff_9D1E_4B3EB7CF471C" value="1"/>
+					<type xmi:idref="EAnone_CharacterString"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D5729505_BDCD_4755_A2CF_17EF60246ACA" name="tettstednummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000033_BDCD_4755_A2CF_17EF60246ACA" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000034_BDCD_4755_A2CF_17EF60246ACA" value="1"/>
+					<type xmi:idref="EAnone_CharacterString"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_2EC760E8_1D16_4589_BB98_F2503D5A5658" visibility="public" supplier="EAID_D95B4907_D9E3_494d_93F3_B2CA05B66022" client="EAID_B77D59A2_4077_445b_97C7_373C192189F5"/>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_AE74ED87_2318_4a03_9147_435F6A13EB65" visibility="public" supplier="EAID_AEF4A7CF_11EF_4c2f_9FC6_E87ABE2D44B4" client="EAID_B77D59A2_4077_445b_97C7_373C192189F5"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9" name="Målemetode" visibility="public"/>
+			<packagedElement xmi:type="uml:Dependency" xmi:id="EAID_B12B7B3F_3E11_4b52_85E9_08B13969E6F8" visibility="public" supplier="EAPK_4502960B_D5B0_4377_8FCF_A32ED284FB20" client="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+		</packagedElement>
+		<SOSI_UML_profil_5.0:FeatureType base_Class="EAID_C307964B_B97E_4384_8B46_E09E5A348668"/>
+		<thecustomprofile:persistence base_Class="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" persistence="transient"/>
+		<SOSI-UML-profil_5.1:FeatureType base_Class="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+		<SOSI:dataType base_Class="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8" SOSI_navn="IDENT"/>
+		<SOSI:dataType base_Class="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D" SOSI_navn="KVALITET"/>
+		<thecustomprofile:persistence base_Class="EAID_B77D59A2_4077_445b_97C7_373C192189F5" persistence="transient"/>
+		<SOSI:dataType base_Class="EAID_B77D59A2_4077_445b_97C7_373C192189F5" SOSI_navn="TETTSTEDID"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9" asDictionary="true" SOSI_navn="MÅLEMETODE" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode" SOSI_lengde="2"/>
+		<SOSI:applicationSchema base_Package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" version="20261001" SOSI_versjon="5.0" xsdEncodingRule="sosi" SOSI_modellstatus="gyldig" SOSI_kortnavn="Tettsted" SOSI_langnavn="Tettsted" SOSI_spesifikasjonstype="produktspesifikasjon" xsdDocument="tettsted.xsd" SOSI_produktgruppe="SSB" xmlns="app" targetNamespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Tettsted/20261001"/>
+		<SOSI-UML-profil_5.1:Rolle base_Package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" designation="&quot;Built-up area&quot;@en" xsdEncodingRule="sosi" SOSI_presentasjonsnavn="Tettsteder" description="&quot;Område hvor det bor minst 200 personer, og avstanden mellom husene normalt ikke overstiger 50 meter&quot;@no" definition="&quot;An area where at least 200 people live and the distance between houses normally does not exceed 50 meters&quot;@en"/>
+		<SOSI-UML-profil_5.1:ApplicationSchema base_Package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" version="20261001" designation="&quot;Built-up area&quot;@en" SOSI_versjon="5.0" xsdEncodingRule="sosi" language="no" SOSI_modellstatus="gyldig" description="&quot;Område hvor det bor minst 200 personer, og avstanden mellom husene normalt ikke overstiger 50 meter&quot;@no" SOSI_kortnavn="Tettsted" SOSI_langnavn="Tettsted" SOSI_spesifikasjonstype="produktspesifikasjon" xsdDocument="tettsted.xsd" xmlns="app" targetNamespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Tettsted/20261001"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" xmi:type="uml:Package" name="Tettsted-20261001" scope="public">
+				<model package2="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" package="EAPK_4DDF280E_329F_400b_AEAC_493256D558AE" tpos="0" ea_localid="25016" ea_eleType="package"/>
+				<properties documentation="Applikasjonsskjema for Tettsteder og Sentrumssoner" isSpecification="false" sType="Package" nType="0" scope="public" stereotype="ApplicationSchema"/>
+				<project author="baetor" version="1.0" phase="1.0" created="2017-10-25 14:33:17" modified="2026-09-02 14:11:59" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_C6293474_7827_a578_A3FA_6758689EBA61" name="catalogue-entry" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_48297A8B_AB7C_45ed_84BD_6B9477BB94B0" name="definition" value="&quot;An area where at least 200 people live and the distance between houses normally does not exceed 50 meters&quot;@en" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_A646FFA4_61D7_c761_9992_4BBAF0720B6A" name="description" value="&quot;Område hvor det bor minst 200 personer, og avstanden mellom husene normalt ikke overstiger 50 meter&quot;@no" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_EBABBC35_1E68_2c1e_934E_F2EBC4A8F2AF" name="designation" value="&quot;Built-up area&quot;@en" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_DEB7F7C4_4ED7_194e_989C_08A7D29B6A53" name="language" value="no" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_780F8C1B_FACE_88fa_B5B6_066CAF7D4679" name="SOSI_bildeAvModellelement" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_DEC125F0_3863_ad38_BD29_C003E5348CC0" name="SOSI_kortnavn" value="Tettsted" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_8B13C732_D9A5_ffd9_975A_487E9B05BB72" name="SOSI_langnavn" value="Tettsted" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_CBAC033E_1731_7217_9A87_FE6520D979C7" name="SOSI_modellstatus" value="gyldig#NOTES#Values: utkast,utkastOgSkjult,foreslått,gyldig,fagligGodkjent,standardisert,erstattet,tilbaketrukket,ugyldig&#xA;Default: utkast&#xA;" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_BB73CCB2_1420_4223_93A6_0B02F6A5EBBB" name="SOSI_presentasjonsnavn" value="Tettsteder" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_706E715A_7E31_44b1_9072_6CF664CA3510" name="SOSI_produktgruppe" value="SSB" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_A37A7EEB_7D1E_ca7d_9E90_0AC34F2217B3" name="SOSI_spesifikasjonstype" value="produktspesifikasjon" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_83FDE7A4_F7B7_a7f7_9220_B0AC67ADEB2A" name="SOSI_versjon" value="5.0" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_393CD814_FBA7_2afb_BA62_3B3E08AEE586" name="targetNamespace" value="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Tettsted/20261001" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_6F40CEE6_0F99_7a0f_A74F_B64784021ED3" name="version" value="20261001" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_08B91BD2_93C5_3493_9F22_43EBA3735D7D" name="xmlns" value="app" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_6E79370E_FD21_befd_A773_827FCEFBB0F4" name="xsdDocument" value="tettsted.xsd#NOTES#Description: Navn på xsd fila! (test)&#xA;" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+					<tag xmi:id="EAID_BCD3CBEE_D761_d2d7_9CEA_511FADA62268" name="xsdEncodingRule" value="sosi" modelElement="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={3421DAF9-AD46-4959-968C-909B83D4CB47}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=ApplicationSchema;FQName=SOSI-UML-profil 5.1::ApplicationSchema;@ENDSTEREO;$DES;$CLT={CAF6B04A-FF6B-4d2f-939F-2ABD540BF39B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="SSB"/>
+				<packageproperties version="1.0" xmiver="Enterprise Architect XMI/UML 1.3" tpos="0"/>
+				<paths xmlpath="SOSI Del 3\SSB\Tettsted-20261001.xml"/>
+				<times created="2017-10-25 14:33:17" modified="2026-09-30 12:11:10" lastloaddate="2026-09-30 12:11:13" lastsavedate="2016-02-29 09:25:57"/>
+				<flags iscontrolled="1" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0" packageFlags="Recurse=0;VCCFG=SOSI;"/>
+			</element>
+			<element xmi:idref="EAID_C307964B_B97E_4384_8B46_E09E5A348668" xmi:type="uml:Class" name="SOSI_Fellesegenskaper" scope="public">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="1" ea_localid="242977" ea_eleType="element"/>
+				<properties documentation="abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.&#xA;&#xA;Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="FeatureType" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="jonken" created="2026-09-07 12:40:16" modified="2026-09-07 12:40:16" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={459E9EFA-60A3-4b8d-AD5B-C090334FB658}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=FeatureType;GUID={807AD7F5-6575-4a2e-99E1-86CDDA17BB80};FQName=SOSI UML profil 5.0::FeatureType;@ENDSTEREO;$DES;$CLT={C307964B-B97E-4384-8B46-E09E5A348668}$CLT;$ENDXREF;$XREFPROP=$XID={1D6A0D4A-B7E1-46c4-AF5E-AB92D8360391}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={C307964B-B97E-4384-8B46-E09E5A348668}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Tettsted-20261001" persistence="Transient"/>
+				<attributes>
+					<attribute xmi:idref="EAID_E356AD10_6545_43a4_A97C_D1E53F444892" name="identifikasjon" scope="Public">
+						<initial/>
+						<documentation value="unik identifikasjon av et objekt "/>
+						<model ea_localid="1311984" ea_guid="{E356AD10-6545-43a4-A97C-D1E53F444892}"/>
+						<properties type="Identifikasjon" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_FBBC1410_4049_4e1f_9ABD_DBF9A09ADF03" name="SOSI_navn" value="IDENT"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={EA040801-4A99-47e7-9828-EE65003444DD}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={E356AD10-6545-43a4-A97C-D1E53F444892}$CLT;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_DD489A43_7581_49a6_8294_29A5E9736C9E" name="kvalitet" scope="Public">
+						<initial/>
+						<documentation value="beskrivelse av kvaliteten på stedfestingen&#xA;&#xA;Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI."/>
+						<model ea_localid="1311986" ea_guid="{DD489A43-7581-49a6-8294-29A5E9736C9E}"/>
+						<properties type="Posisjonskvalitet" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="7"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_212B037B_3385_4d64_AA85_FCEF742550C4" name="SOSI_navn" value="KVALITET"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_D0F4AB7E_C481_4b0b_8BD8_C6DDA6306590" name="oppdateringsdato" scope="Public">
+						<initial/>
+						<documentation value="tidspunkt for siste endring på objektet &#xA;&#xA;Merknad: &#xA;Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen)."/>
+						<model ea_localid="1311985" ea_guid="{D0F4AB7E-C481-4b0b-8BD8-C6DDA6306590}"/>
+						<properties type="DateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_D7EF7EF5_8075_4474_902E_8DBCA56CCC2E" name="SOSI_navn" value="OPPDATERINGSDATO"/>
+							<tag xmi:id="EAID_80D24D8D_E994_4117_A65D_072233E697A1" name="SOSI_datatype" value="DATOTID"/>
+							<tag xmi:id="EAID_271C9DDE_11D2_4fd5_BB99_BAD68C04AEA4" name="definition" value="&quot;Date and time at which this version of the spatial object was inserted or changed in the spatial data set.&quot;@en"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={4DBDCFFF-A07F-4c35-9A8C-F68990EE8284}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={D0F4AB7E-C481-4b0b-8BD8-C6DDA6306590}$CLT;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_2084600D_61B7_41ae_B483_D34A16B35F86" name="opphav" scope="Public">
+						<initial/>
+						<documentation value="referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde&#xA;&#xA;Merknad: &#xA;Kan også beskrive navn på person og årsak til oppdatering"/>
+						<model ea_localid="1311987" ea_guid="{2084600D-61B7-41ae-B483-D34A16B35F86}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="10"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_EE013EEC_427B_4fc3_BEA6_880CEAA0C7A5" name="SOSI_navn" value="OPPHAV"/>
+							<tag xmi:id="EAID_F10C0559_9E06_4a0a_BE49_47620722A271" name="SOSI_lengde" value="255"/>
+							<tag xmi:id="EAID_A5570F4A_B1D3_4891_93F6_3A047D4D76F3" name="SOSI_datatype" value="T"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_7CE73A93_239B_4b59_A3C0_73DC99463CF7" start="EAID_C307964B_B97E_4384_8B46_E09E5A348668" end="EAID_C01DD65F_7316_4988_924A_87336870F4D6"/>
+					<Generalization xmi:id="EAID_7AE89DBC_01C3_49d9_A1C4_ED4A23F30403" start="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" end="EAID_C307964B_B97E_4384_8B46_E09E5A348668"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" xmi:type="uml:Class" name="Tettsted" scope="public">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="2" ea_localid="242975" ea_eleType="element"/>
+				<properties documentation="område hvor det bor minst 200 personer, og avstanden mellom husene normalt ikke overstiger 50 meter (SSB)&#xA;&#xA;Merknad: &#xA;Hussamlinger som naturlig  hører med til tettstedet, tas med inntil en avstand på 400 meter fra tettstedskjernen." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="FeatureType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="baetor" created="2017-10-25 14:33:26" modified="2026-09-07 12:45:09" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_ED33D65F_D91B_e6d9_AE7E_BD47EFBA6D11" name="byValuePropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_465BEE89_9A25_079a_94E9_9EE4AE462701" name="definition" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_A646FFA4_1EC0_681e_857B_1A2C486D96A8" name="description" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_EBABBC35_DB51_ccdb_AC56_A44ECC11A486" name="designation" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_26B33348_11C4_a611_BB92_64B28A01B2EC" name="isCollection" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_F9638764_68C0_7668_BA44_7F307D3ACA5D" name="noPropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_012B4F34_1648_48e2_8E3D_D02F7763A09F" name="persistence" value="transient" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_780F8C1B_9B77_c59b_8FA9_B446974F1CCC" name="SOSI_bildeAvModellelement" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+					<tag xmi:id="EAID_D92437BF_F4DB_36f4_9618_400411395B27" name="SOSI_presentasjonsnavn" modelElement="EAID_791BAA66_276E_4169_BC3A_59D6AC626983"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={916A7C27-EB2A-43bb-AF13-A04B2D6AF6E2}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=FeatureType;FQName=SOSI-UML-profil 5.1::FeatureType;@ENDSTEREO;$DES;$CLT={791BAA66-276E-4169-BC3A-59D6AC626983}$CLT;$ENDXREF;$XREFPROP=$XID={A13292B3-1AB4-405e-A58E-3FE1294501B6}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={791BAA66-276E-4169-BC3A-59D6AC626983}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Tettsted-20261001" persistence="Transient"/>
+				<attributes>
+					<attribute xmi:idref="EAID_20C588E1_0F39_4ca3_9C04_2E407A57206E" name="areal" scope="Public">
+						<initial/>
+						<documentation value="Areal i km2"/>
+						<model ea_localid="1311978" ea_guid="{20C588E1-0F39-4ca3-9C04-2E407A57206E}"/>
+						<properties type="Real" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_4ADAC776_669E_4d10_8801_350064EE9C77" name="SOSI_navn" value="AREAL_KM2"/>
+							<tag xmi:id="EAID_F4CD9473_E3D5_4ce5_BFA9_178194F52970" name="SOSI_datatype" value="D"/>
+							<tag xmi:id="EAID_0EF84CAB_1017_4476_BBD3_17D384E71A22" name="SOSI_lengde" value="7.3"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_634EE170_DD21_42da_9F8D_D842AAEF116B" name="befolkningsTetthet" scope="Public">
+						<initial/>
+						<documentation value="Befolkningstetthet (pers. per km2)"/>
+						<model ea_localid="1311980" ea_guid="{634EE170-DD21-42da-9F8D-D842AAEF116B}"/>
+						<properties type="Real" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="4"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_F5F13220_6F00_4768_B8FE_2AF5A786EA11" name="SOSI_navn" value="BEFOLKNINGS_TETTHET"/>
+							<tag xmi:id="EAID_7143575C_94B0_473b_BE39_EEBBBA1A9790" name="SOSI_datatype" value="D"/>
+							<tag xmi:id="EAID_9A7D4CA5_1AAF_426d_B1BE_F20E2576F96F" name="SOSI_lengde" value="7.2"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_9526B8D9_35CB_40ee_B317_CD189DE71CD6" name="område" scope="Public">
+						<initial/>
+						<documentation value="objektets utstrekning"/>
+						<model ea_localid="1311976" ea_guid="{9526B8D9-35CB-40ee-B317-CD189DE71CD6}"/>
+						<properties type="GM_MultiSurface" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;IsLiteral=0;union=0;"/>
+						<tags/>
+						<xrefs value="$XREFPROP=$XID={64D6B9E4-1AA3-4d77-84C9-369DBE078C75}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={9526B8D9-35CB-40ee-B317-CD189DE71CD6}$CLT;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_E1D6974A_770C_49e8_8901_F1C94B8F80FB" name="statistikkÅr" scope="Public">
+						<initial/>
+						<documentation value="angivelse av årstallsversjon for statistikken"/>
+						<model ea_localid="1311981" ea_guid="{E1D6974A-770C-49e8-8901-F1C94B8F80FB}"/>
+						<properties type="Integer" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="5"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_2C337C69_A2F4_40ef_A2F7_62C55E52D857" name="SOSI_lengde" value="4"/>
+							<tag xmi:id="EAID_AB19D8C0_BD07_4e7c_AD59_AF3377B44DA2" name="SOSI_navn" value="STATISTIKKÅR"/>
+							<tag xmi:id="EAID_3D5AB10A_FCB0_4bfb_B9F1_90B8AF41ACE0" name="SOSI_datatype" value="H"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_F3267CBA_43C7_4bd0_9823_A602D4598933" name="tettstedId" scope="Public">
+						<initial/>
+						<documentation value="unik identifikasjon av et tettsted i form av en 4-sifret kode eller et navn"/>
+						<model ea_localid="1311977" ea_guid="{F3267CBA-43C7-4bd0-9823-A602D4598933}"/>
+						<properties type="TettstedId" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;IsLiteral=0;"/>
+						<tags>
+							<tag xmi:id="EAID_A92EAAF9_C577_49c8_AEF9_FD6014CB2446" name="SOSI_navn" value="TETTSTED_ID"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_EC2E17E8_8CC8_486e_9921_AC8EBFF6D6BF" name="totalBefolkning" scope="Public">
+						<initial/>
+						<documentation value="Antall personer i tettstedet"/>
+						<model ea_localid="1311979" ea_guid="{EC2E17E8-8CC8-486e-9921-AC8EBFF6D6BF}"/>
+						<properties type="Integer" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="3"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_A796F983_02E6_4016_9B57_DA457F5CED6A" name="SOSI_navn" value="TOTAL_BEFOLKNING"/>
+							<tag xmi:id="EAID_FF673B5A_58ED_41aa_B7D6_1577D491F481" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_0291DC20_8D41_4346_B974_874881932E0B" name="SOSI_lengde" value="7"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_7AE89DBC_01C3_49d9_A1C4_ED4A23F30403" start="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" end="EAID_C307964B_B97E_4384_8B46_E09E5A348668"/>
+					<Realisation xmi:id="EAID_C6501868_47AE_42ce_80CC_1DB93573CA34" start="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" end="EAID_0F6389C4_A887_45dc_A276_40ED771459F1"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8" xmi:type="uml:Class" name="Identifikasjon" scope="public">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="4" ea_localid="242972" ea_eleType="element"/>
+				<properties documentation="Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. &#xA;&#xA;Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. &#xA;&#xA;Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. " isSpecification="false" sType="Class" nType="0" alias="Identification" scope="public" stereotype="dataType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="bormor" version="1.0" phase="1.0" created="2026-09-07 12:38:21" modified="2026-09-07 12:38:21" complexity="1" status="Proposed"/>
+				<code product_name="1" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=0;BorderWidth=1;FontColor=0;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_EC313136_8DF9_47fe_BA19_A2697D6D9B10" name="SOSI_navn" value="IDENT" modelElement="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={F97FAA6A-5F1D-4987-8D29-42C32EBE2C84}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=dataType;GUID={CD6A9266-6921-409c-8DD5-275757EE3C8D};FQName=SOSI::dataType;@ENDSTEREO;$DES;$CLT={26E35E8C-E82A-464d-BD6C-EC8D060C9FC8}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Tettsted-20261001" persistence="Persistent"/>
+				<attributes>
+					<attribute xmi:idref="EAID_6877DB83_7104_45d6_8C69_46835D868327" name="lokalId" scope="Public">
+						<initial/>
+						<documentation value="lokal identifikator av et objekt&#xA;&#xA;Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."/>
+						<model ea_localid="1311971" ea_guid="{6877DB83-7104-45d6-8C69-46835D868327}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="localId"/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_3DFE428F_5016_4e13_8A78_90A20E489517" name="SOSI_navn" value="LOKALID"/>
+							<tag xmi:id="EAID_501BAA89_E552_4e50_BC5D_35A447B761D4" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_E024ADBA_2256_411d_92A0_5F2D370F146A" name="SOSI_lengde" value="100"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_C5F86213_3497_4777_A503_3212F836AF3B" name="navnerom" scope="Public">
+						<initial/>
+						<documentation value="navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI&#xA;&#xA;Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0&#xA;&#xA;Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"/>
+						<model ea_localid="1311972" ea_guid="{C5F86213-3497-4777-A503-3212F836AF3B}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="namespace"/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_FC0AE3CC_68C5_48a4_B787_BAA1B0D48F0A" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_A0CE54D0_0571_4282_8D67_36FCEE75C071" name="SOSI_lengde" value="100"/>
+							<tag xmi:id="EAID_3440762A_37E6_4db4_B162_7B25F8E19991" name="SOSI_navn" value="NAVNEROM"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_64AC92DA_966F_487d_83CE_92392D5FCEAF" name="versjonId" scope="Public">
+						<initial/>
+						<documentation value="identifikasjon av en spesiell versjon av et geografisk objekt (instans)"/>
+						<model ea_localid="1311973" ea_guid="{64AC92DA-966F-487d-83CE-92392D5FCEAF}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="versionId"/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_9A6022BB_6543_4a2d_B045_31E54294CE7A" name="SOSI_navn" value="VERSJONID"/>
+							<tag xmi:id="EAID_06E1D3AC_1EA1_4947_A567_E20E5B946E54" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_F84B4F2B_0C90_4559_8484_539A4A7DB3EB" name="SOSI_lengde" value="100"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_2E7B0C61_2A71_4cea_861A_1F2913B190E4" start="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8" end="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D" xmi:type="uml:Class" name="Posisjonskvalitet" scope="public">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="5" ea_localid="242973" ea_eleType="element"/>
+				<properties documentation="beskrivelse av kvaliteten på stedfestingen.&#xA;&#xA;Merknad: Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="dataType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="kent" created="2026-09-07 12:38:21" modified="2026-09-07 12:38:21" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0D769646_FD7C_4d78_8C64_AF44B25B54EC" name="SOSI_navn" value="KVALITET" modelElement="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={6C6377AA-80AC-4212-9E82-908FCFFFFB89}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=dataType;GUID={CD6A9266-6921-409c-8DD5-275757EE3C8D};FQName=SOSI::dataType;@ENDSTEREO;$DES;$CLT={2BFEE7B1-8D47-4cd2-9DC6-2F19A8F4150D}$CLT;$ENDXREF;$XREFPROP=$XID={B63B8BDF-796D-4ac8-A572-7AEB09B096E0}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={2BFEE7B1-8D47-4cd2-9DC6-2F19A8F4150D}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Tettsted-20261001" persistence="Transient"/>
+				<attributes>
+					<attribute xmi:idref="EAID_AA0DC74F_620E_40e3_BB81_ABFC15B212E0" name="målemetode" scope="Public">
+						<initial/>
+						<documentation value="metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"/>
+						<model ea_localid="1311974" ea_guid="{AA0DC74F-620E-40e3-BB81-ABFC15B212E0}"/>
+						<properties type="Målemetode" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_CC508918_6445_4cc7_AAD6_761EA0A9FCF5" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode"/>
+							<tag xmi:id="EAID_BCE46105_1AB1_4d2e_A2C8_5460CC052AD2" name="SOSI_navn" value="MÅLEMETODE"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_2CE1AE4F_5A8E_434f_881D_05F6F6C443DD" name="nøyaktighet" scope="Public">
+						<initial/>
+						<documentation value="punktstandardavviket i grunnriss for punkter samt tverravvik for linjer&#xA;&#xA;Merknad:&#xA;Oppgitt i cm"/>
+						<model ea_localid="1311975" ea_guid="{2CE1AE4F-5A8E-434f-881D-05F6F6C443DD}"/>
+						<properties type="Integer" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="1"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_753BAC86_23F1_4d7e_BFCD_272F1183EF46" name="SOSI_navn" value="NØYAKTIGHET"/>
+							<tag xmi:id="EAID_78D268A6_53DD_4c3e_98E3_4FAA5DE5351E" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_44E4EA4D_7B06_4768_9887_0B5C1A970437" name="SOSI_lengde" value="6"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_0A64D407_4D9F_46e3_8977_8D860A2E6375" start="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D" end="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_B77D59A2_4077_445b_97C7_373C192189F5" xmi:type="uml:Class" name="TettstedId" scope="public">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="8" ea_localid="242976" ea_eleType="element"/>
+				<properties documentation="unik identifikasjon av et tettsted i form av en 4-sifret kode eller et navn" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="dataType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="baetor" created="2017-10-25 14:33:24" modified="2017-12-22 10:16:54" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_E11BCC12_277F_4b13_B351_759798C8D800" name="persistence" value="transient" modelElement="EAID_B77D59A2_4077_445b_97C7_373C192189F5"/>
+					<tag xmi:id="EAID_79E82648_F556_4d1b_8F9D_9D781760A18A" name="SOSI_navn" value="TETTSTEDID" modelElement="EAID_B77D59A2_4077_445b_97C7_373C192189F5"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={AD543B4D-FA5F-4084-B5AA-FAB8279625B3}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=dataType;GUID={45ABF06E-8B9A-4af7-BB3A-5B1E09B9B9FB};FQName=SOSI::dataType;@ENDSTEREO;$DES;$CLT={B77D59A2-4077-445b-97C7-373C192189F5}$CLT;$ENDXREF;$XREFPROP=$XID={F571CCBC-4AA1-4690-87F4-E44A0C6A8EC1}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={B77D59A2-4077-445b-97C7-373C192189F5}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Tettsted-20261001" persistence="Transient" ea_attsclassified="{F3267CBA-43C7-4bd0-9823-A602D4598933}"/>
+				<attributes>
+					<attribute xmi:idref="EAID_254F56A0_310F_4bff_9D1E_4B3EB7CF471C" name="tettstednavn" scope="Public">
+						<initial/>
+						<documentation value="navn på tettsted bestemt av SSB"/>
+						<model ea_localid="1311983" ea_guid="{254F56A0-310F-4bff-9D1E-4B3EB7CF471C}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_00914FEA_0478_449f_AA4C_26DB490CD5DC" name="SOSI_navn" value="TETTSTEDNAVN"/>
+							<tag xmi:id="EAID_D6F1371C_F7C7_4eb8_96F3_4A932EBE3C59" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_845C9F37_8CE4_4bac_A40D_7602A93D0DDC" name="SOSI_lengde" value="255"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={8D307DE1-9149-4217-AA41-2F8863701FAA}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={254F56A0-310F-4bff-9D1E-4B3EB7CF471C}$CLT;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_D5729505_BDCD_4755_A2CF_17EF60246ACA" name="tettstednummer" scope="Public">
+						<initial/>
+						<documentation value="består av en 4-sifret kode&#xA;&#xA;Merknad: Det skal benyttes ledende nuller."/>
+						<model ea_localid="1311982" ea_guid="{D5729505-BDCD-4755-A2CF-17EF60246ACA}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;IsLiteral=0;"/>
+						<tags>
+							<tag xmi:id="EAID_0F1A364B_0027_4a67_8FDB_BEBF5AFFEE70" name="SOSI_navn" value="TETTSTEDNUMMER"/>
+							<tag xmi:id="EAID_55345318_B34C_4481_817B_6ECBB7A5DFC2" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_FA0C3F9B_FA90_4549_B471_E5ACE899C42D" name="SOSI_lengde" value="4"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Realisation xmi:id="EAID_2EC760E8_1D16_4589_BB98_F2503D5A5658" start="EAID_B77D59A2_4077_445b_97C7_373C192189F5" end="EAID_D95B4907_D9E3_494d_93F3_B2CA05B66022"/>
+					<Realisation xmi:id="EAID_AE74ED87_2318_4a03_9147_435F6A13EB65" start="EAID_B77D59A2_4077_445b_97C7_373C192189F5" end="EAID_AEF4A7CF_11EF_4c2f_9FC6_E87ABE2D44B4"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9" xmi:type="uml:Class" name="Målemetode" scope="public">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="9" ea_localid="242974" ea_eleType="element"/>
+				<properties documentation="metode som ligger til grunn for registrering av posisjon&#xA;&#xA;&#xA;-- Definition - - &#xA;method on which registration of position is based" isSpecification="false" sType="Class" nType="0" alias="MeasuringMethod" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="kent" created="2026-09-07 12:38:21" modified="2026-09-07 12:38:21" complexity="1" status="Proposed"/>
+				<code/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_A4C6_8F0E1839B10C" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_BA9C_4BD92933F43D" name="codeList" value="https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode" modelElement="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_9566_DA96121297B9" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_8C5B_BE370F5FE29B" name="SOSI_lengde" value="2" modelElement="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_9BCA_7A09CA412B14" name="SOSI_navn" value="MÅLEMETODE" modelElement="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_BA5C_8DF5074C1D97" name="SOSI_presentasjonsnavn" modelElement="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={DE02EE52-A537-4eb0-A584-7FCD660056ED}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={72E14DF3-21BC-4cb5-BC5B-3EB81D7C25A9}$CLT;$ENDXREF;$XREFPROP=$XID={BA7BE1EF-4A6B-4e5a-8B73-D5246C1DD00D}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={72E14DF3-21BC-4cb5-BC5B-3EB81D7C25A9}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Tettsted-20261001" persistence="Transient" ea_attsclassified="{AA0DC74F-620E-40e3-BB81-ABFC15B212E0}"/>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_7CE73A93_239B_4b59_A3C0_73DC99463CF7">
+				<source xmi:idref="EAID_C307964B_B97E_4384_8B46_E09E5A348668">
+					<model ea_localid="242977" type="Class" name="SOSI_Fellesegenskaper"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C01DD65F_7316_4988_924A_87336870F4D6">
+					<model ea_localid="2592" type="Class" name="SOSI_Objekt"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228799"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_7AE89DBC_01C3_49d9_A1C4_ED4A23F30403">
+				<source xmi:idref="EAID_791BAA66_276E_4169_BC3A_59D6AC626983">
+					<model ea_localid="242975" type="Class" name="Tettsted"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C307964B_B97E_4384_8B46_E09E5A348668">
+					<model ea_localid="242977" type="Class" name="SOSI_Fellesegenskaper"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228803"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_C6501868_47AE_42ce_80CC_1DB93573CA34">
+				<source xmi:idref="EAID_791BAA66_276E_4169_BC3A_59D6AC626983">
+					<model ea_localid="242975" type="Class" name="Tettsted"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_0F6389C4_A887_45dc_A276_40ED771459F1">
+					<model ea_localid="7392" type="Class" name="Tettsted"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228802"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_2E7B0C61_2A71_4cea_861A_1F2913B190E4">
+				<source xmi:idref="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8">
+					<model ea_localid="242972" type="Class" name="Identifikasjon"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76">
+					<model ea_localid="2590" type="Class" name="Identifikasjon"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228805"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_0A64D407_4D9F_46e3_8977_8D860A2E6375">
+				<source xmi:idref="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D">
+					<model ea_localid="242973" type="Class" name="Posisjonskvalitet"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474">
+					<model ea_localid="2588" type="Class" name="Posisjonskvalitet"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228804"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_2EC760E8_1D16_4589_BB98_F2503D5A5658">
+				<source xmi:idref="EAID_B77D59A2_4077_445b_97C7_373C192189F5">
+					<model ea_localid="242976" type="Class" name="TettstedId"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_D95B4907_D9E3_494d_93F3_B2CA05B66022">
+					<model ea_localid="6628" type="Class" name="TettstedId"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228801"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_AE74ED87_2318_4a03_9147_435F6A13EB65">
+				<source xmi:idref="EAID_B77D59A2_4077_445b_97C7_373C192189F5">
+					<model ea_localid="242976" type="Class" name="TettstedId"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_AEF4A7CF_11EF_4c2f_9FC6_E87ABE2D44B4">
+					<model ea_localid="7405" type="Class" name="TettstedId"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228800"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_B12B7B3F_3E11_4b52_85E9_08B13969E6F8">
+				<source xmi:idref="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B">
+					<model ea_localid="242971" type="Package" name="Tettsted-20261001"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4502960B_D5B0_4377_8FCF_A32ED284FB20">
+					<model ea_localid="5700" type="Package" name="Generelle typer 5.1"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="228798"/>
+				<properties ea_type="Dependency" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_CharacterString" name="CharacterString" visibility="public"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Package" xmi:id="EAnoneTypesPackage" name="EA_none_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_DateTime" name="DateTime" visibility="public"/>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_CharacterString" name="CharacterString" visibility="public"/>
+				</packagedElement>
+			</packagedElement>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="thecustomprofile" nsPrefix="thecustomprofile" name="thecustomprofile" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="thecustomprofile">
+					<body> Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="persistence" name="persistence">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="persistence-base_Class" name="base_Class" association="Class_persistence">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="persistence-persistence" name="persistence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_persistence" name="A_Class_persistence" memberEnd="extension_persistence persistence-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_persistence" name="extension_persistence" type="persistence" isComposite="true" lower="0" upper="1" memberEnd="extension_persistence persistence-base_Class"/>
+				</packagedElement>
+			</uml:Profile>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="D0C37C6B-E" nsPrefix="SOSI" name="SOSI" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="D0C37C6B-E">
+					<body>SOSI Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="topo" name="topo">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="topo-base_Aggregation" name="base_Aggregation" association="Aggregation_topo">
+						<type href="http://schema.omg.org/spec/UML/2.1/Aggregation"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Aggregation_topo" name="A_Aggregation_topo" memberEnd="extension_topo topo-base_Aggregation">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_topo" name="extension_topo" type="topo" isComposite="true" lower="0" upper="1" memberEnd="extension_topo topo-base_Aggregation"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="featureType" name="featureType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-base_Class" name="base_Class" association="Class_featureType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-byValuePropertyType" name="byValuePropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_featureType" name="A_Class_featureType" memberEnd="extension_featureType featureType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_featureType" name="extension_featureType" type="featureType" isComposite="true" lower="0" upper="1" memberEnd="extension_featureType featureType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Attribute" name="Attribute">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-base_Attribute" name="base_Attribute" association="Attribute_Attribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-isMetadata" name="isMetadata">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-sequenceNumber" name="sequenceNumber">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_Attribute" name="A_Attribute_Attribute" memberEnd="extension_Attribute Attribute-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Attribute" name="extension_Attribute" type="Attribute" isComposite="true" lower="0" upper="1" memberEnd="extension_Attribute Attribute-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiKodelisteverdi" name="sosiKodelisteverdi">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiKodelisteverdi-base_Attribute" name="base_Attribute" association="Attribute_sosiKodelisteverdi">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiKodelisteverdi-SOSI_verdi" name="SOSI_verdi">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_sosiKodelisteverdi" name="A_Attribute_sosiKodelisteverdi" memberEnd="extension_sosiKodelisteverdi sosiKodelisteverdi-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiKodelisteverdi" name="extension_sosiKodelisteverdi" type="sosiKodelisteverdi" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiKodelisteverdi sosiKodelisteverdi-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-base_Class" name="base_Class" association="Class_dataType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_dataType" name="A_Class_dataType" memberEnd="extension_dataType dataType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_dataType" name="extension_dataType" type="dataType" isComposite="true" lower="0" upper="1" memberEnd="extension_dataType dataType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="union" name="union">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="union-base_Class" name="base_Class" association="Class_union">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="union-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="union-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_union" name="A_Class_union" memberEnd="extension_union union-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_union" name="extension_union" type="union" isComposite="true" lower="0" upper="1" memberEnd="extension_union union-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="type" name="type">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-base_Class" name="base_Class" association="Class_type">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-xmlSchemaType" name="xmlSchemaType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-byValuePropertyType" name="byValuePropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_type" name="A_Class_type" memberEnd="extension_type type-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_type" name="extension_type" type="type" isComposite="true" lower="0" upper="1" memberEnd="extension_type type-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="codeList" name="codeList">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-base_Class" name="base_Class" association="Class_codeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-asDictionary" name="asDictionary">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-defaultCodeSpace" name="defaultCodeSpace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-codeList" name="codeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_codeList" name="A_Class_codeList" memberEnd="extension_codeList codeList-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_codeList" name="extension_codeList" type="codeList" isComposite="true" lower="0" upper="1" memberEnd="extension_codeList codeList-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiFremmednøklerAssosiasjon" name="sosiFremmednøklerAssosiasjon">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøklerAssosiasjon-base_Association" name="base_Association" association="Association_sosiFremmednøklerAssosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøklerAssosiasjon-SOSI_assosiasjon" name="SOSI_assosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_sosiFremmednøklerAssosiasjon" name="A_Association_sosiFremmednøklerAssosiasjon" memberEnd="extension_sosiFremmednøklerAssosiasjon sosiFremmednøklerAssosiasjon-base_Association">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiFremmednøklerAssosiasjon" name="extension_sosiFremmednøklerAssosiasjon" type="sosiFremmednøklerAssosiasjon" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiFremmednøklerAssosiasjon sosiFremmednøklerAssosiasjon-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="StringAttribute" name="StringAttribute">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-base_Attribute" name="base_Attribute" association="Attribute_StringAttribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-length" name="length">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_StringAttribute" name="A_Attribute_StringAttribute" memberEnd="extension_StringAttribute StringAttribute-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_StringAttribute" name="extension_StringAttribute" type="StringAttribute" isComposite="true" lower="0" upper="1" memberEnd="extension_StringAttribute StringAttribute-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiPrimærnøkkel" name="sosiPrimærnøkkel">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-base_Attribute" name="base_Attribute" association="Attribute_sosiPrimærnøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-SOSI_primærnøkkel" name="SOSI_primærnøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_sosiPrimærnøkkel" name="A_Attribute_sosiPrimærnøkkel" memberEnd="extension_sosiPrimærnøkkel sosiPrimærnøkkel-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiPrimærnøkkel" name="extension_sosiPrimærnøkkel" type="sosiPrimærnøkkel" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiPrimærnøkkel sosiPrimærnøkkel-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosienumeration" name="sosienumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosienumeration-base_Enumeration" name="base_Enumeration" association="Enumeration_sosienumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Enumeration"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Enumeration_sosienumeration" name="A_Enumeration_sosienumeration" memberEnd="extension_sosienumeration sosienumeration-base_Enumeration">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosienumeration" name="extension_sosienumeration" type="sosienumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_sosienumeration sosienumeration-base_Enumeration"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiPrimærnøklerAssosiasjon" name="sosiPrimærnøklerAssosiasjon">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøklerAssosiasjon-base_Association" name="base_Association" association="Association_sosiPrimærnøklerAssosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøklerAssosiasjon-SOSI_assosiasjon" name="SOSI_assosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_sosiPrimærnøklerAssosiasjon" name="A_Association_sosiPrimærnøklerAssosiasjon" memberEnd="extension_sosiPrimærnøklerAssosiasjon sosiPrimærnøklerAssosiasjon-base_Association">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiPrimærnøklerAssosiasjon" name="extension_sosiPrimærnøklerAssosiasjon" type="sosiPrimærnøklerAssosiasjon" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiPrimærnøklerAssosiasjon sosiPrimærnøklerAssosiasjon-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="leaf" name="leaf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="leaf-base_Package" name="base_Package" association="Package_leaf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="leaf-xsdDocument" name="xsdDocument">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_leaf" name="A_Package_leaf" memberEnd="extension_leaf leaf-base_Package">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_leaf" name="extension_leaf" type="leaf" isComposite="true" lower="0" upper="1" memberEnd="extension_leaf leaf-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="import" name="import">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="import-base_PackageImport" name="base_PackageImport" association="PackageImport_import">
+						<type href="http://schema.omg.org/spec/UML/2.1/PackageImport"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="PackageImport_import" name="A_PackageImport_import" memberEnd="extension_import import-base_PackageImport">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_import" name="extension_import" type="import" isComposite="true" lower="0" upper="1" memberEnd="extension_import import-base_PackageImport"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiRefAssosiasjon" name="sosiRefAssosiasjon">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiRefAssosiasjon-base_Association" name="base_Association" association="Association_sosiRefAssosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiRefAssosiasjon-SOSI_assosiasjon" name="SOSI_assosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_sosiRefAssosiasjon" name="A_Association_sosiRefAssosiasjon" memberEnd="extension_sosiRefAssosiasjon sosiRefAssosiasjon-base_Association">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiRefAssosiasjon" name="extension_sosiRefAssosiasjon" type="sosiRefAssosiasjon" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiRefAssosiasjon sosiRefAssosiasjon-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiFremmednøkkel" name="sosiFremmednøkkel">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-base_Attribute" name="base_Attribute" association="Attribute_sosiFremmednøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-SOSI_fremmednøkkel" name="SOSI_fremmednøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_sosiFremmednøkkel" name="A_Attribute_sosiFremmednøkkel" memberEnd="extension_sosiFremmednøkkel sosiFremmednøkkel-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiFremmednøkkel" name="extension_sosiFremmednøkkel" type="sosiFremmednøkkel" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiFremmednøkkel sosiFremmednøkkel-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="enumeration" name="enumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-base_Class" name="base_Class" association="Class_enumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_enumeration" name="A_Class_enumeration" memberEnd="extension_enumeration enumeration-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_enumeration" name="extension_enumeration" type="enumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_enumeration enumeration-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="KodelisteAttribute" name="KodelisteAttribute">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-base_Attribute" name="base_Attribute" association="Attribute_KodelisteAttribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-defaultCodeSpace" name="defaultCodeSpace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-kodelister" name="kodelister">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_KodelisteAttribute" name="A_Attribute_KodelisteAttribute" memberEnd="extension_KodelisteAttribute KodelisteAttribute-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_KodelisteAttribute" name="extension_KodelisteAttribute" type="KodelisteAttribute" isComposite="true" lower="0" upper="1" memberEnd="extension_KodelisteAttribute KodelisteAttribute-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="applicationSchema" name="applicationSchema">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-base_Package" name="base_Package" association="Package_applicationSchema">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-version" name="version">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_dokumentasjon" name="SOSI_dokumentasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_versjon" name="SOSI_versjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-xsdEncodingRule" name="xsdEncodingRule">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_produsent" name="SOSI_produsent">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_organisasjon" name="SOSI_organisasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_modellstatus" name="SOSI_modellstatus">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_kortnavn" name="SOSI_kortnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_langnavn" name="SOSI_langnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_spesifikasjonstype" name="SOSI_spesifikasjonstype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-xsdDocument" name="xsdDocument">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_produktgruppe" name="SOSI_produktgruppe">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-xmlns" name="xmlns">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-targetNamespace" name="targetNamespace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_applicationSchema" name="A_Package_applicationSchema" memberEnd="extension_applicationSchema applicationSchema-base_Package">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_applicationSchema" name="extension_applicationSchema" type="applicationSchema" isComposite="true" lower="0" upper="1" memberEnd="extension_applicationSchema applicationSchema-base_Package"/>
+				</packagedElement>
+			</uml:Profile>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="9EECBE8B-D" nsPrefix="SOSI-UML-profil_5.1" name="SOSI-UML-profil 5.1" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="9EECBE8B-D">
+					<body>Versjon 1.0 av UML-profil basert på profilen som er definert i kap. 13 i Regler for UML-modellering 5.1. Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-base_Class" name="base_Class" association="Class_dataType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_dataType" name="A_Class_dataType" memberEnd="extension_dataType dataType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_dataType" name="extension_dataType" type="dataType" isComposite="true" lower="0" upper="1" memberEnd="extension_dataType dataType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Rolle" name="Rolle">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-xsdEncodingRule" name="xsdEncodingRule">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-isMetadata" name="isMetadata">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-inLineOrByReference" name="inLineOrByReference">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-sequenceNumber" name="sequenceNumber">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Egenskap" name="Egenskap">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-base_Attribute" name="base_Attribute" association="Attribute_Egenskap">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-isMetadata" name="isMetadata">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-inLineOrByReference" name="inLineOrByReference">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-sequenceNumber" name="sequenceNumber">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_Egenskap" name="A_Attribute_Egenskap" memberEnd="extension_Egenskap Egenskap-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Egenskap" name="extension_Egenskap" type="Egenskap" isComposite="true" lower="0" upper="1" memberEnd="extension_Egenskap Egenskap-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Union" name="Union">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Union-base_Class" name="base_Class" association="Class_Union">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Union" name="A_Class_Union" memberEnd="extension_Union Union-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Union" name="extension_Union" type="Union" isComposite="true" lower="0" upper="1" memberEnd="extension_Union Union-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="CodeList" name="CodeList">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-base_Class" name="base_Class" association="Class_CodeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-asDictionary" name="asDictionary">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-codeList" name="codeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_CodeList" name="A_Class_CodeList" memberEnd="extension_CodeList CodeList-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_CodeList" name="extension_CodeList" type="CodeList" isComposite="true" lower="0" upper="1" memberEnd="extension_CodeList CodeList-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ApplicationSchema" name="ApplicationSchema">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-base_Package" name="base_Package" association="Package_ApplicationSchema">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-version" name="version">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_versjon" name="SOSI_versjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-xsdEncodingRule" name="xsdEncodingRule">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-language" name="language">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_modellstatus" name="SOSI_modellstatus">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-catalogue-entry" name="catalogue-entry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_kortnavn" name="SOSI_kortnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_bildeAvModellelement" name="SOSI_bildeAvModellelement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_langnavn" name="SOSI_langnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_spesifikasjonstype" name="SOSI_spesifikasjonstype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-xsdDocument" name="xsdDocument">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-xmlns" name="xmlns">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-targetNamespace" name="targetNamespace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_ApplicationSchema" name="A_Package_ApplicationSchema" memberEnd="extension_ApplicationSchema ApplicationSchema-base_Package">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_ApplicationSchema" name="extension_ApplicationSchema" type="ApplicationSchema" isComposite="true" lower="0" upper="1" memberEnd="extension_ApplicationSchema ApplicationSchema-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="FeatureType" name="FeatureType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-base_Class" name="base_Class" association="Class_FeatureType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-SOSI_bildeAvModellelement" name="SOSI_bildeAvModellelement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-byValuePropertyType" name="byValuePropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_FeatureType" name="A_Class_FeatureType" memberEnd="extension_FeatureType FeatureType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_FeatureType" name="extension_FeatureType" type="FeatureType" isComposite="true" lower="0" upper="1" memberEnd="extension_FeatureType FeatureType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Kode" name="Kode">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-base_Attribute" name="base_Attribute" association="Attribute_Kode">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-SOSI_bildeAvModellelement" name="SOSI_bildeAvModellelement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-SOSI_verdi" name="SOSI_verdi">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_Kode" name="A_Attribute_Kode" memberEnd="extension_Kode Kode-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Kode" name="extension_Kode" type="Kode" isComposite="true" lower="0" upper="1" memberEnd="extension_Kode Kode-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="enumeration" name="enumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-base_Class" name="base_Class" association="Class_enumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_enumeration" name="A_Class_enumeration" memberEnd="extension_enumeration enumeration-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_enumeration" name="extension_enumeration" type="enumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_enumeration enumeration-base_Class"/>
+				</packagedElement>
+			</uml:Profile>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="SOSIprofil50" nsPrefix="SOSI_UML_profil_5.0" name="SOSI UML profil 5.0" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="SOSIprofil50">
+					<body>Denne profilen definerer standard stereotyper men lager ingen tagged values da disse skal legges inn med standardskript og eies av klassene. Version:5.0.RC1</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-base_Class" name="base_Class" association="Class_dataType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_dataType" name="A_Class_dataType" memberEnd="extension_dataType dataType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_dataType" name="extension_dataType" type="dataType" isComposite="true" lower="0" upper="1" memberEnd="extension_dataType dataType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Union" name="Union">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Union-base_Class" name="base_Class" association="Class_Union">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Union" name="A_Class_Union" memberEnd="extension_Union Union-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Union" name="extension_Union" type="Union" isComposite="true" lower="0" upper="1" memberEnd="extension_Union Union-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="CodeList" name="CodeList">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-base_Class" name="base_Class" association="Class_CodeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_CodeList" name="A_Class_CodeList" memberEnd="extension_CodeList CodeList-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_CodeList" name="extension_CodeList" type="CodeList" isComposite="true" lower="0" upper="1" memberEnd="extension_CodeList CodeList-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ApplicationSchema" name="ApplicationSchema">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-base_Package" name="base_Package" association="Package_ApplicationSchema">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_ApplicationSchema" name="A_Package_ApplicationSchema" memberEnd="extension_ApplicationSchema ApplicationSchema-base_Package">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_ApplicationSchema" name="extension_ApplicationSchema" type="ApplicationSchema" isComposite="true" lower="0" upper="1" memberEnd="extension_ApplicationSchema ApplicationSchema-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="FeatureType" name="FeatureType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-base_Class" name="base_Class" association="Class_FeatureType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_FeatureType" name="A_Class_FeatureType" memberEnd="extension_FeatureType FeatureType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_FeatureType" name="extension_FeatureType" type="FeatureType" isComposite="true" lower="0" upper="1" memberEnd="extension_FeatureType FeatureType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="MessageType" name="MessageType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MessageType-base_Class" name="base_Class" association="Class_MessageType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_MessageType" name="A_Class_MessageType" memberEnd="extension_MessageType MessageType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_MessageType" name="extension_MessageType" type="MessageType" isComposite="true" lower="0" upper="1" memberEnd="extension_MessageType MessageType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="enumeration" name="enumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-base_Class" name="base_Class" association="Class_enumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_enumeration" name="A_Class_enumeration" memberEnd="extension_enumeration enumeration-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_enumeration" name="extension_enumeration" type="enumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_enumeration enumeration-base_Class"/>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_9E402205_FDE4_4add_A3BD_3461775DFB97">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" localID="66212" owner="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="2"/>
+				<properties name="Hoveddiagram Tettsted-20261001" type="Logical"/>
+				<project author="baetor" version="1.0" created="2017-10-25 00:00:00" modified="2026-09-24 11:37:12"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=1134;DocSize.cy=791;ShowDetails=0;Orientation=L;Zoom=120;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=1;HideProps=0;ShowReqs=0;ShowCons=1;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=685D9921;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=SOSI::Klassediagram;DefaultLang=SOSI;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=169;Top=144;Right=337;Bottom=244;" subject="EAID_C307964B_B97E_4384_8B46_E09E5A348668" seqno="1" style="DUID=7E930AB0;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=366;Top=369;Right=515;Bottom=449;" subject="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D" seqno="2" style="DUID=031E87E4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=169;Top=367;Right=329;Bottom=450;" subject="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8" seqno="3" style="DUID=DBFD485F;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=556;Top=371;Right=721;Bottom=449;" subject="EAID_B77D59A2_4077_445b_97C7_373C192189F5" seqno="4" style="DUID=6010EA84;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=461;Top=85;Right=653;Bottom=299;" subject="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" seqno="5" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;AttCustom=0;OpCustom=0;AttInh=1;RzO=1;DUID=BBC118AE;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7AE89DBC_01C3_49d9_A1C4_ED4A23F30403" style="Mode=3;EOID=7E930AB0;SOID=BBC118AE;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_37C6B348_F1F0_4e75_A75C_C7ED70344BA3">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" localID="66213" owner="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="3"/>
+				<properties name="Kodelister" type="Logical"/>
+				<project author="baetor" version="1.0" created="2017-10-25 14:33:26" modified="2026-09-24 11:30:44"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=1;HideProps=0;ShowReqs=0;ShowCons=1;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=E2198F57;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=SOSI::Klassediagram;DefaultLang=SOSI;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=153;Top=59;Right=586;Bottom=188;" subject="EAID_72E14DF3_21BC_4cb5_BC5B_3EB81D7C25A9" seqno="1" style="DUID=3C9816A3;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_DEC6CB56_EF20_4c4b_91B3_35B554BD024F">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" localID="66214" owner="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="5"/>
+				<properties name="Realiseringer fra SOSI del 2" type="Logical"/>
+				<project author="baetor" version="1.0" created="2017-10-25 14:33:26" modified="2026-09-24 11:37:12"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=1;HideProps=0;ShowReqs=0;ShowCons=1;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;"/>
+				<style2 value="SaveTag=385CB013;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=SOSI::Klassediagram;DefaultLang=SOSI;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=403;Top=287;Right=593;Bottom=357;" subject="EAID_AEF4A7CF_11EF_4c2f_9FC6_E87ABE2D44B4" seqno="1" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=197EFEA5;"/>
+					<element geometry="Left=94;Top=287;Right=326;Bottom=385;" subject="EAID_0F6389C4_A887_45dc_A276_40ED771459F1" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=801BE032;"/>
+					<element geometry="Left=409;Top=44;Right=587;Bottom=114;" subject="EAID_B77D59A2_4077_445b_97C7_373C192189F5" seqno="3" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=B11C7502;"/>
+					<element geometry="Left=92;Top=44;Right=328;Bottom=187;" subject="EAID_791BAA66_276E_4169_BC3A_59D6AC626983" seqno="4" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=C3C1719D;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AE74ED87_2318_4a03_9147_435F6A13EB65" style="Mode=3;EOID=197EFEA5;SOID=B11C7502;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_C6501868_47AE_42ce_80CC_1DB93573CA34" style="Mode=3;EOID=801BE032;SOID=C3C1719D;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_923A98FA_D0E8_460d_B2E8_43F50F6AD433">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" localID="66215" owner="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="1"/>
+				<properties name="Pakkerealisering Tettsted-20261001" type="Package"/>
+				<project author="flejoh" version="1.0" created="2017-12-19 11:29:05" modified="2026-09-24 11:41:59"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=677CFF52;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=15524833;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=15524833;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=15524833;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=85;Top=117;Right=319;Bottom=271;" subject="EAID_4502960B_D5B0_4377_8FCF_A32ED284FB20" seqno="1" style="DUID=4427AB94;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=454;Top=116;Right=612;Bottom=273;" subject="EAID_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" seqno="2" style="DUID=C3B2AC97;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=35DB8FDB;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B12B7B3F_3E11_4b52_85E9_08B13969E6F8" style="Mode=3;EOID=4427AB94;SOID=C3B2AC97;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_DAF4EF99_B530_42c7_A994_51495DC07E38">
+				<model package="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" localID="66216" owner="EAPK_CAF6B04A_FF6B_4d2f_939F_2ABD540BF39B" tpos="4"/>
+				<properties name="Realiseringer fra SOSI del 1" type="Logical"/>
+				<project author="baetor" version="1.0" created="2026-09-24 11:33:40" modified="2026-09-24 11:37:12"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=787;DocSize.cy=1130;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=4F2A1C45;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=28;Top=513;Right=213;Bottom=611;" subject="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76" seqno="1" style="DUID=9DD3B999;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=22;Top=354;Right=233;Bottom=491;" subject="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474" seqno="2" style="DUID=195711CB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=266;Top=33;Right=480;Bottom=378;" subject="EAID_C01DD65F_7316_4988_924A_87336870F4D6" seqno="3" style="DUID=47692E76;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=51;Top=144;Right=190;Bottom=268;" subject="EAID_6237DC61_FAE6_496c_B447_76C63ECD774C" seqno="4" style="DUID=F8B729D9;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=549;Top=380;Right=734;Bottom=465;" subject="EAID_2BFEE7B1_8D47_4cd2_9DC6_2F19A8F4150D" seqno="5" style="DUID=BC393616;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=549;Top=519;Right=734;Bottom=604;" subject="EAID_26E35E8C_E82A_464d_BD6C_EC8D060C9FC8" seqno="6" style="DUID=638794C2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=571;Top=153;Right=723;Bottom=251;" subject="EAID_C307964B_B97E_4384_8B46_E09E5A348668" seqno="7" style="DUID=D9BA99C5;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3993BABC_2793_4268_9A93_CB9749063D66" style="Mode=3;EOID=F8B729D9;SOID=47692E76;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0A64D407_4D9F_46e3_8977_8D860A2E6375" style="Mode=3;EOID=195711CB;SOID=BC393616;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_2E7B0C61_2A71_4cea_861A_1F2913B190E4" style="Mode=3;EOID=9DD3B999;SOID=638794C2;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7CE73A93_239B_4b59_A3C0_73DC99463CF7" style="Mode=3;EOID=47692E76;SOID=D9BA99C5;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+		<EAStub xmi:id="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76" name="Identifikasjon" UMLType="Class"/>
+		<EAStub xmi:id="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474" name="Posisjonskvalitet" UMLType="Class"/>
+		<EAStub xmi:id="EAID_298674ED_BFB7_41af_853C_E04B41F8FF1C" name="GM_MultiSurface" UMLType="Class"/>
+		<EAStub xmi:id="EAID_992C4B6C_785C_48a4_81A2_5F957E9C8A6B" name="Integer" UMLType="Class"/>
+	</xmi:Extension>
+</xmi:XMI>
