@@ -1,0 +1,310 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Tettsteder",
+  "format": "text/html",
+  "date": {
+    "creation": "2020-05-07",
+    "revision": "2024-11-19"
+  },
+  "language": "nor",
+  "contact": {
+    "individualName": "Margrete Steinnes",
+    "organizationName": "Statistisk sentralbyrå",
+    "logo": "https://register.geonorge.no/data/organizations/971526920_SSB_liten.png",
+    "electronicMailAddress": "margrete.steinnes@ssb.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Tettsteder",
+    "abstract": "Datasettet viser Tettsteder pr. 01.01 for årsversjon. Det er DOK-datasett. Tettsteder er geografiske områder som har en dynamisk avgrensing, og antall tettsteder og deres yttergrenser vil endre seg over tid avhengig av byggeaktivitet og befolkningsutvikling. \nEt tettsted er en hussamling med minst 200 bosatte og der avstanden mellom husene normalt ikke skal overstige 50 meter. Les mer om tettsted og fullstendig definisjon her: https://www.ssb.no/befolkning/folketall/statistikk/tettsteders-befolkning-og-areal\n\nDataene er tilgjengelig for innsyn og nedlasting fra Geonorge\nÅrsdatasett er også nedlastbar fra SSBs kartportal https://kart.ssb.no  > Se eget Tema \"Tettsteder\" eller gå til \"Innholdskatalog\" for oversikt over alle tilgjengelig datasett",
+    "purpose": {
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Dataene brukes i mange analyser som en viktig variabel for å forklare variasjoner i sosiale, miljømessige og demografiske forhold og til statistiske formål for øvrig. Brukere er særlig planleggingsetater og forskningsmiljøer."
+      }
+    },
+    "topicCategory": [
+      "Samfunn og kultur"
+    ],
+    "spatialRepresentationType": "Vektor",
+    "spatialResolution": {
+      "equivalentScale": "20000"
+    },
+    "uniqueId": "https://data.geonorge.no/sosi/befolkning/tettsteder_historisk",
+    "keyword": [
+      "tettsted",
+      "befolkning",
+      "tettstedsavgrensninger",
+      "statistikk",
+      "Arealbruk",
+      "Norge digitalt",
+      "geodataloven",
+      "Inspire",
+      "fellesDatakatalog"
+    ],
+    "restriction": {
+      "resourceConstraints": {
+        "useLimitations": "Ingen begrensninger på bruk er oppgitt."
+      },
+      "legalConstraints": {
+        "accessConstraints": "Åpne data",
+        "useConstraints": "Lisens",
+        "license": "Norsk lisens for offentlige data (NLOD)",
+        "licenseUrl": "http://data.norge.no/nlod/no/1.0"
+      },
+      "securityConstraints": {
+        "classification": "Ugradert"
+      }
+    },
+    "contact": [
+      {
+        "individualName": "Margrete Steinnes",
+        "organizationName": "Statistisk sentralbyrå",
+        "electronicMailAddress": "margrete.steinnes@ssb.no",
+        "role": "owner"
+      },
+      {
+        "individualName": "Svein Reid",
+        "organizationName": "Statistisk sentralbyrå",
+        "electronicMailAddress": "svein.reid@ssb.no",
+        "role": "pointOfContact"
+      },
+      {
+        "individualName": "Svein Reid",
+        "organizationName": "Statistisk sentralbyrå",
+        "electronicMailAddress": "svein.reid@ssb.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Årlig",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "2.0",
+        "eastBoundLongitude": "33.0",
+        "southBoundLatitude": "57.0",
+        "northBoundLatitude": "72.0"
+      },
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2020-05-07",
+          "endPosition": "2024-11-19"
+        }
+      }
+    },
+    "date": {
+      "creation": "2020-05-07",
+      "publication": "2020-05-07",
+      "revision": "2024-11-19"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Tettsted UTF-8 XMI",
+        "level": "dataset",
+        "levelDescription": "Ny tettsted UTF-8"
+      }
+    }
+  ],
+  "referenceSystemSection": {
+    "spatialReferenceSystem": [
+      {
+        "code": "EPSG:25833",
+        "name": "EUREF89 UTM sone 33, 2d"
+      },
+      {
+        "code": "EPSG:25835",
+        "name": "EUREF89 UTM sone 35, 2d"
+      },
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      },
+      {
+        "code": "EPSG:4258",
+        "name": "EUREF 89 Geografisk (ETRS 89) 2d"
+      },
+      {
+        "code": "EPSG:3035",
+        "name": "EUREF89 / ETRS89-LAEA Europe"
+      },
+      {
+        "code": "EPSG:25833",
+        "name": "EUREF89 UTM sone 33, 2d"
+      }
+    ]
+  },
+  "dataQualitySection": {
+    "scope": {
+      "level": "series"
+    },
+    "report": [
+      {
+        "nameOfMeasure": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services",
+        "descriptiveResult": "Dataene er ikke vurdert iht produktspesifikasjonen"
+      },
+      {
+        "nameOfMeasure": "SOSI produktspesifikasjon: Tettsted",
+        "descriptiveResult": "Dataene er i henhold til produktspesifikasjonen"
+      },
+      {
+        "nameOfMeasure": "Sosi applikasjonsskjema",
+        "descriptiveResult": "SOSI-filer er i henhold til applikasjonsskjema"
+      },
+      {
+        "nameOfMeasure": "Sosi applikasjonsskjema",
+        "descriptiveResult": "GML-filer er i henhold til applikasjonsskjema"
+      }
+    ]
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Årlig",
+    "maintenanceAndUpdateStatement": "Fullført"
+  },
+  "dataCaptureAndProductionSection": {
+    "DataAcquisitionAndProcessing": {
+      "dataCaptureStatement": "Tettsteder avgrenses ut fra SSBarealbruk, Matrikkelen og andre kilder. Se nærmere beskrivelse her:\nwww.ssb.no/beftett."
+    }
+  },
+  "portrayal": {
+    "name": "Tegneregler",
+    "linkage": "https://register.geonorge.no/tegneregler/tettsteder"
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "landsfiler",
+          "deliveryMediumName": "Geonorge nedlastning",
+          "deliveryService": {
+            "serviceEndpoint": "https://nedlasting.geonorge.no/api/capabilities/173f4a15-dead-4f82-b92e-f37396b72cea",
+            "serviceProperty": {
+              "type": "Geonorge nedlastning",
+              "value": "GEONORGE:DOWNLOAD"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GML"
+          },
+          {
+            "formatName": "SOSI"
+          },
+          {
+            "formatName": "FGDB"
+          },
+          {
+            "formatName": "PostGIS"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, landsfiler",
+          "deliveryMediumName": "Egen nedlastningsside",
+          "deliveryService": {
+            "serviceEndpoint": "https://kart.ssb.no/",
+            "serviceProperty": {
+              "type": "Egen nedlastningsside",
+              "value": "WWW:DOWNLOAD-1.0-http--download"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "Shape"
+          },
+          {
+            "formatName": "Parquet"
+          },
+          {
+            "formatName": "GML"
+          },
+          {
+            "formatName": "GeoPackage"
+          },
+          {
+            "formatName": "GeoJSON"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Tettsteder WMS, fra kart.ssb.no",
+          "deliveryService": {
+            "serviceEndpoint": "https://kart.ssb.no/api/mapserver/v1/wms/tettsteder?service=WMS&version=1.3.0&request=GetCapabilities",
+            "serviceProperty": {
+              "type": "Tettsteder WMS, fra kart.ssb.no",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GML",
+            "version": "3.2.1"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2026-01-07",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Statistisk sentralbyrå",
+      "individualName": "Svein Reid",
+      "logo": "https://register.geonorge.no/data/organizations/971526920_SSB_liten.png",
+      "electronicMailAddress": "svein.reid@ssb.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "173f4a15-dead-4f82-b92e-f37396b72cea",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/173f4a15-dead-4f82-b92e-f37396b72cea"
+    }
+  },
+  "additionalReferences": [
+    {
+      "title": "Produktark",
+      "href": "https://register.geonorge.no/produktark/tettsteder"
+    },
+    {
+      "title": "Produktside",
+      "href": "https://www.ssb.no/befolkning/statistikker/beftett"
+    }
+  ],
+  "chapterAutofill": {
+    "om_spesifikasjonen": 10,
+    "om_produktet": 152,
+    "formaal": 0,
+    "bruksomraade": 31,
+    "omfang": 29,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 36,
+    "datakvalitet": 61,
+    "datafangst_og_produksjon": 14,
+    "vedlikehold": 2,
+    "presentasjon": 2,
+    "leveranse": 37,
+    "metadata": 15,
+    "tilleggsinformasjon": 4
+  }
+}
