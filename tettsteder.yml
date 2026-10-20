@@ -2,7 +2,8 @@ metadataId: 173f4a15-dead-4f82-b92e-f37396b72cea
 output_directory: produktspesifikasjon
 product_slug: tettsteder
 updated: '2026-10-20'
-outputs: geopackage,postgis,xsd,jsonschema,pygeoapi,ldproxy
+outputs: geopackage,postgis,xsd,jsonschema,pygeoapi,ldproxy,odcs
+ldproxy_provider: geopackage
 scopes:
 - name: Tettsted UTF-8 XMI
   url: inputs/tettsteder/model.xmi
