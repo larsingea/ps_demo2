@@ -1,0 +1,9 @@
+metadataId: 0b960bb3-d9af-499e-a204-72833a4bcaaa
+output_directory: produktspesifikasjon
+product_slug: jordsmonn
+updated: '2026-10-21'
+scopes:
+- name: Jordsmonn SOSI UML
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Skog%20og%20landskap/Produktspesifikasjon%20Jordsmonn%20-%2020260901.xml
+  generator: xmi
+  description: Datamodell fra SOSI UML
