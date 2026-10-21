@@ -1,0 +1,334 @@
+[
+  {
+    "name": "JordsmonnGrense",
+    "description": "grensen for jordsmonnflata\n-- Definition --\nthe boundary of an expanse of soil",
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "GM_Curve",
+        "description": "forløp som følger overgang mellom ulike fenomener\n-- Definition --\ncourse follwing the transition between different real world phenomena",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "Kurve"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Produktspesifikasjon Jordsmonn - 20260901"
+  },
+  {
+    "name": "Jordsmonn",
+    "description": "geografisk område med tilnærmet enhetlige egenskaper i jordsmonnet\n-- Definition --\ngeographic area with approximately uniform soil characteristics",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "GM_Surface",
+        "description": "objektets utstrekning\n-- Definition --\narea over which an object extends",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "Flate"
+        }
+      },
+      {
+        "name": "dominerendeTeksturOverflatesjikt",
+        "type": "DominerendeTeksturOverflatesjikt",
+        "description": "Viser arealets dominerende tekstur (og grusinnhold) i overflatesjikt registrert under jordkartlegging i felt.\n-- Definition --\ncategory for the dominant texture in the surface layer recorded during fieldwork.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser arealets dominerende tekstur (og grusinnhold) i overflatesjikt registrert under jordkartlegging i felt.\n-- Definition - -\ncategory for the dominant texture in the surface layer recorded during fieldwork.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/dominerendeteksturoverflatesjikt"
+        },
+        "taggedValues": {
+          "SOSI_navn": "DOMTEKSTUROVERFLATE"
+        }
+      },
+      {
+        "name": "forstyrrelser",
+        "type": "Forstyrrelser",
+        "description": "Viser hva slags menneskelig aktivitet, utover vanlig jordarbeiding/grøfting, som har forstyrret arealet.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser hva slags menneskelig aktivitet, utover vanlig jordarbeiding/grøfting, som har forstyrret arealet.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/forstyrrelser"
+        },
+        "taggedValues": {
+          "SOSI_navn": "FORSTYRRELSER"
+        }
+      },
+      {
+        "name": "helling",
+        "type": "Helling",
+        "description": "Viser dominerende helling på arealet.\n-- Definition --\ninclination class for the soil figure",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser dominerende helling på arealet.\n-- Definition --\ninclination class for the soil figure",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/helling"
+        },
+        "taggedValues": {
+          "SOSI_navn": "HELLING"
+        }
+      },
+      {
+        "name": "jordsmonnklassifikasjon",
+        "type": "Jordsmonnklassifikasjon",
+        "description": "Viser hvilken jordgruppe som dominerer på arealet\n-- Definition --\nShows which soiltype which is dominating the area.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser hvilken jordgruppe som dominerer på arealet\n-- Definition --\nShows which soiltype which is dominating the area.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/jordsmonnklassifikasjon"
+        },
+        "taggedValues": {
+          "SOSI_navn": "JMKLASSIFIKASJON"
+        }
+      },
+      {
+        "name": "kartleggingsmetodikk",
+        "type": "Kartleggingsmetodikk",
+        "description": "Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.\n--Definition--\nDisplays the methodolgy used during field mapping.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.\n--Definition--\nDisplays the methodolgy used during field mapping.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/kartleggingsmetodikk"
+        },
+        "taggedValues": {
+          "SOSI_navn": "KL_METODIKK"
+        }
+      },
+      {
+        "name": "kartleggingsår",
+        "type": "CharacterString",
+        "description": "Viser årstall for når jordsmonnkartlegging er utført.\n-- Definition --\nyear of mapping",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KL_ÅR"
+        }
+      },
+      {
+        "name": "mestBegrensendeJordegenskap",
+        "type": "MestBegrensendeJordegenskap",
+        "description": "Viser den jordegenskapen som er mest begrensende for bruken av arealet",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser den jordegenskapen som er mest begrensende for bruken av arealet",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/mestbegrensendejordegenskap"
+        },
+        "taggedValues": {
+          "SOSI_navn": "MESTBEGRENSENDEJORDEGENSKAP"
+        }
+      },
+      {
+        "name": "naturligeDreneringsforhold",
+        "type": "NaturligeDreneringsforhold",
+        "description": "Viser jordsmonnets naturlige evne til å bli kvitt overflødig vann.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser jordsmonnets naturlige evne til å bli kvitt overflødig vann.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/naturligedreneringsforhold"
+        },
+        "taggedValues": {
+          "SOSI_navn": "NATDRENFORHOLD"
+        }
+      },
+      {
+        "name": "organiskMateriale",
+        "type": "OrganiskMateriale",
+        "description": "Viser jordsmonnets innhold av organisk materiale i overflatesjiktet, samt tykkelse på organisk jord der denne finnes.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser jordsmonnets innhold av organisk materiale i overflatesjiktet, samt tykkelse på organisk jord der denne finnes.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/organiskmateriale"
+        },
+        "taggedValues": {
+          "SOSI_navn": "ORGANISKMATERIALE"
+        }
+      },
+      {
+        "name": "steinBlokk",
+        "type": "SteinBlokk",
+        "description": "Viser stein- og blokkinnhold (0–50 cm) på arealet på kartleggingstidspunktet",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser stein- og blokkinnhold (0–50 cm) på arealet på kartleggingstidspunktet",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/steinblokk"
+        },
+        "taggedValues": {
+          "SOSI_navn": "STEINBLOKK"
+        }
+      },
+      {
+        "name": "tilleggsinformasjon",
+        "type": "Tilleggsinformasjon",
+        "description": "Viser tilleggsinformasjon om andre egenskaper ved arealet.",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser tilleggsinformasjon om andre egenskaper ved arealet.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/tilleggsinformasjon"
+        },
+        "taggedValues": {
+          "SOSI_navn": "TILLEGG"
+        }
+      },
+      {
+        "name": "opprinneligLokalId",
+        "type": "Integer",
+        "description": "Opprinnelig id i databasen\n— Definition —\nOriginal ID in the soil database",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "FIGURID"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Jordsmonn_Fellesegenskaper"
+      ],
+      "associations": [
+        {
+          "target": "JordsmonnGrense",
+          "role": "avgrensesAvJordsmonngrense",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Produktspesifikasjon Jordsmonn - 20260901"
+  },
+  {
+    "name": "Jordsmonn_Fellesegenskaper",
+    "description": "abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.\nMerknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.",
+    "attributes": [
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "IDENT"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          }
+        ]
+      },
+      {
+        "name": "kopidata",
+        "type": "Kopidata",
+        "description": "angivelse av at objektet er hentet fra et kopidatasett og ikke fra originaldatasettet\n\nMerknad: Inneholder informasjon om når kopidatasettet ble kopiert fra originaldatasettet og hvem som er originaldataansvarlig",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KOPIDATA"
+        },
+        "attributes": [
+          {
+            "name": "områdeId",
+            "type": "Integer",
+            "description": "identifikasjon av område som dataene dekker\nMerknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres nærmere.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "OMRÅDEID"
+            }
+          },
+          {
+            "name": "originalDatavert",
+            "type": "CharacterString",
+            "description": "ansvarlig etat for forvaltning av data",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "ORIGINALDATAVERT"
+            }
+          },
+          {
+            "name": "kopidato",
+            "type": "DateTime",
+            "description": "dato når objektet ble kopiert fra originaldatasettet\n\nMerknad:\nEr en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase brukes til distribusjon.\nÅ kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato blir endret.\nEventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Datafangstdato og/eller Verifiseringsdato.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "KOPIDATO"
+            }
+          }
+        ]
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "description": "Beskrivelse av kvaliteten på stedfestingen.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "KVALITET"
+        },
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "definition": "metode som ligger til grunn for registrering av posisjon\n-- Definition - -\nmethod on which registration of position is based",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode"
+            },
+            "taggedValues": {
+              "SOSI_navn": "MÅLEMETODE"
+            }
+          }
+        ]
+      },
+      {
+        "name": "verifiseringsdato",
+        "type": "DateTime",
+        "description": "dato når dataene er fastslått å være i samsvar med virkeligheten\nMerknad: Verifiseringsdato er identisk med ..DATO i tidligere versjoner av SOSI",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "VERIFISERINGSDATO"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Produktspesifikasjon Jordsmonn - 20260901"
+  }
+]
