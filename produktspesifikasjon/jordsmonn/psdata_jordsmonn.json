@@ -1,0 +1,329 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Jordsmonn",
+  "format": "text/html",
+  "date": {
+    "creation": "2026-09-17",
+    "revision": "2026-09-17"
+  },
+  "language": "nor",
+  "contact": {
+    "individualName": "Siri Svendgård-Stokke",
+    "organizationName": "Norsk institutt for bioøkonomi",
+    "logo": "https://register.geonorge.no/data/organizations/988983837_NIBIO_liten.jpg",
+    "electronicMailAddress": "siri.svendgard-stokke@nibio.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Jordsmonn",
+    "abstract": "NIBIO kartlegger jordsmonnet på fulldyrka og overflatedyrka jord basert på standardisert internasjonal metodikk og en fornorsket utgave av et internasjonalt klassifikasjonssystem. Arealer med like jordegenskaper avgrenses mot arealer med andre jordegenskaper. \n\nDatasettet inneholder en beskrivelse av seks temakart som har opphav i jorddata fra kartleggingen, samt informasjon om helling, stein og blokkinnhold, tilleggsinformasjon, kartleggingsmetodikk og kartleggingsår.",
+    "purpose": {
+      "summary": "Jordsmonndataene gir en god og detaljert oversikt over jordressursene i Norge. Jordsmonndata utgjør et objektivt kunnskapsgrunnlag for beslutninger om bruk av jordressursen.",
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Utstrekningsbeskrivelse\nDatasettet finnes for kommuner der jordkartlegging er utført, samt for noen utvalgte arealer spredt over hele landet. Hvert år kartlegges nye kommuner, og dekningsgraden øker år for år."
+      }
+    },
+    "spatialRepresentationType": "Vektor",
+    "spatialResolution": {
+      "equivalentScale": "1:5 000 til 1:40 000"
+    },
+    "supplementalInformation": "Jordsmonn kartlegges som hovedregel bare en gang. Løpende ajourføring av jordsmonndata utføres ikke. Kun noen få kommuner i Norge er ajourført siden kartleggingsprogrammet startet opp på begynnelsen av 1980-tallet.\n \nStatus\nFra oppstarten og fram til nå har kartleggings-metodikken endret seg, men det er i hovedsak de samme, stabile egenskapene ved jorda som fortsatt bestemmes ute i felt. I perioden 2018-2022 ble resultater fra de ulike kartleggingsmetodikkene samordnet/ harmonisert, og en oppdatering av databasen ble utført i henhold til dette arbeidet. \n\nDagens harmoniserte jordsmonnbase ble lansert i mai 2022.",
+    "uniqueId": "0b960bb3-d9af-499e-a204-72833a4bcaaa",
+    "keyword": [
+      "Jordsmonn",
+      "Jordsmonnkartlegging",
+      "Jordegenskaper",
+      "Jordsmonnklassifikasjon",
+      "Miljøtiltak",
+      "Arealplanlegging",
+      "Jordbruk",
+      "Agronomi",
+      "Organisk materiale",
+      "Naturlige dreneringsforhold",
+      "Begrensende jordegenskap",
+      "Dominerende tekstur i overflatesjikt",
+      "Helling",
+      "Stein- og blokkinnhold",
+      "Kartleggingsmetodikk",
+      "Arealdekke",
+      "Landbruk",
+      "Landskap",
+      "Geologi"
+    ],
+    "restriction": {
+      "resourceConstraints": {
+        "useLimitations": "ingen"
+      },
+      "legalConstraints": {
+        "accessConstraints": "Åpne data",
+        "useConstraints": "Lisens",
+        "license": "Norsk lisens for offentlige data (NLOD) 2.0",
+        "licenseUrl": "https://data.norge.no/nlod/no/2.0"
+      },
+      "securityConstraints": {
+        "classification": "Ugradert"
+      }
+    },
+    "contact": [
+      {
+        "individualName": "Siri Svendgård-Stokke",
+        "organizationName": "Norsk institutt for bioøkonomi",
+        "electronicMailAddress": "siri.svendgard-stokke@nibio.no",
+        "role": "owner"
+      },
+      {
+        "individualName": "Christina Sogge",
+        "organizationName": "Norsk institutt for bioøkonomi",
+        "electronicMailAddress": "gisdrift@nibio.no",
+        "role": "pointOfContact"
+      },
+      {
+        "individualName": "Ingvild Nystuen",
+        "organizationName": "Norsk institutt for bioøkonomi",
+        "electronicMailAddress": "gisdrift@nibio.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Ikke planlagt",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "2.0",
+        "eastBoundLongitude": "33.0",
+        "southBoundLatitude": "57.0",
+        "northBoundLatitude": "72.0"
+      },
+      "geographicDescription": [
+        "Fastlandsnorge",
+        "Jordkartlagt jordbruksareal",
+        "Fulldyrka jord",
+        "Overflatedyrka jord",
+        "0ver 60 % av norges fulldyrka og overflatedyrka jord (2026)"
+      ],
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2026-09-17",
+          "endPosition": "2026-09-17"
+        }
+      }
+    },
+    "date": {
+      "creation": "2026-09-17",
+      "publication": "2026-09-17",
+      "revision": "2026-09-17"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Jordsmonn SOSI UML",
+        "level": "dataset",
+        "levelDescription": "Datamodell fra SOSI UML"
+      }
+    }
+  ],
+  "referenceSystemSection": {
+    "spatialReferenceSystem": [
+      {
+        "code": "EPSG:32632",
+        "name": "WGS84 UTM sone 32, 2d"
+      },
+      {
+        "code": "EPSG:32633",
+        "name": "WGS84 UTM sone 33, 2d"
+      },
+      {
+        "code": "EPSG:32635",
+        "name": "WGS84 UTM sone 35, 2d"
+      },
+      {
+        "code": "EPSG:32632",
+        "name": "WGS84 UTM sone 32, 2d"
+      }
+    ]
+  },
+  "dataQualitySection": {
+    "scope": {
+      "level": "dataset"
+    },
+    "report": [
+      {
+        "nameOfMeasure": "SOSI produktspesifikasjon: Jordsmonn",
+        "descriptiveResult": "Dataene er ikke vurdert iht produktspesifikasjonen"
+      }
+    ]
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Ikke planlagt",
+    "maintenanceAndUpdateStatement": "Under arbeid"
+  },
+  "dataCaptureAndProductionSection": {
+    "DataAcquisitionAndProcessing": {
+      "dataCaptureStatement": "Ulike jordtyper identifiseres i felt ved hjelp av jordbor. Opphavsmateriale, tekstur (kornstørrelse), innhold av organisk materiale, jordas naturlige dreneringsgrad, jorddybde og jordsmonnutvikling blir vurdert. Avgrensingen av jordtyper tegnes direkte inn på digitale flybilder i felt, og baseres på en kombinasjon av borstikk ned til en meters dybde, flybildetolking og GPS. I tillegg til jordtyper deles arealene inn på bakgrunn av terrengegenskaper som har vesentlig betydning for den praktiske bruken av arealene, slik som hellingsgrad og stein- og blokkinnhold."
+    }
+  },
+  "portrayal": {
+    "name": "Tegneregler",
+    "linkage": "https://register.geonorge.no/tegneregler/jordsmonn"
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "kommunevis, landsfiler",
+          "deliveryMediumName": "Geonorge nedlastning",
+          "deliveryService": {
+            "serviceEndpoint": "https://kart8.nibio.no/api/capabilities/0b960bb3-d9af-499e-a204-72833a4bcaaa",
+            "serviceProperty": {
+              "type": "Geonorge nedlastning",
+              "value": "GEONORGE:DOWNLOAD"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GML"
+          },
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Harmonisert jordsmonn – WMS",
+          "deliveryService": {
+            "serviceEndpoint": "https://wms.nibio.no/cgi-bin/jordsmonn_harmonisert?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities",
+            "serviceProperty": {
+              "type": "Harmonisert jordsmonn – WMS",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "OGC WMS 1.3.0"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Jordsmonn - Potensial for grønnsaksdyrking - WMS",
+          "deliveryService": {
+            "serviceEndpoint": "https://wms.nibio.no/cgi-bin/grsak?",
+            "serviceProperty": {
+              "type": "Jordsmonn - Potensial for grønnsaksdyrking - WMS",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "png",
+            "version": "1.3.0"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Erosjonsrisiko - WMS",
+          "deliveryService": {
+            "serviceEndpoint": "https://wms.nibio.no/cgi-bin/jordsmonn_erosjonsrisiko?",
+            "serviceProperty": {
+              "type": "Erosjonsrisiko - WMS",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "PNG"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Jordressurser - WMS",
+          "deliveryService": {
+            "serviceEndpoint": "https://wms.nibio.no/cgi-bin/jordressurser?service=wms&request=getcapabilities",
+            "serviceProperty": {
+              "type": "Jordressurser - WMS",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "jpg"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2026-09-18",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Norsk institutt for bioøkonomi",
+      "individualName": "Christina Sogge",
+      "logo": "https://register.geonorge.no/data/organizations/988983837_NIBIO_liten.jpg",
+      "electronicMailAddress": "gisdrift@nibio.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "0b960bb3-d9af-499e-a204-72833a4bcaaa",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/0b960bb3-d9af-499e-a204-72833a4bcaaa"
+    }
+  },
+  "additionalReferences": [
+    {
+      "title": "Produktark",
+      "href": "https://register.geonorge.no/produktark/jordsmonn"
+    },
+    {
+      "title": "Produktside",
+      "href": "https://nibio.no/tema/jord/jordkartlegging?locationfilter=true"
+    }
+  ],
+  "chapterAutofill": {
+    "om_spesifikasjonen": 12,
+    "om_produktet": 149,
+    "formaal": 22,
+    "bruksomraade": 29,
+    "omfang": 30,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 24,
+    "datakvalitet": 10,
+    "datafangst_og_produksjon": 78,
+    "vedlikehold": 4,
+    "presentasjon": 2,
+    "leveranse": 63,
+    "metadata": 17,
+    "tilleggsinformasjon": 92,
+    "datamodell": 781
+  }
+}

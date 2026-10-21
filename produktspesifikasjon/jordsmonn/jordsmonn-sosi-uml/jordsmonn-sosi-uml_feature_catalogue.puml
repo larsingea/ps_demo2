@@ -1,0 +1,79 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Jordsmonn - Jordsmonn SOSI UML - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class JordsmonnGrense <<featureType>> {
+    + grense [1] : GM_Curve
+  }
+
+  class Jordsmonn <<featureType>> {
+    + område [1] : GM_Surface
+    + dominerendeTeksturOverflatesjikt [1] : DominerendeTeksturOverflatesjikt
+    + forstyrrelser [1] : Forstyrrelser
+    + helling [0..1] : Helling
+    + jordsmonnklassifikasjon [1] : Jordsmonnklassifikasjon
+    + kartleggingsmetodikk [1] : Kartleggingsmetodikk
+    + kartleggingsår [1] : CharacterString
+    + mestBegrensendeJordegenskap [1] : MestBegrensendeJordegenskap
+    + naturligeDreneringsforhold [1] : NaturligeDreneringsforhold
+    + organiskMateriale [1] : OrganiskMateriale
+    + steinBlokk [1] : SteinBlokk
+    + tilleggsinformasjon [0..1] : Tilleggsinformasjon
+    + opprinneligLokalId [1] : Integer
+  }
+
+  abstract class Jordsmonn_Fellesegenskaper <<featureType>> {
+    + identifikasjon [1] : Identifikasjon
+    + kopidata [1] : Kopidata
+    + kvalitet [0..1] : Posisjonskvalitet
+    + verifiseringsdato [0..1] : Date
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+  }
+
+  class Kopidata <<dataType>> {
+    + områdeId [1] : Integer
+    + originalDatavert [1] : CharacterString
+    + kopidato [1] : Date
+  }
+
+  class Posisjonskvalitet <<dataType>> {
+    + målemetode [1] : Målemetode
+  }
+}
+
+  Jordsmonn_Fellesegenskaper <|-- Jordsmonn
+  Jordsmonn --> JordsmonnGrense : avgrensesAvJordsmonngrense [0..*]
+
+@enduml
