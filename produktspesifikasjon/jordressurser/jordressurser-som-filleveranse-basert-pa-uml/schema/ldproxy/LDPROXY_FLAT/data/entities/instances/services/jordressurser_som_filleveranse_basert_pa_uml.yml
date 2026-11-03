@@ -1,0 +1,19 @@
+---
+id: jordressurser_som_filleveranse_basert_pa_uml
+label: FIXME
+description: FIXME
+enabled: true
+serviceType: OGC_API
+collections:
+  jordressurser:
+    id: jordressurser
+    label: jordressurser
+    enabled: true
+  jordressurser_fellesgenskaper:
+    id: jordressurser_fellesgenskaper
+    label: jordressurser_fellesgenskaper
+    enabled: true
+  jordressursgrense:
+    id: jordressursgrense
+    label: jordressursgrense
+    enabled: true

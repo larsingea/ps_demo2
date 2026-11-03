@@ -1,0 +1,158 @@
+---
+id: jordressurser_som_filleveranse_basert_pa_uml
+enabled: true
+providerType: FEATURE
+providerSubType: SQL
+nativeCrs:
+  code: 25833
+  forceAxisOrder: NONE
+nativeTimeZone: Europe/Oslo
+connectionInfo:
+  database: FIXME
+  host: FIXME
+  user: FIXME
+  password: FIXME-base64-encoded
+  schemas:
+  - public
+sourcePathDefaults:
+  primaryKey: objid
+  sortKey: objid
+types:
+  jordressurser:
+    sourcePath: /jordressurser
+    type: OBJECT
+    objectType: Jordressurser
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      område:
+        sourcePath: område
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        constraints:
+          required: true
+      jordressursklasse:
+        sourcePath: jordressursklasse
+        type: STRING
+        constraints:
+          codelist: Jordressursklasse
+          required: true
+      hellingGjsnitt:
+        sourcePath: hellinggjsnitt
+        type: STRING
+        constraints:
+          codelist: HellingGjsnitt
+          required: true
+      kartleggingsmetodikk:
+        sourcePath: kartleggingsmetodikk
+        type: STRING
+        constraints:
+          codelist: Kartleggingsmetodikk
+          required: true
+      kartleggingsår:
+        sourcePath: kartleggingsår
+        type: INTEGER
+        constraints:
+          required: true
+      tilleggsinformasjon:
+        sourcePath: tilleggsinformasjon
+        type: STRING
+        constraints:
+          codelist: Tilleggsinformasjon
+          required: true
+      steinBlokk:
+        sourcePath: steinblokk
+        type: STRING
+        constraints:
+          codelist: SteinBlokk
+          required: true
+      årsakTilNedklassifisering:
+        sourcePath: årsaktilnedklassifisering
+        type: STRING
+        constraints:
+          codelist: _rsakTilNedklassifisering
+          required: true
+      opprinneligLokalId:
+        sourcePath: opprinneliglokalid
+        type: INTEGER
+        constraints:
+          required: true
+      avgrensesAvJordressursgrense:
+        sourcePath: "[objid=jordressurserobjid]Jordressurser_avgrensesAvJordressursgrense/[jordressursgrenseobjid=objid]jordressursgrense"
+        type: OBJECT_ARRAY
+        objectType: Link
+        constraints:
+          minOccurrence: 0
+        properties:
+          title:
+            sourcePath: objid
+            type: STRING
+            label: JordressursGrense-title
+          href:
+            sourcePath: objid
+            type: STRING
+            label: JordressursGrense-ID
+            transformations:
+            - stringFormat: "{{serviceUrl}}/collections/jordressursgrense/items/{{value}}"
+  jordressurser_fellesgenskaper:
+    sourcePath: /jordressurser_fellesgenskaper
+    type: OBJECT
+    objectType: Jordressurser_Fellesgenskaper
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      identifikasjon_lokalId:
+        sourcePath: identifikasjon_lokalid
+        type: STRING
+        constraints:
+          required: true
+      identifikasjon_navnerom:
+        sourcePath: identifikasjon_navnerom
+        type: STRING
+        constraints:
+          required: true
+      kopidata_områdeId:
+        sourcePath: kopidata_områdeid
+        type: INTEGER
+        constraints:
+          required: true
+      kopidata_originalDatavert:
+        sourcePath: kopidata_originaldatavert
+        type: STRING
+        constraints:
+          required: true
+      kopidata_kopidato:
+        sourcePath: kopidata_kopidato
+        type: DATE
+        role: PRIMARY_INSTANT
+        constraints:
+          required: true
+      kvalitet_målemetode:
+        sourcePath: kvalitet_målemetode
+        type: STRING
+        constraints:
+          codelist: M_lemetode
+      verifiseringsdato:
+        sourcePath: verifiseringsdato
+        type: DATE
+  jordressursgrense:
+    sourcePath: /jordressursgrense
+    type: OBJECT
+    objectType: JordressursGrense
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      grense:
+        sourcePath: grense
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        constraints:
+          required: true

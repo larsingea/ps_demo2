@@ -1,0 +1,219 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/jordressurser/jordressurser-som-filleveranse-basert-pa-uml/jordressursersomfilleveransebasertpauml/jordressurser-som-filleveranse-basert-pa-uml.json",
+  "definitions": {
+    "HellingGjsnitt": {
+      "description": "Viser gjennomsnittlige helling på arealet.\n-- Definition - -\nAverage inclination class of the soil figure",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/jordsmonn/hellinggjsnitt",
+      "type": "string",
+      "format": "uri"
+    },
+    "Identifikasjon": {
+      "type": "object",
+      "properties": {
+        "lokalId": {
+          "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lokalId",
+        "navnerom"
+      ]
+    },
+    "JordressursGrense": {
+      "description": "avgrensing for en eller to arealressursflater\n-- Definition --\ndelimitation for one or two area resource surfaces",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "Jordressurser": {
+      "description": "Geografisk område med tilnærmet enhetlige egenskaper i de kriteriene som benyttes i rangering av jordkartlagte arealer for datasettet\n— Definition —\nGeographic area with approximately uniform characteristics in the dataset",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Jordressurser_Fellesgenskaper"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "geometry": {
+              "$ref": "https://geojson.org/schema/Polygon.json"
+            },
+            "jordressursklasse": {
+              "description": "Viser arealets klassetilhørighet i Jordressurser.\n— Definition —\nShows the Soil Resource Class for an area.",
+              "$ref": "#/definitions/Jordressursklasse"
+            },
+            "hellingGjsnitt": {
+              "description": "Viser gjennomsnittlige helling på arealet.\n-- Definition - -\nAverage inclination class of the soil figure",
+              "$ref": "#/definitions/HellingGjsnitt"
+            },
+            "kartleggingsmetodikk": {
+              "description": "Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.\n--Definition--\nDisplays the methodolgy used during field mapping.",
+              "$ref": "#/definitions/Kartleggingsmetodikk"
+            },
+            "kartleggingsår": {
+              "description": "Viser hvilket år kartfiguren ble jordkartlagt\n— Definition —\nMapping year",
+              "type": "integer"
+            },
+            "tilleggsinformasjon": {
+              "description": "Viser tilleggsinformasjon om andre egenskaper ved arealet.\n— Definition —\nSupplementary information.",
+              "$ref": "#/definitions/Tilleggsinformasjon"
+            },
+            "steinBlokk": {
+              "description": "Viser stein- og blokkinnhold (0–50 cm) på arealet på kartleggingstidspunktet.\n— Definition —\nShows the amount of stones and boulders for the soil figure in the upper 50 cm.",
+              "$ref": "#/definitions/SteinBlokk"
+            },
+            "årsakTilNedklassifisering": {
+              "description": "Viser årsak til at kartfiguren er nedklassifisert.\n— Definition —\nReason for down-classification of Soil Resource Class.",
+              "$ref": "#/definitions/ÅrsakTilNedklassifisering"
+            },
+            "opprinneligLokalId": {
+              "description": "Opprinnelig id i databasen\n— Definition —\nOriginal ID in the soil database",
+              "type": "integer"
+            },
+            "avgrensesAvJordressursgrense": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "hellingGjsnitt",
+            "jordressursklasse",
+            "kartleggingsmetodikk",
+            "kartleggingsår",
+            "opprinneligLokalId",
+            "steinBlokk",
+            "tilleggsinformasjon",
+            "årsakTilNedklassifisering"
+          ]
+        }
+      ]
+    },
+    "Jordressurser_Fellesgenskaper": {
+      "description": "abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.\nMerknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.\nMerknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.\nMerknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "kopidata": {
+          "description": "angivelse av at objektet er hentet fra en kopi av originaldata\nMerknad:\nKan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.",
+          "$ref": "#/definitions/Kopidata"
+        },
+        "kvalitet": {
+          "description": "Beskrivelse av kvaliteten på stedfestingen.\nMerknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+          "$ref": "#/definitions/Posisjonskvalitet"
+        },
+        "verifiseringsdato": {
+          "description": "dato når dataene er fastslått å være i samsvar med virkeligheten",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon",
+        "kopidata"
+      ]
+    },
+    "Jordressursklasse": {
+      "description": "Viser arealets klassetilhørighet i Jordressurser\n— Definition —\nShows the Soil Resource Class for an area",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/jordsmonn/jordressursklasser",
+      "type": "string",
+      "format": "uri"
+    },
+    "Kartleggingsmetodikk": {
+      "description": "Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.\n--Definition--\nDisplays the methodolgy used during field mapping.",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/jordsmonn/kartleggingsmetodikk",
+      "type": "string",
+      "format": "uri"
+    },
+    "Kopidata": {
+      "type": "object",
+      "properties": {
+        "områdeId": {
+          "description": "identifikasjon av område som dataene dekker\n\nMerknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres nærmere.",
+          "type": "integer"
+        },
+        "originalDatavert": {
+          "description": "ansvarlig etat for forvaltning av data",
+          "type": "string"
+        },
+        "kopidato": {
+          "description": "dato når objektet ble kopiert fra originaldatasettet\n\nMerknad:\nEr en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase brukes til distribusjon.\nÅ kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato blir endret.\nEventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Datafangstdato og/eller Verifiseringsdato.",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "kopidato",
+        "områdeId",
+        "originalDatavert"
+      ]
+    },
+    "Målemetode": {
+      "description": "metode som ligger til grunn for registrering av posisjon\n\n\n-- Definition - -\nmethod on which registration of position is based",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/malemetode-kode",
+      "type": "string",
+      "format": "uri"
+    },
+    "Posisjonskvalitet": {
+      "type": "object",
+      "properties": {
+        "målemetode": {
+          "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+          "$ref": "#/definitions/Målemetode"
+        }
+      },
+      "required": [
+        "målemetode"
+      ]
+    },
+    "SteinBlokk": {
+      "description": "Viser stein- og blokkinnhold (0–50 cm) på arealet på kartleggingstidspunktet.\n— Definition —\nShows the amount of stones and boulders for the soil figure in the upper 50 cm.",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/jordsmonn/steinblokk",
+      "type": "string",
+      "format": "uri"
+    },
+    "Tilleggsinformasjon": {
+      "description": "Viser tilleggsinformasjon om andre egenskaper ved arealet.\n— Definition —\nSupplementary information.",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/jordsmonn/tilleggsinformasjon",
+      "type": "string",
+      "format": "uri"
+    },
+    "ÅrsakTilNedklassifisering": {
+      "description": "Viser årsak til at kartfiguren er nedklassifisert.\n— Definition —\nReason for down-classification of Soil Resource Class.",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/jordsmonn/arsaktilnedklassifisering",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}
