@@ -1,0 +1,189 @@
+# pygeoapi-konfigurasjon — generert fra datamodellen og metadata i Geonorge.
+# Verdier merket "<REPLACE_ME>" må fylles inn før tjenesten kan startes.
+server:
+  bind:
+    host: 0.0.0.0
+    port: 5000
+  cors: false
+  url: ${PYGEOAPI_SERVER_URL:-http://localhost:5000}
+  mimetype: application/json; charset=UTF-8
+  encoding: utf-8
+  gzip: false
+  languages:
+  - nb-NO
+  pretty_print: true
+  admin: ${PYGEOAPI_SERVER_ADMIN:-false}
+  limits:
+    default_items: 20
+    max_items: 100
+  map:
+    url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+    attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap
+      contributors</a>'
+logging:
+  level: ERROR
+metadata:
+  identification:
+    title: Jordressurser
+    description: "Kartet Jordressurser rangerer jordbruksareal ut ifra de naturlige\
+      \ betingelsene for jordbruk. \n\nArealene har vært gjenstand for jordkartlegging\
+      \ og er delt inn i fire klasser basert på data om jordas egenskaper, helling,\
+      \ hyppige forekomster av fjell i dagen, samt innhold av stein- og blokk.  Det\
+      \ er ikke tatt hensyn til klima i rangeringen.\n\nDet brukes en skala som går\
+      \ fra de aller beste egenskapene til de mindre gode egenskapene som påvirker\
+      \ plantedyrking og drifta på arealet.\n\nKartfigurer fra det nasjonale jordkartleggings-programmet\
+      \ utgjør enhetene i kartet.  Kartlegging utføres på fulldyrka og overflatedyrka\
+      \ jord. \nKartfigurene er inndelt inn i fire klasser: \n1 = Svært gode jordressurser,\
+      \ \n2 = Gode jordressurser, \n3 = Middels gode jordressurser og \n4 = Mindre\
+      \ gode jordressurser."
+    keywords:
+    - Jordsmonn
+    - Jordressurser
+    - Jordsmonkartlegging
+    - arealplanlegging
+    - plan- og bygningsloven (PBL)
+    - jord
+    - egenskaper ved jord
+    - Jordkartlagte areal
+    - jordbruksareal
+    - jordloven
+    - Landbruk
+    keywords_type: theme
+    terms_of_service: Åpne data
+    url: https://kartkatalog.geonorge.no/metadata/3690c283-a1f2-4e95-8cd4-2d6115eb28f7
+  license:
+    name: Norsk lisens for offentlige data (NLOD)
+    url: http://data.norge.no/nlod/no/1.0
+  provider:
+    name: Norsk institutt for bioøkonomi
+    url: "<REPLACE_ME>"
+  contact:
+    name: Norsk institutt for bioøkonomi
+    email: gisdrift@nibio.no
+    url: "<REPLACE_ME>"
+resources:
+  jordressurs-grense:
+    type: collection
+    title: JordressursGrense
+    description: 'avgrensing for en eller to arealressursflater
+
+      -- Definition --
+
+      delimitation for one or two area resource surfaces'
+    keywords:
+    - JordressursGrense
+    extents:
+      spatial:
+        bbox:
+        - 2.0
+        - 57.0
+        - 33.0
+        - 72.0
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: jordressurser_som_filleveranse_basert_pa_uml
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: jordressursgrense
+      geom_field: grense
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  jordressurser-fellesgenskaper:
+    type: collection
+    title: Jordressurser_Fellesgenskaper
+    description: 'abstrakt objekttype som bærer sentrale egenskaper som er anbefalt
+      for bruk i produktspesifikasjoner.
+
+      Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.'
+    keywords:
+    - Jordressurser_Fellesgenskaper
+    extents:
+      spatial:
+        bbox:
+        - 2.0
+        - 57.0
+        - 33.0
+        - 72.0
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: jordressurser_som_filleveranse_basert_pa_uml
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: jordressurser_fellesgenskaper
+  jordressurser:
+    type: collection
+    title: Jordressurser
+    description: 'Geografisk område med tilnærmet enhetlige egenskaper i de kriteriene
+      som benyttes i rangering av jordkartlagte arealer for datasettet
+
+      — Definition —
+
+      Geographic area with approximately uniform characteristics in the dataset'
+    keywords:
+    - Jordressurser
+    extents:
+      spatial:
+        bbox:
+        - 2.0
+        - 57.0
+        - 33.0
+        - 72.0
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: jordressurser_som_filleveranse_basert_pa_uml
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: jordressurser
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833

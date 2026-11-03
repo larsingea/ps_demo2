@@ -1,0 +1,271 @@
+[
+  {
+    "name": "JordressursGrense",
+    "description": "avgrensing for en eller to arealressursflater\n-- Definition --\ndelimitation for one or two area resource surfaces",
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "GM_Curve",
+        "description": "forløp som følger overgang mellom ulike fenomener\n-- Definition --\ncourse following the transition between different real world phenomena",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "GM_Curve"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Produktspesifikasjon Jordressurser - 20260901"
+  },
+  {
+    "name": "Jordressurser_Fellesgenskaper",
+    "description": "abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.\nMerknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.",
+    "attributes": [
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.\nMerknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.\nMerknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "IDENT"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          }
+        ]
+      },
+      {
+        "name": "kopidata",
+        "type": "Kopidata",
+        "description": "angivelse av at objektet er hentet fra en kopi av originaldata\nMerknad:\nKan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KOPIDATA"
+        },
+        "attributes": [
+          {
+            "name": "områdeId",
+            "type": "Integer",
+            "description": "identifikasjon av område som dataene dekker\n\nMerknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres nærmere.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "OMRÅDEID"
+            }
+          },
+          {
+            "name": "originalDatavert",
+            "type": "CharacterString",
+            "description": "ansvarlig etat for forvaltning av data",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "ORIGINALDATAVERT"
+            }
+          },
+          {
+            "name": "kopidato",
+            "type": "DateTime",
+            "description": "dato når objektet ble kopiert fra originaldatasettet\n\nMerknad:\nEr en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase brukes til distribusjon.\nÅ kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato blir endret.\nEventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Datafangstdato og/eller Verifiseringsdato.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "KOPIDATO"
+            }
+          }
+        ]
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "description": "Beskrivelse av kvaliteten på stedfestingen.\nMerknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "cardinality": "0..1",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "definition": "metode som ligger til grunn for registrering av posisjon\n\n\n-- Definition - -\nmethod on which registration of position is based",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/malemetode-kode"
+            },
+            "taggedValues": {
+              "SOSI_navn": "MÅLEMETODE"
+            }
+          }
+        ]
+      },
+      {
+        "name": "verifiseringsdato",
+        "type": "DateTime",
+        "description": "dato når dataene er fastslått å være i samsvar med virkeligheten",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "VERIFISERINGSDATO"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Produktspesifikasjon Jordressurser - 20260901"
+  },
+  {
+    "name": "Jordressurser",
+    "description": "Geografisk område med tilnærmet enhetlige egenskaper i de kriteriene som benyttes i rangering av jordkartlagte arealer for datasettet\n— Definition —\nGeographic area with approximately uniform characteristics in the dataset",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "GM_Surface",
+        "description": "objektets utstrekning\n— Definition —\nArea over which an object extends",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "FLATE"
+        }
+      },
+      {
+        "name": "jordressursklasse",
+        "type": "Jordressursklasse",
+        "description": "Viser arealets klassetilhørighet i Jordressurser.\n— Definition —\nShows the Soil Resource Class for an area.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser arealets klassetilhørighet i Jordressurser\n— Definition —\nShows the Soil Resource Class for an area",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/jordressursklasser"
+        },
+        "taggedValues": {
+          "SOSI_navn": "JRKLASSE"
+        }
+      },
+      {
+        "name": "hellingGjsnitt",
+        "type": "HellingGjsnitt",
+        "description": "Viser gjennomsnittlige helling på arealet.\n-- Definition - -\nAverage inclination class of the soil figure",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser gjennomsnittlige helling på arealet.\n-- Definition - -\nAverage inclination class of the soil figure",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/hellinggjsnitt"
+        },
+        "taggedValues": {
+          "SOSI_navn": "HELLINGGJSNITT"
+        }
+      },
+      {
+        "name": "kartleggingsmetodikk",
+        "type": "Kartleggingsmetodikk",
+        "description": "Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.\n--Definition--\nDisplays the methodolgy used during field mapping.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.\n--Definition--\nDisplays the methodolgy used during field mapping.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/kartleggingsmetodikk"
+        },
+        "taggedValues": {
+          "SOSI_navn": "KL_METODIKK"
+        }
+      },
+      {
+        "name": "kartleggingsår",
+        "type": "Integer",
+        "description": "Viser hvilket år kartfiguren ble jordkartlagt\n— Definition —\nMapping year",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KL_ÅR"
+        }
+      },
+      {
+        "name": "tilleggsinformasjon",
+        "type": "Tilleggsinformasjon",
+        "description": "Viser tilleggsinformasjon om andre egenskaper ved arealet.\n— Definition —\nSupplementary information.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser tilleggsinformasjon om andre egenskaper ved arealet.\n— Definition —\nSupplementary information.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/tilleggsinformasjon"
+        },
+        "taggedValues": {
+          "SOSI_navn": "TILLEGG"
+        }
+      },
+      {
+        "name": "steinBlokk",
+        "type": "SteinBlokk",
+        "description": "Viser stein- og blokkinnhold (0–50 cm) på arealet på kartleggingstidspunktet.\n— Definition —\nShows the amount of stones and boulders for the soil figure in the upper 50 cm.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser stein- og blokkinnhold (0–50 cm) på arealet på kartleggingstidspunktet.\n— Definition —\nShows the amount of stones and boulders for the soil figure in the upper 50 cm.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/steinblokk"
+        },
+        "taggedValues": {
+          "SOSI_navn": "STEINBLOKK"
+        }
+      },
+      {
+        "name": "årsakTilNedklassifisering",
+        "type": "ÅrsakTilNedklassifisering",
+        "description": "Viser årsak til at kartfiguren er nedklassifisert.\n— Definition —\nReason for down-classification of Soil Resource Class.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Viser årsak til at kartfiguren er nedklassifisert.\n— Definition —\nReason for down-classification of Soil Resource Class.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/jordsmonn/arsaktilnedklassifisering"
+        },
+        "taggedValues": {
+          "SOSI_navn": "ÅRSAK_NEDKL"
+        }
+      },
+      {
+        "name": "opprinneligLokalId",
+        "type": "Integer",
+        "description": "Opprinnelig id i databasen\n— Definition —\nOriginal ID in the soil database",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "FIGURID"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Jordressurser_Fellesgenskaper"
+      ],
+      "associations": [
+        {
+          "target": "JordressursGrense",
+          "role": "avgrensesAvJordressursgrense",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Produktspesifikasjon Jordressurser - 20260901"
+  }
+]

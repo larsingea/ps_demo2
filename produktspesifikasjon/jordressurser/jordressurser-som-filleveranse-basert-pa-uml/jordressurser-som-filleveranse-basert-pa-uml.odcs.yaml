@@ -1,0 +1,471 @@
+# Open Data Contract Standard (ODCS) v3.1.0 — generert fra datamodellen.
+apiVersion: v3.1.0
+kind: DataContract
+id: urn:odcs:jordressurser-jordressurser-som-filleveranse-basert-p-uml:1.0.0
+version: 1.0.0
+status: active
+name: Jordressurser - Jordressurser som filleveranse basert på UML
+tags:
+- Landbruk og havbruk
+- Jordsmonn
+- Jordressurser
+- Jordsmonkartlegging
+- arealplanlegging
+- plan- og bygningsloven (PBL)
+- jord
+- egenskaper ved jord
+- Jordkartlagte areal
+- jordbruksareal
+- jordloven
+- Landbruk
+- Åpne data
+- Ugradert
+price:
+  priceAmount: 0
+  priceUnit: dataset
+description:
+  limitations: Åpne data. Lisens. Ugradert
+  purpose: "I jordkartlegginga blir det lagt vekt på ni spesifikke egenskaper ved\
+    \ jordsmonnet, slik som tekstur, lagdeling og drenering. Dette er relativt stabile\
+    \ egenskaper ved jorda som lar seg bestemme ute i felt, in situ. En jordtype er\
+    \ en spesifikk, unik kombinasjon av disse ni egenskapene. Hver jordtype har et\
+    \ navn.\n\nI noen kartfigurer kan det være avvikende egenskaper enn dem som framkommer\
+    \ fra jordkartleggingen. I tillegg til jordtypene innenfor hver kartfigur, registreres\
+    \ også andre relevante egenskaper, slik som eventuell høy frekvens av fjellblotninger\
+    \ og innhold av stein og blokk i øverste 50 cm. Dominerende hellingsklasse i hver\
+    \ kartfigur tilordnes i etterkant av feltarbeidet.\n\nKlassene for innhold av\
+    \ stein og blokk påvirker klassetildelingen i Jordressurser. \n\nHelling er tilordnet\
+    \ som heltall, i prosent, og det er kartfigurenes gjennomsnittlige helling som\
+    \ brukes i dette kartet. \nDet er også ander tilleggsegenskaper om kartfiguren\
+    \ som påvirker klassetildelingen i Jordressurser."
+authoritativeDefinitions:
+- url: https://kartkatalog.geonorge.no/metadata/3690c283-a1f2-4e95-8cd4-2d6115eb28f7
+  type: businessDefinition
+  description: Metadata i Kartkatalogen
+- url: https://register.geonorge.no/produktark/jordressurser
+  type: businessDefinition
+  description: Produktark
+- url: https://nibio.no/tema/jord/jordkartlegging/jordsmonnkart/jordressurser
+  type: businessDefinition
+  description: Produktside
+- url: https://register.geonorge.no/tegneregler/jordressurser
+  type: implementation
+  description: Tegneregler
+team:
+  members:
+  - username: siri.svendgard-stokke@nibio.no
+    name: Siri Svengaard-Stokke
+    description: Norsk institutt for bioøkonomi
+    role: owner
+  - username: gisdrift@nibio.no
+    name: Christina Sogge
+    description: Norsk institutt for bioøkonomi
+    role: pointOfContact, publisher
+support:
+- channel: Norsk institutt for bioøkonomi
+  tool: email
+  url: mailto:siri.svendgard-stokke@nibio.no
+  scope: issues
+  description: Kontaktpunkt hos Norsk institutt for bioøkonomi
+slaProperties:
+- property: frequency
+  value: Ikke planlagt
+  driver: operational
+  description: Under arbeid
+customProperties:
+- property: license
+  value: Norsk lisens for offentlige data (NLOD)
+- property: licenseUrl
+  value: http://data.norge.no/nlod/no/1.0
+- property: accessConstraints
+  value: Åpne data
+- property: useConstraints
+  value: Lisens
+- property: classification
+  value: Ugradert
+- property: equivalentScale
+  value: 1:5000 - 1:20 000
+- property: spatialRepresentationType
+  value: Vektor
+- property: language
+  value: nor
+- property: maintenanceAndUpdateStatement
+  value: Under arbeid
+servers:
+- server: geonorge-nedlastning
+  type: api
+  location: https://kartkatalog.nibio.no/api/capabilities/3690c283-a1f2-4e95-8cd4-2d6115eb28f7
+  description: Geonorge nedlastning - GML, GPKG
+- server: ogc-api-features
+  type: api
+  location: https://ogcapi.nibio.no/felles/jordressurser
+  description: OGC API-Features - GeoJSON
+- server: atom-feed
+  type: api
+  location: https://kartkatalog.nibio.no/api/atom/3690c283-a1f2-4e95-8cd4-2d6115eb28f7
+  description: Atom Feed - GML, gpkg
+- server: jordressurser-wms
+  type: api
+  location: https://wms.nibio.no/cgi-bin/jordressurser?service=wms&request=getcapabilities
+  description: Jordressurser - WMS - jpg
+schema:
+- name: JordressursGrense
+  physicalName: jordressursgrense
+  logicalType: object
+  physicalType: table
+  description: 'avgrensing for en eller to arealressursflater
+
+    -- Definition --
+
+    delimitation for one or two area resource surfaces'
+  customProperties:
+  - property: sosiObjektType
+    value: JordressursGrense
+  properties:
+  - name: grense
+    logicalType: object
+    physicalType: geometry(LineString)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: LineString
+- name: Jordressurser_Fellesgenskaper
+  physicalName: jordressurser_fellesgenskaper
+  logicalType: object
+  physicalType: table
+  description: 'abstrakt objekttype som bærer sentrale egenskaper som er anbefalt
+    for bruk i produktspesifikasjoner.
+
+    Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.'
+  customProperties:
+  - property: sosiObjektType
+    value: Jordressurser_Fellesgenskaper
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: 'lokal identifikator av et objekt
+
+
+        Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren
+        er unik innenfor navnerommet.'
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales
+        å være en http-URI
+
+
+        Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+
+        Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar
+        for de unike identifikatorene og må være registrert i data.geonorge.no eller
+        data.norge.no'
+      required: true
+    description: 'Unik identifikasjon av et objekt i et datasett, forvaltet av den
+      ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som
+      stabil referanse til objektet.
+
+      Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon,
+      slik som f.eks bygningsnummer.
+
+      Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets
+      levetid, og ikke gjenbrukes i andre objekt.'
+    required: true
+  - name: kopidata
+    logicalType: object
+    properties:
+    - name: områdeId
+      logicalType: integer
+      description: 'identifikasjon av område som dataene dekker
+
+
+        Merknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres
+        nærmere.'
+      required: true
+    - name: originalDatavert
+      logicalType: string
+      description: ansvarlig etat for forvaltning av data
+      required: true
+    - name: kopidato
+      logicalType: timestamp
+      description: 'dato når objektet ble kopiert fra originaldatasettet
+
+
+        Merknad:
+
+        Er en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase
+        brukes til distribusjon.
+
+        Å kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato
+        blir endret.
+
+        Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato,
+        Datafangstdato og/eller Verifiseringsdato.'
+      required: true
+    description: 'angivelse av at objektet er hentet fra en kopi av originaldata
+
+      Merknad:
+
+      Kan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.'
+    required: true
+  - name: kvalitet
+    logicalType: object
+    properties:
+    - name: målemetode
+      logicalType: string
+      authoritativeDefinitions:
+      - url: https://register.geonorge.no/sosi-kodelister/malemetode-kode
+        type: businessDefinition
+      customProperties:
+      - property: sosiCodeList
+        value: Målemetode
+      - property: asDictionary
+        value: 'true'
+      description: metode for måling i grunnriss (x,y), og høyde (z) når metoden er
+        den samme som ved måling i grunnriss
+      required: true
+    description: 'Beskrivelse av kvaliteten på stedfestingen.
+
+      Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.'
+  - name: verifiseringsdato
+    logicalType: timestamp
+    description: dato når dataene er fastslått å være i samsvar med virkeligheten
+- name: Jordressurser
+  physicalName: jordressurser
+  logicalType: object
+  physicalType: table
+  description: 'Geografisk område med tilnærmet enhetlige egenskaper i de kriteriene
+    som benyttes i rangering av jordkartlagte arealer for datasettet
+
+    — Definition —
+
+    Geographic area with approximately uniform characteristics in the dataset'
+  customProperties:
+  - property: sosiObjektType
+    value: Jordressurser
+  - property: inheritsFrom
+    value: Jordressurser_Fellesgenskaper
+  - property: associations
+    value:
+    - role: avgrensesAvJordressursgrense
+      target: JordressursGrense
+      cardinality: 0..*
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: 'lokal identifikator av et objekt
+
+
+        Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren
+        er unik innenfor navnerommet.'
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales
+        å være en http-URI
+
+
+        Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+
+        Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar
+        for de unike identifikatorene og må være registrert i data.geonorge.no eller
+        data.norge.no'
+      required: true
+    description: 'Unik identifikasjon av et objekt i et datasett, forvaltet av den
+      ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som
+      stabil referanse til objektet.
+
+      Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon,
+      slik som f.eks bygningsnummer.
+
+      Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets
+      levetid, og ikke gjenbrukes i andre objekt.'
+    required: true
+  - name: kopidata
+    logicalType: object
+    properties:
+    - name: områdeId
+      logicalType: integer
+      description: 'identifikasjon av område som dataene dekker
+
+
+        Merknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres
+        nærmere.'
+      required: true
+    - name: originalDatavert
+      logicalType: string
+      description: ansvarlig etat for forvaltning av data
+      required: true
+    - name: kopidato
+      logicalType: timestamp
+      description: 'dato når objektet ble kopiert fra originaldatasettet
+
+
+        Merknad:
+
+        Er en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase
+        brukes til distribusjon.
+
+        Å kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato
+        blir endret.
+
+        Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato,
+        Datafangstdato og/eller Verifiseringsdato.'
+      required: true
+    description: 'angivelse av at objektet er hentet fra en kopi av originaldata
+
+      Merknad:
+
+      Kan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.'
+    required: true
+  - name: kvalitet
+    logicalType: object
+    properties:
+    - name: målemetode
+      logicalType: string
+      authoritativeDefinitions:
+      - url: https://register.geonorge.no/sosi-kodelister/malemetode-kode
+        type: businessDefinition
+      customProperties:
+      - property: sosiCodeList
+        value: Målemetode
+      - property: asDictionary
+        value: 'true'
+      description: metode for måling i grunnriss (x,y), og høyde (z) når metoden er
+        den samme som ved måling i grunnriss
+      required: true
+    description: 'Beskrivelse av kvaliteten på stedfestingen.
+
+      Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.'
+  - name: verifiseringsdato
+    logicalType: timestamp
+    description: dato når dataene er fastslått å være i samsvar med virkeligheten
+  - name: område
+    logicalType: object
+    physicalType: geometry(Surface)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: Surface
+  - name: jordressursklasse
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/jordsmonn/jordressursklasser
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Jordressursklasse
+    - property: asDictionary
+      value: 'true'
+    description: 'Viser arealets klassetilhørighet i Jordressurser.
+
+      — Definition —
+
+      Shows the Soil Resource Class for an area.'
+    required: true
+  - name: hellingGjsnitt
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/jordsmonn/hellinggjsnitt
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: HellingGjsnitt
+    - property: asDictionary
+      value: 'true'
+    description: 'Viser gjennomsnittlige helling på arealet.
+
+      -- Definition - -
+
+      Average inclination class of the soil figure'
+    required: true
+  - name: kartleggingsmetodikk
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/jordsmonn/kartleggingsmetodikk
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Kartleggingsmetodikk
+    - property: asDictionary
+      value: 'true'
+    description: 'Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under
+      jordsmonnkartlegging.
+
+      --Definition--
+
+      Displays the methodolgy used during field mapping.'
+    required: true
+  - name: kartleggingsår
+    logicalType: integer
+    description: 'Viser hvilket år kartfiguren ble jordkartlagt
+
+      — Definition —
+
+      Mapping year'
+    required: true
+  - name: tilleggsinformasjon
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/jordsmonn/tilleggsinformasjon
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Tilleggsinformasjon
+    - property: asDictionary
+      value: 'true'
+    description: 'Viser tilleggsinformasjon om andre egenskaper ved arealet.
+
+      — Definition —
+
+      Supplementary information.'
+    required: true
+  - name: steinBlokk
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/jordsmonn/steinblokk
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: SteinBlokk
+    - property: asDictionary
+      value: 'true'
+    description: 'Viser stein- og blokkinnhold (0–50 cm) på arealet på kartleggingstidspunktet.
+
+      — Definition —
+
+      Shows the amount of stones and boulders for the soil figure in the upper 50
+      cm.'
+    required: true
+  - name: årsakTilNedklassifisering
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/jordsmonn/arsaktilnedklassifisering
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: ÅrsakTilNedklassifisering
+    - property: asDictionary
+      value: 'true'
+    description: 'Viser årsak til at kartfiguren er nedklassifisert.
+
+      — Definition —
+
+      Reason for down-classification of Soil Resource Class.'
+    required: true
+  - name: opprinneligLokalId
+    logicalType: integer
+    description: 'Opprinnelig id i databasen
+
+      — Definition —
+
+      Original ID in the soil database'
+    required: true

@@ -1,0 +1,382 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Jordressurser",
+  "format": "text/html",
+  "date": {
+    "creation": "2026-09-17",
+    "revision": "2026-10-28"
+  },
+  "language": "nor",
+  "contact": {
+    "individualName": "Siri Svengaard-Stokke",
+    "organizationName": "Norsk institutt for bioøkonomi",
+    "logo": "https://register.geonorge.no/data/organizations/988983837_NIBIO_liten.jpg",
+    "electronicMailAddress": "siri.svendgard-stokke@nibio.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Jordressurser",
+    "abstract": "Kartet Jordressurser rangerer jordbruksareal ut ifra de naturlige betingelsene for jordbruk. \n\nArealene har vært gjenstand for jordkartlegging og er delt inn i fire klasser basert på data om jordas egenskaper, helling, hyppige forekomster av fjell i dagen, samt innhold av stein- og blokk.  Det er ikke tatt hensyn til klima i rangeringen.\n\nDet brukes en skala som går fra de aller beste egenskapene til de mindre gode egenskapene som påvirker plantedyrking og drifta på arealet.\n\nKartfigurer fra det nasjonale jordkartleggings-programmet utgjør enhetene i kartet.  Kartlegging utføres på fulldyrka og overflatedyrka jord. \nKartfigurene er inndelt inn i fire klasser: \n1 = Svært gode jordressurser, \n2 = Gode jordressurser, \n3 = Middels gode jordressurser og \n4 = Mindre gode jordressurser.",
+    "purpose": {
+      "summary": "I jordkartlegginga blir det lagt vekt på ni spesifikke egenskaper ved jordsmonnet, slik som tekstur, lagdeling og drenering. Dette er relativt stabile egenskaper ved jorda som lar seg bestemme ute i felt, in situ. En jordtype er en spesifikk, unik kombinasjon av disse ni egenskapene. Hver jordtype har et navn.\n\nI noen kartfigurer kan det være avvikende egenskaper enn dem som framkommer fra jordkartleggingen. I tillegg til jordtypene innenfor hver kartfigur, registreres også andre relevante egenskaper, slik som eventuell høy frekvens av fjellblotninger og innhold av stein og blokk i øverste 50 cm. Dominerende hellingsklasse i hver kartfigur tilordnes i etterkant av feltarbeidet.\n\nKlassene for innhold av stein og blokk påvirker klassetildelingen i Jordressurser. \n\nHelling er tilordnet som heltall, i prosent, og det er kartfigurenes gjennomsnittlige helling som brukes i dette kartet. \nDet er også ander tilleggsegenskaper om kartfiguren som påvirker klassetildelingen i Jordressurser.",
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Datasettet skal bidra til å løse kommunenes oppgaver med jordvern og jordbruk etter plan- og bygningsloven, samt annen arealforvaltning som berører jordbruksareal. Kartfigurer fra det nasjonale jordkartleggingsprogrammet utgjør enhetene i kartet."
+      }
+    },
+    "topicCategory": [
+      "Landbruk og havbruk"
+    ],
+    "spatialRepresentationType": "Vektor",
+    "spatialResolution": {
+      "equivalentScale": "1:5000 - 1:20 000"
+    },
+    "supplementalInformation": "Produktspesifikasjonen Jordressurser inneholder en beskrivelse av temakartet Jordressurser som er utviklet for arealplanlegging. Temakartet er blant annet tilgjengelige under fagområdet Jordsmonn og fagområde Arealinformasjon i NIBIOs karttjeneste Kilden. Andre temakart som har opphav i jorddata fra jordkartleggingsprogrammet, er beskrevet i produktspesifikasjonene Jordsmonn, Erosjonsrisiko og Dyrkingspotensial.",
+    "uniqueId": "3690c283-a1f2-4e95-8cd4-2d6115eb28f7",
+    "keyword": [
+      "Jordsmonn",
+      "Jordressurser",
+      "Jordsmonkartlegging",
+      "arealplanlegging",
+      "plan- og bygningsloven (PBL)",
+      "jord",
+      "egenskaper ved jord",
+      "Jordkartlagte areal",
+      "jordbruksareal",
+      "jordloven",
+      "Landbruk"
+    ],
+    "restriction": {
+      "legalConstraints": {
+        "accessConstraints": "Åpne data",
+        "useConstraints": "Lisens",
+        "license": "Norsk lisens for offentlige data (NLOD)",
+        "licenseUrl": "http://data.norge.no/nlod/no/1.0"
+      },
+      "securityConstraints": {
+        "classification": "Ugradert"
+      }
+    },
+    "contact": [
+      {
+        "individualName": "Siri Svengaard-Stokke",
+        "organizationName": "Norsk institutt for bioøkonomi",
+        "electronicMailAddress": "siri.svendgard-stokke@nibio.no",
+        "role": "owner"
+      },
+      {
+        "individualName": "Christina Sogge",
+        "organizationName": "Norsk institutt for bioøkonomi",
+        "electronicMailAddress": "gisdrift@nibio.no",
+        "role": "pointOfContact"
+      },
+      {
+        "individualName": "Ingvild Nystuen",
+        "organizationName": "Norsk institutt for bioøkonomi",
+        "electronicMailAddress": "gisdrift@nibio.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Ikke planlagt",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "2.0",
+        "eastBoundLongitude": "33.0",
+        "southBoundLatitude": "57.0",
+        "northBoundLatitude": "72.0"
+      },
+      "geographicDescription": [
+        "Norges fastland"
+      ],
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2026-09-17",
+          "endPosition": "2026-10-28"
+        }
+      }
+    },
+    "date": {
+      "creation": "2026-09-17",
+      "publication": "2026-09-17",
+      "revision": "2026-10-28"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Jordressurser som filleveranse basert på UML",
+        "level": "dataset",
+        "levelDescription": "Datamodell basert på SOSI UML"
+      }
+    }
+  ],
+  "referenceSystemSection": {
+    "spatialReferenceSystem": [
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      },
+      {
+        "code": "EPSG:25833",
+        "name": "EUREF89 UTM sone 33, 2d"
+      },
+      {
+        "code": "EPSG:25835",
+        "name": "EUREF89 UTM sone 35, 2d"
+      },
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      }
+    ]
+  },
+  "dataQualitySection": {
+    "scope": {
+      "level": "dataset"
+    },
+    "report": [
+      {
+        "nameOfMeasure": "Prosentvis dekning i forhold til datasettets utstrekning",
+        "measureDescription": "Datasettets faktiske kartlagte areal i forhold til datasettets spesifiserte utstrekning",
+        "result": "100"
+      },
+      {
+        "nameOfMeasure": "Prosentvis oppfyllelse av FAIR-prinsipper",
+        "measureDescription": "Angir fullstendighet i forhold til krav fra FAIR-prinsippene (The FAIR Guiding Principles for scientific data management and stewardship)",
+        "result": "87"
+      }
+    ]
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Ikke planlagt",
+    "maintenanceAndUpdateStatement": "Under arbeid"
+  },
+  "dataCaptureAndProductionSection": {
+    "DataAcquisitionAndProcessing": {
+      "dataCaptureStatement": "NIBIO Rapport 37/2025, «Det nasjonale programmet for jordkartlegging» (https://hdl.handle.net/11250/3185641) beskriver hvordan stedfesting og dokumentasjon av jordsmonnets egenskaper utføres (forarbeid, metodikk i felt og etterarbeid). Rapporten inneholder også informasjon om dataforvaltning og formidling av data fra programmet. \nKartfigurenes helling hentes fra den nasjonale høydemodellen (hoydedata.no) og to av terrengmodellene derfra benyttes: en med 1 m oppløsning og en med 10 m oppløsning. Begge modellene endres over tid når nye og oppdaterte høydedataprosjekt er tilgjengelig. Det er kartfigurens gjennomsnittlige helling som benyttes i Jordressurser.\nInformasjon om hvordan egenskaper ved jord, helling, hyppig forekommende fjell i dagen samt innhold av stein- og blokk påvirker klassetildeling i Jordressurser er publisert på produktsiden."
+    }
+  },
+  "portrayal": {
+    "name": "Tegneregler",
+    "linkage": "https://register.geonorge.no/tegneregler/jordressurser"
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "kommunevis, fylkesvis",
+          "deliveryMediumName": "Geonorge nedlastning",
+          "deliveryService": {
+            "serviceEndpoint": "https://kartkatalog.nibio.no/api/capabilities/3690c283-a1f2-4e95-8cd4-2d6115eb28f7",
+            "serviceProperty": {
+              "type": "Geonorge nedlastning",
+              "value": "GEONORGE:DOWNLOAD"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GML"
+          },
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "landsfiler, kommunevis",
+          "deliveryMediumName": "OGC API-Features",
+          "deliveryService": {
+            "serviceEndpoint": "https://ogcapi.nibio.no/felles/jordressurser",
+            "serviceProperty": {
+              "type": "OGC API-Features",
+              "value": "OGC:API-Features"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GeoJSON"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "kommunevis, fylkesvis",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "https://kartkatalog.nibio.no/api/atom/3690c283-a1f2-4e95-8cd4-2d6115eb28f7",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GML"
+          },
+          {
+            "formatName": "gpkg"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Jordressurser - WMS",
+          "deliveryService": {
+            "serviceEndpoint": "https://wms.nibio.no/cgi-bin/jordressurser?service=wms&request=getcapabilities",
+            "serviceProperty": {
+              "type": "Jordressurser - WMS",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "jpg"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: jordressurser-som-filleveranse-basert-pa-uml",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/jordressurser/jordressurser-som-filleveranse-basert-pa-uml/jordressurser-som-filleveranse-basert-pa-uml.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "PostGIS-skript: jordressurser-som-filleveranse-basert-pa-uml.postgis",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/jordressurser/jordressurser-som-filleveranse-basert-pa-uml/jordressurser-som-filleveranse-basert-pa-uml.postgis.sql",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "SQL"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GML/XSD-skjema: jordressurser-som-filleveranse-basert-pa-uml",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/jordressurser/jordressurser-som-filleveranse-basert-pa-uml/schema/xsd/INPUT/jordressurser-som-filleveranse-basert-pa-uml.xsd",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "XSD"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: jordressurser-som-filleveranse-basert-pa-uml",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/jordressurser/jordressurser-som-filleveranse-basert-pa-uml/schema/jsonschema/INPUT/jordressursersomfilleveransebasertpauml/jordressurser-som-filleveranse-basert-pa-uml.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
+          }
+        ]
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2026-11-02",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Norsk institutt for bioøkonomi",
+      "individualName": "Christina Sogge",
+      "logo": "https://register.geonorge.no/data/organizations/988983837_NIBIO_liten.jpg",
+      "electronicMailAddress": "gisdrift@nibio.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "3690c283-a1f2-4e95-8cd4-2d6115eb28f7",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/3690c283-a1f2-4e95-8cd4-2d6115eb28f7"
+    }
+  },
+  "additionalReferences": [
+    {
+      "title": "Produktark",
+      "href": "https://register.geonorge.no/produktark/jordressurser"
+    },
+    {
+      "title": "Produktside",
+      "href": "https://nibio.no/tema/jord/jordkartlegging/jordsmonnkart/jordressurser"
+    }
+  ],
+  "chapterAutofill": {
+    "om_spesifikasjonen": 12,
+    "om_produktet": 186,
+    "formaal": 144,
+    "bruksomraade": 31,
+    "omfang": 34,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 24,
+    "datakvalitet": 42,
+    "datafangst_og_produksjon": 108,
+    "vedlikehold": 4,
+    "presentasjon": 2,
+    "leveranse": 65,
+    "metadata": 17,
+    "tilleggsinformasjon": 49,
+    "datamodell": 744
+  },
+  "specificationContact": "Norsk institutt for bioøkonomi, [siri.svendgard-stokke@nibio.no](mailto:siri.svendgard-stokke@nibio.no)"
+}
