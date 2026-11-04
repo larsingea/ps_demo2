@@ -7,3 +7,7 @@ scopes:
   url: inputs/nasjonalt-register-over-luftfartshindre/postgis.schema.sql
   generator: postgis
   description: Fra DBeaver postgisdump fra Distribusjonsbasen
+- name: NRL_UML
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Statens%20kartverk/NasjonaltRegisterOverLuftfartshindre_20180322.xml
+  generator: xmi
+  description: Basert på UML
