@@ -78,12 +78,6 @@ Egnet til bruk i elektroniske kart- og varslingssystemer i fly og helikoptre. Si
 
 **Nivåbeskrivelse**: Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser
 
-### Basert pa postgiskjema fra geonorge
-
-**Nivå**: dataset
-
-**Nivåbeskrivelse**: Fra DBeaver postgisdump fra Distribusjonsbasen
-
 ### NRL_UML
 
 **Nivå**: dataset
@@ -93,16 +87,6 @@ Egnet til bruk i elektroniske kart- og varslingssystemer i fly og helikoptre. Si
 ## Datainnhold og struktur
 
 
-
-### Datamodell - Basert pa postgiskjema fra geonorge
-
-
-
-<a href="basert-pa-postgiskjema-fra-geonorge/basert-pa-postgiskjema-fra-geonorge_feature_catalogue.png" title="Klikk for stor visning"><img src="basert-pa-postgiskjema-fra-geonorge/basert-pa-postgiskjema-fra-geonorge_feature_catalogue.png" alt="Datamodell Basert pa postgiskjema fra geonorge" style="max-width: 100%; height: auto;" /></a>
-
-
-
-➡️ [Se full datamodell for omfang "Basert pa postgiskjema fra geonorge" (diagram per pakke og objektkatalog)](basert-pa-postgiskjema-fra-geonorge/objektkatalog.html)
 
 ### Datamodell - NRL_UML
 
