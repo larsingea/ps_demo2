@@ -13,505 +13,158 @@
 Egenskaper
 
 <table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
+  <thead>
+    <tr>
+      <th>Egenskap</th>
+      <th>Beskrivelse</th>
+      <th>Type</th>
+      <th>Multiplisitet</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>objid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>objid</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>lokalid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>lokalid</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navnerom</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>navnerom</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>versjonid</strong></td>
+      <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>versjonid</td>
+      <td></td>
+      <td>string</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>oppdateringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>verifisertrapporteringsnoyaktighet</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>registreringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>navn</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>oppdateringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>status</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>verifisertrapporteringsnoyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>registreringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navn</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>vertikalavstand</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>vertikalavstand</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshindermerking</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshinderlyssetting</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshindermerking</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>materiale</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshinderlyssetting</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>materiale</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>datafangstdato</td>
+      <td></td>
       <td>date</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetode</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetode</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighet</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetodehoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighethoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetodehoyde</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighethoyde</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>hoydereferanse</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>informasjon</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>hoydereferanse</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>informasjon</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>flatetype</strong></td>
+      <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>flatetype</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>omrade_ell</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>omrade_<wbr />ell</td>
+      <td></td>
+      <td>GM_<wbr />Surface</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Surface</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>omrade_egm</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>omrade_<wbr />egm</td>
+      <td></td>
+      <td>GM_<wbr />Surface</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Surface</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>omrade_nn2</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>omrade_<wbr />nn2</td>
+      <td></td>
+      <td>GM_<wbr />Surface</td>
       <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Surface</td>
     </tr>
   </tbody>
 </table>
@@ -521,526 +174,164 @@ Egenskaper
 Egenskaper
 
 <table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
+  <thead>
+    <tr>
+      <th>Egenskap</th>
+      <th>Beskrivelse</th>
+      <th>Type</th>
+      <th>Multiplisitet</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>objid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>objid</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>lokalid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>lokalid</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navnerom</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>navnerom</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>versjonid</strong></td>
+      <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>versjonid</td>
+      <td></td>
+      <td>string</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>oppdateringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>verifisertrapporteringsnoyaktighet</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>registreringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>navn</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>oppdateringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>status</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>verifisertrapporteringsnoyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>registreringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navn</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>vertikalavstand</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>vertikalavstand</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshindermerking</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshinderlyssetting</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshindermerking</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>materiale</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshinderlyssetting</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>materiale</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>datafangstdato</td>
+      <td></td>
       <td>date</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetode</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetode</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighet</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetodehoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighethoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetodehoyde</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighethoyde</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>hoydereferanse</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>informasjon</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>hoydereferanse</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>informasjon</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>linjetype</strong></td>
+      <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>linjetype</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>anleggsbredde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>anleggsbredde</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>beliggenhet_ell</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Curve</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>beliggenhet_egm</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>beliggenhet_<wbr />ell</td>
+      <td></td>
+      <td>GM_<wbr />Curve</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Curve</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>beliggenhet_nn2</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>beliggenhet_<wbr />egm</td>
+      <td></td>
+      <td>GM_<wbr />Curve</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Curve</td>
+      <td>beliggenhet_<wbr />nn2</td>
+      <td></td>
+      <td>GM_<wbr />Curve</td>
+      <td>0..1</td>
     </tr>
   </tbody>
 </table>
@@ -1050,568 +341,176 @@ Egenskaper
 Egenskaper
 
 <table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
+  <thead>
+    <tr>
+      <th>Egenskap</th>
+      <th>Beskrivelse</th>
+      <th>Type</th>
+      <th>Multiplisitet</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>objid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>objid</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>lokalid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>lokalid</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navnerom</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>navnerom</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>versjonid</strong></td>
+      <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>versjonid</td>
+      <td></td>
+      <td>string</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>oppdateringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>verifisertrapporteringsnoyaktighet</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>registreringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>navn</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>oppdateringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>status</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>verifisertrapporteringsnoyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>registreringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navn</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>vertikalavstand</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>vertikalavstand</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshindermerking</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshinderlyssetting</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshindermerking</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>materiale</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshinderlyssetting</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>materiale</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>datafangstdato</td>
+      <td></td>
       <td>date</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetode</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetode</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighet</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetodehoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighethoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetodehoyde</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighethoyde</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>hoydereferanse</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>informasjon</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>hoydereferanse</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>informasjon</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftspenntype</strong></td>
+      <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftspenntype</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>farligspenn</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>farligspenn</td>
+      <td></td>
       <td>boolean</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>farligspennmerknad</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>farligspennmerknad</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>anleggsbredde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>anleggsbredde</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>beliggenhet_ell</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Curve</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>beliggenhet_egm</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>beliggenhet_<wbr />ell</td>
+      <td></td>
+      <td>GM_<wbr />Curve</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Curve</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>beliggenhet_nn2</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>beliggenhet_<wbr />egm</td>
+      <td></td>
+      <td>GM_<wbr />Curve</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Curve</td>
+      <td>beliggenhet_<wbr />nn2</td>
+      <td></td>
+      <td>GM_<wbr />Curve</td>
+      <td>0..1</td>
     </tr>
   </tbody>
 </table>
@@ -1626,526 +525,164 @@ NrlMast – kardinalitet: 0..*
 Egenskaper
 
 <table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
+  <thead>
+    <tr>
+      <th>Egenskap</th>
+      <th>Beskrivelse</th>
+      <th>Type</th>
+      <th>Multiplisitet</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>objid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>objid</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>lokalid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>lokalid</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navnerom</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>navnerom</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>versjonid</strong></td>
+      <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>versjonid</td>
+      <td></td>
+      <td>string</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>oppdateringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>verifisertrapporteringsnoyaktighet</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>registreringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>navn</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>oppdateringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>status</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>verifisertrapporteringsnoyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>registreringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navn</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>vertikalavstand</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>vertikalavstand</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshindermerking</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshinderlyssetting</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshindermerking</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>materiale</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshinderlyssetting</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>materiale</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>datafangstdato</td>
+      <td></td>
       <td>date</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetode</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetode</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighet</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetodehoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighethoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetodehoyde</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighethoyde</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>hoydereferanse</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>informasjon</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>hoydereferanse</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>informasjon</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>masttype</strong></td>
+      <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>masttype</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>horisontalavstand</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>horisontalavstand</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>posisjon_ell</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Point</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>posisjon_egm</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>posisjon_<wbr />ell</td>
+      <td></td>
+      <td>GM_<wbr />Point</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Point</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>posisjon_nn2</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>posisjon_<wbr />egm</td>
+      <td></td>
+      <td>GM_<wbr />Point</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Point</td>
+      <td>posisjon_<wbr />nn2</td>
+      <td></td>
+      <td>GM_<wbr />Point</td>
+      <td>0..1</td>
     </tr>
   </tbody>
 </table>
@@ -2155,532 +692,170 @@ Egenskaper
 Egenskaper
 
 <table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
+  <thead>
+    <tr>
+      <th>Egenskap</th>
+      <th>Beskrivelse</th>
+      <th>Type</th>
+      <th>Multiplisitet</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>objid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>objid</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>lokalid</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>lokalid</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navnerom</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>navnerom</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>versjonid</strong></td>
+      <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>versjonid</td>
+      <td></td>
+      <td>string</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>oppdateringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>verifisertrapporteringsnoyaktighet</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>registreringsdato</td>
+      <td></td>
+      <td>date<wbr />Time</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>navn</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>oppdateringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>status</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>verifisertrapporteringsnoyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>registreringsdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
-      <td>dateTime</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>navn</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>vertikalavstand</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>vertikalavstand</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshindermerking</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>luftfartshinderlyssetting</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshindermerking</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>materiale</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>luftfartshinderlyssetting</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstdato</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>materiale</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>datafangstdato</td>
+      <td></td>
       <td>date</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetode</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighet</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetode</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighet</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>datafangstmetodehoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>noyaktighethoyde</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>datafangstmetodehoyde</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>noyaktighethoyde</td>
+      <td></td>
       <td>integer</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>hoydereferanse</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>informasjon</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>hoydereferanse</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
+      <td>informasjon</td>
+      <td></td>
       <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>punkttype</strong></td>
+      <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>punkttype</td>
+      <td></td>
+      <td><a href="#kodeliste-string">string</a><br />(kodeliste)</td>
       <td>1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>horisontalavstand</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
-      <td>0..1</td>
-    </tr>
-    <tr>
-      <th scope="row">Type:</th>
+      <td>horisontalavstand</td>
+      <td></td>
       <td>number</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>posisjon_ell</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Point</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>posisjon_egm</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>posisjon_<wbr />ell</td>
+      <td></td>
+      <td>GM_<wbr />Point</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Point</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="feature-attribute-table">
-  <colgroup>
-    <col style="width: 35%;" />
-    <col style="width: 65%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <th scope="row">Navn:</th>
-      <td><strong>posisjon_nn2</strong></td>
-    </tr>
-    <tr>
-      <th scope="row">Multiplisitet:</th>
+      <td>posisjon_<wbr />egm</td>
+      <td></td>
+      <td>GM_<wbr />Point</td>
       <td>0..1</td>
     </tr>
     <tr>
-      <th scope="row">Type:</th>
-      <td>GM_Point</td>
+      <td>posisjon_<wbr />nn2</td>
+      <td></td>
+      <td>GM_<wbr />Point</td>
+      <td>0..1</td>
     </tr>
   </tbody>
 </table>
 
 ### Kodelister
 
-#### «CodeList» string
+#### <a id="kodeliste-string"></a>«CodeList» string
 
 (ingen)

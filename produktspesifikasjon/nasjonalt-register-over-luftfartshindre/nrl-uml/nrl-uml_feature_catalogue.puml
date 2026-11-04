@@ -1,0 +1,173 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Nasjonalt register over luftfartshindre - NRL_UML - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class VertikalObjektKomponentPunkt <<featureType>> {
+    + posisjon [0..1] : Punkt
+    + href [1] : Høydereferanse
+    + hrefSystem [1] : Høydereferansesystem
+    + identifikasjonPunkt [1] : IdentifikasjonPunkt
+    + kvalitet [1] : Posisjonskvalitet
+  }
+
+  abstract class Supertype_VertikalObjekt <<featureType>> {
+    + datafangstdato [0..1] : Date
+    + endringsflagg [0..1] : Endringsflagg
+    + gyldigFra [0..1] : Date
+    + gyldigTil [0..1] : Date
+    + informasjon [0..*] : CharacterString
+    + link [0..*] : Link
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+    + status [1] : Status
+  }
+
+  abstract class Supertype_VertikalObjektKomponent <<featureType>> {
+    + verifiseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + endringsflagg [0..1] : Endringsflagg
+    + status [0..1] : Status
+  }
+
+  class VertikalObjekt <<featureType>> {
+    + kommentarVertikalObjektType [0..1] : CharacterString
+    + vertikalObjektGruppe [0..1] : JaNei
+    + vertikalObjektNavn [0..1] : CharacterString
+    + vertikalObjektType [1] : VertikalObjektType
+    + identifikasjonObjekt [1] : IdentifikasjonObjekt
+  }
+
+  class VertikalObjektKomponentLinje <<featureType>> {
+    + identifikasjonLinje [1] : IdentifikasjonLinje
+    + linjeElement [0..1] : Kurve
+    + linjespenn [0..1] : JaNei
+    + lengde [0..1] : Real
+    + lengdeMåleenhet [0..1] : Måleenhet
+  }
+
+  abstract class VertikalObjektKomponent <<featureType>> {
+    + merking [0..*] : Merking
+    + vertikalUtstrekning [0..1] : Real
+    + vertikalUtstrekningMåleenhet [0..1] : Måleenhet
+    + merkeplikt [0..1] : Merkeplikt
+    + eksternReferanse [0..*] : ReferanseTilEksterntRegister
+    + komponentsekvensnummer [0..1] : Integer
+    + BSLE-2-1_hinder [1] : JaNei
+    + lyssetting [1..*] : Lystype
+  }
+
+  class VertikalObjektKomponentLinjePkt <<featureType>> {
+    + posisjon [0..1] : Punkt
+    + href [1] : Høydereferanse
+    + hrefSystem [1] : Høydereferansesystem
+    + identifikasjonLinjePkt [1] : IdentifikasjonLinjePkt
+    + kvalitet [1] : Posisjonskvalitet
+  }
+
+  class IdentifikasjonPunkt <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class Posisjonskvalitet <<dataType>> {
+    + målemetode [1] : Målemetode
+    + nøyaktighet [0..1] : Integer
+    + synbarhet [0..1] : Synbarhet
+    + målemetodeHøyde [0..1] : MålemetodeHøyde
+    + nøyaktighetHøyde [0..1] : Integer
+  }
+
+  class Endringsflagg <<dataType>> {
+    + typeEndring [1] : TypeEndring
+    + tidspunktEndring [1] : Date
+  }
+
+  class IdentifikasjonObjekt <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class IdentifikasjonLinje <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class Merking <<dataType>> {
+    + merkingFarge [0..2] : MerkingFarge
+    + merkingType [1] : MerkingType
+    + kommentarMerkingType [0..1] : CharacterString
+    + merkingMønster [1] : MerkingMønster
+    + kommentarMerkingMønster [0..1] : CharacterString
+    + merkingICAO [0..1] : JaNei
+    + merkingTilstand [0..1] : MerkingTilstand
+  }
+
+  class MerkingFarge <<dataType>> {
+    + farge [1] : Farge
+    + annet [0..1] : CharacterString
+    + fluoriserende [1] : JaNei
+    + reflekterende [1] : JaNei
+  }
+
+  class Merkeplikt <<dataType>> {
+    + merkepliktig [1] : JaNei
+    + merkepliktigIhenholdTil [0..1] : RegelverkMerkeplikt
+    + ansvarligForMerking [0..1] : AnsvarligForMerking
+    + merkeInformasjon [0..1] : MerkeInformasjon
+    + kommentarMerkeplikt [0..1] : CharacterString
+  }
+
+  class ReferanseTilEksterntRegister <<dataType>> {
+    + registernavn [0..1] : CharacterString
+    + eksternId [1] : CharacterString
+  }
+
+  class IdentifikasjonLinjePkt <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+}
+
+  VertikalObjektKomponent <|-- VertikalObjektKomponentPunkt
+  Supertype_VertikalObjekt <|-- VertikalObjekt
+  VertikalObjekt --> VertikalObjektKomponentPunkt : bestårAvVertikalobjKompPunkt [0..*]
+  VertikalObjekt --> VertikalObjektKomponentLinje : bestårAvVertikalobjKompLinje [0..*]
+  VertikalObjektKomponent <|-- VertikalObjektKomponentLinje
+  VertikalObjektKomponentLinje --> VertikalObjektKomponentLinjePkt : avgrensesAvPunkt [0..*]
+  Supertype_VertikalObjektKomponent <|-- VertikalObjektKomponent
+  VertikalObjektKomponent <|-- VertikalObjektKomponentLinjePkt
+  VertikalObjektKomponentLinjePkt --> VertikalObjektKomponentLinje : avgrenserLinje [0..*]
+
+@enduml

@@ -1,0 +1,1990 @@
+[
+  {
+    "name": "VertikalObjektKomponentPunkt",
+    "description": "Egenskaper tilhørende en VertikalObjektKomponent som er et punkt.",
+    "attributes": [
+      {
+        "name": "posisjon",
+        "type": "Punkt",
+        "description": "det geografiske punktobjektet",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "href",
+        "type": "Høydereferanse",
+        "description": "koordinatregistering utført på topp eller bunn av et objekt",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Høyden målt til foten av objektet",
+              "label": "Høyden målt til foten av objektet"
+            },
+            {
+              "value": "Høyden målt til toppen av objektet",
+              "label": "Høyden målt til toppen av objektet"
+            },
+            {
+              "value": "Ukjent",
+              "label": "benyttes ikke ved nyregistrering"
+            }
+          ],
+          "definition": "koordinatregistering utført på topp eller bunn av et objekt"
+        }
+      },
+      {
+        "name": "hrefSystem",
+        "type": "Høydereferansesystem",
+        "description": "referanseflate som er utgangspunktet for høydekoordinat.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ellipsoide jf. KOORDSYS",
+              "label": "Ellipsoide jf. KOORDSYS"
+            },
+            {
+              "value": "Lokal referanseflate",
+              "label": "Lokal referanseflate"
+            },
+            {
+              "value": "Geoide bestemt av NKG i 1989",
+              "label": "NKG: The Nordic Geodetic Commission - founded in 1953 - is an association of geodesists from Denmark, Finland, Iceland, Norway and Sweden. Its purpose is to give the members possibilities of fruitful gatherings and mutual exchange of professional views and experiences. The NKG is recognized and supported by a number of Nordic  organizations, such as the Director Generals of the Nordic Mapping Authorities. (Kilde: http://217.152.180.26/nkg/)"
+            },
+            {
+              "value": "Norsk Null av 1954",
+              "label": "Denne er identisk med NN1954"
+            },
+            {
+              "value": "Nord-Norsk Null av 1957",
+              "label": "For nyere data er denne gått ut av bruk. Er erstattet av NN54."
+            },
+            {
+              "value": "Norsk Null av 2000",
+              "label": "Nytt felles nordisk vertikalt datum, basert på Normaal Amsterdals Peil."
+            }
+          ],
+          "definition": "referanseflate som er utgangspunktet for høydekoordinat."
+        }
+      },
+      {
+        "name": "identifikasjonPunkt",
+        "type": "IdentifikasjonPunkt",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KOMPONENTIDENTPUNKT"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nMerknad: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterer. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nMerknad: Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "description": "beskrivelse av kvaliteten på stedfestingen",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KVALITET"
+        },
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Terrengmålt",
+                  "label": "Målt i terrenget"
+                },
+                {
+                  "value": "Tatt fra plan",
+                  "label": "Tatt fra plan eller godkjent tiltak"
+                },
+                {
+                  "value": "Annet",
+                  "label": "Annet"
+                },
+                {
+                  "value": "Stereoinstrument",
+                  "label": "Målt i stereoinstrument, uspesifisert instrument"
+                },
+                {
+                  "value": "Analytisk plotter",
+                  "label": "Målt i stereoinstrument, analytisk plotter"
+                },
+                {
+                  "value": "Digitalt stereoinstrument",
+                  "label": "Målt i stereoinstrument, digitalt instrument"
+                },
+                {
+                  "value": "Flybåren laserscanner",
+                  "label": "Målt med laserskanner fra fly"
+                },
+                {
+                  "value": "Digitalisert fra ortofoto",
+                  "label": "Geometri overført fra ortofoto ved hjelp av manuell registrering på skjerm"
+                },
+                {
+                  "value": "Digitalisert på skjerm fra satellittbilde",
+                  "label": "Geometri overført fra satelittbilde ved hjelp av manuell registrering på skjerm"
+                },
+                {
+                  "value": "Dig. på skjerm fra scannet samkopi",
+                  "label": "Geometri overført fra kart ved hjelp av manuell registrering på skjerm, medium skannet kart (raster), samkopi"
+                },
+                {
+                  "value": "Genererte data (interpolasjon)",
+                  "label": "Genererte data, interpolasjonsmetode. Ikke nærmere spesifisert"
+                },
+                {
+                  "value": "Frihåndstegning",
+                  "label": "Digitalisert ut fra frihåndstegning.  Frihåndstegning er basert på svært grovt grunnlag eller ikke noe grunnlag"
+                },
+                {
+                  "value": "Digitalisert fra krokering på kart",
+                  "label": "Digitalisert fra krokering på kart, dvs grovt skissert på kart"
+                },
+                {
+                  "value": "Direkte innlagt på skjerm",
+                  "label": "Digitalisert ut fra frihåndstegning (direkte på skjerm). Frihåndstegning er basert på svært grovt grunnlag eller ikke noe grunnlag"
+                },
+                {
+                  "value": "Ukjent målemetode",
+                  "label": "Målemetode er ukjent"
+                },
+                {
+                  "value": "GPS Kodemåling, relative målinger",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS, GALILEO): Kodemåling, relative målinger."
+                },
+                {
+                  "value": "GPS Kodemåling, enkeltmålinger",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS,\nGALILEO): Kodemåling, enkle målinger."
+                }
+              ],
+              "definition": "metode som ligger til grunn for registrering av posisjon"
+            }
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "Integer",
+            "description": "punktstandardavviket i grunnriss for punkter\n\nMerknad:\nOppgitt i cm",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "NØYAKTIGHET"
+            }
+          },
+          {
+            "name": "synbarhet",
+            "type": "Synbarhet",
+            "description": "hvor godt den kartlagte detalj var synbar ved kartleggingen",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Fullt ut synlig/gjenfinnbar i terrenget",
+                  "label": "Default"
+                },
+                {
+                  "value": "Dårlig gjenfinnbar i terreng",
+                  "label": "Forøvrig grei å innmåle. (Benyttes bl.a. for innmåling av ledninger på lukket grøft)"
+                },
+                {
+                  "value": "Middels synlig i flybilde/modell",
+                  "label": "Middels synlig i flybilde/modell"
+                },
+                {
+                  "value": "Dårlig/ikke synlig i flybilde/modell",
+                  "label": "Dårlig/ikke synlig i flybilde/modell"
+                }
+              ],
+              "definition": "hvor godt den kartlagte detalj var synbar ved kartleggingen"
+            }
+          },
+          {
+            "name": "målemetodeHøyde",
+            "type": "MålemetodeHøyde",
+            "description": "metode for å måle høyden",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Terrengmålt",
+                  "label": "Målt i terrenget"
+                },
+                {
+                  "value": "Tatt fra plan",
+                  "label": "Tatt fra plan eller godkjent tiltak"
+                },
+                {
+                  "value": "Annet",
+                  "label": "Annet"
+                },
+                {
+                  "value": "Stereoinstrument",
+                  "label": "Målt i stereoinstrument, uspesifisert instrument"
+                },
+                {
+                  "value": "Analytisk plotter",
+                  "label": "Målt i stereoinstrument, analytisk plotter"
+                },
+                {
+                  "value": "Digitalt stereoinstrument",
+                  "label": "Målt i stereoinstrument, digitalt instrument"
+                },
+                {
+                  "value": "Flybåren laserscanning",
+                  "label": "Målt med laserskanner fra fly"
+                },
+                {
+                  "value": "Genererte data (interpolasjon)",
+                  "label": "Genererte data, interpolasjonsmetode. Ikke nærmere spesifisert"
+                },
+                {
+                  "value": "Generert i terrengmodell",
+                  "label": "Genererte data, interpolasjonsmetode, fra terrengmodell"
+                },
+                {
+                  "value": "Målt med stigningsmåler",
+                  "label": "Målt med stigningsmåler"
+                },
+                {
+                  "value": "GPS Kodemåling, relative målinger.",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS, GALILEO): Kodemåling, relative målinger."
+                },
+                {
+                  "value": "GPS Kodemåling, enkeltpunktbestemmelser",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS,\nGALILEO): Kodemåling, enkle målinger."
+                },
+                {
+                  "value": "Ukjent målemetode",
+                  "label": "Ukjent målemetode"
+                }
+              ],
+              "definition": "metode for å måle objekttypens høydeverdi"
+            }
+          },
+          {
+            "name": "nøyaktighetHøyde",
+            "type": "Integer",
+            "description": "nøyaktighet for høyden i cm",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "H-NØYAKTIGHET"
+            }
+          }
+        ]
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "VertikalObjektKomponent"
+      ],
+      "associations": []
+    },
+    "package": "NasjonaltRegisterOverLuftfartshindre_20180322",
+    "taggedValues": {
+      "SOSI_navn": "VERTIKALOBJKOMPPUNKT"
+    }
+  },
+  {
+    "name": "Supertype_VertikalObjekt",
+    "description": "VertkalObjekt inneholder felles egenskaper for alle VertikalObjektKomponenter som til sammen utgjør et luftfartshinder. Her listes egenskaper som er arvet fra SOSI objekt.",
+    "attributes": [
+      {
+        "name": "datafangstdato",
+        "type": "DateTime",
+        "description": "dato da objektet siste gang ble innmålt",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "DATAFANGSTDATO"
+        }
+      },
+      {
+        "name": "endringsflagg",
+        "type": "Endringsflagg",
+        "description": "endringsinformasjon om et objekt",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "ENDRINGSFLAGG"
+        },
+        "attributes": [
+          {
+            "name": "typeEndring",
+            "type": "TypeEndring",
+            "description": "endringsstatus for objektet",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Endret",
+                  "label": "Endret"
+                },
+                {
+                  "value": "Nytt",
+                  "label": "Nytt"
+                },
+                {
+                  "value": "Slettet",
+                  "label": "Slettet"
+                }
+              ],
+              "definition": "endringsstatus for objektet"
+            }
+          },
+          {
+            "name": "tidspunktEndring",
+            "type": "DateTime",
+            "description": "tidspunkt for endring av objektet",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "ENDRET_TID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "gyldigFra",
+        "type": "DateTime",
+        "description": "Tidspunktet når objektet oppstod i den virkelige verden",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GYLDIGFRA"
+        }
+      },
+      {
+        "name": "gyldigTil",
+        "type": "DateTime",
+        "description": "Tidspunktet når objektet opphørte å eksistere i den virkelige verden",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GYLDIGTIL"
+        }
+      },
+      {
+        "name": "informasjon",
+        "type": "CharacterString",
+        "description": "generell opplysning\n\nMerknad:\nmulighet til å legge inn utfyllende informasjon om objektet",
+        "cardinality": "0..*",
+        "taggedValues": {
+          "SOSI_navn": "INFORMASJON"
+        }
+      },
+      {
+        "name": "link",
+        "type": "Link",
+        "description": "referanse  til et informasjonselement, enten lokalt eller globalt",
+        "cardinality": "0..*",
+        "taggedValues": {
+          "SOSI_navn": "LINK"
+        }
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objektdataene\n\nMerknad:\nOppdateringsdato refererer til en endring av dataene i registeret. Dataene kan dermed endres som følge av en forvaltningsmessig beslutning uten at det virkelige objektet i terrenget er endret.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDATERINGSDATO"
+        }
+      },
+      {
+        "name": "opphav",
+        "type": "CharacterString",
+        "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPHAV"
+        }
+      },
+      {
+        "name": "status",
+        "type": "Status",
+        "description": "objektets tilstand, se gyldige koder i kodeliste Status",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Eksisterende (default)",
+              "label": "Identisk med tidligere SITSTAT = 3\n\n-- Definition --\nIdentical with previous SITSTAT = 3"
+            },
+            {
+              "value": "Kondemnert",
+              "label": "Ikke lenger et hinder."
+            },
+            {
+              "value": "Ombygd",
+              "label": "Hindret er ombygd (blir vanligvis ikke brukt)"
+            },
+            {
+              "value": "Planlagt",
+              "label": "Hindret skal bygges"
+            },
+            {
+              "value": "Under arbeid",
+              "label": "Hinderet er under bygging/ombygging"
+            },
+            {
+              "value": "Fjernet",
+              "label": "Feilregistrert i registeret, skulle aldri vært der."
+            }
+          ],
+          "definition": "objektets tilstand"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "NasjonaltRegisterOverLuftfartshindre_20180322"
+  },
+  {
+    "name": "Supertype_VertikalObjektKomponent",
+    "description": "Et luftfartshinder kan bestå av ett eller flere VertikalObjektKomponent. Her listes egenskaper som er arvet fra SOSI-objekt.",
+    "attributes": [
+      {
+        "name": "verifiseringsdato",
+        "type": "DateTime",
+        "description": "dato når dataene er fastslått å være i samsvar med virkeligheten\n\nMerknad: Verifiseringsdato er identisk med ..DATO i tidligere versjoner av SOSI",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "VERIFISERINGSDATO"
+        }
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objektdataene\n\nMerknad:\nOppdateringsdato refererer til en endring av dataene i registeret. Dataene kan dermed endres som følge av en forvaltningsmessig beslutning uten at det virkelige objektet i terrenget er endret.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDATERINGSDATO"
+        }
+      },
+      {
+        "name": "endringsflagg",
+        "type": "Endringsflagg",
+        "description": "endringsinformasjon om et objekt",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "ENDRINGSFLAGG"
+        },
+        "attributes": [
+          {
+            "name": "typeEndring",
+            "type": "TypeEndring",
+            "description": "endringsstatus for objektet",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Endret",
+                  "label": "Endret"
+                },
+                {
+                  "value": "Nytt",
+                  "label": "Nytt"
+                },
+                {
+                  "value": "Slettet",
+                  "label": "Slettet"
+                }
+              ],
+              "definition": "endringsstatus for objektet"
+            }
+          },
+          {
+            "name": "tidspunktEndring",
+            "type": "DateTime",
+            "description": "tidspunkt for endring av objektet",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "ENDRET_TID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "status",
+        "type": "Status",
+        "description": "objektets tilstand, se gyldige koder i kodeliste Status",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Eksisterende (default)",
+              "label": "Identisk med tidligere SITSTAT = 3\n\n-- Definition --\nIdentical with previous SITSTAT = 3"
+            },
+            {
+              "value": "Kondemnert",
+              "label": "Ikke lenger et hinder."
+            },
+            {
+              "value": "Ombygd",
+              "label": "Hindret er ombygd (blir vanligvis ikke brukt)"
+            },
+            {
+              "value": "Planlagt",
+              "label": "Hindret skal bygges"
+            },
+            {
+              "value": "Under arbeid",
+              "label": "Hinderet er under bygging/ombygging"
+            },
+            {
+              "value": "Fjernet",
+              "label": "Feilregistrert i registeret, skulle aldri vært der."
+            }
+          ],
+          "definition": "objektets tilstand"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "NasjonaltRegisterOverLuftfartshindre_20180322",
+    "taggedValues": {
+      "SOSI_navn": "SUPERTYPE_VERTIKALOBJKOMP"
+    }
+  },
+  {
+    "name": "VertikalObjekt",
+    "description": "VertkalObjekt inneholder felles egenskaper for alle VertikalObjektKomponenter som til sammen utgjør et luftfartshinder. Her listes egenskaper som <i>ikke</i> er arvet fra SOSI objekt.",
+    "attributes": [
+      {
+        "name": "kommentarVertikalObjektType",
+        "type": "CharacterString",
+        "description": "hvis \"Annet\" velges på vertikalObjektType skal dette spesifiseres her",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "KOMMENTARVERTOBJTYPE"
+        }
+      },
+      {
+        "name": "vertikalObjektGruppe",
+        "type": "JaNei",
+        "description": "indikerer om VertikalObjekt er en representant for et antall nært lokaliserte objekter av samme type",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ja",
+              "label": "Ja"
+            },
+            {
+              "value": "Nei",
+              "label": "Nei"
+            },
+            {
+              "value": "Ukjent",
+              "label": "Ukjent"
+            }
+          ],
+          "definition": "alternativ til å bruke den generelle datatypen Boolean"
+        },
+        "taggedValues": {
+          "SOSI_navn": "VERTIKALOBJEKTGRUPPE"
+        }
+      },
+      {
+        "name": "vertikalObjektNavn",
+        "type": "CharacterString",
+        "description": "Navn på VertikalObjekt.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "VERTIKALOBJEKTNAVN"
+        }
+      },
+      {
+        "name": "vertikalObjektType",
+        "type": "VertikalObjektType",
+        "description": "her angis det hvilken type vertikalt objekt dette objektet er, se egen kodeliste",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Landbruksutstyr",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode AG_EQUIP"
+            },
+            {
+              "value": "Telemast",
+              "label": "mast med radio- og telekommunikasjonsutstyr for sending/mottak av telesignaler\n\ntilsvarer klasse MastTele i Ledningsnett 4.0"
+            },
+            {
+              "value": "Bru",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode BRIDGE"
+            },
+            {
+              "value": "Bygning",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode BUILDING"
+            },
+            {
+              "value": "Gondolbane",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode CABLE_CAR"
+            },
+            {
+              "value": "Kontrolltårn",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode CONTROL_TOWER"
+            },
+            {
+              "value": "Kjøletårn",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode COOLING_TOWER"
+            },
+            {
+              "value": "Kran",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType\n\ngjelder også heisekrantypene skinnekran/havnekran, tårnkran/byggekran, mobilkran, flytekran"
+            },
+            {
+              "value": "Demning",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode DAM"
+            },
+            {
+              "value": "Kuppel",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode DOME"
+            },
+            {
+              "value": "EL_Nettstasjon",
+              "label": "stasjon som transformerer elektrisitet fra et høyspentnivå til et lavere\n\ntilsvarer EL_Transformatorstasjon og EL_Nettstasjon i SOSI Ledning 4.5\n\nMerk: Gjelder alle typer transformasjoner. I standarden for luftfartshinder skiller vi ikke mellom ulike typer transformasjoner som for eksempel transformasjon til lavere eller høyere enn 230 V slik det gjøres i SOSI Ledning 4.5."
+            },
+            {
+              "value": "Gjerde",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode FENCE"
+            },
+            {
+              "value": "Fyrtårn",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType kode LIGHTHOUSE"
+            },
+            {
+              "value": "Monument",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode MONUMENT"
+            },
+            {
+              "value": "Terrengpunkt",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode NATURAL_HIGHPOINT"
+            },
+            {
+              "value": "Navigasjonshjelpemiddel",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode NAVAID\n\nGjelder kun radio instrumenter som brukes ifm navigasjon for luftfartøy og ikke hjelpemidler til andre form for navigasjon, som for eksempel til sjøs."
+            },
+            {
+              "value": "Stolpe",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode POLE"
+            },
+            {
+              "value": "Kraftverk",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode POWER_PLANT"
+            },
+            {
+              "value": "Raffineri",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode REFINERY"
+            },
+            {
+              "value": "Oljerigg",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode RIG"
+            },
+            {
+              "value": "Skilt",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode SIGN"
+            },
+            {
+              "value": "Pipe",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode STACK"
+            },
+            {
+              "value": "Tank",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode TANK"
+            },
+            {
+              "value": "Forankret ballong",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode TETHERED_BALLOON"
+            },
+            {
+              "value": "Tårn",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode TOWER"
+            },
+            {
+              "value": "Kraftledning",
+              "label": "linje som fører elektrisk kraft over store avstander\n\ntilsvarer klasse LuftledningLH i SOSI Ledningsnett 4.0 og kodene \"Høgspentnett\" og \"Lavspentnett\" i kodelista Ledningsnettverkstype i SOSI Ledningsnett 4.5\n\ntilsvarer også kode TRANSMISSION_LINE\nhentet fra AIXM 5.1 klasse CodeVerticalStructureType"
+            },
+            {
+              "value": "Tre",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode TREE"
+            },
+            {
+              "value": "Skogsområde",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode VEGETATION\n\ngjelder også klasse lufthavnhinderTregruppe i SOSI Lufthavn 4.1"
+            },
+            {
+              "value": "Vanntårn",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode WATER_TOWER"
+            },
+            {
+              "value": "Vindmølle",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode WINDMILL"
+            },
+            {
+              "value": "Vindmøllepark",
+              "label": "hentet fra AIXM 5.1 klasse CodeVerticalStructureType, kode WINDMILL_FARMS"
+            },
+            {
+              "value": "Hopptårn",
+              "label": "tilsvarer klasse Hoppbakke i SOSI Bygnan 4.0\n\nikke dommertårnet"
+            },
+            {
+              "value": "Vindmåler",
+              "label": "meteorologisk instrument som måler vindhastighet og vindretning"
+            },
+            {
+              "value": "Lysmast",
+              "label": "mast brukt for montering av ulike lyskilder"
+            },
+            {
+              "value": "Flaggstang",
+              "label": "lang rett stang for heising av flagg\n\ntilsvarer klasse Flaggstang i SOSI Bygnan 4.0"
+            },
+            {
+              "value": "Petroleumsinnretning",
+              "label": "innretning, installasjon, anlegg og annet utstyr for petroleumsvirksomhet, likevel ikke forsynings- og hjelpefartøy eller skip som transporterer petroleum i bulk\n\ntilsvarer klasse Petroleumsinnretning i SOSI Petroleum 4.0"
+            },
+            {
+              "value": "Silo",
+              "label": "lagringsbygg for fôr og korn som ikke er registrert som bygning i GAB\n\ntilsvarer klasse Silo i SOSI Bygnan 4.0\n\nMerknad: I motsetning til definisjonen av klasse Silo i SOSI Bygnan 4.0 vil dette også gjelde store silobygg"
+            },
+            {
+              "value": "Stolheis",
+              "label": "taubane med stoler til persontransport\n\ntilsvarer klasse Stolheis i SOSI Bygnan 4.0"
+            },
+            {
+              "value": "Skitrekk",
+              "label": "taubane til å dra skiløper opp bratte bakker\n\ntilsvarer klasse Skitrekk i SOSI Bygnan 4.0"
+            },
+            {
+              "value": "Taubane",
+              "label": "innretning hvor tau eller vaiere bærer og eller trekker last over en strekning\n\ntilsvarer klasse Taubane i SOSI Bygnan 4.0"
+            },
+            {
+              "value": "Fornøyelsesparkinnretning",
+              "label": "pariserhjul, berg og dal bane og andre høye innretninger i en fornøyelsespark"
+            },
+            {
+              "value": "Annet",
+              "label": "Annet"
+            }
+          ],
+          "definition": "ulike typer VertikalObjekter (luftfartshindre).",
+          "asDictionary": "false"
+        }
+      },
+      {
+        "name": "identifikasjonObjekt",
+        "type": "IdentifikasjonObjekt",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KOMPONENTIDENTOBJEKT"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nMerknad: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterer. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nMerknad: Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Supertype_VertikalObjekt"
+      ],
+      "associations": [
+        {
+          "target": "VertikalObjektKomponentPunkt",
+          "role": "bestårAvVertikalobjKompPunkt",
+          "cardinality": "0..*"
+        },
+        {
+          "target": "VertikalObjektKomponentLinje",
+          "role": "bestårAvVertikalobjKompLinje",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "NasjonaltRegisterOverLuftfartshindre_20180322",
+    "taggedValues": {
+      "SOSI_navn": "VERTIKALOBJEKT"
+    }
+  },
+  {
+    "name": "VertikalObjektKomponentLinje",
+    "description": "Egenskaper tilhørende en VertikalObjektKomponent som er en linje.",
+    "attributes": [
+      {
+        "name": "identifikasjonLinje",
+        "type": "IdentifikasjonLinje",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KOMPONENTIDENTLINJE"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nMerknad: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterer. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nMerknad: Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "linjeElement",
+        "type": "Kurve",
+        "description": "det geografiske linjeobjektet",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "linjespenn",
+        "type": "JaNei",
+        "description": "informasjon om en VertikalObjektKomponentLinje er et spenn eller ei. Et linjespenn har vertikal utstrekning på 60 m eller høyere eller er av andre årsaker omfattet av merkepålegg fra Luftfartstilsynet.",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ja",
+              "label": "Ja"
+            },
+            {
+              "value": "Nei",
+              "label": "Nei"
+            },
+            {
+              "value": "Ukjent",
+              "label": "Ukjent"
+            }
+          ],
+          "definition": "alternativ til å bruke den generelle datatypen Boolean"
+        },
+        "taggedValues": {
+          "SOSI_navn": "LINJESPENN"
+        }
+      },
+      {
+        "name": "lengde",
+        "type": "Real",
+        "description": "horisontal avstand mellom start- og sluttpunkt på linjesegment",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "LENGDE"
+        }
+      },
+      {
+        "name": "lengdeMåleenhet",
+        "type": "Måleenhet",
+        "description": "her oppgis måleenheten til lengden av linjesegmentet",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "FT",
+              "label": "foot"
+            },
+            {
+              "value": "M",
+              "label": "meter"
+            },
+            {
+              "value": "CM",
+              "label": "centimeter"
+            },
+            {
+              "value": "KM",
+              "label": "kilometer"
+            }
+          ],
+          "definition": "kodeliste for måleenheter.",
+          "asDictionary": "false"
+        },
+        "taggedValues": {
+          "SOSI_navn": "LENGDEMÅLEENHET"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "VertikalObjektKomponent"
+      ],
+      "associations": [
+        {
+          "target": "VertikalObjektKomponentLinjePkt",
+          "role": "avgrensesAvPunkt",
+          "cardinality": "0..*",
+          "sourceRole": "avgrenserLinje",
+          "sourceCardinality": "0..*"
+        }
+      ]
+    },
+    "package": "NasjonaltRegisterOverLuftfartshindre_20180322",
+    "taggedValues": {
+      "SOSI_navn": "VERTIKALOBJKOMPLINJE"
+    }
+  },
+  {
+    "name": "VertikalObjektKomponent",
+    "description": "Et luftfartshinder kan bestå av ett eller flere VertikalObjektKomponent(er). Her listes egenskaper som <i>ikke</i> er arvet fra SOSI objekt. En VertikalObjektKomponent kan være enten en linje eller et punkt – se VertikalObjektKomponentLinje og VertikalObjektKomponentPunkt.",
+    "attributes": [
+      {
+        "name": "merking",
+        "type": "Merking",
+        "description": "samlet informasjon om merking. Gjelder ikke lyssetting. All informasjon om lyssetting ligger under featureType Lyssetting",
+        "cardinality": "0..*",
+        "taggedValues": {
+          "SOSI_navn": "MERKING"
+        },
+        "attributes": [
+          {
+            "name": "merkingFarge",
+            "type": "MerkingFarge",
+            "description": "skal brukes hvis merking består av en eller to farger",
+            "cardinality": "0..2",
+            "taggedValues": {
+              "SOSI_navn": "MERKINGFARGE"
+            },
+            "attributes": [
+              {
+                "name": "farge",
+                "type": "Farge",
+                "description": "farge angis med koder fra definert kodeliste",
+                "cardinality": "1",
+                "valueDomain": {
+                  "kind": "codelist",
+                  "listedValues": [
+                    {
+                      "value": "Svovelgul",
+                      "label": "RAL 1016 (Sulfur yellow)"
+                    },
+                    {
+                      "value": "Trafikkrød",
+                      "label": "RAL 3020 (Traffic red)"
+                    },
+                    {
+                      "value": "Lysende rød",
+                      "label": "RAL 3024 (Luminous red)"
+                    },
+                    {
+                      "value": "Lys grå",
+                      "label": "RAL 7035 (Light grey)"
+                    },
+                    {
+                      "value": "Agatgrå",
+                      "label": "RAL 7038 (Agate grey)"
+                    },
+                    {
+                      "value": "Signalhvit",
+                      "label": "RAL 9003 (Signal white)"
+                    },
+                    {
+                      "value": "Ren hvit",
+                      "label": "RAL 9010 (Pure white)"
+                    },
+                    {
+                      "value": "Trafikkhvit",
+                      "label": "RAL 9016 (Traffic white)"
+                    },
+                    {
+                      "value": "Oransje",
+                      "label": "RAL kode ikke aktuelt, kode er videreført fra gammelt system"
+                    },
+                    {
+                      "value": "Rødt",
+                      "label": "RAL kode ikke aktuelt, kode er videreført fra gammelt system"
+                    },
+                    {
+                      "value": "Hvitt",
+                      "label": "RAL kode ikke aktuelt, kode er videreført fra gammelt system"
+                    },
+                    {
+                      "value": "Annet",
+                      "label": "Annet"
+                    }
+                  ],
+                  "definition": "kodeliste for merkingens farge. Består hovedsakelig av farger fra Vedlegg 1 til BSL E 2-1. I tillegg er det inkludert en del koder fra gammelt NRL-system.",
+                  "asDictionary": "false"
+                },
+                "taggedValues": {
+                  "SOSI_navn": "FARGE"
+                }
+              },
+              {
+                "name": "annet",
+                "type": "CharacterString",
+                "description": "hvis \"annet\" velges på attributt farge, må dette spesifiseres her",
+                "cardinality": "0..1",
+                "taggedValues": {
+                  "SOSI_navn": "ANNET"
+                }
+              },
+              {
+                "name": "fluoriserende",
+                "type": "JaNei",
+                "description": "om fargemerkingen er fluoriserende (selvlysende)",
+                "cardinality": "1",
+                "valueDomain": {
+                  "kind": "codelist",
+                  "listedValues": [
+                    {
+                      "value": "Ja",
+                      "label": "Ja"
+                    },
+                    {
+                      "value": "Nei",
+                      "label": "Nei"
+                    },
+                    {
+                      "value": "Ukjent",
+                      "label": "Ukjent"
+                    }
+                  ],
+                  "definition": "alternativ til å bruke den generelle datatypen Boolean"
+                },
+                "taggedValues": {
+                  "SOSI_navn": "FLUORISERENDE"
+                }
+              },
+              {
+                "name": "reflekterende",
+                "type": "JaNei",
+                "description": "om fargemerkingen er reflekterende",
+                "cardinality": "1",
+                "valueDomain": {
+                  "kind": "codelist",
+                  "listedValues": [
+                    {
+                      "value": "Ja",
+                      "label": "Ja"
+                    },
+                    {
+                      "value": "Nei",
+                      "label": "Nei"
+                    },
+                    {
+                      "value": "Ukjent",
+                      "label": "Ukjent"
+                    }
+                  ],
+                  "definition": "alternativ til å bruke den generelle datatypen Boolean"
+                },
+                "taggedValues": {
+                  "SOSI_navn": "REFLEKTERENDE"
+                }
+              }
+            ]
+          },
+          {
+            "name": "merkingType",
+            "type": "MerkingType",
+            "description": "ulike typer merking spesifiseres her",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Flagg",
+                  "label": "kan være ensfarget eller mønstret."
+                },
+                {
+                  "value": "Markør",
+                  "label": "gjelder også blåser"
+                },
+                {
+                  "value": "Plater",
+                  "label": "Objektet er merket med fargede plater"
+                },
+                {
+                  "value": "Ukjent",
+                  "label": "Merketypen er ukjent"
+                },
+                {
+                  "value": "Annet",
+                  "label": "hvis valgt, kreves utfylling av feltet kommentarMerkingType"
+                }
+              ],
+              "definition": "ulike typer merking spesifiseres her",
+              "asDictionary": "false"
+            }
+          },
+          {
+            "name": "kommentarMerkingType",
+            "type": "CharacterString",
+            "description": "hvis \"annet\" velges på merkingType skal dette spesifiseres her",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "KOMMENTARMERKINGTYPE"
+            }
+          },
+          {
+            "name": "merkingMønster",
+            "type": "MerkingMønster",
+            "description": "mønster til merkingen",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Ensfarget",
+                  "label": "Ensfarget"
+                },
+                {
+                  "value": "Rutemønstret",
+                  "label": "Rutemønstret"
+                },
+                {
+                  "value": "Horisontale bånd",
+                  "label": "to-fargete alternerende horisontale bånd"
+                },
+                {
+                  "value": "Vertikale bånd",
+                  "label": "to-fargete alternerende vertikale bånd"
+                },
+                {
+                  "value": "Ukjent",
+                  "label": "Ukjent"
+                },
+                {
+                  "value": "Annet",
+                  "label": "Annet"
+                }
+              ],
+              "definition": "ulike mønstertyper for merking.",
+              "asDictionary": "false"
+            }
+          },
+          {
+            "name": "kommentarMerkingMønster",
+            "type": "CharacterString",
+            "description": "hvis \"Annet\" velges på merkingMønster skal dette spesifiseres her",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "KOMMENTARMERKINGMØNSTER"
+            }
+          },
+          {
+            "name": "merkingICAO",
+            "type": "JaNei",
+            "description": "hvorvidt merking er ihht. ICAO standard",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Ja",
+                  "label": "Ja"
+                },
+                {
+                  "value": "Nei",
+                  "label": "Nei"
+                },
+                {
+                  "value": "Ukjent",
+                  "label": "Ukjent"
+                }
+              ],
+              "definition": "alternativ til å bruke den generelle datatypen Boolean"
+            },
+            "taggedValues": {
+              "SOSI_navn": "MERKINGICAO"
+            }
+          },
+          {
+            "name": "merkingTilstand",
+            "type": "MerkingTilstand",
+            "description": "informasjon om merkingens tilstand",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Dårlig",
+                  "label": "Merkingen er vanskelig å se."
+                },
+                {
+                  "value": "Brukbar",
+                  "label": "Merkingen er mulig å se, men utydelig."
+                },
+                {
+                  "value": "God",
+                  "label": "Merkingen er godt synlig."
+                },
+                {
+                  "value": "Veldig god",
+                  "label": "Merkingen er meget godt synlig."
+                },
+                {
+                  "value": "Ukjent",
+                  "label": "Tilstanden til merking er ukjent."
+                }
+              ],
+              "definition": "Angivelse av merkingens tilstand.",
+              "asDictionary": "false"
+            }
+          }
+        ]
+      },
+      {
+        "name": "vertikalUtstrekning",
+        "type": "Real",
+        "description": "objektkomponentens maksimale høyde over terreng- eller vannoverflate",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "VERTIKALUTSTREKNING"
+        }
+      },
+      {
+        "name": "vertikalUtstrekningMåleenhet",
+        "type": "Måleenhet",
+        "description": "her oppgis måleenheten til den vertikale utstrekningen av objektet",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "FT",
+              "label": "foot"
+            },
+            {
+              "value": "M",
+              "label": "meter"
+            },
+            {
+              "value": "CM",
+              "label": "centimeter"
+            },
+            {
+              "value": "KM",
+              "label": "kilometer"
+            }
+          ],
+          "definition": "kodeliste for måleenheter.",
+          "asDictionary": "false"
+        },
+        "taggedValues": {
+          "SOSI_navn": "VERTIKALUTSTREKNINGMÅLEENHET"
+        }
+      },
+      {
+        "name": "merkeplikt",
+        "type": "Merkeplikt",
+        "description": "informasjon om merkeplikt. Gjelder lyssetting og annen merking.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "MERKEPLIKT"
+        },
+        "attributes": [
+          {
+            "name": "merkepliktig",
+            "type": "JaNei",
+            "description": "hvorvidt hinder er merkepliktig",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Ja",
+                  "label": "Ja"
+                },
+                {
+                  "value": "Nei",
+                  "label": "Nei"
+                },
+                {
+                  "value": "Ukjent",
+                  "label": "Ukjent"
+                }
+              ],
+              "definition": "alternativ til å bruke den generelle datatypen Boolean"
+            },
+            "taggedValues": {
+              "SOSI_navn": "MERKEPLIKTIG"
+            }
+          },
+          {
+            "name": "merkepliktigIhenholdTil",
+            "type": "RegelverkMerkeplikt",
+            "description": "regelverk som pålegger merking",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "BSL E 2",
+                  "label": "Merket i henhold til forskrift om Bestemmelser for sivil luftfart nr 2."
+                },
+                {
+                  "value": "BSL E 3",
+                  "label": "Merket i henhold til forskrift om Bestemmelser for sivil luftfart nr 3."
+                },
+                {
+                  "value": "Pålagt av LT",
+                  "label": "merking pålagt spesifikt av Luftfartstilsynet"
+                },
+                {
+                  "value": "BSL E 2 aggregerte komponenter",
+                  "label": "enkeltelementer er ikke merkepliktige i utgangspunktet, men de er merkepliktige hvis de oppfyller visse krav når de er sett som helhet"
+                },
+                {
+                  "value": "EASA",
+                  "label": "Merket i henhold til bestemmelser fra EASA"
+                },
+                {
+                  "value": "ICAO",
+                  "label": "Merket i henhold til bestemmelser fra ICAO"
+                }
+              ],
+              "definition": "hinder er merkepliktig i henhold til",
+              "asDictionary": "false"
+            }
+          },
+          {
+            "name": "ansvarligForMerking",
+            "type": "AnsvarligForMerking",
+            "description": "hvem har ansvar for merking",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Eier av hinder",
+                  "label": "Eier av hinder"
+                },
+                {
+                  "value": "Godkjenningsansvarlig for landingsplass-flyplass",
+                  "label": "Godkjenningsansvarlig for landingsplass-flyplass"
+                }
+              ],
+              "definition": "hvem har ansvar for merking",
+              "asDictionary": "false"
+            }
+          },
+          {
+            "name": "merkeInformasjon",
+            "type": "MerkeInformasjon",
+            "description": "utdypende informasjon om merking",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "merket i henhold til forskrift",
+                  "label": "merket i henhold til forskrift"
+                },
+                {
+                  "value": "merket i henhold til dispensasjon",
+                  "label": "merket i henhold til dispensasjon"
+                },
+                {
+                  "value": "merket utover aktuell forskrift",
+                  "label": "merket utover aktuell forskrift"
+                },
+                {
+                  "value": "mangler merking",
+                  "label": "mangler merking"
+                },
+                {
+                  "value": "ukjent",
+                  "label": "ukjent"
+                }
+              ],
+              "definition": "utdypende informasjon om merking",
+              "asDictionary": "false"
+            }
+          },
+          {
+            "name": "kommentarMerkeplikt",
+            "type": "CharacterString",
+            "description": "utfyllende informasjon om en eller flere av de andre attributtene",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "KOMMENTARMERKEPLIKT"
+            }
+          }
+        ]
+      },
+      {
+        "name": "eksternReferanse",
+        "type": "ReferanseTilEksterntRegister",
+        "description": "referanse til et eksternt register",
+        "cardinality": "0..*",
+        "taggedValues": {
+          "SOSI_navn": "REFERANSEEKSTREG"
+        },
+        "attributes": [
+          {
+            "name": "registernavn",
+            "type": "CharacterString",
+            "description": "navn til eksternt register",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "REGISTERNAVN"
+            }
+          },
+          {
+            "name": "eksternId",
+            "type": "CharacterString",
+            "description": "ekstern Id av samme objekt i et annet register",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "EKSTERNID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "komponentsekvensnummer",
+        "type": "Integer",
+        "description": "angir rekkefølge på VertikalObjektKomponent som tilhører samme VertikalObjekt",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "KOMPONENTSEKVNR"
+        }
+      },
+      {
+        "name": "BSLE-2-1_hinder",
+        "type": "JaNei",
+        "description": "hvorvidt dette er et hinder ihht. forskrift BSL E 2-1",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ja",
+              "label": "Ja"
+            },
+            {
+              "value": "Nei",
+              "label": "Nei"
+            },
+            {
+              "value": "Ukjent",
+              "label": "Ukjent"
+            }
+          ],
+          "definition": "alternativ til å bruke den generelle datatypen Boolean"
+        },
+        "taggedValues": {
+          "SOSI_navn": "BSLE21HINDER"
+        }
+      },
+      {
+        "name": "lyssetting",
+        "type": "Lystype",
+        "description": "hinderlys til bruk ved merking av luftfartshinder i henhold til vedlegg til forskrift om rapportering, registrering og merking av luftfartshinder, BSL E 2-1. <font color=\"#0f0f0f\">I tillegg er det mulig å velge koder fra gammel NRL</font>",
+        "cardinality": "1..*",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Lavintensitet type A",
+              "label": "rødt, fast, 10 candela"
+            },
+            {
+              "value": "Lavintensitet type B",
+              "label": "rødt, fast, 32 candela"
+            },
+            {
+              "value": "Lavintensitet type C",
+              "label": "ikke del av oversikten i vedlegg 2 BSL E 2-1, men tatt fra tabell 6-3 i ICAO annex 14"
+            },
+            {
+              "value": "Lavintensitet type D",
+              "label": "ikke del av oversikten i vedlegg 2 BSL E 2-1, men tatt fra tabell 6-3 i ICAO annex 14"
+            },
+            {
+              "value": "Mellomintensitet type A",
+              "label": "hvitt, blinkende, 20 000 candela ved bakgrunnsbelysning 50 cd/m ² og over, 2000 candela med bakgrunnsbelysning uneder 50 cd/m ²"
+            },
+            {
+              "value": "Mellomintensitet type B",
+              "label": "rødt, blinkende, 2000 candela"
+            },
+            {
+              "value": "Mellomintensitet type C",
+              "label": "rødt, fast, 2000 candela"
+            },
+            {
+              "value": "Høyintensitet type A",
+              "label": "hvitt, blinkende, 200 000 candela ved bakgrunnsbelysning over 500 cd/m², 20 000 candela ved bakgrunnsbelysning 50-500 cd/m² og 2000 candela ved bakgrunnsbelysning under 50 cd/m²"
+            },
+            {
+              "value": "Høyintensitet type B",
+              "label": "hvitt, blinkende, 100 000 candela ved bakgrunnsbelysning over 500 cd/m², 20 000 candela ved bakgrunnsbelysning 50-500 cd/m² og 2000 candela ved bakgrunnsbelysning under 50 cd/m²"
+            },
+            {
+              "value": "Belyst med flomlys",
+              "label": "objektet er opplys av lyskastere for å være synlig for luftfarten"
+            },
+            {
+              "value": "Fast rødt",
+              "label": "brukes dersom vi ikke vet lysstyrke, men har observert lysfarge rød fast lys"
+            },
+            {
+              "value": "Fast hvitt",
+              "label": "brukes dersom vi ikke vet lysstyrke, men har observert lysfarge hvit fast lys"
+            },
+            {
+              "value": "Blinkende hvitt",
+              "label": "brukes dersom vi ikke vet lysstyrke, men har observert lysfarge hvitt blinkende lys"
+            },
+            {
+              "value": "Blinkende rødt",
+              "label": "brukes dersom vi ikke vet lysstyrke, men har observert lysfarge rødt blinkende lys"
+            },
+            {
+              "value": "Lyssatt",
+              "label": "brukes dersom man vet at hinderet har lys, men ikke vet farge og type"
+            },
+            {
+              "value": "Ikke lyssatt",
+              "label": "Ikke lyssatt"
+            },
+            {
+              "value": "Ukjent",
+              "label": "benyttes dersom det er ukjent om hinderet har lys eller ikke."
+            }
+          ],
+          "definition": "hinderlys til bruk ved merking av luftfartshinder i henhold til vedlegg til forskrift om rapportering, registrering og merking av luftfartshinder, BSL E 2-1. <font color=\"#0f0f0f\">I tillegg er det mulig å velge koder fra gammel NRL</font>",
+          "asDictionary": "false"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [
+        "Supertype_VertikalObjektKomponent"
+      ],
+      "associations": []
+    },
+    "package": "NasjonaltRegisterOverLuftfartshindre_20180322",
+    "taggedValues": {
+      "SOSI_navn": "VERTIKALOBJKOMPONENT"
+    }
+  },
+  {
+    "name": "VertikalObjektKomponentLinjePkt",
+    "description": "Egenskaper tilhørende en VertikalObjektKomponent som er et punkt.",
+    "attributes": [
+      {
+        "name": "posisjon",
+        "type": "Punkt",
+        "description": "det geografiske punktobjektet",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "href",
+        "type": "Høydereferanse",
+        "description": "hvorvidt koordinatregistering er utført på topp eller bunn av et objekt",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Høyden målt til foten av objektet",
+              "label": "Høyden målt til foten av objektet"
+            },
+            {
+              "value": "Høyden målt til toppen av objektet",
+              "label": "Høyden målt til toppen av objektet"
+            },
+            {
+              "value": "Ukjent",
+              "label": "benyttes ikke ved nyregistrering"
+            }
+          ],
+          "definition": "koordinatregistering utført på topp eller bunn av et objekt"
+        }
+      },
+      {
+        "name": "hrefSystem",
+        "type": "Høydereferansesystem",
+        "description": "referanseflate som er utgangspunktet for høydekoordinat.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ellipsoide jf. KOORDSYS",
+              "label": "Ellipsoide jf. KOORDSYS"
+            },
+            {
+              "value": "Lokal referanseflate",
+              "label": "Lokal referanseflate"
+            },
+            {
+              "value": "Geoide bestemt av NKG i 1989",
+              "label": "NKG: The Nordic Geodetic Commission - founded in 1953 - is an association of geodesists from Denmark, Finland, Iceland, Norway and Sweden. Its purpose is to give the members possibilities of fruitful gatherings and mutual exchange of professional views and experiences. The NKG is recognized and supported by a number of Nordic  organizations, such as the Director Generals of the Nordic Mapping Authorities. (Kilde: http://217.152.180.26/nkg/)"
+            },
+            {
+              "value": "Norsk Null av 1954",
+              "label": "Denne er identisk med NN1954"
+            },
+            {
+              "value": "Nord-Norsk Null av 1957",
+              "label": "For nyere data er denne gått ut av bruk. Er erstattet av NN54."
+            },
+            {
+              "value": "Norsk Null av 2000",
+              "label": "Nytt felles nordisk vertikalt datum, basert på Normaal Amsterdals Peil."
+            }
+          ],
+          "definition": "referanseflate som er utgangspunktet for høydekoordinat."
+        }
+      },
+      {
+        "name": "identifikasjonLinjePkt",
+        "type": "IdentifikasjonLinjePkt",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KOMPONENTIDENTLINJEPKT"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nMerknad: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterer. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nMerknad: Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "description": "beskrivelse av kvaliteten på stedfestingen",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KVALITET"
+        },
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Terrengmålt",
+                  "label": "Målt i terrenget"
+                },
+                {
+                  "value": "Tatt fra plan",
+                  "label": "Tatt fra plan eller godkjent tiltak"
+                },
+                {
+                  "value": "Annet",
+                  "label": "Annet"
+                },
+                {
+                  "value": "Stereoinstrument",
+                  "label": "Målt i stereoinstrument, uspesifisert instrument"
+                },
+                {
+                  "value": "Analytisk plotter",
+                  "label": "Målt i stereoinstrument, analytisk plotter"
+                },
+                {
+                  "value": "Digitalt stereoinstrument",
+                  "label": "Målt i stereoinstrument, digitalt instrument"
+                },
+                {
+                  "value": "Flybåren laserscanner",
+                  "label": "Målt med laserskanner fra fly"
+                },
+                {
+                  "value": "Digitalisert fra ortofoto",
+                  "label": "Geometri overført fra ortofoto ved hjelp av manuell registrering på skjerm"
+                },
+                {
+                  "value": "Digitalisert på skjerm fra satellittbilde",
+                  "label": "Geometri overført fra satelittbilde ved hjelp av manuell registrering på skjerm"
+                },
+                {
+                  "value": "Dig. på skjerm fra scannet samkopi",
+                  "label": "Geometri overført fra kart ved hjelp av manuell registrering på skjerm, medium skannet kart (raster), samkopi"
+                },
+                {
+                  "value": "Genererte data (interpolasjon)",
+                  "label": "Genererte data, interpolasjonsmetode. Ikke nærmere spesifisert"
+                },
+                {
+                  "value": "Frihåndstegning",
+                  "label": "Digitalisert ut fra frihåndstegning.  Frihåndstegning er basert på svært grovt grunnlag eller ikke noe grunnlag"
+                },
+                {
+                  "value": "Digitalisert fra krokering på kart",
+                  "label": "Digitalisert fra krokering på kart, dvs grovt skissert på kart"
+                },
+                {
+                  "value": "Direkte innlagt på skjerm",
+                  "label": "Digitalisert ut fra frihåndstegning (direkte på skjerm). Frihåndstegning er basert på svært grovt grunnlag eller ikke noe grunnlag"
+                },
+                {
+                  "value": "Ukjent målemetode",
+                  "label": "Målemetode er ukjent"
+                },
+                {
+                  "value": "GPS Kodemåling, relative målinger",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS, GALILEO): Kodemåling, relative målinger."
+                },
+                {
+                  "value": "GPS Kodemåling, enkeltmålinger",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS,\nGALILEO): Kodemåling, enkle målinger."
+                }
+              ],
+              "definition": "metode som ligger til grunn for registrering av posisjon"
+            }
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "Integer",
+            "description": "punktstandardavviket i grunnriss for punkter\n\nMerknad:\nOppgitt i cm",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "NØYAKTIGHET"
+            }
+          },
+          {
+            "name": "synbarhet",
+            "type": "Synbarhet",
+            "description": "hvor godt den kartlagte detalj var synbar ved kartleggingen",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Fullt ut synlig/gjenfinnbar i terrenget",
+                  "label": "Default"
+                },
+                {
+                  "value": "Dårlig gjenfinnbar i terreng",
+                  "label": "Forøvrig grei å innmåle. (Benyttes bl.a. for innmåling av ledninger på lukket grøft)"
+                },
+                {
+                  "value": "Middels synlig i flybilde/modell",
+                  "label": "Middels synlig i flybilde/modell"
+                },
+                {
+                  "value": "Dårlig/ikke synlig i flybilde/modell",
+                  "label": "Dårlig/ikke synlig i flybilde/modell"
+                }
+              ],
+              "definition": "hvor godt den kartlagte detalj var synbar ved kartleggingen"
+            }
+          },
+          {
+            "name": "målemetodeHøyde",
+            "type": "MålemetodeHøyde",
+            "description": "metode for å måle høyden",
+            "cardinality": "0..1",
+            "valueDomain": {
+              "kind": "codelist",
+              "listedValues": [
+                {
+                  "value": "Terrengmålt",
+                  "label": "Målt i terrenget"
+                },
+                {
+                  "value": "Tatt fra plan",
+                  "label": "Tatt fra plan eller godkjent tiltak"
+                },
+                {
+                  "value": "Annet",
+                  "label": "Annet"
+                },
+                {
+                  "value": "Stereoinstrument",
+                  "label": "Målt i stereoinstrument, uspesifisert instrument"
+                },
+                {
+                  "value": "Analytisk plotter",
+                  "label": "Målt i stereoinstrument, analytisk plotter"
+                },
+                {
+                  "value": "Digitalt stereoinstrument",
+                  "label": "Målt i stereoinstrument, digitalt instrument"
+                },
+                {
+                  "value": "Flybåren laserscanning",
+                  "label": "Målt med laserskanner fra fly"
+                },
+                {
+                  "value": "Genererte data (interpolasjon)",
+                  "label": "Genererte data, interpolasjonsmetode. Ikke nærmere spesifisert"
+                },
+                {
+                  "value": "Generert i terrengmodell",
+                  "label": "Genererte data, interpolasjonsmetode, fra terrengmodell"
+                },
+                {
+                  "value": "Målt med stigningsmåler",
+                  "label": "Målt med stigningsmåler"
+                },
+                {
+                  "value": "GPS Kodemåling, relative målinger.",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS, GALILEO): Kodemåling, relative målinger."
+                },
+                {
+                  "value": "GPS Kodemåling, enkeltpunktbestemmelser",
+                  "label": "Innmålt med satellittbaserte systemer for navigasjon og\nposisjonering med global dekning (f.eks GPS, GLONASS,\nGALILEO): Kodemåling, enkle målinger."
+                },
+                {
+                  "value": "Ukjent målemetode",
+                  "label": "Ukjent målemetode"
+                }
+              ],
+              "definition": "metode for å måle objekttypens høydeverdi"
+            }
+          },
+          {
+            "name": "nøyaktighetHøyde",
+            "type": "Integer",
+            "description": "nøyaktighet for høyden i cm",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "H-NØYAKTIGHET"
+            }
+          }
+        ]
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "VertikalObjektKomponent"
+      ],
+      "associations": [
+        {
+          "target": "VertikalObjektKomponentLinje",
+          "role": "avgrenserLinje",
+          "cardinality": "0..*",
+          "sourceRole": "avgrensesAvPunkt",
+          "sourceCardinality": "0..*"
+        }
+      ]
+    },
+    "package": "NasjonaltRegisterOverLuftfartshindre_20180322",
+    "taggedValues": {
+      "SOSI_navn": "VERTIKALOBJKOMPPUNKT"
+    }
+  }
+]
