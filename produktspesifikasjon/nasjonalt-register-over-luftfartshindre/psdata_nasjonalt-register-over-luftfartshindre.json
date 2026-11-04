@@ -4,7 +4,7 @@
   "format": "text/html",
   "date": {
     "creation": "2014-04-01",
-    "revision": "2026-10-16"
+    "revision": "2026-11-03"
   },
   "language": "nor",
   "contact": {
@@ -121,14 +121,14 @@
       "temporalElement": {
         "timePeriod": {
           "beginPosition": "2014-04-01",
-          "endPosition": "2026-10-16"
+          "endPosition": "2026-11-03"
         }
       }
     },
     "date": {
       "creation": "2014-04-01",
       "publication": "2014-04-01",
-      "revision": "2026-10-16"
+      "revision": "2026-11-03"
     },
     "language": "nor"
   },
@@ -145,6 +145,13 @@
         "scopeIdentification": "Basert pa postgiskjema fra geonorge",
         "level": "dataset",
         "levelDescription": "Fra DBeaver postgisdump fra Distribusjonsbasen"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "NRL_UML",
+        "level": "dataset",
+        "levelDescription": "Basert på UML"
       }
     }
   ],
@@ -299,7 +306,7 @@
   "metadataSection": {
     "metadataStandard": "ISO19115",
     "metadataStandardVersion": "2003",
-    "metadataDate": "2026-10-19",
+    "metadataDate": "2026-11-04",
     "language": "nor",
     "contact": {
       "organizationName": "Kartverket",
@@ -330,7 +337,7 @@
     "om_produktet": 210,
     "formaal": 22,
     "bruksomraade": 32,
-    "omfang": 33,
+    "omfang": 38,
     "datainnhold_og_struktur": 0,
     "referansesystem": 49,
     "datakvalitet": 26,
@@ -340,6 +347,7 @@
     "leveranse": 38,
     "metadata": 15,
     "tilleggsinformasjon": 26,
-    "datamodell": 386
-  }
+    "datamodell": 4717
+  },
+  "specificationContact": "Kartverket, [kundesenter@kartverket.no](mailto:kundesenter@kartverket.no)"
 }

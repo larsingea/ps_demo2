@@ -22,14 +22,14 @@ Norge, Norsk kontinentalsokkel, Svalbard, Jan Mayen
 
 - **Tidsperiode**:
   - **Fra**: 2014-04-01
-  - **Til**: 2026-10-16
+  - **Til**: 2026-11-03
 
 ## Om spesifikasjonen
 
 
 > **Denne versjonen av produktspesifikasjonen:** <br>
 > **Opprettet dato:** 2014-04-01<br>
-> **Endret dato:** 2026-10-16<br>
+> **Endret dato:** 2026-11-03<br>
 > **Språk:** nor<br>
 > **Kontaktinformasjon:** Kartverket, [kundesenter@kartverket.no](mailto:kundesenter@kartverket.no)
 
@@ -84,6 +84,12 @@ Egnet til bruk i elektroniske kart- og varslingssystemer i fly og helikoptre. Si
 
 **Nivåbeskrivelse**: Fra DBeaver postgisdump fra Distribusjonsbasen
 
+### NRL_UML
+
+**Nivå**: dataset
+
+**Nivåbeskrivelse**: Basert på UML
+
 ## Datainnhold og struktur
 
 
@@ -97,6 +103,16 @@ Egnet til bruk i elektroniske kart- og varslingssystemer i fly og helikoptre. Si
 
 
 ➡️ [Se full datamodell for omfang "Basert pa postgiskjema fra geonorge" (diagram per pakke og objektkatalog)](basert-pa-postgiskjema-fra-geonorge/objektkatalog.html)
+
+### Datamodell - NRL_UML
+
+
+
+<a href="nrl-uml/nrl-uml_feature_catalogue.png" title="Klikk for stor visning"><img src="nrl-uml/nrl-uml_feature_catalogue.png" alt="Datamodell NRL_UML" style="max-width: 100%; height: auto;" /></a>
+
+
+
+➡️ [Se full datamodell for omfang "NRL_UML" (diagram per pakke og objektkatalog)](nrl-uml/objektkatalog.html)
 
 ## Referansesystem
 
@@ -155,7 +171,7 @@ Kartverket registrerer luftfartshindre i Nasjonalt register over luftfartshindre
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-10-19
+**Metadatadato**: 2026-11-04
 
 **språk**: nor
 
