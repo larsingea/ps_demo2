@@ -142,13 +142,6 @@
     },
     {
       "specificationScope": {
-        "scopeIdentification": "Basert pa postgiskjema fra geonorge",
-        "level": "dataset",
-        "levelDescription": "Fra DBeaver postgisdump fra Distribusjonsbasen"
-      }
-    },
-    {
-      "specificationScope": {
         "scopeIdentification": "NRL_UML",
         "level": "dataset",
         "levelDescription": "Basert på UML"
@@ -337,7 +330,7 @@
     "om_produktet": 210,
     "formaal": 22,
     "bruksomraade": 32,
-    "omfang": 38,
+    "omfang": 27,
     "datainnhold_og_struktur": 0,
     "referansesystem": 49,
     "datakvalitet": 26,
