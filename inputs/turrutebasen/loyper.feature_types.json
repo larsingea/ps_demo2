@@ -31,6 +31,39 @@
         "type": "GM_Curve",
         "cardinality": "1",
         "description": "Geometritype - linje"
+      },
+      {
+        "name": "eier",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Hvem som er ansvarlig for merking. Turlag eller lignende"
+      },
+      {
+        "name": "organisasjon",
+        "type": "Organisasjon",
+        "cardinality": "0..1",
+        "description": "Hvem er ansvarlig for merking 2",
+        "valueDomain": {
+          "kind": "enumeration",
+          "listedValues": [
+            {
+              "value": "DNT",
+              "label": "Den norske turistforening",
+              "description": "Den norske turistforening"
+            },
+            {
+              "value": "SF",
+              "label": "Skiforeningen",
+              "description": " Skiforeningen - Foreningen til Ski-Idrettens  Fremme"
+            },
+            {
+              "value": "LT",
+              "label": "Lokalt turlag",
+              "description": "Lokalt turlag som ikke er tilsluttet DNT"
+            }
+          ],
+          "asDictionary": "false"
+        }
       }
     ]
   }
