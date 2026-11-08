@@ -52,11 +52,288 @@
             "name": "malemetode",
             "type": "Malemetode",
             "cardinality": "1",
-            "description": "Metode som er brukt for å registrere posisjonen (SOSI «målemetode»). Kildedata bruker tallkoder, for eksempel 24, 92, 96 og 99.",
+            "description": "Metode som er brukt for å registrere posisjonen (SOSI «målemetode»).",
             "valueDomain": {
               "type": "CodeList",
               "name": "Malemetode",
-              "values": []
+              "values": [
+                {
+                  "name": "terrengmaltUspesifisertMaleinstrument",
+                  "description": "Terrengmålt: Uspesifisert måleinstrument (kode 10)."
+                },
+                {
+                  "name": "terrengmaltTotalstasjon",
+                  "description": "Terrengmålt: Totalstasjon (kode 11)."
+                },
+                {
+                  "name": "terrengmaltTeodolittOgElAvstandsmaler",
+                  "description": "Terrengmålt: Teodolitt og el. avstandsmåler (kode 12)."
+                },
+                {
+                  "name": "terrengmaltTeodolittOgMaleband",
+                  "description": "Terrengmålt: Teodolitt og målebånd (kode 13)."
+                },
+                {
+                  "name": "terrengmaltOrtogonalmetoden",
+                  "description": "Terrengmålt: Ortogonalmetoden (kode 14)."
+                },
+                {
+                  "name": "utmal",
+                  "description": "Utmål (kode 15)."
+                },
+                {
+                  "name": "tattFraPlan",
+                  "description": "Tatt fra plan (kode 18)."
+                },
+                {
+                  "name": "annet",
+                  "description": "Annet (kode 19)."
+                },
+                {
+                  "name": "stereoinstrument",
+                  "description": "Stereoinstrument (kode 20)."
+                },
+                {
+                  "name": "aerotriangulert",
+                  "description": "Aerotriangulert (kode 21)."
+                },
+                {
+                  "name": "stereoinstrumentAnalytiskPlotter",
+                  "description": "Stereoinstrument: Analytisk plotter (kode 22)."
+                },
+                {
+                  "name": "stereoinstrumentAutograf",
+                  "description": "Stereoinstrument: Autograf (kode 23)."
+                },
+                {
+                  "name": "stereoinstrumentDigitalt",
+                  "description": "Stereoinstrument: Digitalt (kode 24)."
+                },
+                {
+                  "name": "skannetFraKart",
+                  "description": "Skannet fra kart (kode 30)."
+                },
+                {
+                  "name": "skannetFraKartBlyantoriginal",
+                  "description": "Skannet fra kart: Blyantoriginal (kode 31)."
+                },
+                {
+                  "name": "skannetFraKartRissefolie",
+                  "description": "Skannet fra kart: Rissefolie (kode 32)."
+                },
+                {
+                  "name": "skannetFraKartTransparentFolieGodKvalitet",
+                  "description": "Skannet fra kart: Transparent folie, god kvalitet (kode 33)."
+                },
+                {
+                  "name": "skannetFraKartTransparentFolieMindreGodKvalitet",
+                  "description": "Skannet fra kart: Transparent folie, mindre god kvalitet (kode 34)."
+                },
+                {
+                  "name": "skannetFraKartPapirkopi",
+                  "description": "Skannet fra kart: Papirkopi (kode 35)."
+                },
+                {
+                  "name": "flybarenLaserskanner",
+                  "description": "Flybåren laserskanner (kode 36)."
+                },
+                {
+                  "name": "bilbarenLaser",
+                  "description": "Bilbåren laser (kode 37)."
+                },
+                {
+                  "name": "lineaerReferanse",
+                  "description": "Lineær referanse (kode 38)."
+                },
+                {
+                  "name": "digitaliseringsbordOrtofotoEllerFlybilde",
+                  "description": "Digitaliseringsbord: Ortofoto eller flybilde (kode 40)."
+                },
+                {
+                  "name": "digitaliseringsbordOrtofotoFilm",
+                  "description": "Digitaliseringsbord: Ortofoto, film (kode 41)."
+                },
+                {
+                  "name": "digitaliseringsbordOrtofotoFotokopi",
+                  "description": "Digitaliseringsbord: Ortofoto, fotokopi (kode 42)."
+                },
+                {
+                  "name": "digitaliseringsbordFlybildeFilm",
+                  "description": "Digitaliseringsbord: Flybilde, film (kode 43)."
+                },
+                {
+                  "name": "digitaliseringsbordFlybildeFotokopi",
+                  "description": "Digitaliseringsbord: Flybilde, fotokopi (kode 44)."
+                },
+                {
+                  "name": "digitalisertPaSkjermFraOrtofoto",
+                  "description": "Digitalisert på skjerm fra ortofoto (kode 45)."
+                },
+                {
+                  "name": "digitalisertPaSkjermFraSatellittbilde",
+                  "description": "Digitalisert på skjerm fra satellittbilde (kode 46)."
+                },
+                {
+                  "name": "digitalisertPaSkjermFraAndreDigitaleRasterdata",
+                  "description": "Digitalisert på skjerm fra andre digitale rasterdata (kode 47)."
+                },
+                {
+                  "name": "digitalisertPaSkjermFraTolkningAvSeismikk",
+                  "description": "Digitalisert på skjerm fra tolkning av seismikk (kode 48)."
+                },
+                {
+                  "name": "vektoriseringAvLaserdata",
+                  "description": "Vektorisering av laserdata (kode 49)."
+                },
+                {
+                  "name": "digitaliseringsbordKart",
+                  "description": "Digitaliseringsbord: Kart (kode 50)."
+                },
+                {
+                  "name": "digitaliseringsbordKartBlyantoriginal",
+                  "description": "Digitaliseringsbord: Kart, blyantoriginal (kode 51)."
+                },
+                {
+                  "name": "digitaliseringsbordKartRissefolie",
+                  "description": "Digitaliseringsbord: Kart, rissefolie (kode 52)."
+                },
+                {
+                  "name": "digitaliseringsbordKartTransparentFolieGodKvalitet",
+                  "description": "Digitaliseringsbord: Kart, transparent folie, god kvalitet (kode 53)."
+                },
+                {
+                  "name": "digitaliseringsbordKartTransparentFolieMindreGodKvalitet",
+                  "description": "Digitaliseringsbord: Kart, transparent folie, mindre god kvalitet (kode 54)."
+                },
+                {
+                  "name": "digitaliseringsbordKartPapirkopi",
+                  "description": "Digitaliseringsbord: Kart, papirkopi (kode 55)."
+                },
+                {
+                  "name": "digitalisertPaSkjermFraSkannetKart",
+                  "description": "Digitalisert på skjerm fra skannet kart (kode 56)."
+                },
+                {
+                  "name": "genererteDataInterpolasjon",
+                  "description": "Genererte data (interpolasjon) (kode 60)."
+                },
+                {
+                  "name": "genererteDataInterpolasjonTerrengmodell",
+                  "description": "Genererte data (interpolasjon): Terrengmodell (kode 61)."
+                },
+                {
+                  "name": "genererteDataInterpolasjonVektetMiddel",
+                  "description": "Genererte data (interpolasjon): Vektet middel (kode 62)."
+                },
+                {
+                  "name": "genererteDataFraAnnenGeometri",
+                  "description": "Genererte data: Fra annen geometri (kode 63)."
+                },
+                {
+                  "name": "genererteDataGeneralisering",
+                  "description": "Genererte data: Generalisering (kode 64)."
+                },
+                {
+                  "name": "genererteDataSentralpunkt",
+                  "description": "Genererte data: Sentralpunkt (kode 65)."
+                },
+                {
+                  "name": "genererteDataSammenknytningspunktRandpunkt",
+                  "description": "Genererte data: Sammenknytningspunkt, randpunkt (kode 66)."
+                },
+                {
+                  "name": "koordinaterHentetFraGab",
+                  "description": "Koordinater hentet fra GAB (kode 67)."
+                },
+                {
+                  "name": "koordinaterHentetFraJreg",
+                  "description": "Koordinater hentet fra JREG (kode 68)."
+                },
+                {
+                  "name": "beregnet",
+                  "description": "Beregnet (kode 69)."
+                },
+                {
+                  "name": "spesielleMetoder",
+                  "description": "Spesielle metoder (kode 70)."
+                },
+                {
+                  "name": "spesielleMetoderMaltMedStikkstang",
+                  "description": "Spesielle metoder: Målt med stikkstang (kode 71)."
+                },
+                {
+                  "name": "spesielleMetoderMaltMedWaterstang",
+                  "description": "Spesielle metoder: Målt med waterstang (kode 72)."
+                },
+                {
+                  "name": "spesielleMetoderMaltMedMalehjul",
+                  "description": "Spesielle metoder: Målt med målehjul (kode 73)."
+                },
+                {
+                  "name": "spesielleMetoderMaltMedStigningsmaler",
+                  "description": "Spesielle metoder: Målt med stigningsmåler (kode 74)."
+                },
+                {
+                  "name": "fastsattPunkt",
+                  "description": "Fastsatt punkt (kode 77)."
+                },
+                {
+                  "name": "fastsattVedDomEllerKongeligResolusjon",
+                  "description": "Fastsatt ved dom eller kongelig resolusjon (kode 78)."
+                },
+                {
+                  "name": "annetSpesifisertIFilhode",
+                  "description": "Annet, spesifisert i filhode (kode 79)."
+                },
+                {
+                  "name": "frihandstegning",
+                  "description": "Frihåndstegning (kode 80)."
+                },
+                {
+                  "name": "frihandstegningPaKart",
+                  "description": "Frihåndstegning på kart (kode 81)."
+                },
+                {
+                  "name": "frihandstegningPaSkjerm",
+                  "description": "Frihåndstegning på skjerm (kode 82)."
+                },
+                {
+                  "name": "treghetsstedfesting",
+                  "description": "Treghetsstedfesting (kode 90)."
+                },
+                {
+                  "name": "gnssKodemalingRelativeMalinger",
+                  "description": "GNSS: Kodemåling, relative målinger (kode 91)."
+                },
+                {
+                  "name": "gnssKodemalingEnkleMalinger",
+                  "description": "GNSS: Kodemåling, enkle målinger (kode 92)."
+                },
+                {
+                  "name": "gnssFasemalingStatiskMaling",
+                  "description": "GNSS: Fasemåling, statisk måling (kode 93)."
+                },
+                {
+                  "name": "gnssFasemalingAndreMetoder",
+                  "description": "GNSS: Fasemåling, andre metoder (kode 94)."
+                },
+                {
+                  "name": "kombinasjonAvGnssTreghet",
+                  "description": "Kombinasjon av GNSS/treghet (kode 95)."
+                },
+                {
+                  "name": "gnssFasemalingRtk",
+                  "description": "GNSS: Fasemåling RTK (kode 96)."
+                },
+                {
+                  "name": "gnssFasemalingFloatLosning",
+                  "description": "GNSS: Fasemåling, float-løsning (kode 97)."
+                },
+                {
+                  "name": "ukjentMalemetode",
+                  "description": "Ukjent målemetode (kode 99)."
+                }
+              ]
             }
           },
           {
@@ -113,11 +390,24 @@
         "name": "sesong",
         "type": "Sesong",
         "cardinality": "0..1",
-        "description": "Årstid objektet er tilgjengelig eller i bruk. Kildedata bruker énbokstavskoder, for eksempel H.",
+        "description": "Årstid objektet er tilgjengelig eller i bruk.",
         "valueDomain": {
           "type": "CodeList",
           "name": "Sesong",
-          "values": []
+          "values": [
+            {
+              "name": "sommer",
+              "description": "Sommer (kode S)."
+            },
+            {
+              "name": "vinter",
+              "description": "Vinter (kode V)."
+            },
+            {
+              "name": "helars",
+              "description": "Helårs (kode H)."
+            }
+          ]
         }
       }
     ],
@@ -145,9 +435,27 @@
       },
       {
         "name": "merking",
-        "type": "Boolean",
+        "type": "RuteMerking",
         "cardinality": "0..1",
-        "description": "Angir om ruta er merket i terrenget (JA/NEI i kildedata)."
+        "description": "Angir om og hvordan ruta er merket i terrenget.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "RuteMerking",
+          "values": [
+            {
+              "name": "merket",
+              "description": "Merket (kode JA)."
+            },
+            {
+              "name": "ikkeMerket",
+              "description": "Ikke merket (kode NEI)."
+            },
+            {
+              "name": "sesongmerket",
+              "description": "Sesongmerket (kode SM)."
+            }
+          ]
+        }
       },
       {
         "name": "belysning",
@@ -166,27 +474,55 @@
           "values": [
             {
               "name": "sti",
-              "description": "Ruta følger sti – kode ST i kildedata."
+              "description": "Sti (kode ST)."
             },
             {
-              "name": "traktorveg",
-              "description": "Ruta følger traktorveg – kode TR i kildedata."
+              "name": "traktorvei",
+              "description": "Traktorvei (kode TR)."
             },
             {
-              "name": "skogsbilveg",
-              "description": "Ruta følger skogsbilveg – kode SB i kildedata."
+              "name": "skogsbilvei",
+              "description": "Skogsbilvei (kode SB)."
             },
             {
-              "name": "bilveg",
-              "description": "Ruta følger bilveg – kode BV i kildedata."
+              "name": "utydeligSti",
+              "description": "Utydelig sti (kode US)."
             },
             {
-              "name": "gangOgSykkelveg",
-              "description": "Ruta følger gang- og sykkelveg – kode GS i kildedata."
+              "name": "turvei",
+              "description": "Turvei (kode TV)."
+            },
+            {
+              "name": "opparbeidetLoypetrase",
+              "description": "Opparbeidet løypetrasé (kode LT)."
+            },
+            {
+              "name": "gangvei",
+              "description": "Gangvei (kode GS)."
+            },
+            {
+              "name": "sykkelvei",
+              "description": "Sykkelvei (kode SV)."
+            },
+            {
+              "name": "sykkelfelt",
+              "description": "Sykkelfelt (kode SF)."
             },
             {
               "name": "fortau",
-              "description": "Ruta følger fortau – kode FO i kildedata."
+              "description": "Fortau (kode FO)."
+            },
+            {
+              "name": "bilvei",
+              "description": "Bilvei (kode BV)."
+            },
+            {
+              "name": "vannVassdrag",
+              "description": "Vann/vassdrag (kode VV)."
+            },
+            {
+              "name": "iTerreng",
+              "description": "I terreng (kode IT)."
             }
           ]
         }
@@ -195,24 +531,93 @@
         "name": "underlagstype",
         "type": "Underlagstype",
         "cardinality": "0..1",
-        "description": "Type underlag langs ruta. Tom i kildedata for Ringerike.",
+        "description": "Type underlag langs ruta.",
         "valueDomain": {
           "type": "CodeList",
           "name": "Underlagstype",
-          "values": []
+          "values": [
+            {
+              "name": "asfaltBetong",
+              "description": "Asfalt/betong (kode 1)."
+            },
+            {
+              "name": "grus",
+              "description": "Grus (kode 2)."
+            },
+            {
+              "name": "naturligGrunn",
+              "description": "Naturlig grunn (kode 3)."
+            },
+            {
+              "name": "annetUnderlag",
+              "description": "Annet underlag (kode 4)."
+            }
+          ]
         }
       },
       {
         "name": "rutebredde",
-        "type": "Integer",
+        "type": "Rutebredde",
         "cardinality": "0..1",
-        "description": "Rutas bredde. Tom i kildedata for Ringerike."
+        "description": "Rutas bredde, angitt i breddeklasser.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Rutebredde",
+          "values": [
+            {
+              "name": "inntil0og5m",
+              "description": "0–0,5 m (kode 0)."
+            },
+            {
+              "name": "fra0og5Til1og5m",
+              "description": "0,5 – opptil 1,5 m (kode 1)."
+            },
+            {
+              "name": "fra1og5Til3m",
+              "description": "1,5 – opptil 3 m (kode 2)."
+            },
+            {
+              "name": "fra3Til6m",
+              "description": "3–6 m (kode 3)."
+            },
+            {
+              "name": "over6m",
+              "description": "Over 6 m (kode 4)."
+            }
+          ]
+        }
       },
       {
         "name": "trafikkbelastning",
-        "type": "Integer",
+        "type": "Trafikkbelastning",
         "cardinality": "0..1",
-        "description": "Grad av trafikkbelastning langs ruta. Tom i kildedata for Ringerike."
+        "description": "Grad av motorisert trafikk langs ruta.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Trafikkbelastning",
+          "values": [
+            {
+              "name": "utenMotorisertFerdsel",
+              "description": "Uten motorisert ferdsel (kode 1)."
+            },
+            {
+              "name": "lavTrafikkbelastning",
+              "description": "Lav trafikkbelastning (kode 2)."
+            },
+            {
+              "name": "noeTrafikkbelastning",
+              "description": "Noe trafikkbelastning (kode 3)."
+            },
+            {
+              "name": "noeTrafikkbelastningSykkelfeltPaVegen",
+              "description": "Noe trafikkbelastning, sykkelfelt på vegen (kode 4)."
+            },
+            {
+              "name": "hoyTrafikkbelastning",
+              "description": "Høy trafikkbelastning (kode 5)."
+            }
+          ]
+        }
       }
     ],
     "relationships": {
@@ -260,41 +665,66 @@
             "name": "spesialFotrutetype",
             "type": "SpesialFotrutetype",
             "cardinality": "0..1",
-            "description": "Spesiell type fotrute. Kildedata bruker kodene AN, NT, TR og HF.",
+            "description": "Spesiell type fotrute, for eksempel kyststi eller natursti.",
             "valueDomain": {
               "type": "CodeList",
               "name": "SpesialFotrutetype",
-              "values": []
+              "values": [
+                {
+                  "name": "historiskFerdselsrute",
+                  "description": "Historisk ferdselsrute (kode HF)."
+                },
+                {
+                  "name": "kyststi",
+                  "description": "Kyststi (kode KY)."
+                },
+                {
+                  "name": "kultursti",
+                  "description": "Kultursti (kode KT)."
+                },
+                {
+                  "name": "natursti",
+                  "description": "Natursti (kode NT)."
+                },
+                {
+                  "name": "trimloype",
+                  "description": "Trimløype (kode TR)."
+                },
+                {
+                  "name": "annet",
+                  "description": "Annet (kode AN)."
+                }
+              ]
             }
           },
           {
             "name": "gradering",
-            "type": "Gradering",
+            "type": "RuteVanskelighetsgrad",
             "cardinality": "0..1",
             "description": "Rutas vanskelighetsgrad etter fargeskalaen i merkehåndboka.",
             "valueDomain": {
               "type": "CodeList",
-              "name": "Gradering",
+              "name": "RuteVanskelighetsgrad",
               "values": [
                 {
-                  "name": "gronn",
-                  "description": "Enkel (grønn) – kode G i kildedata."
+                  "name": "enkel",
+                  "description": "Enkel (kode G)."
                 },
                 {
-                  "name": "bla",
-                  "description": "Middels krevende (blå) – kode B i kildedata."
+                  "name": "middels",
+                  "description": "Middels (kode B)."
                 },
                 {
-                  "name": "rod",
-                  "description": "Krevende (rød) – kode R i kildedata."
+                  "name": "krevende",
+                  "description": "Krevende (kode R)."
                 },
                 {
-                  "name": "svart",
-                  "description": "Ekspert (svart) – kode S i kildedata."
+                  "name": "ekspert",
+                  "description": "Ekspert (kode S)."
                 },
                 {
                   "name": "ikkeGradert",
-                  "description": "Ruta er ikke gradert – kode I i kildedata."
+                  "description": "Ikke gradert (kode I)."
                 }
               ]
             }
@@ -303,11 +733,24 @@
             "name": "rutetype",
             "type": "Rutetype",
             "cardinality": "0..1",
-            "description": "Klassifisering av ruta etter type. Tom i kildedata for Ringerike.",
+            "description": "Rutas rolle i rutenettet: hovedrute, forgreningsrute eller materute.",
             "valueDomain": {
               "type": "CodeList",
               "name": "Rutetype",
-              "values": []
+              "values": [
+                {
+                  "name": "hovedrute",
+                  "description": "Hovedrute (kode 1)."
+                },
+                {
+                  "name": "forgreningsrute",
+                  "description": "Forgreningsrute (kode 2)."
+                },
+                {
+                  "name": "materute",
+                  "description": "Materute (kode 3)."
+                }
+              ]
             }
           },
           {
@@ -320,16 +763,16 @@
               "name": "Rutebetydning",
               "values": [
                 {
-                  "name": "nasjonal",
-                  "description": "Rute av nasjonal betydning – kode 1 i kildedata."
+                  "name": "nasjonalBetydning",
+                  "description": "Nasjonal betydning (kode 1)."
                 },
                 {
-                  "name": "regional",
-                  "description": "Rute av regional betydning – kode 2 i kildedata."
+                  "name": "regionalBetydning",
+                  "description": "Regional betydning (kode 2)."
                 },
                 {
-                  "name": "lokal",
-                  "description": "Rute av lokal betydning – kode 3 i kildedata."
+                  "name": "lokalBetydning",
+                  "description": "Lokal betydning (kode 3)."
                 }
               ]
             }
@@ -338,11 +781,32 @@
             "name": "tilpasning",
             "type": "Tilpasning",
             "cardinality": "0..1",
-            "description": "Angir om ruta er tilpasset spesielle brukergrupper. Tom i kildedata for Ringerike.",
+            "description": "Hvilken brukergruppe eller ferdselsform ruta er tilpasset.",
             "valueDomain": {
               "type": "CodeList",
               "name": "Tilpasning",
-              "values": []
+              "values": [
+                {
+                  "name": "gaende",
+                  "description": "Gående (kode G)."
+                },
+                {
+                  "name": "barnevogn",
+                  "description": "Barnevogn (kode B)."
+                },
+                {
+                  "name": "rullestol",
+                  "description": "Rullestol (kode R)."
+                },
+                {
+                  "name": "sykkel",
+                  "description": "Sykkel (kode S)."
+                },
+                {
+                  "name": "annet",
+                  "description": "Annet (kode A)."
+                }
+              ]
             }
           }
         ]
@@ -373,20 +837,55 @@
       },
       {
         "name": "preparering",
-        "type": "Preparering",
+        "type": "Loypepreparering",
         "cardinality": "0..1",
-        "description": "Hvordan løypa prepareres. Kildedata bruker koden PM.",
+        "description": "Hvordan løypa prepareres.",
         "valueDomain": {
           "type": "CodeList",
-          "name": "Preparering",
-          "values": []
+          "name": "Loypepreparering",
+          "values": [
+            {
+              "name": "maskinpreparert",
+              "description": "Maskinpreparert (kode PM)."
+            },
+            {
+              "name": "snoscooterpreparert",
+              "description": "Snøscooterpreparert (kode PS)."
+            },
+            {
+              "name": "upreparertEllerLitePreparertLoype",
+              "description": "Upreparert eller lite preparert løype (kode U)."
+            }
+          ]
         }
       },
       {
         "name": "ryddebredde",
-        "type": "Integer",
+        "type": "Ryddebredde",
         "cardinality": "0..1",
-        "description": "Bredde på ryddet trasé for løypa."
+        "description": "Bredde på ryddet trasé for løypa, angitt i breddeklasser.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Ryddebredde",
+          "values": [
+            {
+              "name": "inntil2m",
+              "description": "Inntil 2 meter (kode 1)."
+            },
+            {
+              "name": "fra2Til3m",
+              "description": "2–3 meter (kode 2)."
+            },
+            {
+              "name": "fra3Til6m",
+              "description": "3–6 meter (kode 3)."
+            },
+            {
+              "name": "over6m",
+              "description": "Over 6 meter (kode 4)."
+            }
+          ]
+        }
       },
       {
         "name": "skiloypeInfo",
@@ -422,41 +921,66 @@
             "name": "spesialSkiloypetype",
             "type": "SpesialSkiloypetype",
             "cardinality": "0..1",
-            "description": "Spesiell type skiløype. Tom i kildedata for Ringerike.",
+            "description": "Spesiell type skiløype, for eksempel konkurranseløype.",
             "valueDomain": {
               "type": "CodeList",
               "name": "SpesialSkiloypetype",
-              "values": []
+              "values": [
+                {
+                  "name": "loypeForSynshemmede",
+                  "description": "Løype for synshemmede (kode SH)."
+                },
+                {
+                  "name": "loypeForBevegelseshemmede",
+                  "description": "Løype for bevegelseshemmede (kode BV)."
+                },
+                {
+                  "name": "loypeForHundekjoring",
+                  "description": "Løype for hundekjøring (kode HL)."
+                },
+                {
+                  "name": "konkurranseloype",
+                  "description": "Konkurranseløype (kode KO)."
+                },
+                {
+                  "name": "rulleskiloype",
+                  "description": "Rulleskiløype (kode RL)."
+                },
+                {
+                  "name": "annet",
+                  "description": "Annet (kode AN)."
+                }
+              ]
             }
           },
           {
             "name": "gradering",
-            "type": "Gradering",
+            "type": "RuteVanskelighetsgrad",
             "cardinality": "0..1",
             "description": "Rutas vanskelighetsgrad etter fargeskalaen i merkehåndboka.",
             "valueDomain": {
               "type": "CodeList",
-              "name": "Gradering",
+              "name": "RuteVanskelighetsgrad",
               "values": [
                 {
-                  "name": "gronn",
-                  "description": "Enkel (grønn) – kode G i kildedata."
+                  "name": "enkel",
+                  "description": "Enkel (kode G)."
                 },
                 {
-                  "name": "bla",
-                  "description": "Middels krevende (blå) – kode B i kildedata."
+                  "name": "middels",
+                  "description": "Middels (kode B)."
                 },
                 {
-                  "name": "rod",
-                  "description": "Krevende (rød) – kode R i kildedata."
+                  "name": "krevende",
+                  "description": "Krevende (kode R)."
                 },
                 {
-                  "name": "svart",
-                  "description": "Ekspert (svart) – kode S i kildedata."
+                  "name": "ekspert",
+                  "description": "Ekspert (kode S)."
                 },
                 {
                   "name": "ikkeGradert",
-                  "description": "Ruta er ikke gradert – kode I i kildedata."
+                  "description": "Ikke gradert (kode I)."
                 }
               ]
             }
@@ -465,11 +989,24 @@
             "name": "rutetype",
             "type": "Rutetype",
             "cardinality": "0..1",
-            "description": "Klassifisering av ruta etter type. Tom i kildedata for Ringerike.",
+            "description": "Rutas rolle i rutenettet: hovedrute, forgreningsrute eller materute.",
             "valueDomain": {
               "type": "CodeList",
               "name": "Rutetype",
-              "values": []
+              "values": [
+                {
+                  "name": "hovedrute",
+                  "description": "Hovedrute (kode 1)."
+                },
+                {
+                  "name": "forgreningsrute",
+                  "description": "Forgreningsrute (kode 2)."
+                },
+                {
+                  "name": "materute",
+                  "description": "Materute (kode 3)."
+                }
+              ]
             }
           },
           {
@@ -482,16 +1019,16 @@
               "name": "Rutebetydning",
               "values": [
                 {
-                  "name": "nasjonal",
-                  "description": "Rute av nasjonal betydning – kode 1 i kildedata."
+                  "name": "nasjonalBetydning",
+                  "description": "Nasjonal betydning (kode 1)."
                 },
                 {
-                  "name": "regional",
-                  "description": "Rute av regional betydning – kode 2 i kildedata."
+                  "name": "regionalBetydning",
+                  "description": "Regional betydning (kode 2)."
                 },
                 {
-                  "name": "lokal",
-                  "description": "Rute av lokal betydning – kode 3 i kildedata."
+                  "name": "lokalBetydning",
+                  "description": "Lokal betydning (kode 3)."
                 }
               ]
             }
@@ -500,11 +1037,32 @@
             "name": "tilpasning",
             "type": "Tilpasning",
             "cardinality": "0..1",
-            "description": "Angir om ruta er tilpasset spesielle brukergrupper. Tom i kildedata for Ringerike.",
+            "description": "Hvilken brukergruppe eller ferdselsform ruta er tilpasset.",
             "valueDomain": {
               "type": "CodeList",
               "name": "Tilpasning",
-              "values": []
+              "values": [
+                {
+                  "name": "gaende",
+                  "description": "Gående (kode G)."
+                },
+                {
+                  "name": "barnevogn",
+                  "description": "Barnevogn (kode B)."
+                },
+                {
+                  "name": "rullestol",
+                  "description": "Rullestol (kode R)."
+                },
+                {
+                  "name": "sykkel",
+                  "description": "Sykkel (kode S)."
+                },
+                {
+                  "name": "annet",
+                  "description": "Annet (kode A)."
+                }
+              ]
             }
           }
         ]
@@ -555,41 +1113,62 @@
             "name": "spesialSykkelrutetype",
             "type": "SpesialSykkelrutetype",
             "cardinality": "0..1",
-            "description": "Spesiell type sykkelrute. Kildedata bruker tallkoden 1.",
+            "description": "Spesiell type sykkelrute, for eksempel tursykling.",
             "valueDomain": {
               "type": "CodeList",
               "name": "SpesialSykkelrutetype",
-              "values": []
+              "values": [
+                {
+                  "name": "tursykling",
+                  "description": "Tursykling (kode 1)."
+                },
+                {
+                  "name": "terrengsykling",
+                  "description": "Terrengsykling (kode 2)."
+                },
+                {
+                  "name": "utforsykling",
+                  "description": "Utforsykling (kode 3)."
+                },
+                {
+                  "name": "transportsykling",
+                  "description": "Transportsykling (kode 4)."
+                },
+                {
+                  "name": "annet",
+                  "description": "Annet (kode 9)."
+                }
+              ]
             }
           },
           {
             "name": "gradering",
-            "type": "Gradering",
+            "type": "RuteVanskelighetsgrad",
             "cardinality": "0..1",
             "description": "Rutas vanskelighetsgrad etter fargeskalaen i merkehåndboka.",
             "valueDomain": {
               "type": "CodeList",
-              "name": "Gradering",
+              "name": "RuteVanskelighetsgrad",
               "values": [
                 {
-                  "name": "gronn",
-                  "description": "Enkel (grønn) – kode G i kildedata."
+                  "name": "enkel",
+                  "description": "Enkel (kode G)."
                 },
                 {
-                  "name": "bla",
-                  "description": "Middels krevende (blå) – kode B i kildedata."
+                  "name": "middels",
+                  "description": "Middels (kode B)."
                 },
                 {
-                  "name": "rod",
-                  "description": "Krevende (rød) – kode R i kildedata."
+                  "name": "krevende",
+                  "description": "Krevende (kode R)."
                 },
                 {
-                  "name": "svart",
-                  "description": "Ekspert (svart) – kode S i kildedata."
+                  "name": "ekspert",
+                  "description": "Ekspert (kode S)."
                 },
                 {
                   "name": "ikkeGradert",
-                  "description": "Ruta er ikke gradert – kode I i kildedata."
+                  "description": "Ikke gradert (kode I)."
                 }
               ]
             }
@@ -598,11 +1177,24 @@
             "name": "rutetype",
             "type": "Rutetype",
             "cardinality": "0..1",
-            "description": "Klassifisering av ruta etter type. Tom i kildedata for Ringerike.",
+            "description": "Rutas rolle i rutenettet: hovedrute, forgreningsrute eller materute.",
             "valueDomain": {
               "type": "CodeList",
               "name": "Rutetype",
-              "values": []
+              "values": [
+                {
+                  "name": "hovedrute",
+                  "description": "Hovedrute (kode 1)."
+                },
+                {
+                  "name": "forgreningsrute",
+                  "description": "Forgreningsrute (kode 2)."
+                },
+                {
+                  "name": "materute",
+                  "description": "Materute (kode 3)."
+                }
+              ]
             }
           },
           {
@@ -615,16 +1207,16 @@
               "name": "Rutebetydning",
               "values": [
                 {
-                  "name": "nasjonal",
-                  "description": "Rute av nasjonal betydning – kode 1 i kildedata."
+                  "name": "nasjonalBetydning",
+                  "description": "Nasjonal betydning (kode 1)."
                 },
                 {
-                  "name": "regional",
-                  "description": "Rute av regional betydning – kode 2 i kildedata."
+                  "name": "regionalBetydning",
+                  "description": "Regional betydning (kode 2)."
                 },
                 {
-                  "name": "lokal",
-                  "description": "Rute av lokal betydning – kode 3 i kildedata."
+                  "name": "lokalBetydning",
+                  "description": "Lokal betydning (kode 3)."
                 }
               ]
             }
@@ -633,11 +1225,32 @@
             "name": "tilpasning",
             "type": "Tilpasning",
             "cardinality": "0..1",
-            "description": "Angir om ruta er tilpasset spesielle brukergrupper. Tom i kildedata for Ringerike.",
+            "description": "Hvilken brukergruppe eller ferdselsform ruta er tilpasset.",
             "valueDomain": {
               "type": "CodeList",
               "name": "Tilpasning",
-              "values": []
+              "values": [
+                {
+                  "name": "gaende",
+                  "description": "Gående (kode G)."
+                },
+                {
+                  "name": "barnevogn",
+                  "description": "Barnevogn (kode B)."
+                },
+                {
+                  "name": "rullestol",
+                  "description": "Rullestol (kode R)."
+                },
+                {
+                  "name": "sykkel",
+                  "description": "Sykkel (kode S)."
+                },
+                {
+                  "name": "annet",
+                  "description": "Annet (kode A)."
+                }
+              ]
             }
           }
         ]
@@ -674,13 +1287,114 @@
       },
       {
         "name": "tilrettelegging",
-        "type": "Tilrettelegging",
+        "type": "FriluftslivTilrettelegging",
         "cardinality": "0..1",
-        "description": "Type tilrettelegging på stedet. Kildedata bruker tallkodene 22, 41, 44, 45, 46 og 50.",
+        "description": "Type tilrettelegging på stedet.",
         "valueDomain": {
           "type": "CodeList",
-          "name": "Tilrettelegging",
-          "values": []
+          "name": "FriluftslivTilrettelegging",
+          "values": [
+            {
+              "name": "benkerBord",
+              "description": "Benker/bord (kode 4)."
+            },
+            {
+              "name": "bro",
+              "description": "Bro (kode 5)."
+            },
+            {
+              "name": "brygge",
+              "description": "Brygge (kode 6)."
+            },
+            {
+              "name": "balGrillplasser",
+              "description": "Bål-/grillplasser (kode 7)."
+            },
+            {
+              "name": "batutsettingsrampe",
+              "description": "Båtutsettingsrampe (kode 8)."
+            },
+            {
+              "name": "hytte",
+              "description": "Hytte (kode 12)."
+            },
+            {
+              "name": "informasjonsskiltTavle",
+              "description": "Informasjonsskilt/tavle (kode 13)."
+            },
+            {
+              "name": "kioskServeringssted",
+              "description": "Kiosk/serveringssted (kode 14)."
+            },
+            {
+              "name": "markbearbeiding",
+              "description": "Markbearbeiding (kode 18)."
+            },
+            {
+              "name": "parkeringsplass",
+              "description": "Parkeringsplass (kode 22)."
+            },
+            {
+              "name": "skitrekk",
+              "description": "Skitrekk (kode 28)."
+            },
+            {
+              "name": "stupebrettBadetrapp",
+              "description": "Stupebrett/badetrapp (kode 30)."
+            },
+            {
+              "name": "teltplass",
+              "description": "Teltplass (kode 32)."
+            },
+            {
+              "name": "toalett",
+              "description": "Toalett (kode 35)."
+            },
+            {
+              "name": "baderampe",
+              "description": "Baderampe (kode 38)."
+            },
+            {
+              "name": "annenTilrettelegging",
+              "description": "Annen tilrettelegging (kode 40)."
+            },
+            {
+              "name": "badeplass",
+              "description": "Badeplass (kode 41)."
+            },
+            {
+              "name": "hytteBetjent",
+              "description": "Hytte betjent (kode 42)."
+            },
+            {
+              "name": "hytteSelvbetjent",
+              "description": "Hytte selvbetjent (kode 43)."
+            },
+            {
+              "name": "hytteUbetjent",
+              "description": "Hytte ubetjent (kode 44)."
+            },
+            {
+              "name": "gapahuk",
+              "description": "Gapahuk (kode 45)."
+            },
+            {
+              "name": "utsiktspunkt",
+              "description": "Utsiktspunkt (kode 46)."
+            },
+            {
+              "name": "severdighet",
+              "description": "Severdighet (kode 50)."
+            },
+            {
+              "name": "kulturminne",
+              "description": "Kulturminne (kode 51)."
+            },
+            {
+              "name": "trimpostTurkasse",
+              "description": "Trimpost/turkasse (kode 52)."
+            }
+          ]
         }
       }
     ],
