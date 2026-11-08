@@ -1,0 +1,441 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Turrutebasen",
+  "format": "text/html",
+  "date": {
+    "revision": "2026-11-06"
+  },
+  "language": "nor",
+  "contact": {
+    "individualName": "Grunndataavdelingen",
+    "organizationName": "Kartverket",
+    "logo": "https://register.geonorge.no/data/organizations/971040238_Kartverket_liten.png",
+    "electronicMailAddress": "post@kartverket.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Turrutebasen",
+    "abstract": "Landsdekkende datasett som viser turruter. Datasettet inneholder fotruter, skiløyper, sykkelruter, andre turruter og tilretteleggingstiltak i friluftslivsområder. Dataene kan brukes i prosesser etter plan- og bygningsloven (kommuneplanlegging og saksbehandlingsom for eksempel byggesak) i kommunene, til analyser, rapportering, oppslag og visualisering av turruter til turplanlegging.",
+    "purpose": {
+      "summary": "Datasett til bruk i offentlig forvaltning og for tur- og friluftsformål.",
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Dataene skal være et verktøy for kommunen i saksbehandling, planlegging og rapportering, sikre god forvaltning av friluftsområder ved å være viktig basisinformasjon i arbeidet med kartlegging og verdsetting av friluftslivsområder og være viktig basisinformasjon i arbeidet med kommunale sti- og løypeplaner, sikre godt kartgrunnlag i redningsaksjoner og utrykninger og være grunnlag for avledede produkter for friluftslivet. \n\nNår data samles i en nasjonal database, vil alle brukere av datasettet få det samme utgangspunktet som kan danne grunnlaget i andre produkter. \n\nDatasettet egner seg som grunnlag på alle nivåer i plan- og byggesaksarbeid; i nasjonale planer, fylkes-, region og kommuneplan, byggesaker, ROS-analyser og konsekvensutredninger. Spesielt er geometrien viktig for å vise hvor turruter og løyper går. I tillegg kan egenskaper som for eksempel spesialrutetype, rutetype og rutebetydning si mer om hva slags rute og/eller løype som er registrert."
+      }
+    },
+    "topicCategory": [
+      "Samfunn og kultur"
+    ],
+    "spatialRepresentationType": "Vektor",
+    "spatialResolution": {
+      "equivalentScale": "1: 50000"
+    },
+    "supplementalInformation": "Sti, turrute og turforslag er begreper som brukes mye i forbindelse med datasettet og som henger tett sammen. Mens stien er det konkrete objektet, som er gjenfinnbart i terrenget og som kan være merket eller umerket, er turruta noe mer enn bare en sti. Turruta er tilrettelagt med merking og/eller skilting og hvor noen har et vedlikeholdsansvar for at den er fremkommelig. \nTurrute er en samlebetegnelse for tursti, løype, samt turveg og led for vandring, skigåing, sykling eller padling/roing. En turrute kan følge ulike fysiske objekter som for eksempel sti, traktorveg eller veg, eller også mindre konkrete objekter som myr og høydedrag.\nStien forvaltes i en nasjonal database kalt FKB-traktorvegSti. Turruter ønskes samlet i en nasjonal database kalt Turrutebasen. Turforslag, som er en beskrivelse av en tur, forvaltes ikke av Kartverket.",
+    "uniqueId": "https://data.geonorge.no/sosi/friluftsliv/tur_og_friluftsruter",
+    "keyword": [
+      "Temadata",
+      "Friluftsruter",
+      "Ruter",
+      "Tur- og friluftsruter",
+      "Turruter",
+      "Tur",
+      "Løype",
+      "Løyper",
+      "Turkart",
+      "Sti",
+      "Skiløyper",
+      "Skiløype",
+      "TFR",
+      "geodataloven",
+      "Norge digitalt",
+      "beredskapsbase",
+      "Det offentlige kartgrunnlaget",
+      "modellbaserteVegprosjekter",
+      "fellesDatakatalog",
+      "Friluftsliv",
+      "skiløypeInfo",
+      "preparering",
+      "antallSkispor",
+      "skøytetrase",
+      "ryddebredde",
+      "Sykkelrute",
+      "sykkelruteInfo",
+      "rutenavn",
+      "rutenummer",
+      "vedlikeholdsansvarlig",
+      "spesialSykkelrutetype",
+      "gradering",
+      "rutetype",
+      "rutebetydning",
+      "ruteinformasjon",
+      "Fotrute",
+      "fotruteInfo",
+      "RuteGenerell",
+      "TurOgFriluftsrute",
+      "merking",
+      "skilting",
+      "ruteFølger",
+      "underlagstype",
+      "rutebredde",
+      "trafikkbelastning",
+      "belysning",
+      "spesialSkiløypetype",
+      "AnnenRuteInfo",
+      "spesialAnnenrutetype",
+      "RuteInfoPunkt",
+      "ruteinfoID",
+      "spesialFotrutetype"
+    ],
+    "restriction": {
+      "resourceConstraints": {
+        "useLimitations": "Åpne data. Datafangsten baserer seg stort sett på innmeldinger fra lag, foreninger og privatpersoner via karttjenesten \"Rett i kartet\". Data kontrolleres og vurderes manuelt i forhold til grunnlagsdata (FKB og N50-kartdata). Grunnlaget som er brukt for å definere en turrute kan være hentet fra ulike objekter som for eksempel FKB-TraktorvegSti, N50-kartdata, digitalisert fra ulike turkart, ortofoto eller andre grunnlagskart. Data kan også være innsamlet ved hjelp av håndholdt GPS. Kvaliteten på turrutene avhenger av de målemetodene eller registreringsmetodene som er brukt for den enkelte turrute."
+      },
+      "legalConstraints": {
+        "accessConstraints": "Åpne data",
+        "useConstraints": "Lisens",
+        "license": "Creative Commons BY 4.0 (CC BY 4.0)",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "contact": [
+      {
+        "individualName": "Grunndataavdelingen",
+        "organizationName": "Kartverket",
+        "electronicMailAddress": "post@kartverket.no",
+        "role": "owner"
+      },
+      {
+        "individualName": "Grunndataavdelingen",
+        "organizationName": "Kartverket",
+        "electronicMailAddress": "post@kartverket.no",
+        "role": "pointOfContact"
+      },
+      {
+        "individualName": "Grunndataavdelingen",
+        "organizationName": "Kartverket",
+        "electronicMailAddress": "post@kartverket.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Ukentlig",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "2.0",
+        "eastBoundLongitude": "33.0",
+        "southBoundLatitude": "57.0",
+        "northBoundLatitude": "72.0"
+      },
+      "geographicDescription": [
+        "Fastlands-Norge med indre farvann og 50 km fra landegrensen"
+      ],
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2026-11-06",
+          "endPosition": "2026-11-06"
+        }
+      }
+    },
+    "date": {
+      "revision": "2026-11-06"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "loyper",
+        "level": "dataset",
+        "levelDescription": "Datamodell (Egen modell)"
+      }
+    }
+  ],
+  "referenceSystemSection": {
+    "spatialReferenceSystem": [
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      },
+      {
+        "code": "EPSG:25833",
+        "name": "EUREF89 UTM sone 33, 2d"
+      },
+      {
+        "code": "EPSG:25835",
+        "name": "EUREF89 UTM sone 35, 2d"
+      },
+      {
+        "code": "EPSG:3035",
+        "name": "EUREF89 / ETRS89-LAEA Europe"
+      },
+      {
+        "code": "EPSG:4258",
+        "name": "EUREF 89 Geografisk (ETRS 89) 2d"
+      },
+      {
+        "code": "EPSG:4326",
+        "name": "WGS84 Geografisk"
+      },
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      }
+    ]
+  },
+  "dataQualitySection": {
+    "scope": {
+      "level": "dataset"
+    },
+    "report": [
+      {
+        "nameOfMeasure": "SOSI produktspesifikasjon: Turrutebasen",
+        "descriptiveResult": "Dataene er i henhold til produktspesifikasjonen"
+      },
+      {
+        "nameOfMeasure": "Sosi applikasjonsskjema",
+        "descriptiveResult": "SOSI-filer er i henhold til applikasjonsskjema"
+      },
+      {
+        "nameOfMeasure": "Sosi applikasjonsskjema",
+        "descriptiveResult": "GML-filer er i henhold til applikasjonsskjema"
+      },
+      {
+        "nameOfMeasure": "Prosentvis oppfyllelse av FAIR-prinsipper",
+        "measureDescription": "Angir fullstendighet i forhold til krav fra FAIR-prinsippene (The FAIR Guiding Principles for scientific data management and stewardship)",
+        "result": "100"
+      }
+    ]
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Ukentlig",
+    "maintenanceAndUpdateStatement": "Kontinuerlig oppdatert"
+  },
+  "dataCaptureAndProductionSection": {
+    "DataAcquisitionAndProcessing": {
+      "dataCaptureStatement": "Departementet tildelte Kartverket oppgaven å samarbeide med Miljødirektoratet om en felles satsning for etablering av nasjonale sti- og løypedata i 2009. Det ble fra da av arbeidet med en fagområdestandard for Friluftsliv. En første versjon av produktspesifikasjon for Turrutebasen var ferdig i desember 2013, og database og rutiner for lagring av data i databasen var i drift fra samme tid (desember 2013). Siden da har det pågått kontinuerlig lagring av data i databasen. Fullstendighet: Data innhentes via publikumsløsningen Rett i kartet samt etter avtale med dataeiere som for eksempel kommuner, fylkeskommuner, lag/foreninger, frivillige organisasjoner og andre. Datasettets fullstendighet varierer fra område til område, da datainnsamlingen i stor grad baserer seg på frivillig innraportering. Stedfestingsnøyaktighet: Krav til nøyaktighet ved innsamling av data er viktig for å oppnå en mest mulig ensartet data¬inn¬samling. Det er et ønske at det alltid tilstrebes data med best mulig nøyaktighet. Mottatte data sammenlignes alltid med primærdata, som for eksempel FKB-TraktorvegSti, og det finnes rutiner for å bytte ut geometri med tilgjengelig geometri som er av bedre kvalitet. Kvaliteten på rutene avhenger av de målemetodene eller registreringsmetodene som er brukt for den enkelte rute, og kan ha varierende nøyaktighet, detaljering og fullstendighet etter hvilke kilder dataene kommer fra. Det er derfor viktig for brukeren å lese kvalitetsopplysningene på dataene, og vurdere dette opp mot bruken av dataene. Grunnlaget for å definere en turrute kan være ulike objekter fra for eksempel FKB-TraktorvegSti, N50-kartdata, eller digitaliserte ruter fra ulike turkart, ortofoto eller andre grunnlagskart. Det kan også være data innsamlet ved hjelp av håndholdt GPS. Dersom geometri hentes fra andre baser, skal kvaliteten følge geometrien. For eksempel, hvis en henter grunnlagsdata fra N50 eller FKB, vil kvalitetskodingen fra disse dataene beholdes. Data høstet med GPS, digitalisert eller manuelt inntegnet på kart, kodes som anbefalt i kapittel 5.1.2.11 Målemetode. På grunn av ulike feilkilder vil en i Turrutebasen ikke angi bedre nøyaktighet enn 1 m selv om GPS i prinsippet kan gi det. Det anbefales å bruke 10-15 m som beste kvalitet. Målemetode og nøyaktighet i grunnriss er påkrevde egenskaper, mens synbarhet er en valgfri egenskap. Egenskapsnøyaktighet: Data innhentes via publikumsløsningen Rett i kartet samt etter avtale med dataeiere som for eksempel kommuner, fylkeskommuner, lag/foreninger, frivillige organisasjoner og andre. Egenskapsnøyaktigheten er avhengig av kilden til dataene og vil variere. Tidfestingsnøyaktighet: Datafangstdato beskriver når dataene er innhentet. Datafangstdato kan være tidspunkt for flyfoto ved konstruksjon, når turruta er kartlagt i terreng eller når ruta er meldt inn til Kartverket. Logisk konsistens: Dataene følger reglene i produktspesifikasjonen"
+    }
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Geonorge nedlastning",
+          "deliveryService": {
+            "serviceEndpoint": "https://nedlasting.geonorge.no/api/capabilities/d1422d17-6d95-4ef1-96ab-8af31744dd63",
+            "serviceProperty": {
+              "type": "Geonorge nedlastning",
+              "value": "GEONORGE:DOWNLOAD"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "FGDB"
+          },
+          {
+            "formatName": "GML"
+          },
+          {
+            "formatName": "GPX"
+          },
+          {
+            "formatName": "PostGIS"
+          },
+          {
+            "formatName": "SOSI"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/TurOgFriluftsruter_AtomFeedFGDB.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "FGDB"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/TurOgFriluftsruter_AtomFeedGML.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GML"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/TurOgFriluftsruter_AtomFeedGPX.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPX"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/TurOgFriluftsruter_AtomFeedPostGIS.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "PostGIS"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/TurOgFriluftsruter_AtomFeedSOSI.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "SOSI"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Turrutebasen WMS",
+          "deliveryService": {
+            "serviceEndpoint": "https://wms.geonorge.no/skwms1/wms.friluftsruter2?request=GetCapabilities&service=WMS&version=1.3.0",
+            "serviceProperty": {
+              "type": "Turrutebasen WMS",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "OGC WMS",
+            "version": "1.3.0"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: loyper",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/turrutebasen/loyper/loyper.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2026-11-08",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Kartverket",
+      "individualName": "Grunndataavdelingen",
+      "logo": "https://register.geonorge.no/data/organizations/971040238_Kartverket_liten.png",
+      "electronicMailAddress": "post@kartverket.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "d1422d17-6d95-4ef1-96ab-8af31744dd63",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/d1422d17-6d95-4ef1-96ab-8af31744dd63"
+    }
+  },
+  "additionalReferences": [
+    {
+      "title": "Produktside",
+      "href": "http://www.kartverket.no/Kart/Geodatasamarbeid/Temadata/Nasjonal-database-for-tur--og-friluftsruter/"
+    }
+  ],
+  "chapterAutofill": {
+    "om_spesifikasjonen": 7,
+    "om_produktet": 229,
+    "formaal": 11,
+    "bruksomraade": 136,
+    "omfang": 27,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 39,
+    "datakvalitet": 49,
+    "datafangst_og_produksjon": 415,
+    "vedlikehold": 3,
+    "presentasjon": 0,
+    "leveranse": 80,
+    "metadata": 13,
+    "tilleggsinformasjon": 133,
+    "datamodell": 86
+  },
+  "specificationContact": "Kartverket, [post@kartverket.no](mailto:post@kartverket.no)"
+}

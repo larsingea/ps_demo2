@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Turrute",
+    "description": "En merket trase for ferdsel på barmark",
+    "abstract": false,
+    "attributes": [
+      {
+        "name": "rutetype",
+        "type": "Rutetype",
+        "cardinality": "1",
+        "description": "Hvilken type ferdsel traseen er tilrettelagt for",
+        "valueDomain": {
+          "kind": "enumeration",
+          "listedValues": [
+            {
+              "value": "S",
+              "label": "Sykkel",
+              "description": "Rute for syklende"
+            },
+            {
+              "value": "F",
+              "label": "Fot",
+              "description": "Rute for gående og løpende"
+            }
+          ],
+          "asDictionary": "false"
+        }
+      },
+      {
+        "name": "linje",
+        "type": "GM_Curve",
+        "cardinality": "1",
+        "description": "Geometritype - linje"
+      },
+      {
+        "name": "eier",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Hvem som er ansvarlig for merking. Turlag eller lignende"
+      },
+      {
+        "name": "organisasjon",
+        "type": "Organisasjon",
+        "cardinality": "0..1",
+        "description": "Hvem er ansvarlig for merking 2",
+        "valueDomain": {
+          "kind": "enumeration",
+          "listedValues": [
+            {
+              "value": "DNT",
+              "label": "Den norske turistforening",
+              "description": "Den norske turistforening"
+            },
+            {
+              "value": "SF",
+              "label": "Skiforeningen",
+              "description": " Skiforeningen - Foreningen til Ski-Idrettens  Fremme"
+            },
+            {
+              "value": "LT",
+              "label": "Lokalt turlag",
+              "description": "Lokalt turlag som ikke er tilsluttet DNT"
+            }
+          ],
+          "asDictionary": "false"
+        }
+      }
+    ]
+  }
+]
