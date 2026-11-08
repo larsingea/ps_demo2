@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Turrute",
+    "description": "En merket trase for ferdsel på barmark",
+    "abstract": false,
+    "attributes": [
+      {
+        "name": "rutetype",
+        "type": "Rutetype",
+        "cardinality": "1",
+        "description": "Hvilken type ferdsel traseen er tilrettelagt for",
+        "valueDomain": {
+          "kind": "enumeration",
+          "listedValues": [
+            {
+              "value": "S",
+              "label": "Sykkel",
+              "description": "Rute for syklende"
+            },
+            {
+              "value": "F",
+              "label": "Fot",
+              "description": "Rute for gående og løpende"
+            }
+          ],
+          "asDictionary": "false"
+        }
+      },
+      {
+        "name": "linje",
+        "type": "GM_Curve",
+        "cardinality": "1",
+        "description": "Geometritype - linje"
+      }
+    ]
+  }
+]
