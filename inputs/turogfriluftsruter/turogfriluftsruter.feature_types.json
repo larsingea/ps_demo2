@@ -1,0 +1,694 @@
+[
+  {
+    "name": "Friluftsobjekt",
+    "abstract": true,
+    "description": "Abstrakt supertype med SOSI-fellesegenskaper for alle objekttyper i tur- og friluftsruter.",
+    "attributes": [
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "1",
+        "description": "Unik identifikasjon av objektet.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "cardinality": "1",
+            "description": "Lokal identifikator, unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden."
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en bestemt versjon av objektet."
+          }
+        ]
+      },
+      {
+        "name": "datafangstdato",
+        "type": "Date",
+        "cardinality": "0..1",
+        "description": "Dato da objektet ble registrert eller observert i terrenget."
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "cardinality": "1",
+        "description": "Tidspunkt for siste endring av objektet i databasen."
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på objektets stedfesting.",
+        "attributes": [
+          {
+            "name": "malemetode",
+            "type": "Malemetode",
+            "cardinality": "1",
+            "description": "Metode som er brukt for å registrere posisjonen (SOSI «målemetode»). Kildedata bruker tallkoder, for eksempel 24, 92, 96 og 99.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Malemetode",
+              "values": []
+            }
+          },
+          {
+            "name": "noyaktighet",
+            "type": "Integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavvik i centimeter for registrert posisjon (SOSI «nøyaktighet»)."
+          }
+        ]
+      },
+      {
+        "name": "opphav",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Kilde for objektets geometri, for eksempel N50-kartdata eller «Rett i kartet»."
+      },
+      {
+        "name": "omradeId",
+        "type": "Integer",
+        "cardinality": "0..1",
+        "description": "Kommunenummer for området objektet tilhører (SOSI «områdeId»)."
+      },
+      {
+        "name": "originalDatavert",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Organisasjon som er original datavert for objektet."
+      },
+      {
+        "name": "kopidato",
+        "type": "DateTime",
+        "cardinality": "0..1",
+        "description": "Tidspunkt da kopien av objektet ble tatt ut fra originaldatabasen."
+      },
+      {
+        "name": "informasjon",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Generell fritekst om objektet, for eksempel hvilket datasett geometrien er hentet fra."
+      },
+      {
+        "name": "anleggsnummer",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Nummer for anlegget i Kulturdepartementets anleggsregister."
+      },
+      {
+        "name": "uukoblingsId",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Kobling til registrering av universell utforming."
+      },
+      {
+        "name": "sesong",
+        "type": "Sesong",
+        "cardinality": "0..1",
+        "description": "Årstid objektet er tilgjengelig eller i bruk. Kildedata bruker énbokstavskoder, for eksempel H.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Sesong",
+          "values": []
+        }
+      }
+    ],
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  },
+  {
+    "name": "Rute",
+    "abstract": true,
+    "description": "Abstrakt supertype for merkede tur- og friluftsruter med linjegeometri.",
+    "attributes": [
+      {
+        "name": "senterlinje",
+        "type": "GM_Curve",
+        "cardinality": "1",
+        "description": "Rutas forløp i terrenget. Lagret som multilinje i filgeodatabasen."
+      },
+      {
+        "name": "skilting",
+        "type": "Boolean",
+        "cardinality": "0..1",
+        "description": "Angir om ruta er skiltet (JA/NEI i kildedata)."
+      },
+      {
+        "name": "merking",
+        "type": "Boolean",
+        "cardinality": "0..1",
+        "description": "Angir om ruta er merket i terrenget (JA/NEI i kildedata)."
+      },
+      {
+        "name": "belysning",
+        "type": "Boolean",
+        "cardinality": "0..1",
+        "description": "Angir om ruta har kunstig belysning (JA/NEI i kildedata)."
+      },
+      {
+        "name": "ruteFolger",
+        "type": "RuteFolger",
+        "cardinality": "0..1",
+        "description": "Hvilken type ferdselsåre ruta følger (SOSI «ruteFølger»).",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "RuteFolger",
+          "values": [
+            {
+              "name": "sti",
+              "description": "Ruta følger sti – kode ST i kildedata."
+            },
+            {
+              "name": "traktorveg",
+              "description": "Ruta følger traktorveg – kode TR i kildedata."
+            },
+            {
+              "name": "skogsbilveg",
+              "description": "Ruta følger skogsbilveg – kode SB i kildedata."
+            },
+            {
+              "name": "bilveg",
+              "description": "Ruta følger bilveg – kode BV i kildedata."
+            },
+            {
+              "name": "gangOgSykkelveg",
+              "description": "Ruta følger gang- og sykkelveg – kode GS i kildedata."
+            },
+            {
+              "name": "fortau",
+              "description": "Ruta følger fortau – kode FO i kildedata."
+            }
+          ]
+        }
+      },
+      {
+        "name": "underlagstype",
+        "type": "Underlagstype",
+        "cardinality": "0..1",
+        "description": "Type underlag langs ruta. Tom i kildedata for Ringerike.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Underlagstype",
+          "values": []
+        }
+      },
+      {
+        "name": "rutebredde",
+        "type": "Integer",
+        "cardinality": "0..1",
+        "description": "Rutas bredde. Tom i kildedata for Ringerike."
+      },
+      {
+        "name": "trafikkbelastning",
+        "type": "Integer",
+        "cardinality": "0..1",
+        "description": "Grad av trafikkbelastning langs ruta. Tom i kildedata for Ringerike."
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "Friluftsobjekt"
+      ],
+      "associations": []
+    }
+  },
+  {
+    "name": "Fotrute",
+    "description": "Merket rute for ferdsel til fots.",
+    "attributes": [
+      {
+        "name": "fotruteInfo",
+        "type": "FotruteInfo",
+        "cardinality": "1..*",
+        "description": "Informasjon om rutene som dette segmentet inngår i. Et segment kan inngå i flere ruter.",
+        "attributes": [
+          {
+            "name": "rutenavn",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Navn på ruta slik den er skiltet eller allment kjent."
+          },
+          {
+            "name": "rutenummer",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Nummer eller kode som identifiserer ruta hos vedlikeholdsansvarlig."
+          },
+          {
+            "name": "vedlikeholdsansvarlig",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Organisasjon som har ansvar for merking og vedlikehold av ruta, for eksempel en DNT-forening eller et vel."
+          },
+          {
+            "name": "ruteinformasjon",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Fritekst med utfyllende informasjon om ruta."
+          },
+          {
+            "name": "spesialFotrutetype",
+            "type": "SpesialFotrutetype",
+            "cardinality": "0..1",
+            "description": "Spesiell type fotrute. Kildedata bruker kodene AN, NT, TR og HF.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "SpesialFotrutetype",
+              "values": []
+            }
+          },
+          {
+            "name": "gradering",
+            "type": "Gradering",
+            "cardinality": "0..1",
+            "description": "Rutas vanskelighetsgrad etter fargeskalaen i merkehåndboka.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Gradering",
+              "values": [
+                {
+                  "name": "gronn",
+                  "description": "Enkel (grønn) – kode G i kildedata."
+                },
+                {
+                  "name": "bla",
+                  "description": "Middels krevende (blå) – kode B i kildedata."
+                },
+                {
+                  "name": "rod",
+                  "description": "Krevende (rød) – kode R i kildedata."
+                },
+                {
+                  "name": "svart",
+                  "description": "Ekspert (svart) – kode S i kildedata."
+                },
+                {
+                  "name": "ikkeGradert",
+                  "description": "Ruta er ikke gradert – kode I i kildedata."
+                }
+              ]
+            }
+          },
+          {
+            "name": "rutetype",
+            "type": "Rutetype",
+            "cardinality": "0..1",
+            "description": "Klassifisering av ruta etter type. Tom i kildedata for Ringerike.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Rutetype",
+              "values": []
+            }
+          },
+          {
+            "name": "rutebetydning",
+            "type": "Rutebetydning",
+            "cardinality": "0..1",
+            "description": "Om ruta har nasjonal, regional eller lokal betydning.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Rutebetydning",
+              "values": [
+                {
+                  "name": "nasjonal",
+                  "description": "Rute av nasjonal betydning – kode 1 i kildedata."
+                },
+                {
+                  "name": "regional",
+                  "description": "Rute av regional betydning – kode 2 i kildedata."
+                },
+                {
+                  "name": "lokal",
+                  "description": "Rute av lokal betydning – kode 3 i kildedata."
+                }
+              ]
+            }
+          },
+          {
+            "name": "tilpasning",
+            "type": "Tilpasning",
+            "cardinality": "0..1",
+            "description": "Angir om ruta er tilpasset spesielle brukergrupper. Tom i kildedata for Ringerike.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Tilpasning",
+              "values": []
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "Rute"
+      ],
+      "associations": []
+    }
+  },
+  {
+    "name": "Skiloype",
+    "description": "Merket rute tilrettelagt for skigåing vinterstid (SOSI «Skiløype»).",
+    "attributes": [
+      {
+        "name": "antallSkispor",
+        "type": "Integer",
+        "cardinality": "0..1",
+        "description": "Antall oppkjørte skispor i løypa."
+      },
+      {
+        "name": "skoytetrase",
+        "type": "Boolean",
+        "cardinality": "0..1",
+        "description": "Angir om løypa har preparert skøytetrasé (SOSI «skøytetrasé»)."
+      },
+      {
+        "name": "preparering",
+        "type": "Preparering",
+        "cardinality": "0..1",
+        "description": "Hvordan løypa prepareres. Kildedata bruker koden PM.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Preparering",
+          "values": []
+        }
+      },
+      {
+        "name": "ryddebredde",
+        "type": "Integer",
+        "cardinality": "0..1",
+        "description": "Bredde på ryddet trasé for løypa."
+      },
+      {
+        "name": "skiloypeInfo",
+        "type": "SkiloypeInfo",
+        "cardinality": "1..*",
+        "description": "Informasjon om løypene som dette segmentet inngår i.",
+        "attributes": [
+          {
+            "name": "rutenavn",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Navn på ruta slik den er skiltet eller allment kjent."
+          },
+          {
+            "name": "rutenummer",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Nummer eller kode som identifiserer ruta hos vedlikeholdsansvarlig."
+          },
+          {
+            "name": "vedlikeholdsansvarlig",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Organisasjon som har ansvar for merking og vedlikehold av ruta, for eksempel en DNT-forening eller et vel."
+          },
+          {
+            "name": "ruteinformasjon",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Fritekst med utfyllende informasjon om ruta."
+          },
+          {
+            "name": "spesialSkiloypetype",
+            "type": "SpesialSkiloypetype",
+            "cardinality": "0..1",
+            "description": "Spesiell type skiløype. Tom i kildedata for Ringerike.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "SpesialSkiloypetype",
+              "values": []
+            }
+          },
+          {
+            "name": "gradering",
+            "type": "Gradering",
+            "cardinality": "0..1",
+            "description": "Rutas vanskelighetsgrad etter fargeskalaen i merkehåndboka.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Gradering",
+              "values": [
+                {
+                  "name": "gronn",
+                  "description": "Enkel (grønn) – kode G i kildedata."
+                },
+                {
+                  "name": "bla",
+                  "description": "Middels krevende (blå) – kode B i kildedata."
+                },
+                {
+                  "name": "rod",
+                  "description": "Krevende (rød) – kode R i kildedata."
+                },
+                {
+                  "name": "svart",
+                  "description": "Ekspert (svart) – kode S i kildedata."
+                },
+                {
+                  "name": "ikkeGradert",
+                  "description": "Ruta er ikke gradert – kode I i kildedata."
+                }
+              ]
+            }
+          },
+          {
+            "name": "rutetype",
+            "type": "Rutetype",
+            "cardinality": "0..1",
+            "description": "Klassifisering av ruta etter type. Tom i kildedata for Ringerike.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Rutetype",
+              "values": []
+            }
+          },
+          {
+            "name": "rutebetydning",
+            "type": "Rutebetydning",
+            "cardinality": "0..1",
+            "description": "Om ruta har nasjonal, regional eller lokal betydning.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Rutebetydning",
+              "values": [
+                {
+                  "name": "nasjonal",
+                  "description": "Rute av nasjonal betydning – kode 1 i kildedata."
+                },
+                {
+                  "name": "regional",
+                  "description": "Rute av regional betydning – kode 2 i kildedata."
+                },
+                {
+                  "name": "lokal",
+                  "description": "Rute av lokal betydning – kode 3 i kildedata."
+                }
+              ]
+            }
+          },
+          {
+            "name": "tilpasning",
+            "type": "Tilpasning",
+            "cardinality": "0..1",
+            "description": "Angir om ruta er tilpasset spesielle brukergrupper. Tom i kildedata for Ringerike.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Tilpasning",
+              "values": []
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "Rute"
+      ],
+      "associations": []
+    }
+  },
+  {
+    "name": "Sykkelrute",
+    "description": "Merket rute tilrettelagt for sykling.",
+    "attributes": [
+      {
+        "name": "sykkelruteInfo",
+        "type": "SykkelruteInfo",
+        "cardinality": "1..*",
+        "description": "Informasjon om sykkelrutene som dette segmentet inngår i.",
+        "attributes": [
+          {
+            "name": "rutenavn",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Navn på ruta slik den er skiltet eller allment kjent."
+          },
+          {
+            "name": "rutenummer",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Nummer eller kode som identifiserer ruta hos vedlikeholdsansvarlig."
+          },
+          {
+            "name": "vedlikeholdsansvarlig",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Organisasjon som har ansvar for merking og vedlikehold av ruta, for eksempel en DNT-forening eller et vel."
+          },
+          {
+            "name": "ruteinformasjon",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Fritekst med utfyllende informasjon om ruta."
+          },
+          {
+            "name": "spesialSykkelrutetype",
+            "type": "SpesialSykkelrutetype",
+            "cardinality": "0..1",
+            "description": "Spesiell type sykkelrute. Kildedata bruker tallkoden 1.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "SpesialSykkelrutetype",
+              "values": []
+            }
+          },
+          {
+            "name": "gradering",
+            "type": "Gradering",
+            "cardinality": "0..1",
+            "description": "Rutas vanskelighetsgrad etter fargeskalaen i merkehåndboka.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Gradering",
+              "values": [
+                {
+                  "name": "gronn",
+                  "description": "Enkel (grønn) – kode G i kildedata."
+                },
+                {
+                  "name": "bla",
+                  "description": "Middels krevende (blå) – kode B i kildedata."
+                },
+                {
+                  "name": "rod",
+                  "description": "Krevende (rød) – kode R i kildedata."
+                },
+                {
+                  "name": "svart",
+                  "description": "Ekspert (svart) – kode S i kildedata."
+                },
+                {
+                  "name": "ikkeGradert",
+                  "description": "Ruta er ikke gradert – kode I i kildedata."
+                }
+              ]
+            }
+          },
+          {
+            "name": "rutetype",
+            "type": "Rutetype",
+            "cardinality": "0..1",
+            "description": "Klassifisering av ruta etter type. Tom i kildedata for Ringerike.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Rutetype",
+              "values": []
+            }
+          },
+          {
+            "name": "rutebetydning",
+            "type": "Rutebetydning",
+            "cardinality": "0..1",
+            "description": "Om ruta har nasjonal, regional eller lokal betydning.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Rutebetydning",
+              "values": [
+                {
+                  "name": "nasjonal",
+                  "description": "Rute av nasjonal betydning – kode 1 i kildedata."
+                },
+                {
+                  "name": "regional",
+                  "description": "Rute av regional betydning – kode 2 i kildedata."
+                },
+                {
+                  "name": "lokal",
+                  "description": "Rute av lokal betydning – kode 3 i kildedata."
+                }
+              ]
+            }
+          },
+          {
+            "name": "tilpasning",
+            "type": "Tilpasning",
+            "cardinality": "0..1",
+            "description": "Angir om ruta er tilpasset spesielle brukergrupper. Tom i kildedata for Ringerike.",
+            "valueDomain": {
+              "type": "CodeList",
+              "name": "Tilpasning",
+              "values": []
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "Rute"
+      ],
+      "associations": []
+    }
+  },
+  {
+    "name": "RuteInfoPunkt",
+    "description": "Punkt langs eller ved en rute med informasjon av interesse for brukerne, for eksempel en hytte, badeplass eller informasjonstavle.",
+    "attributes": [
+      {
+        "name": "posisjon",
+        "type": "GM_Point",
+        "cardinality": "1",
+        "description": "Punktets plassering."
+      },
+      {
+        "name": "ruteInfoId",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Identifikator for punktet hos den som har registrert det."
+      },
+      {
+        "name": "vedlikeholdsansvarlig",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Organisasjon som har registrert eller har ansvar for punktet."
+      },
+      {
+        "name": "tilrettelegging",
+        "type": "Tilrettelegging",
+        "cardinality": "0..1",
+        "description": "Type tilrettelegging på stedet. Kildedata bruker tallkodene 22, 41, 44, 45, 46 og 50.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Tilrettelegging",
+          "values": []
+        }
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "Friluftsobjekt"
+      ],
+      "associations": []
+    }
+  }
+]
