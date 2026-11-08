@@ -2,6 +2,7 @@ metadataId: d1422d17-6d95-4ef1-96ab-8af31744dd63
 output_directory: produktspesifikasjon
 product_slug: turrutebasen
 updated: '2026-11-08'
+outputs: geopackage
 scopes:
 - name: loyper
   url: inputs/turrutebasen/loyper.feature_types.json
