@@ -1,0 +1,297 @@
+[
+  {
+    "name": "LoypeObjekt",
+    "abstract": true,
+    "description": "Abstrakt supertype med felles egenskaper for alle objekttyper i løypedatasettet.",
+    "attributes": [
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "1",
+        "description": "Unik identifikasjon av objektet.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "cardinality": "1",
+            "description": "Lokal identifikator, unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden."
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en bestemt versjon av objektet."
+          }
+        ]
+      },
+      {
+        "name": "datafangstdato",
+        "type": "Date",
+        "cardinality": "0..1",
+        "description": "Dato da objektet ble registrert eller observert i terrenget."
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "cardinality": "1",
+        "description": "Tidspunkt for siste endring av objektet i databasen."
+      },
+      {
+        "name": "forvalter",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Organisasjon som har ansvar for å forvalte objektet, for eksempel kommune eller skiklubb."
+      }
+    ],
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  },
+  {
+    "name": "Loype",
+    "description": "Strekning i terrenget som tilrettelegges for skigåing vinterstid, ved maskinell eller annen preparering.",
+    "attributes": [
+      {
+        "name": "senterlinje",
+        "type": "GM_Curve",
+        "cardinality": "1",
+        "description": "Løypas forløp i terrenget, registrert som senterlinje."
+      },
+      {
+        "name": "navn",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Navn på løypa slik den er skiltet eller allment kjent."
+      },
+      {
+        "name": "loypenummer",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Nummer eller kode for løypa i forvalterens løypenett."
+      },
+      {
+        "name": "loypetype",
+        "type": "Loypetype",
+        "cardinality": "1",
+        "description": "Hvilken stilart eller bruk løypa er tilrettelagt for.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Loypetype",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/loyper/loypetype",
+          "values": [
+            {
+              "name": "klassisk",
+              "description": "Løype med oppkjørte spor for klassisk stil."
+            },
+            {
+              "name": "skoyting",
+              "description": "Løype med bred, preparert flate for fri teknikk."
+            },
+            {
+              "name": "kombinert",
+              "description": "Løype med både klassiske spor og skøytetrasé."
+            },
+            {
+              "name": "turloype",
+              "description": "Enklere preparert løype for turgåing, ofte uten faste spor."
+            }
+          ]
+        }
+      },
+      {
+        "name": "preparering",
+        "type": "Prepareringsmetode",
+        "cardinality": "1",
+        "description": "Metode som normalt brukes for å preparere løypa.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Prepareringsmetode",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/loyper/prepareringsmetode",
+          "values": [
+            {
+              "name": "loypemaskin",
+              "description": "Løypa prepareres med tråkkemaskin (løypemaskin)."
+            },
+            {
+              "name": "snoscooter",
+              "description": "Løypa prepareres med snøscooter og sporsetter."
+            },
+            {
+              "name": "ikkePreparert",
+              "description": "Løypa er merket, men prepareres ikke."
+            }
+          ]
+        }
+      },
+      {
+        "name": "vanskelighetsgrad",
+        "type": "Vanskelighetsgrad",
+        "cardinality": "0..1",
+        "description": "Gradering av løypas tekniske og fysiske krav, etter fargekoder.",
+        "valueDomain": {
+          "type": "enumeration",
+          "name": "Vanskelighetsgrad",
+          "values": [
+            {
+              "name": "gronn",
+              "description": "Enkel løype, egnet for nybegynnere og barn."
+            },
+            {
+              "name": "bla",
+              "description": "Middels krevende løype med moderate bakker."
+            },
+            {
+              "name": "rod",
+              "description": "Krevende løype med bratte eller lange bakker."
+            },
+            {
+              "name": "svart",
+              "description": "Svært krevende løype for erfarne skiløpere."
+            }
+          ]
+        }
+      },
+      {
+        "name": "lengde",
+        "type": "Real",
+        "cardinality": "0..1",
+        "description": "Løypas lengde i kilometer, slik den oppgis til brukerne."
+      },
+      {
+        "name": "belyst",
+        "type": "Boolean",
+        "cardinality": "1",
+        "description": "Angir om løypa har kunstig belysning (lysløype)."
+      },
+      {
+        "name": "merket",
+        "type": "Boolean",
+        "cardinality": "1",
+        "description": "Angir om løypa er merket med skilt eller stikker i terrenget."
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "LoypeObjekt"
+      ],
+      "associations": [
+        {
+          "target": "Loypeinngang",
+          "role": "inngang",
+          "cardinality": "0..*"
+        },
+        {
+          "target": "Rasteplass",
+          "role": "rasteplass",
+          "cardinality": "0..*"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Loypeinngang",
+    "description": "Sted der brukere kan komme inn i løypenettet, typisk ved parkeringsplass eller kollektivholdeplass.",
+    "attributes": [
+      {
+        "name": "posisjon",
+        "type": "GM_Point",
+        "cardinality": "1",
+        "description": "Punkt som angir hvor inngangen til løypenettet ligger."
+      },
+      {
+        "name": "navn",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Navn på inngangen eller parkeringsplassen."
+      },
+      {
+        "name": "antallParkeringsplasser",
+        "type": "Integer",
+        "cardinality": "0..1",
+        "description": "Omtrentlig antall parkeringsplasser for bil."
+      },
+      {
+        "name": "avgiftsbelagt",
+        "type": "Boolean",
+        "cardinality": "0..1",
+        "description": "Angir om parkering ved inngangen er avgiftsbelagt."
+      },
+      {
+        "name": "harKollektivtilbud",
+        "type": "Boolean",
+        "cardinality": "0..1",
+        "description": "Angir om det er kollektivholdeplass ved inngangen."
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "LoypeObjekt"
+      ],
+      "associations": []
+    }
+  },
+  {
+    "name": "Rasteplass",
+    "description": "Tilrettelagt sted langs løypa for hvile og opphold.",
+    "attributes": [
+      {
+        "name": "posisjon",
+        "type": "GM_Point",
+        "cardinality": "1",
+        "description": "Punkt som angir hvor rasteplassen ligger."
+      },
+      {
+        "name": "navn",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "description": "Navn på rasteplassen."
+      },
+      {
+        "name": "fasilitet",
+        "type": "Fasilitet",
+        "cardinality": "0..*",
+        "description": "Fasiliteter som finnes på rasteplassen.",
+        "valueDomain": {
+          "type": "CodeList",
+          "name": "Fasilitet",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/loyper/fasilitet",
+          "values": [
+            {
+              "name": "gapahuk",
+              "description": "Enkelt, åpent byggverk som gir ly for vær og vind."
+            },
+            {
+              "name": "balplass",
+              "description": "Tilrettelagt plass for bålbrenning."
+            },
+            {
+              "name": "benk",
+              "description": "Sitteplass med benk eller bord."
+            },
+            {
+              "name": "toalett",
+              "description": "Toalett tilgjengelig for løypebrukere."
+            },
+            {
+              "name": "servering",
+              "description": "Hytte eller kiosk med servering i sesongen."
+            }
+          ]
+        }
+      }
+    ],
+    "relationships": {
+      "inheritance": [
+        "LoypeObjekt"
+      ],
+      "associations": []
+    }
+  }
+]
