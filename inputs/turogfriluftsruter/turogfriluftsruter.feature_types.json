@@ -56,6 +56,7 @@
             "valueDomain": {
               "type": "CodeList",
               "name": "Malemetode",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/malemetode-kode",
               "values": [
                 {
                   "name": "terrengmaltUspesifisertMaleinstrument",
