@@ -1,0 +1,9 @@
+metadataId: 95867501-5b48-402d-8cb9-1d8a9b1c7bfc
+output_directory: produktspesifikasjon
+product_slug: konsesjonsomrade_fjernvarme_lillestrom_kommune_lokale_data
+updated: '2026-11-09'
+scopes:
+- name: Datamodell fjernvarmekonsesjon
+  url: inputs/konsesjonsomrade-fjernvarme-lillestrom-kommune-lokale-data/datamodell-fjernvarmekonsesjon.feature_types.json
+  generator: custom
+  description: Datamodell (Manuell datamodell)
