@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:forenkletinndeling="https://skjema.geonorge.no/SOSI/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="https://skjema.geonorge.no/SOSI/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/1.0" version="1.0">
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="https://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="forenkletinndeling:IdentifikasjonType"/>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.</documentation>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>Navnerom som unikt identifiserer datakilden til objektet.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>Identifikasjon av en spesiell versjon av et geografisk objekt (instans).</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="forenkletinndeling:Identifikasjon"/>
+    </sequence>
+  </complexType>
+  <element name="Kommune" substitutionGroup="gml:AbstractFeature" type="forenkletinndeling:KommuneType">
+    <annotation>
+      <documentation>Geografisk avgrenset forvaltningsenhet (kommune) i henhold til inndelingslova. Tilsvarer LAU-nivået i EUs statistiske inndeling.</documentation>
+    </annotation>
+  </element>
+  <complexType name="KommuneType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="identifikasjon" type="forenkletinndeling:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.</documentation>
+            </annotation>
+          </element>
+          <element name="kommunenummer" type="gml:CodeType">
+            <annotation>
+              <documentation>Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.</documentation>
+              <appinfo>
+                <sc:targetCodeListURI>https://data.ssb.no/api/klass/v1/classifications/131</sc:targetCodeListURI>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="kommunenavn" type="string">
+            <annotation>
+              <documentation>Offisielt navn på kommunen.</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="samiskForvaltningsområde" type="boolean">
+            <annotation>
+              <documentation>Angir om kommunen inngår i forvaltningsområdet for samisk språk etter sameloven.</documentation>
+            </annotation>
+          </element>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>Kommunens geografiske utstrekning som flate.</documentation>
+            </annotation>
+          </element>
+          <element name="oppdateringsdato" type="date">
+            <annotation>
+              <documentation>Dato og tid for siste endring av objektet i datasettet.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KommunePropertyType">
+    <sequence minOccurs="0">
+      <element ref="forenkletinndeling:Kommune"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Kommunegrense" substitutionGroup="gml:AbstractFeature" type="forenkletinndeling:KommunegrenseType">
+    <annotation>
+      <documentation>Grenselinje som avgrenser en kommune.</documentation>
+    </annotation>
+  </element>
+  <complexType name="KommunegrenseType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="identifikasjon" type="forenkletinndeling:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.</documentation>
+            </annotation>
+          </element>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>Grenselinjens forløp.</documentation>
+            </annotation>
+          </element>
+          <element name="oppdateringsdato" type="date">
+            <annotation>
+              <documentation>Dato og tid for siste endring av objektet i datasettet.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KommunegrensePropertyType">
+    <sequence minOccurs="0">
+      <element ref="forenkletinndeling:Kommunegrense"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>

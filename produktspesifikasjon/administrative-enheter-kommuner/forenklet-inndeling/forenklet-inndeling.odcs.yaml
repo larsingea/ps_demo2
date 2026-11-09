@@ -1,0 +1,212 @@
+# Open Data Contract Standard (ODCS) v3.1.0 — generert fra datamodellen.
+apiVersion: v3.1.0
+kind: DataContract
+id: urn:odcs:administrative-enheter-kommuner-forenklet-inndeling:1.0.0
+version: 1.0.0
+status: active
+name: Administrative enheter kommuner - Forenklet inndeling
+tags:
+- Administrative grenser
+- Kommune
+- Administrativ inndeling
+- Kommunegrenser
+- Fylkesgrenser
+- Riksgrense
+- ABAS
+- Administrative enheter
+- Det offentlige kartgrunnlaget
+- Inspire
+- geodataloven
+- Norge digitalt
+- beredskapsbase
+- dataNorgeNo
+- fellesDatakatalog
+- Basis geodata
+- Norge
+- Åpne data
+- Ugradert
+price:
+  priceAmount: 0
+  priceUnit: dataset
+description:
+  usage: Ingen begrensninger på bruk er oppgitt. Se forøvrig lisens.
+  limitations: Åpne data. Lisens. Ugradert
+  purpose: Framstille den offisielle kommuneinndelingen.
+authoritativeDefinitions:
+- url: https://data.geonorge.no/sosi/administrativeenheter/kommuner
+  type: businessDefinition
+  description: Produktets identifikator
+- url: https://kartkatalog.geonorge.no/metadata/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
+  type: businessDefinition
+  description: Metadata i Kartkatalogen
+- url: https://register.geonorge.no/produktark/administrative-enheter-norge
+  type: businessDefinition
+  description: Produktark
+- url: https://register.geonorge.no/tegneregler/administrative-enheter-norge
+  type: implementation
+  description: Tegneregler
+team:
+  members:
+  - username: post@kartverket.no
+    name: Liv Mari Nesje
+    description: Kartverket
+    role: owner, pointOfContact, publisher
+support:
+- channel: Kartverket
+  tool: email
+  url: mailto:post@kartverket.no
+  scope: issues
+  description: Kontaktpunkt hos Kartverket
+slaProperties:
+- property: frequency
+  value: Årlig
+  driver: operational
+  description: Kontinuerlig oppdatert
+customProperties:
+- property: license
+  value: Creative Commons BY 4.0 (CC BY 4.0)
+- property: licenseUrl
+  value: https://creativecommons.org/licenses/by/4.0/
+- property: accessConstraints
+  value: Åpne data
+- property: useConstraints
+  value: Lisens
+- property: useLimitations
+  value: Ingen begrensninger på bruk er oppgitt. Se forøvrig lisens.
+- property: classification
+  value: Ugradert
+- property: equivalentScale
+  value: '5000'
+- property: spatialRepresentationType
+  value: Vektor
+- property: language
+  value: nor
+- property: maintenanceAndUpdateStatement
+  value: Kontinuerlig oppdatert
+servers:
+- server: geonorge-nedlastning
+  type: api
+  location: https://nedlasting.geonorge.no/api/capabilities/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
+  description: Geonorge nedlastning - FGDB, GeoJSON, GML, PostGIS, SOSI
+- server: atom-feed
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedFGDB.xml
+  description: Atom Feed - FGDB
+- server: atom-feed-gml
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedGML.xml
+  description: Atom Feed - GML
+- server: atom-feed-geojson
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedGeoJSON.xml
+  description: Atom Feed - GeoJSON
+- server: atom-feed-postgis
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedPostGIS.xml
+  description: Atom Feed - PostGIS
+- server: atom-feed-sosi
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedSOSI.xml
+  description: Atom Feed - SOSI
+- server: administrative-enheter-wms
+  type: api
+  location: https://wms.geonorge.no/skwms1/wms.adm_enheter2?service=wms&request=GetCapabilities
+  description: Administrative enheter WMS - png
+schema:
+- name: Kommune
+  physicalName: kommune
+  logicalType: object
+  physicalType: table
+  description: Geografisk avgrenset forvaltningsenhet (kommune) i henhold til inndelingslova.
+    Tilsvarer LAU-nivået i EUs statistiske inndeling.
+  customProperties:
+  - property: sosiObjektType
+    value: Kommune
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den
+        lokale identifikatoren er unik innenfor navnerommet.
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: Navnerom som unikt identifiserer datakilden til objektet.
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: Identifikasjon av en spesiell versjon av et geografisk objekt (instans).
+    description: Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter,
+      som kan benyttes av eksterne applikasjoner som referanse til objektet.
+    required: true
+  - name: kommunenummer
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://data.ssb.no/api/klass/v1/classifications/131
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Kommunenummer
+    - property: asDictionary
+      value: 'true'
+    description: Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.
+    required: true
+  - name: kommunenavn
+    logicalType: string
+    description: Offisielt navn på kommunen.
+    required: true
+  - name: samiskForvaltningsområde
+    logicalType: boolean
+    description: Angir om kommunen inngår i forvaltningsområdet for samisk språk etter
+      sameloven.
+  - name: område
+    logicalType: object
+    physicalType: geometry(Surface)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: Surface
+  - name: oppdateringsdato
+    logicalType: timestamp
+    description: Dato og tid for siste endring av objektet i datasettet.
+    required: true
+- name: Kommunegrense
+  physicalName: kommunegrense
+  logicalType: object
+  physicalType: table
+  description: Grenselinje som avgrenser en kommune.
+  customProperties:
+  - property: sosiObjektType
+    value: Kommunegrense
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den
+        lokale identifikatoren er unik innenfor navnerommet.
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: Navnerom som unikt identifiserer datakilden til objektet.
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: Identifikasjon av en spesiell versjon av et geografisk objekt (instans).
+    description: Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter,
+      som kan benyttes av eksterne applikasjoner som referanse til objektet.
+    required: true
+  - name: grense
+    logicalType: object
+    physicalType: geometry(LineString)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: LineString
+  - name: oppdateringsdato
+    logicalType: timestamp
+    description: Dato og tid for siste endring av objektet i datasettet.
+    required: true
