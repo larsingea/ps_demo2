@@ -1,0 +1,710 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred/datamodellforgpkgskred/datamodell-for-gpkg-skred.json",
+  "definitions": {
+    "Analyseområde": {
+      "description": "dekning av et område analysert med tanke på potensiell skredfare",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon_lokalId": {
+          "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "identifikasjon_navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nNOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+          "type": "string"
+        },
+        "identifikasjon_versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nNOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+          "type": "string"
+        },
+        "datauttaksdato": {
+          "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+          "type": "string",
+          "format": "date"
+        },
+        "datafangstdato": {
+          "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+          "type": "string",
+          "format": "date"
+        },
+        "førsteDigitaliseringsdato": {
+          "description": "dato når en representasjon av objektet i digital form første gang ble etablert\n\nMerknad:\nførsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess.\nEventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+          "type": "string",
+          "format": "date"
+        },
+        "oppdateringsdato": {
+          "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).\n\n-Definition-\nDate and time at which this version of the spatial object was inserted or changed in the spatial data set.",
+          "type": "string",
+          "format": "date"
+        },
+        "opphav": {
+          "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+          "type": "string"
+        },
+        "prosjektURL": {
+          "description": "URL-lenke til kartleggingsprosjektets informasjonsside",
+          "type": "string"
+        },
+        "rapportURL": {
+          "description": "URL-lenke til rapport fra kartleggingsprosjektet",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon_lokalId",
+        "identifikasjon_navnerom"
+      ]
+    },
+    "AnalyseområdeGr": {
+      "description": "avgrensningslinje for område analysert med tanke på potensiell skredfare",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "Kartleggingsområde": {
+      "description": "dekning av et område kartlagt med tanke på potensiell skredfare",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kartleggingsområdeID": {
+          "description": "kartleggingsområdets identifikator",
+          "type": "string"
+        },
+        "kartleggingsområdeNavn": {
+          "description": "navn på kartleggingsområde",
+          "type": "string"
+        },
+        "kartleggingStatus": {
+          "description": "Status for kartleggingen av aktuelt område",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "Kartleggingsområdekant": {
+      "description": "avgrensningslinje for et kartleggingsområde som dekker et nærmere angitt geografisk område.",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "KvikkleireFaresoneAvgr": {
+      "description": "avgrensningslinje for areal med evaluering av risiko for kvikkleireskred basert på skadekonsekvens og faregrad\n\n\n-- Definition --\nline delimiting area for which quick clay slide hazard has been evaluated based on damage consequences and degree of hazard",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "SkredFaregrense": {
+      "description": "grenselinje som viser rekkevidden for mulige skred\n\nMerknad: Resten av faresonepolygonet er ofte avgrenset av dataavgrensningslinje\n\n\n-- Definition --\nboundary line which shows the extent of potential avalanches/landslides",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "SkredFaresone": {
+      "description": "område hvor skredfaren er nærmere vurdert/kartlagt med hensyn til sannsynlighet og rekkevidde\n\nMerknad: Skredfaresonen kan bestå av utløsningsområde og utløpsområde for skred\n\n\n-- Definition --\narea where the avalanche/landslide hazard has been evaluated/surveyed in more detail with regard to probability and extent",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon_lokalId": {
+          "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "identifikasjon_navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nNOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+          "type": "string"
+        },
+        "identifikasjon_versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nNOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+          "type": "string"
+        },
+        "datauttaksdato": {
+          "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+          "type": "string",
+          "format": "date"
+        },
+        "datafangstdato": {
+          "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+          "type": "string",
+          "format": "date"
+        },
+        "førsteDigitaliseringsdato": {
+          "description": "dato når en representasjon av objektet i digital form første gang ble etablert\n\nMerknad:\nførsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess.\nEventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+          "type": "string",
+          "format": "date"
+        },
+        "oppdateringsdato": {
+          "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).\n\n-Definition-\nDate and time at which this version of the spatial object was inserted or changed in the spatial data set.",
+          "type": "string",
+          "format": "date"
+        },
+        "opphav": {
+          "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+          "type": "string"
+        },
+        "skredtype": {
+          "description": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\n\nMerknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\n\n-- Definition --\nwhat type of avalanche/landslide masses related to the avalanche/landslide hazard or event\nNote: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these",
+          "type": "string"
+        },
+        "skredStatistikkSannsynlighet": {
+          "description": "statistisk sannsynlighet for at det går et skred\n\nBetingelse: Egenskapen skredFaregradKlasse eller skredStatistikkSannsynlighet er påkrevet. skredFaregradKlasse benyttes ved kvikkleire og skredStatistikkSannsynlighet ved bratt terreng\n\nMerknad: Oppgis som et skred per antall år. I plan og bygningsloven skal man ta hensyn til 1000 årsskredet.\n\n-- Definition --\nstatistical probability that an avalanche  landslide will take place   Condition: The attribute landslideHazardLevelClass or avalancheStatisticProbability is mandatory. landslideHazardLevelClass is used in the case of quick clay and avalancheStatisticProbability in the case of steep terrain   Note:  Indicated as a yearly probability of avalanches/landslides. In the Planning and Building Act consideration must be given for the yearly probability of 1/1000",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon_lokalId",
+        "identifikasjon_navnerom",
+        "skredStatistikkSannsynlighet",
+        "skredtype"
+      ]
+    },
+    "SkredTypePunkt": {
+      "description": "Punkt som definerer den dimensjonerende skredtypen for en eller flere faresoner.",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Point.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon_lokalId": {
+          "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "identifikasjon_navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nNOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+          "type": "string"
+        },
+        "identifikasjon_versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nNOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+          "type": "string"
+        },
+        "datauttaksdato": {
+          "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+          "type": "string",
+          "format": "date"
+        },
+        "datafangstdato": {
+          "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+          "type": "string",
+          "format": "date"
+        },
+        "førsteDigitaliseringsdato": {
+          "description": "dato når en representasjon av objektet i digital form første gang ble etablert\n\nMerknad:\nførsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess.\nEventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+          "type": "string",
+          "format": "date"
+        },
+        "oppdateringsdato": {
+          "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).\n\n-Definition-\nDate and time at which this version of the spatial object was inserted or changed in the spatial data set.",
+          "type": "string",
+          "format": "date"
+        },
+        "opphav": {
+          "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+          "type": "string"
+        },
+        "skredOmrID": {
+          "description": "unikt id-nummer for skredområde/kvikkleirefaresone\n\n-- Definition --\nunique ID number for landslide area or quick clay hazard zone",
+          "type": "integer"
+        },
+        "skredtype": {
+          "description": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\n\nMerknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\n\n-- Definition --\nwhat type of avalanche/landslide masses related to the avalanche/landslide hazard or event\nNote: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon_lokalId",
+        "identifikasjon_navnerom",
+        "skredOmrID",
+        "skredtype"
+      ]
+    },
+    "UtlopOmr": {
+      "description": "areal som påvirkes eller dekkes av skredmassser når skred utløses\n\n\n-- Definition --\narea which is affected or covered by avalanche/landslide masses when an avalanche/landslide occurs",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon_lokalId": {
+          "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "identifikasjon_navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nNOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+          "type": "string"
+        },
+        "identifikasjon_versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nNOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+          "type": "string"
+        },
+        "datauttaksdato": {
+          "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+          "type": "string",
+          "format": "date"
+        },
+        "datafangstdato": {
+          "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+          "type": "string",
+          "format": "date"
+        },
+        "førsteDigitaliseringsdato": {
+          "description": "dato når en representasjon av objektet i digital form første gang ble etablert\n\nMerknad:\nførsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess.\nEventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+          "type": "string",
+          "format": "date"
+        },
+        "oppdateringsdato": {
+          "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).\n\n-Definition-\nDate and time at which this version of the spatial object was inserted or changed in the spatial data set.",
+          "type": "string",
+          "format": "date"
+        },
+        "opphav": {
+          "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+          "type": "string"
+        },
+        "prosjektURL": {
+          "description": "URL-lenke til kartleggingsprosjektets informasjonsside",
+          "type": "string"
+        },
+        "rapportURL": {
+          "description": "URL-lenke til rapport fra kartleggingsprosjektet",
+          "type": "string"
+        },
+        "skredOmrID": {
+          "description": "unikt id-nummer for skredområde/kvikkleirefaresone\n\n-- Definition --\nunique ID number for landslide area or quick clay hazard zone",
+          "type": "integer"
+        },
+        "skredOmrNavn": {
+          "description": "stedsnavn som brukes i forbindelse med en skredhendelse\n\n-- Definition --\nplace name which is used in connection with a landslide event",
+          "type": "string"
+        },
+        "arealKm2": {
+          "description": "faresonens areal i kvadratkilometer (km2)",
+          "type": "number"
+        },
+        "skredFaregradKlasse": {
+          "description": "graden av sannsynlighet for at det skal gå et skred\n\nMerknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold. Skredfaregradklassen er for skredtypen kvikkleire basert på en evaluering av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore (0-51)\n\n-- Definition --\nthe degree of probability that there will be a landslide\nNote: Reflects the degree of hazard as regards the area\u0027s stability,, based upon topographic conditions, geological/geotechnical conditions and erosion conditions. For quick clay landslides the landslideHazardLevelClass is based upon a weighed hazardfactorscore (0-51)",
+          "type": "string"
+        },
+        "skredSkadeKonsekvensScore": {
+          "description": "poengverdi basert på vektede faktorer for skadekonsekvensen\n\nMerknad: Se nærmere definisjon i kap. definisjoner og forkortelser.\n\n-- Definition --\nvalue (in points) based on weighted factors for the consequences of damage   Note: See more precise definition in chapter on definitions and abbreviations.",
+          "type": "integer"
+        },
+        "skredRisikoKvikkleireKlasse": {
+          "description": "risikoen for at et område kan bli påført skredskade, inndelt etter risikoklasser\n\nMerknad: Denne egenskapen gjengir en klassifisering av risiko for at området vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se kapittel definisjoner og forkortelser)\n\n-- Definition --\nthe risk that a landslide may inflict damage on an area, categorized according to risk classes   Note: This attribute cites a classification of risk that the area will be vulnerable to landslide damage. The classification method is based on a review of damage consequences and hazard levels",
+          "type": "string"
+        },
+        "skredKvalKartlegging": {
+          "description": "angir status og detaljeringsgrad  når det gjelder kartlegging av sonen\n\n-- Definition --\nindicates the status and degree of detail as regards the mapping of the zone",
+          "type": "string"
+        },
+        "skredFaregradScore": {
+          "description": "tallverdi som er fremkommet ved at de viktigste kriteriene og faktorene som påvirker faregraden for kvikkleireskred er vurdert (jfr. Tabell 2 under kap.definisjoner og forkortelser.)\n\n-- Definition --\nnumerical value which results from the evaluation of the influence of the most important criteria and factors on the degree of hazard of a quick clay slide (cf. Table 2 in the chapter on definitions and abbreviations.)",
+          "type": "integer"
+        },
+        "skredSkadeKonsekvensKlasse": {
+          "description": "hvilke økonomiske og samfunnsmessige følger et kvikkleireskred får og fare for tap av menneskeliv\n\nMerknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt fare for at viktige samfunnsmessige funksjoner skal stoppe opp.  For skredtypen kvikkleire er inndelingen basert på beregningen av en poengverdi basert på vektede faktorer (se kap. definisjoner og forkortelser.) i kombinasjon med skadekonsekvensen\n\n-- Definition --\nwhat economic and social consequences follow a quick clay slide, and risk of loss of human lives   Note: Qualitative classification of consequences of damage in connection with risk of fatalities, personal injuries, financial loss, value reduction as well as the risk that important social functions can be affected",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon_lokalId",
+        "identifikasjon_navnerom",
+        "skredFaregradKlasse",
+        "skredKvalKartlegging",
+        "skredOmrID"
+      ]
+    },
+    "UtlosningOmr": {
+      "description": "område hvor skred kan utløses\n\nMerknad: Alle typer skred",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon_lokalId": {
+          "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "identifikasjon_navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nNOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+          "type": "string"
+        },
+        "identifikasjon_versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nNOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+          "type": "string"
+        },
+        "datauttaksdato": {
+          "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+          "type": "string",
+          "format": "date"
+        },
+        "datafangstdato": {
+          "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+          "type": "string",
+          "format": "date"
+        },
+        "førsteDigitaliseringsdato": {
+          "description": "dato når en representasjon av objektet i digital form første gang ble etablert\n\nMerknad:\nførsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess.\nEventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+          "type": "string",
+          "format": "date"
+        },
+        "oppdateringsdato": {
+          "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).\n\n-Definition-\nDate and time at which this version of the spatial object was inserted or changed in the spatial data set.",
+          "type": "string",
+          "format": "date"
+        },
+        "opphav": {
+          "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+          "type": "string"
+        },
+        "prosjektURL": {
+          "description": "URL-lenke til kartleggingsprosjektets informasjonsside",
+          "type": "string"
+        },
+        "rapportURL": {
+          "description": "URL-lenke til rapport fra kartleggingsprosjektet",
+          "type": "string"
+        },
+        "skredOmrID": {
+          "description": "unikt id-nummer for skredområde/kvikkleirefaresone\n\n-- Definition --\nunique ID number for landslide area or quick clay hazard zone",
+          "type": "integer"
+        },
+        "skredOmrNavn": {
+          "description": "stedsnavn som brukes i forbindelse med en skredhendelse\n\n-- Definition --\nplace name which is used in connection with a landslide event",
+          "type": "string"
+        },
+        "arealKm2": {
+          "description": "faresonens areal i kvadratkilometer (km2)",
+          "type": "number"
+        },
+        "skredFaregradKlasse": {
+          "description": "graden av sannsynlighet for at det skal gå et skred\n\nMerknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold. Skredfaregradklassen er for skredtypen kvikkleire basert på en evaluering av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore (0-51)\n\n-- Definition --\nthe degree of probability that there will be a landslide\nNote: Reflects the degree of hazard as regards the area\u0027s stability,, based upon topographic conditions, geological/geotechnical conditions and erosion conditions. For quick clay landslides the landslideHazardLevelClass is based upon a weighed hazardfactorscore (0-51)",
+          "type": "string"
+        },
+        "skredSkadeKonsekvensScore": {
+          "description": "poengverdi basert på vektede faktorer for skadekonsekvensen\n\nMerknad: Se nærmere definisjon i kap. definisjoner og forkortelser.\n\n-- Definition --\nvalue (in points) based on weighted factors for the consequences of damage   Note: See more precise definition in chapter on definitions and abbreviations.",
+          "type": "integer"
+        },
+        "skredRisikoKvikkleireKlasse": {
+          "description": "risikoen for at et område kan bli påført skredskade, inndelt etter risikoklasser\n\nMerknad: Denne egenskapen gjengir en klassifisering av risiko for at området vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se kapittel definisjoner og forkortelser)\n\n-- Definition --\nthe risk that a landslide may inflict damage on an area, categorized according to risk classes   Note: This attribute cites a classification of risk that the area will be vulnerable to landslide damage. The classification method is based on a review of damage consequences and hazard levels",
+          "type": "string"
+        },
+        "skredKvalKartlegging": {
+          "description": "angir status og detaljeringsgrad  når det gjelder kartlegging av sonen\n\n-- Definition --\nindicates the status and degree of detail as regards the mapping of the zone",
+          "type": "string"
+        },
+        "skredFaregradScore": {
+          "description": "tallverdi som er fremkommet ved at de viktigste kriteriene og faktorene som påvirker faregraden for kvikkleireskred er vurdert (jfr. Tabell 2 under kap.definisjoner og forkortelser.)\n\n-- Definition --\nnumerical value which results from the evaluation of the influence of the most important criteria and factors on the degree of hazard of a quick clay slide (cf. Table 2 in the chapter on definitions and abbreviations.)",
+          "type": "integer"
+        },
+        "skredSkadeKonsekvensKlasse": {
+          "description": "hvilke økonomiske og samfunnsmessige følger et kvikkleireskred får og fare for tap av menneskeliv\n\nMerknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt fare for at viktige samfunnsmessige funksjoner skal stoppe opp.  For skredtypen kvikkleire er inndelingen basert på beregningen av en poengverdi basert på vektede faktorer (se kap. definisjoner og forkortelser.) i kombinasjon med skadekonsekvensen\n\n-- Definition --\nwhat economic and social consequences follow a quick clay slide, and risk of loss of human lives   Note: Qualitative classification of consequences of damage in connection with risk of fatalities, personal injuries, financial loss, value reduction as well as the risk that important social functions can be affected",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon_lokalId",
+        "identifikasjon_navnerom",
+        "skredFaregradKlasse",
+        "skredKvalKartlegging",
+        "skredOmrID"
+      ]
+    },
+    "string": {
+      "enumDescription": {
+        "utført": {
+          "description": "Nei"
+        },
+        "til ny vurdering": {
+          "description": "Ja"
+        },
+        "erstattet av ny": {
+          "description": "Nei"
+        },
+        "fjernet": {
+          "description": "Nei"
+        },
+        "ajourført": {
+          "description": "Nei"
+        },
+        "under planlegging": {
+          "description": "Nei"
+        },
+        "pågående": {
+          "description": "Nei"
+        },
+        "Ja": {},
+        "Nei": {},
+        "Steinskred, uspesifisert": {
+          "description": "Steinskred, ikke nærmere bestemt type"
+        },
+        "Steinsprang (\u003c 100 m3)": {
+          "description": "Steinsprang (steinblokker \u003c 100 m3)"
+        },
+        "Lite fjellskred (100 - 10 000 m3)": {
+          "description": "Lite fjellskred (steinblokker 100 - 10 000 m3)"
+        },
+        "Fjellskred (\u003e 10 000 m3)": {
+          "description": "Fjellskred (steinblokker \u003e 10 000 m3)"
+        },
+        "Undervannsskred, uspesifisert": {
+          "description": "Undervannsskred, ikke nærmere bestemt type"
+        },
+        "Snøskred, uspesifisert": {
+          "description": "Snøskred, ikke nærmere bestemt type"
+        },
+        "Vått snøskred": {},
+        "Tørt snøskred": {},
+        "Sørpeskred": {},
+        "Løssnøskred, uspesifisert": {
+          "description": "Løssnøskred, ikke nærmere bestemt type"
+        },
+        "Vått løssnøskred": {},
+        "Tørt løssnøskred": {},
+        "Flakskred, uspesifisert": {
+          "description": "Flakskred, ikke nærmere bestemt type"
+        },
+        "Vått flakskred": {},
+        "Tørt flakskred": {},
+        "Løsmasseskred, uspesifisert": {
+          "description": "Løsmasseskred, ikke nærmere bestemt type"
+        },
+        "Kvikkleireskred": {},
+        "Flomskred": {},
+        "Leirskred": {},
+        "Jordskred": {},
+        "Jordskred, uspesifisert": {
+          "description": "Jordskred, ikke nærmere bestemt type\n\nMerknad: Fra og med 2015 benyttes ikke denne verdien for nye data."
+        },
+        "Isnedfall, uspesifisert": {
+          "description": "Isnedfall, ikke nærmere bestemt type"
+        },
+        "Skavlfall": {},
+        "Utglidning av veg": {},
+        "Ikke angitt": {
+          "description": "Skredtype ikke angitt"
+        },
+        "Ny, ikke-godkjent skredtype": {
+          "description": "Ny, ikke-godkjent skredtype\n\nMerknad: Fra og med 2015 benyttes ikke denne verdien for nye data."
+        },
+        "100": {
+          "description": "Gjentaksintervall: 100 år"
+        },
+        "1000": {
+          "description": "Gjentaksintervall: 1000 år"
+        },
+        "5000": {
+          "description": "Gjentaksintervall: 5000 år"
+        },
+        "Ingen": {
+          "description": "Påvist ikkje kvikkleire/sprøbruddmateriale, eller topografiske forhold som tilsier at kvikkleireskred ikke kan forekomme"
+        },
+        "Lav": {
+          "description": "Gunstige topografiske forhold.  Grunnundersøkelser viser at grunnforholdene er akseptable.  Det er lite eller ingen aktiv erosjon i vassdraget.  Det har vært liten skredaktivitet i området.  Ingen terrenginngrep, terrenginngrep har hatt gunstig innvirkning på stabiliteten (faregradscore 0-17)"
+        },
+        "Middels": {
+          "description": "Mindre gunstig topografiske forhold.  Mangelfulle grunnundersøkelser, eller grunnundersøkelsene viser mindre gunstige grunnforhold.  Det er aktiv erosjon i vassdraget.  Det har vært betydelig skredaktivitet i området.  Eventuelle terrenginngrep har liten eller ingen stabilitetsforverrende virkning (faregradscore 18-25)"
+        },
+        "Høy": {
+          "description": "Ugunstige topografiske forhold.  Mangelfulle grunnundersøkelser eller grunnundersøkelsene viser ugunstige grunnforhold.  Det er betydelig aktiv erosjon i vassdraget.  Det har vært stor skredaktivitet i området.  Terrenginngrep med stabilitetsforverrende virkning (faregradscore 26-51)"
+        },
+        "Risikoklasse 0": {
+          "description": "Områder hvor det ikke er fare for kvikkleireskred."
+        },
+        "Risikoklasse 1": {
+          "description": "Områder hvor det normalt ikke vil være aktuelt å foreta noen form for videre evaluering eller tiltak. Ved et eventuelt anleggsmessig inngrep vil det kreves dokumentasjon på at sikkerheten er tilfredsstillende.\n\n-- Definition --\nAreas where any further evaluation or action will normally not be relevant. For any intervention in the form of construction, documentation that safety is satisfactory will be required."
+        },
+        "Risikoklasse 2": {
+          "description": "Som ved risikoklasse 1 vil det heller ikke her  normalt  være aktuelt å foreta noen form for videre evaluering eller tiltak. Ved et eventuelt anleggsmessig inngrep vil det kreves dokumentasjon på at sikkerheten er tilfredsstillende.\n\n-- Definition --\nAs with Risk Class 1, neither will further evaluation or action normally be relevant here. For any intervention in the form of construction, documentation that safety is satisfactory will be required."
+        },
+        "Risikoklasse 3": {
+          "description": "Omfatter soner med til dels tett bebyggelse.\n\n-- Definition --\nIncludes zones that may in part be heavily built-up."
+        },
+        "Risikoklasse 4": {
+          "description": "Omfatter for det meste soner med tett bebyggelse. Må gis høy prioritet i det videre arbeidet med sikring mot skred.\n\n-- Definition --\nMainly comprising zones that are heavily built-up. Must be given high priority in the further work on preventive measures against landslide."
+        },
+        "Risikoklasse 5": {
+          "description": "Omfatter soner med høyeste skadekonsekvens og høyeste faregrad. Må gis høy prioritet i det videre arbeidet med sikring mot skred.\n\n-- Definition --\nComprising zones with the greatest injury consequences and highest hazard level. Must be given high priority in the ongoing work of landslide prevention."
+        },
+        "Ingen undersøkelse": {
+          "description": "Det er kun topografiske vurderinger som ligger til grunn for\nkvikkleirefaresonen, ingen befaring eller grunnundersøkelse. Denne kodeverdien må brukes dersom man skal utveksle soner som ikke er klassifisert"
+        },
+        "Enkel undersøkelse": {
+          "description": "Enkel undersøkelse av sonen, oversiktskartlegging\n\n-- Definition --\nSimple investigation of the zone, overview mapping."
+        },
+        "Supplerende undersøkelser / stabilitet": {
+          "description": "Utført supplerende undersøkelser og vurdering av stabilitet\n\n-- Definition --\nSupplementary investigation and assessment of stability carried out"
+        },
+        "Sikringstiltak utført": {
+          "description": "Sikringstiltak er utført"
+        },
+        "Ikke alvorlig": {},
+        "Mindre alvorlig": {
+          "description": "Liten risiko for skade på mennesker, tap av liv, begrensede økonomiske og samfunnsmessige konsekvenser (0-6 poeng).\n\n-- Definition --\nLow risk of personal injuries, loss of life; limited economic and social consequences (0-6 points)."
+        },
+        "Alvorlig": {
+          "description": "Risiko for skade på mennesker/tap av liv eller betydelige økonomiske og samfunnsmessige konsekvenser (7-22 poeng).\n\n-- Definition --\nRisk of personal injuries/loss of life or substantial economic and social consequences (7-22 points)."
+        },
+        "Meget alvorlig": {
+          "description": "Stor risiko for skade på mennesker/tap av liv eller meget store økonomiske og samfunnsmessige konsekvenser (23-45 poeng).\n\n-- Definition --\nHigh risk of personal injuries/loss of life or very great economic and social consequences (23-45 points)."
+        }
+      },
+      "type": "string",
+      "enum": [
+        "utført",
+        "til ny vurdering",
+        "erstattet av ny",
+        "fjernet",
+        "ajourført",
+        "under planlegging",
+        "pågående",
+        "Ja",
+        "Nei",
+        "Steinskred, uspesifisert",
+        "Steinsprang (\u003c 100 m3)",
+        "Lite fjellskred (100 - 10 000 m3)",
+        "Fjellskred (\u003e 10 000 m3)",
+        "Undervannsskred, uspesifisert",
+        "Snøskred, uspesifisert",
+        "Vått snøskred",
+        "Tørt snøskred",
+        "Sørpeskred",
+        "Løssnøskred, uspesifisert",
+        "Vått løssnøskred",
+        "Tørt løssnøskred",
+        "Flakskred, uspesifisert",
+        "Vått flakskred",
+        "Tørt flakskred",
+        "Løsmasseskred, uspesifisert",
+        "Kvikkleireskred",
+        "Flomskred",
+        "Leirskred",
+        "Jordskred",
+        "Jordskred, uspesifisert",
+        "Isnedfall, uspesifisert",
+        "Skavlfall",
+        "Utglidning av veg",
+        "Ikke angitt",
+        "Ny, ikke-godkjent skredtype",
+        "100",
+        "1000",
+        "5000",
+        "Ingen",
+        "Lav",
+        "Middels",
+        "Høy",
+        "Risikoklasse 0",
+        "Risikoklasse 1",
+        "Risikoklasse 2",
+        "Risikoklasse 3",
+        "Risikoklasse 4",
+        "Risikoklasse 5",
+        "Ingen undersøkelse",
+        "Enkel undersøkelse",
+        "Supplerende undersøkelser / stabilitet",
+        "Sikringstiltak utført",
+        "Ikke alvorlig",
+        "Mindre alvorlig",
+        "Alvorlig",
+        "Meget alvorlig"
+      ]
+    }
+  }
+}

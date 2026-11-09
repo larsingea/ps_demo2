@@ -1,0 +1,1112 @@
+---
+id: datamodell_for_gpkg_skred
+enabled: true
+providerType: FEATURE
+providerSubType: SQL
+nativeCrs:
+  code: 25833
+  forceAxisOrder: NONE
+nativeTimeZone: Europe/Oslo
+connectionInfo:
+  dialect: GPKG
+  database: datamodell-for-gpkg-skred.gpkg
+sourcePathDefaults:
+  primaryKey: objid
+  sortKey: objid
+types:
+  analyseområde:
+    sourcePath: /analyseområde
+    type: OBJECT
+    objectType: Analyseområde
+    description: dekning av et område analysert med tanke på potensiell skredfare
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        constraints:
+          required: true
+      identifikasjon_lokalId:
+        sourcePath: identifikasjon_lokalid
+        type: STRING
+        description: 'lokal identifikator, tildelt av dataleverendør/dataforvalter.
+          Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter
+          har samme identifikator.
+
+
+          NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren
+          er unik innenfor navnerommet.'
+        constraints:
+          required: true
+      identifikasjon_navnerom:
+        sourcePath: identifikasjon_navnerom
+        type: STRING
+        description: 'navnerom som unikt identifiserer datakilden til objektet, starter
+          med to bokstavs kode jfr ISO 3166. Benytter understreking  ("_") dersom
+          data produsenten ikke er assosiert med bare et land.
+
+
+          NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar
+          for de unike identifikatorene og vil registreres i "INSPIRE external  Object
+          Identifier Namespaces Register"
+
+
+          Eksempel: NO for Norge.'
+        constraints:
+          required: true
+      identifikasjon_versjonId:
+        sourcePath: identifikasjon_versjonid
+        type: STRING
+        description: 'identifikasjon av en spesiell versjon av et geografisk objekt
+          (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av
+          et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon,
+          benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt.
+          versjonId er en unik  identifikasjon av versjonen.
+
+
+          NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO
+          8601, slik som  "2007-02-12T12:12:12+05:30" som versjonId.'
+      datauttaksdato:
+        sourcePath: datauttaksdato
+        type: DATE
+        role: PRIMARY_INSTANT
+        description: 'dato for uttak fra en database
+
+
+          Merknad:
+
+          Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en
+          originaldatabase eller en kopidatabase.'
+      datafangstdato:
+        sourcePath: datafangstdato
+        type: DATE
+        description: 'dato når objektet siste gang ble registrert/observert/målt i
+          terrenget
+
+
+          Merknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da
+          registrerte endringer kan bufres i en kortere eller lengre periode før disse
+          legges inn i databasen.
+
+          Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+      førsteDigitaliseringsdato:
+        sourcePath: førstedigitaliseringsdato
+        type: DATE
+        description: 'dato når en representasjon av objektet i digital form første
+          gang ble etablert
+
+
+          Merknad:
+
+          førsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at
+          den første datafangsten skjedde analogt og gjort om til digital form senere
+          i en produksjonsprosess.
+
+          Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen
+          /observasjonen / målingen av objektet.'
+      oppdateringsdato:
+        sourcePath: oppdateringsdato
+        type: DATE
+        description: 'dato for siste endring på objektetdataene
+
+
+          Merknad:
+
+          Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som
+          er registrert kan bufres en kortere eller lengre periode før disse legges
+          inn i datasystemet (databasen).
+
+
+          -Definition-
+
+          Date and time at which this version of the spatial object was inserted or
+          changed in the spatial data set.'
+      opphav:
+        sourcePath: opphav
+        type: STRING
+        description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+          Merknad:
+
+          Kan også beskrive navn på person og årsak til oppdatering'
+      prosjektURL:
+        sourcePath: prosjekturl
+        type: STRING
+        description: URL-lenke til kartleggingsprosjektets informasjonsside
+      rapportURL:
+        sourcePath: rapporturl
+        type: STRING
+        description: URL-lenke til rapport fra kartleggingsprosjektet
+  analyseområdegr:
+    sourcePath: /analyseområdegr
+    type: OBJECT
+    objectType: AnalyseområdeGr
+    description: avgrensningslinje for område analysert med tanke på potensiell skredfare
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        constraints:
+          required: true
+  kartleggingsområde:
+    sourcePath: /kartleggingsområde
+    type: OBJECT
+    objectType: Kartleggingsområde
+    description: dekning av et område kartlagt med tanke på potensiell skredfare
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        constraints:
+          required: true
+      kartleggingsområdeID:
+        sourcePath: kartleggingsområdeid
+        type: STRING
+        description: kartleggingsområdets identifikator
+      kartleggingsområdeNavn:
+        sourcePath: kartleggingsområdenavn
+        type: STRING
+        description: navn på kartleggingsområde
+      kartleggingStatus:
+        sourcePath: kartleggingstatus
+        type: STRING
+        description: Status for kartleggingen av aktuelt område
+  kartleggingsområdekant:
+    sourcePath: /kartleggingsområdekant
+    type: OBJECT
+    objectType: Kartleggingsområdekant
+    description: avgrensningslinje for et kartleggingsområde som dekker et nærmere
+      angitt geografisk område.
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        constraints:
+          required: true
+  kvikkleirefaresoneavgr:
+    sourcePath: /kvikkleirefaresoneavgr
+    type: OBJECT
+    objectType: KvikkleireFaresoneAvgr
+    description: 'avgrensningslinje for areal med evaluering av risiko for kvikkleireskred
+      basert på skadekonsekvens og faregrad
+
+
+
+      -- Definition --
+
+      line delimiting area for which quick clay slide hazard has been evaluated based
+      on damage consequences and degree of hazard'
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        constraints:
+          required: true
+  skredfaregrense:
+    sourcePath: /skredfaregrense
+    type: OBJECT
+    objectType: SkredFaregrense
+    description: 'grenselinje som viser rekkevidden for mulige skred
+
+
+      Merknad: Resten av faresonepolygonet er ofte avgrenset av dataavgrensningslinje
+
+
+
+      -- Definition --
+
+      boundary line which shows the extent of potential avalanches/landslides'
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        constraints:
+          required: true
+  skredfaresone:
+    sourcePath: /skredfaresone
+    type: OBJECT
+    objectType: SkredFaresone
+    description: 'område hvor skredfaren er nærmere vurdert/kartlagt med hensyn til
+      sannsynlighet og rekkevidde
+
+
+      Merknad: Skredfaresonen kan bestå av utløsningsområde og utløpsområde for skred
+
+
+
+      -- Definition --
+
+      area where the avalanche/landslide hazard has been evaluated/surveyed in more
+      detail with regard to probability and extent'
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        constraints:
+          required: true
+      identifikasjon_lokalId:
+        sourcePath: identifikasjon_lokalid
+        type: STRING
+        description: 'lokal identifikator, tildelt av dataleverendør/dataforvalter.
+          Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter
+          har samme identifikator.
+
+
+          NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren
+          er unik innenfor navnerommet.'
+        constraints:
+          required: true
+      identifikasjon_navnerom:
+        sourcePath: identifikasjon_navnerom
+        type: STRING
+        description: 'navnerom som unikt identifiserer datakilden til objektet, starter
+          med to bokstavs kode jfr ISO 3166. Benytter understreking  ("_") dersom
+          data produsenten ikke er assosiert med bare et land.
+
+
+          NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar
+          for de unike identifikatorene og vil registreres i "INSPIRE external  Object
+          Identifier Namespaces Register"
+
+
+          Eksempel: NO for Norge.'
+        constraints:
+          required: true
+      identifikasjon_versjonId:
+        sourcePath: identifikasjon_versjonid
+        type: STRING
+        description: 'identifikasjon av en spesiell versjon av et geografisk objekt
+          (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av
+          et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon,
+          benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt.
+          versjonId er en unik  identifikasjon av versjonen.
+
+
+          NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO
+          8601, slik som  "2007-02-12T12:12:12+05:30" som versjonId.'
+      datauttaksdato:
+        sourcePath: datauttaksdato
+        type: DATE
+        role: PRIMARY_INSTANT
+        description: 'dato for uttak fra en database
+
+
+          Merknad:
+
+          Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en
+          originaldatabase eller en kopidatabase.'
+      datafangstdato:
+        sourcePath: datafangstdato
+        type: DATE
+        description: 'dato når objektet siste gang ble registrert/observert/målt i
+          terrenget
+
+
+          Merknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da
+          registrerte endringer kan bufres i en kortere eller lengre periode før disse
+          legges inn i databasen.
+
+          Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+      førsteDigitaliseringsdato:
+        sourcePath: førstedigitaliseringsdato
+        type: DATE
+        description: 'dato når en representasjon av objektet i digital form første
+          gang ble etablert
+
+
+          Merknad:
+
+          førsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at
+          den første datafangsten skjedde analogt og gjort om til digital form senere
+          i en produksjonsprosess.
+
+          Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen
+          /observasjonen / målingen av objektet.'
+      oppdateringsdato:
+        sourcePath: oppdateringsdato
+        type: DATE
+        description: 'dato for siste endring på objektetdataene
+
+
+          Merknad:
+
+          Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som
+          er registrert kan bufres en kortere eller lengre periode før disse legges
+          inn i datasystemet (databasen).
+
+
+          -Definition-
+
+          Date and time at which this version of the spatial object was inserted or
+          changed in the spatial data set.'
+      opphav:
+        sourcePath: opphav
+        type: STRING
+        description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+          Merknad:
+
+          Kan også beskrive navn på person og årsak til oppdatering'
+      skredtype:
+        sourcePath: skredtype
+        type: STRING
+        description: 'hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+
+          Merknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner
+          av disse
+
+
+          -- Definition --
+
+          what type of avalanche/landslide masses related to the avalanche/landslide
+          hazard or event
+
+          Note: Various types of avalanche/landslide masses, such as rock, snow, soil
+          and combinations these'
+        constraints:
+          required: true
+      skredStatistikkSannsynlighet:
+        sourcePath: skredstatistikksannsynlighet
+        type: STRING
+        description: 'statistisk sannsynlighet for at det går et skred
+
+
+          Betingelse: Egenskapen skredFaregradKlasse eller skredStatistikkSannsynlighet
+          er påkrevet. skredFaregradKlasse benyttes ved kvikkleire og skredStatistikkSannsynlighet
+          ved bratt terreng
+
+
+          Merknad: Oppgis som et skred per antall år. I plan og bygningsloven skal
+          man ta hensyn til 1000 årsskredet.
+
+
+          -- Definition --
+
+          statistical probability that an avalanche  landslide will take place   Condition:
+          The attribute landslideHazardLevelClass or avalancheStatisticProbability
+          is mandatory. landslideHazardLevelClass is used in the case of quick clay
+          and avalancheStatisticProbability in the case of steep terrain   Note:  Indicated
+          as a yearly probability of avalanches/landslides. In the Planning and Building
+          Act consideration must be given for the yearly probability of 1/1000'
+        constraints:
+          required: true
+  skredtypepunkt:
+    sourcePath: /skredtypepunkt
+    type: OBJECT
+    objectType: SkredTypePunkt
+    description: Punkt som definerer den dimensjonerende skredtypen for en eller flere
+      faresoner.
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POINT
+        constraints:
+          required: true
+      identifikasjon_lokalId:
+        sourcePath: identifikasjon_lokalid
+        type: STRING
+        description: 'lokal identifikator, tildelt av dataleverendør/dataforvalter.
+          Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter
+          har samme identifikator.
+
+
+          NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren
+          er unik innenfor navnerommet.'
+        constraints:
+          required: true
+      identifikasjon_navnerom:
+        sourcePath: identifikasjon_navnerom
+        type: STRING
+        description: 'navnerom som unikt identifiserer datakilden til objektet, starter
+          med to bokstavs kode jfr ISO 3166. Benytter understreking  ("_") dersom
+          data produsenten ikke er assosiert med bare et land.
+
+
+          NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar
+          for de unike identifikatorene og vil registreres i "INSPIRE external  Object
+          Identifier Namespaces Register"
+
+
+          Eksempel: NO for Norge.'
+        constraints:
+          required: true
+      identifikasjon_versjonId:
+        sourcePath: identifikasjon_versjonid
+        type: STRING
+        description: 'identifikasjon av en spesiell versjon av et geografisk objekt
+          (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av
+          et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon,
+          benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt.
+          versjonId er en unik  identifikasjon av versjonen.
+
+
+          NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO
+          8601, slik som  "2007-02-12T12:12:12+05:30" som versjonId.'
+      datauttaksdato:
+        sourcePath: datauttaksdato
+        type: DATE
+        role: PRIMARY_INSTANT
+        description: 'dato for uttak fra en database
+
+
+          Merknad:
+
+          Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en
+          originaldatabase eller en kopidatabase.'
+      datafangstdato:
+        sourcePath: datafangstdato
+        type: DATE
+        description: 'dato når objektet siste gang ble registrert/observert/målt i
+          terrenget
+
+
+          Merknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da
+          registrerte endringer kan bufres i en kortere eller lengre periode før disse
+          legges inn i databasen.
+
+          Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+      førsteDigitaliseringsdato:
+        sourcePath: førstedigitaliseringsdato
+        type: DATE
+        description: 'dato når en representasjon av objektet i digital form første
+          gang ble etablert
+
+
+          Merknad:
+
+          førsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at
+          den første datafangsten skjedde analogt og gjort om til digital form senere
+          i en produksjonsprosess.
+
+          Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen
+          /observasjonen / målingen av objektet.'
+      oppdateringsdato:
+        sourcePath: oppdateringsdato
+        type: DATE
+        description: 'dato for siste endring på objektetdataene
+
+
+          Merknad:
+
+          Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som
+          er registrert kan bufres en kortere eller lengre periode før disse legges
+          inn i datasystemet (databasen).
+
+
+          -Definition-
+
+          Date and time at which this version of the spatial object was inserted or
+          changed in the spatial data set.'
+      opphav:
+        sourcePath: opphav
+        type: STRING
+        description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+          Merknad:
+
+          Kan også beskrive navn på person og årsak til oppdatering'
+      skredOmrID:
+        sourcePath: skredomrid
+        type: INTEGER
+        description: 'unikt id-nummer for skredområde/kvikkleirefaresone
+
+
+          -- Definition --
+
+          unique ID number for landslide area or quick clay hazard zone'
+        constraints:
+          required: true
+      skredtype:
+        sourcePath: skredtype
+        type: STRING
+        description: 'hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+
+          Merknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner
+          av disse
+
+
+          -- Definition --
+
+          what type of avalanche/landslide masses related to the avalanche/landslide
+          hazard or event
+
+          Note: Various types of avalanche/landslide masses, such as rock, snow, soil
+          and combinations these'
+        constraints:
+          required: true
+  utlopomr:
+    sourcePath: /utlopomr
+    type: OBJECT
+    objectType: UtlopOmr
+    description: 'areal som påvirkes eller dekkes av skredmassser når skred utløses
+
+
+
+      -- Definition --
+
+      area which is affected or covered by avalanche/landslide masses when an avalanche/landslide
+      occurs'
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        constraints:
+          required: true
+      identifikasjon_lokalId:
+        sourcePath: identifikasjon_lokalid
+        type: STRING
+        description: 'lokal identifikator, tildelt av dataleverendør/dataforvalter.
+          Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter
+          har samme identifikator.
+
+
+          NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren
+          er unik innenfor navnerommet.'
+        constraints:
+          required: true
+      identifikasjon_navnerom:
+        sourcePath: identifikasjon_navnerom
+        type: STRING
+        description: 'navnerom som unikt identifiserer datakilden til objektet, starter
+          med to bokstavs kode jfr ISO 3166. Benytter understreking  ("_") dersom
+          data produsenten ikke er assosiert med bare et land.
+
+
+          NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar
+          for de unike identifikatorene og vil registreres i "INSPIRE external  Object
+          Identifier Namespaces Register"
+
+
+          Eksempel: NO for Norge.'
+        constraints:
+          required: true
+      identifikasjon_versjonId:
+        sourcePath: identifikasjon_versjonid
+        type: STRING
+        description: 'identifikasjon av en spesiell versjon av et geografisk objekt
+          (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av
+          et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon,
+          benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt.
+          versjonId er en unik  identifikasjon av versjonen.
+
+
+          NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO
+          8601, slik som  "2007-02-12T12:12:12+05:30" som versjonId.'
+      datauttaksdato:
+        sourcePath: datauttaksdato
+        type: DATE
+        role: PRIMARY_INSTANT
+        description: 'dato for uttak fra en database
+
+
+          Merknad:
+
+          Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en
+          originaldatabase eller en kopidatabase.'
+      datafangstdato:
+        sourcePath: datafangstdato
+        type: DATE
+        description: 'dato når objektet siste gang ble registrert/observert/målt i
+          terrenget
+
+
+          Merknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da
+          registrerte endringer kan bufres i en kortere eller lengre periode før disse
+          legges inn i databasen.
+
+          Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+      førsteDigitaliseringsdato:
+        sourcePath: førstedigitaliseringsdato
+        type: DATE
+        description: 'dato når en representasjon av objektet i digital form første
+          gang ble etablert
+
+
+          Merknad:
+
+          førsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at
+          den første datafangsten skjedde analogt og gjort om til digital form senere
+          i en produksjonsprosess.
+
+          Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen
+          /observasjonen / målingen av objektet.'
+      oppdateringsdato:
+        sourcePath: oppdateringsdato
+        type: DATE
+        description: 'dato for siste endring på objektetdataene
+
+
+          Merknad:
+
+          Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som
+          er registrert kan bufres en kortere eller lengre periode før disse legges
+          inn i datasystemet (databasen).
+
+
+          -Definition-
+
+          Date and time at which this version of the spatial object was inserted or
+          changed in the spatial data set.'
+      opphav:
+        sourcePath: opphav
+        type: STRING
+        description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+          Merknad:
+
+          Kan også beskrive navn på person og årsak til oppdatering'
+      prosjektURL:
+        sourcePath: prosjekturl
+        type: STRING
+        description: URL-lenke til kartleggingsprosjektets informasjonsside
+      rapportURL:
+        sourcePath: rapporturl
+        type: STRING
+        description: URL-lenke til rapport fra kartleggingsprosjektet
+      skredOmrID:
+        sourcePath: skredomrid
+        type: INTEGER
+        description: 'unikt id-nummer for skredområde/kvikkleirefaresone
+
+
+          -- Definition --
+
+          unique ID number for landslide area or quick clay hazard zone'
+        constraints:
+          required: true
+      skredOmrNavn:
+        sourcePath: skredomrnavn
+        type: STRING
+        description: 'stedsnavn som brukes i forbindelse med en skredhendelse
+
+
+          -- Definition --
+
+          place name which is used in connection with a landslide event'
+      arealKm2:
+        sourcePath: arealkm2
+        type: FLOAT
+        description: faresonens areal i kvadratkilometer (km2)
+      skredFaregradKlasse:
+        sourcePath: skredfaregradklasse
+        type: STRING
+        description: 'graden av sannsynlighet for at det skal gå et skred
+
+
+          Merknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet
+          basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold.
+          Skredfaregradklassen er for skredtypen kvikkleire basert på en evaluering
+          av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore
+          (0-51)
+
+
+          -- Definition --
+
+          the degree of probability that there will be a landslide
+
+          Note: Reflects the degree of hazard as regards the area''s stability,, based
+          upon topographic conditions, geological/geotechnical conditions and erosion
+          conditions. For quick clay landslides the landslideHazardLevelClass is based
+          upon a weighed hazardfactorscore (0-51)'
+        constraints:
+          required: true
+      skredSkadeKonsekvensScore:
+        sourcePath: skredskadekonsekvensscore
+        type: INTEGER
+        description: 'poengverdi basert på vektede faktorer for skadekonsekvensen
+
+
+          Merknad: Se nærmere definisjon i kap. definisjoner og forkortelser.
+
+
+          -- Definition --
+
+          value (in points) based on weighted factors for the consequences of damage   Note:
+          See more precise definition in chapter on definitions and abbreviations.'
+      skredRisikoKvikkleireKlasse:
+        sourcePath: skredrisikokvikkleireklasse
+        type: STRING
+        description: 'risikoen for at et område kan bli påført skredskade, inndelt
+          etter risikoklasser
+
+
+          Merknad: Denne egenskapen gjengir en klassifisering av risiko for at området
+          vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering
+          av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes
+          poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se
+          kapittel definisjoner og forkortelser)
+
+
+          -- Definition --
+
+          the risk that a landslide may inflict damage on an area, categorized according
+          to risk classes   Note: This attribute cites a classification of risk that
+          the area will be vulnerable to landslide damage. The classification method
+          is based on a review of damage consequences and hazard levels'
+      skredKvalKartlegging:
+        sourcePath: skredkvalkartlegging
+        type: STRING
+        description: 'angir status og detaljeringsgrad  når det gjelder kartlegging
+          av sonen
+
+
+          -- Definition --
+
+          indicates the status and degree of detail as regards the mapping of the
+          zone'
+        constraints:
+          required: true
+      skredFaregradScore:
+        sourcePath: skredfaregradscore
+        type: INTEGER
+        description: 'tallverdi som er fremkommet ved at de viktigste kriteriene og
+          faktorene som påvirker faregraden for kvikkleireskred er vurdert (jfr. Tabell
+          2 under kap.definisjoner og forkortelser.)
+
+
+          -- Definition --
+
+          numerical value which results from the evaluation of the influence of the
+          most important criteria and factors on the degree of hazard of a quick clay
+          slide (cf. Table 2 in the chapter on definitions and abbreviations.)'
+      skredSkadeKonsekvensKlasse:
+        sourcePath: skredskadekonsekvensklasse
+        type: STRING
+        description: 'hvilke økonomiske og samfunnsmessige følger et kvikkleireskred
+          får og fare for tap av menneskeliv
+
+
+          Merknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med
+          fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt
+          fare for at viktige samfunnsmessige funksjoner skal stoppe opp.  For skredtypen
+          kvikkleire er inndelingen basert på beregningen av en poengverdi basert
+          på vektede faktorer (se kap. definisjoner og forkortelser.) i kombinasjon
+          med skadekonsekvensen
+
+
+          -- Definition --
+
+          what economic and social consequences follow a quick clay slide, and risk
+          of loss of human lives   Note: Qualitative classification of consequences
+          of damage in connection with risk of fatalities, personal injuries, financial
+          loss, value reduction as well as the risk that important social functions
+          can be affected'
+  utlosningomr:
+    sourcePath: /utlosningomr
+    type: OBJECT
+    objectType: UtlosningOmr
+    description: 'område hvor skred kan utløses
+
+
+      Merknad: Alle typer skred'
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      geometry:
+        sourcePath: geometry
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        constraints:
+          required: true
+      identifikasjon_lokalId:
+        sourcePath: identifikasjon_lokalid
+        type: STRING
+        description: 'lokal identifikator, tildelt av dataleverendør/dataforvalter.
+          Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter
+          har samme identifikator.
+
+
+          NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren
+          er unik innenfor navnerommet.'
+        constraints:
+          required: true
+      identifikasjon_navnerom:
+        sourcePath: identifikasjon_navnerom
+        type: STRING
+        description: 'navnerom som unikt identifiserer datakilden til objektet, starter
+          med to bokstavs kode jfr ISO 3166. Benytter understreking  ("_") dersom
+          data produsenten ikke er assosiert med bare et land.
+
+
+          NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar
+          for de unike identifikatorene og vil registreres i "INSPIRE external  Object
+          Identifier Namespaces Register"
+
+
+          Eksempel: NO for Norge.'
+        constraints:
+          required: true
+      identifikasjon_versjonId:
+        sourcePath: identifikasjon_versjonid
+        type: STRING
+        description: 'identifikasjon av en spesiell versjon av et geografisk objekt
+          (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av
+          et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon,
+          benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt.
+          versjonId er en unik  identifikasjon av versjonen.
+
+
+          NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO
+          8601, slik som  "2007-02-12T12:12:12+05:30" som versjonId.'
+      datauttaksdato:
+        sourcePath: datauttaksdato
+        type: DATE
+        role: PRIMARY_INSTANT
+        description: 'dato for uttak fra en database
+
+
+          Merknad:
+
+          Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en
+          originaldatabase eller en kopidatabase.'
+      datafangstdato:
+        sourcePath: datafangstdato
+        type: DATE
+        description: 'dato når objektet siste gang ble registrert/observert/målt i
+          terrenget
+
+
+          Merknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da
+          registrerte endringer kan bufres i en kortere eller lengre periode før disse
+          legges inn i databasen.
+
+          Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+      førsteDigitaliseringsdato:
+        sourcePath: førstedigitaliseringsdato
+        type: DATE
+        description: 'dato når en representasjon av objektet i digital form første
+          gang ble etablert
+
+
+          Merknad:
+
+          førsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at
+          den første datafangsten skjedde analogt og gjort om til digital form senere
+          i en produksjonsprosess.
+
+          Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen
+          /observasjonen / målingen av objektet.'
+      oppdateringsdato:
+        sourcePath: oppdateringsdato
+        type: DATE
+        description: 'dato for siste endring på objektetdataene
+
+
+          Merknad:
+
+          Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som
+          er registrert kan bufres en kortere eller lengre periode før disse legges
+          inn i datasystemet (databasen).
+
+
+          -Definition-
+
+          Date and time at which this version of the spatial object was inserted or
+          changed in the spatial data set.'
+      opphav:
+        sourcePath: opphav
+        type: STRING
+        description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+          Merknad:
+
+          Kan også beskrive navn på person og årsak til oppdatering'
+      prosjektURL:
+        sourcePath: prosjekturl
+        type: STRING
+        description: URL-lenke til kartleggingsprosjektets informasjonsside
+      rapportURL:
+        sourcePath: rapporturl
+        type: STRING
+        description: URL-lenke til rapport fra kartleggingsprosjektet
+      skredOmrID:
+        sourcePath: skredomrid
+        type: INTEGER
+        description: 'unikt id-nummer for skredområde/kvikkleirefaresone
+
+
+          -- Definition --
+
+          unique ID number for landslide area or quick clay hazard zone'
+        constraints:
+          required: true
+      skredOmrNavn:
+        sourcePath: skredomrnavn
+        type: STRING
+        description: 'stedsnavn som brukes i forbindelse med en skredhendelse
+
+
+          -- Definition --
+
+          place name which is used in connection with a landslide event'
+      arealKm2:
+        sourcePath: arealkm2
+        type: FLOAT
+        description: faresonens areal i kvadratkilometer (km2)
+      skredFaregradKlasse:
+        sourcePath: skredfaregradklasse
+        type: STRING
+        description: 'graden av sannsynlighet for at det skal gå et skred
+
+
+          Merknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet
+          basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold.
+          Skredfaregradklassen er for skredtypen kvikkleire basert på en evaluering
+          av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore
+          (0-51)
+
+
+          -- Definition --
+
+          the degree of probability that there will be a landslide
+
+          Note: Reflects the degree of hazard as regards the area''s stability,, based
+          upon topographic conditions, geological/geotechnical conditions and erosion
+          conditions. For quick clay landslides the landslideHazardLevelClass is based
+          upon a weighed hazardfactorscore (0-51)'
+        constraints:
+          required: true
+      skredSkadeKonsekvensScore:
+        sourcePath: skredskadekonsekvensscore
+        type: INTEGER
+        description: 'poengverdi basert på vektede faktorer for skadekonsekvensen
+
+
+          Merknad: Se nærmere definisjon i kap. definisjoner og forkortelser.
+
+
+          -- Definition --
+
+          value (in points) based on weighted factors for the consequences of damage   Note:
+          See more precise definition in chapter on definitions and abbreviations.'
+      skredRisikoKvikkleireKlasse:
+        sourcePath: skredrisikokvikkleireklasse
+        type: STRING
+        description: 'risikoen for at et område kan bli påført skredskade, inndelt
+          etter risikoklasser
+
+
+          Merknad: Denne egenskapen gjengir en klassifisering av risiko for at området
+          vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering
+          av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes
+          poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se
+          kapittel definisjoner og forkortelser)
+
+
+          -- Definition --
+
+          the risk that a landslide may inflict damage on an area, categorized according
+          to risk classes   Note: This attribute cites a classification of risk that
+          the area will be vulnerable to landslide damage. The classification method
+          is based on a review of damage consequences and hazard levels'
+      skredKvalKartlegging:
+        sourcePath: skredkvalkartlegging
+        type: STRING
+        description: 'angir status og detaljeringsgrad  når det gjelder kartlegging
+          av sonen
+
+
+          -- Definition --
+
+          indicates the status and degree of detail as regards the mapping of the
+          zone'
+        constraints:
+          required: true
+      skredFaregradScore:
+        sourcePath: skredfaregradscore
+        type: INTEGER
+        description: 'tallverdi som er fremkommet ved at de viktigste kriteriene og
+          faktorene som påvirker faregraden for kvikkleireskred er vurdert (jfr. Tabell
+          2 under kap.definisjoner og forkortelser.)
+
+
+          -- Definition --
+
+          numerical value which results from the evaluation of the influence of the
+          most important criteria and factors on the degree of hazard of a quick clay
+          slide (cf. Table 2 in the chapter on definitions and abbreviations.)'
+      skredSkadeKonsekvensKlasse:
+        sourcePath: skredskadekonsekvensklasse
+        type: STRING
+        description: 'hvilke økonomiske og samfunnsmessige følger et kvikkleireskred
+          får og fare for tap av menneskeliv
+
+
+          Merknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med
+          fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt
+          fare for at viktige samfunnsmessige funksjoner skal stoppe opp.  For skredtypen
+          kvikkleire er inndelingen basert på beregningen av en poengverdi basert
+          på vektede faktorer (se kap. definisjoner og forkortelser.) i kombinasjon
+          med skadekonsekvensen
+
+
+          -- Definition --
+
+          what economic and social consequences follow a quick clay slide, and risk
+          of loss of human lives   Note: Qualitative classification of consequences
+          of damage in connection with risk of fatalities, personal injuries, financial
+          loss, value reduction as well as the risk that important social functions
+          can be affected'

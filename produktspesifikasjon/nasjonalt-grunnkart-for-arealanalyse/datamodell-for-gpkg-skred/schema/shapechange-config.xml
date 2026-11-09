@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ShapeChangeConfiguration xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 https://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+ <input id="INPUT">
+  <parameter name="inputModelType" value="SCXML" />
+  <parameter name="inputFile" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred/schema/model.scxml" />
+  <parameter name="appSchemaNameRegex" value="^datamodell-for-gpkg-skred$" />
+  <parameter name="publicOnly" value="true" />
+  <parameter name="checkingConstraints" value="disabled" />
+  <parameter name="addTaggedValues" value="*" />
+  <parameter name="representTaggedValues" value="SOSI_navn,SOSI_verdi,NVDB_ID" />
+  <xi:include href="https://shapechange.net/resources/config/StandardAliases.xml" />
+ </input>
+ <log>
+  <parameter name="reportLevel" value="INFO" />
+  <parameter name="logFile" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred/schema/log.xml" />
+ </log>
+ <transformers>
+  <Transformer class="de.interactive_instruments.shapechange.core.transformation.flattening.Flattener" mode="enabled" id="LDPROXY_FLAT" input="INPUT">
+   <parameters>
+    <ProcessParameter name="separatorForPropertyFromNonUnion" value="_" />
+   </parameters>
+   <rules>
+    <ProcessRuleSet name="flattener">
+     <rule name="rule-trf-prop-flatten-types" />
+    </ProcessRuleSet>
+   </rules>
+  </Transformer>
+ </transformers>
+ <targets>
+  <Target class="de.interactive_instruments.shapechange.core.target.json.JsonSchemaTarget" mode="enabled" inputs="INPUT">
+   <advancedProcessConfigurations>
+    <JsonSchemaAnnotations>
+     <annotations>
+      <SimpleAnnotation annotation="description" descriptorOrTaggedValue="documentation" noValueBehavior="ignore" />
+      <SimpleAnnotation annotation="title" descriptorOrTaggedValue="alias" noValueBehavior="ignore" />
+      <SimpleAnnotation annotation="codelist" descriptorOrTaggedValue="TV:codeList" noValueBehavior="ignore" />
+     </annotations>
+    </JsonSchemaAnnotations>
+   </advancedProcessConfigurations>
+   <targetParameter name="outputDirectory" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred/schema/jsonschema" />
+   <targetParameter name="jsonSchemaVersion" value="draft-07" />
+   <targetParameter name="jsonBaseUri" value="https://skjema.geonorge.no/SOSI/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred" />
+   <targetParameter name="entityTypeName" value="@type" />
+   <targetParameter name="defaultEncodingRule" value="sosiJson" />
+   <rules>
+    <EncodingRule name="sosiJson">
+     <rule name="rule-json-cls-basictype" />
+     <rule name="rule-json-cls-codelist-uri-format" />
+     <rule name="rule-json-cls-name-as-entityType" />
+     <rule name="rule-json-cls-primaryGeometry" />
+     <rule name="rule-json-cls-identifierForTypeWithIdentity" />
+     <rule name="rule-json-cls-union-propertyCount" />
+     <rule name="rule-json-cls-valueTypeOptions" />
+     <rule name="rule-json-all-documentation" />
+     <rule name="rule-json-cls-documentation-enumDescription" />
+    </EncodingRule>
+   </rules>
+   <mapEntries>
+    <MapEntry type="Punkt" rule="*" targetType="https://geojson.org/schema/Point.json" param="geometry" />
+    <MapEntry type="Kurve" rule="*" targetType="https://geojson.org/schema/LineString.json" param="geometry" />
+    <MapEntry type="Flate" rule="*" targetType="https://geojson.org/schema/Polygon.json" param="geometry" />
+    <MapEntry type="Sverm" rule="*" targetType="https://geojson.org/schema/MultiPoint.json" param="geometry" />
+   </mapEntries>
+   <xi:include href="https://shapechange.net/resources/config/StandardMapEntries_JSON.xml" />
+  </Target>
+  <Target class="de.interactive_instruments.shapechange.core.target.ldproxy2.Ldproxy2Target" mode="enabled" inputs="LDPROXY_FLAT">
+   <targetParameter name="outputDirectory" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred/schema/ldproxy" />
+   <targetParameter name="srid" value="25833" />
+   <targetParameter name="primaryKeyColumn" value="objid" />
+   <targetParameter name="nativeTimeZone" value="Europe/Oslo" />
+   <targetParameter name="defaultEncodingRule" value="ldproxy2" />
+   <targetParameter name="descriptionTemplate" value="[[documentation]]" />
+   <targetParameter name="descriptorNoValue" value="" />
+   <rules>
+    <EncodingRule name="ldproxy2" extends="*">
+     <rule name="rule-ldp2-all-associativeTablesWithSeparatePkField" />
+     <rule name="rule-ldp2-all-documentation" />
+    </EncodingRule>
+   </rules>
+   <xi:include href="https://shapechange.net/resources/config/StandardMapEntries_Ldproxy2.xml" />
+  </Target>
+ </targets>
+</ShapeChangeConfiguration>

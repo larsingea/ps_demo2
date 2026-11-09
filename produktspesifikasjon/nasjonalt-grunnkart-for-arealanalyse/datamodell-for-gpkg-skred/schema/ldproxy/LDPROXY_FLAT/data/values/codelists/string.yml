@@ -1,0 +1,60 @@
+---
+label: string
+entries:
+  "100": 100
+  "1000": 1000
+  "5000": 5000
+  Alvorlig: Alvorlig
+  Enkel undersøkelse: Enkel undersøkelse
+  Fjellskred (> 10 000 m3): Fjellskred (> 10 000 m3)
+  Flakskred, uspesifisert: "Flakskred, uspesifisert"
+  Flomskred: Flomskred
+  Høy: Høy
+  Ikke alvorlig: Ikke alvorlig
+  Ikke angitt: Ikke angitt
+  Ingen: Ingen
+  Ingen undersøkelse: Ingen undersøkelse
+  Isnedfall, uspesifisert: "Isnedfall, uspesifisert"
+  Ja: Ja
+  Jordskred: Jordskred
+  Jordskred, uspesifisert: "Jordskred, uspesifisert"
+  Kvikkleireskred: Kvikkleireskred
+  Lav: Lav
+  Leirskred: Leirskred
+  Lite fjellskred (100 - 10 000 m3): Lite fjellskred (100 - 10 000 m3)
+  Løsmasseskred, uspesifisert: "Løsmasseskred, uspesifisert"
+  Løssnøskred, uspesifisert: "Løssnøskred, uspesifisert"
+  Meget alvorlig: Meget alvorlig
+  Middels: Middels
+  Mindre alvorlig: Mindre alvorlig
+  Nei: Nei
+  Ny, ikke-godkjent skredtype: "Ny, ikke-godkjent skredtype"
+  Risikoklasse 0: Risikoklasse 0
+  Risikoklasse 1: Risikoklasse 1
+  Risikoklasse 2: Risikoklasse 2
+  Risikoklasse 3: Risikoklasse 3
+  Risikoklasse 4: Risikoklasse 4
+  Risikoklasse 5: Risikoklasse 5
+  Sikringstiltak utført: Sikringstiltak utført
+  Skavlfall: Skavlfall
+  Snøskred, uspesifisert: "Snøskred, uspesifisert"
+  Steinskred, uspesifisert: "Steinskred, uspesifisert"
+  Steinsprang (< 100 m3): Steinsprang (< 100 m3)
+  Supplerende undersøkelser / stabilitet: Supplerende undersøkelser / stabilitet
+  Sørpeskred: Sørpeskred
+  Tørt flakskred: Tørt flakskred
+  Tørt løssnøskred: Tørt løssnøskred
+  Tørt snøskred: Tørt snøskred
+  Undervannsskred, uspesifisert: "Undervannsskred, uspesifisert"
+  Utglidning av veg: Utglidning av veg
+  Vått flakskred: Vått flakskred
+  Vått løssnøskred: Vått løssnøskred
+  Vått snøskred: Vått snøskred
+  ajourført: ajourført
+  erstattet av ny: erstattet av ny
+  fjernet: fjernet
+  pågående: pågående
+  til ny vurdering: til ny vurdering
+  under planlegging: under planlegging
+  utført: utført
+sourceType: TEMPLATES
