@@ -2,10 +2,10 @@ metadataId: 28c28e3a-d88f-4a34-8c60-5efe6d56a44d
 output_directory: produktspesifikasjon
 product_slug: nasjonalt_grunnkart_for_arealanalyse
 updated: '2026-11-09'
+outputs: geopackage,jsonschema,ldproxy
+ldproxy_provider: geopackage
 scopes:
-- name: Grunnkartarealanalyse_atomfeedgpkg.xml
-  url: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/GrunnkartArealanalyse_AtomFeedGPKG.xml
+- name: Datamodell for GPKG_skred
+  url: inputs/nasjonalt-grunnkart-for-arealanalyse/input.gpkg
   generator: geopackage
-  description: GeoPackage (Atom Feed)
-  username_secret: CLIENTID
-  password_secret: CLIENTKEY
+  description: Datamodell hentet fra GPKG skredfaresoner
