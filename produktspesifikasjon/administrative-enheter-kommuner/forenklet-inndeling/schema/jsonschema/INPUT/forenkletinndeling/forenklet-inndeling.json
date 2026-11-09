@@ -1,0 +1,105 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/forenkletinndeling/forenklet-inndeling.json",
+  "definitions": {
+    "Identifikasjon": {
+      "type": "object",
+      "properties": {
+        "lokalId": {
+          "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "navnerom": {
+          "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+          "type": "string"
+        },
+        "versjonId": {
+          "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lokalId",
+        "navnerom"
+      ]
+    },
+    "Kommune": {
+      "description": "Geografisk avgrenset forvaltningsenhet (kommune) i henhold til inndelingslova. Tilsvarer LAU-nivået i EUs statistiske inndeling.",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "kommunenummer": {
+          "description": "Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.",
+          "$ref": "#/definitions/Kommunenummer"
+        },
+        "kommunenavn": {
+          "description": "Offisielt navn på kommunen.",
+          "type": "string"
+        },
+        "samiskForvaltningsområde": {
+          "description": "Angir om kommunen inngår i forvaltningsområdet for samisk språk etter sameloven.",
+          "type": "boolean"
+        },
+        "oppdateringsdato": {
+          "description": "Dato og tid for siste endring av objektet i datasettet.",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon",
+        "kommunenavn",
+        "kommunenummer",
+        "oppdateringsdato"
+      ]
+    },
+    "Kommunegrense": {
+      "description": "Grenselinje som avgrenser en kommune.",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "oppdateringsdato": {
+          "description": "Dato og tid for siste endring av objektet i datasettet.",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon",
+        "oppdateringsdato"
+      ]
+    },
+    "Kommunenummer": {
+      "codelist": "https://data.ssb.no/api/klass/v1/classifications/131",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

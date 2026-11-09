@@ -1,0 +1,115 @@
+[
+  {
+    "abstract": false,
+    "attributes": [
+      {
+        "attributes": [
+          {
+            "cardinality": "1",
+            "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+            "name": "lokalId",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+            "name": "navnerom",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+            "name": "versjonId",
+            "type": "CharacterString"
+          }
+        ],
+        "cardinality": "1",
+        "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+        "name": "identifikasjon",
+        "type": "Identifikasjon"
+      },
+      {
+        "cardinality": "1",
+        "description": "Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.",
+        "name": "kommunenummer",
+        "type": "Kommunenummer",
+        "valueDomain": {
+          "asDictionary": "true",
+          "codeList": "https://data.ssb.no/api/klass/v1/classifications/131",
+          "kind": "codelist"
+        }
+      },
+      {
+        "cardinality": "1",
+        "description": "Offisielt navn på kommunen.",
+        "name": "kommunenavn",
+        "type": "CharacterString"
+      },
+      {
+        "cardinality": "0..1",
+        "description": "Angir om kommunen inngår i forvaltningsområdet for samisk språk etter sameloven.",
+        "name": "samiskForvaltningsområde",
+        "type": "Boolean"
+      },
+      {
+        "cardinality": "1",
+        "description": "Kommunens geografiske utstrekning som flate.",
+        "name": "område",
+        "type": "GM_Surface"
+      },
+      {
+        "cardinality": "1",
+        "description": "Dato og tid for siste endring av objektet i datasettet.",
+        "name": "oppdateringsdato",
+        "type": "DateTime"
+      }
+    ],
+    "description": "Geografisk avgrenset forvaltningsenhet (kommune) i henhold til inndelingslova. Tilsvarer LAU-nivået i EUs statistiske inndeling.",
+    "name": "Kommune"
+  },
+  {
+    "abstract": false,
+    "attributes": [
+      {
+        "attributes": [
+          {
+            "cardinality": "1",
+            "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+            "name": "lokalId",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+            "name": "navnerom",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+            "name": "versjonId",
+            "type": "CharacterString"
+          }
+        ],
+        "cardinality": "1",
+        "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+        "name": "identifikasjon",
+        "type": "Identifikasjon"
+      },
+      {
+        "cardinality": "1",
+        "description": "Grenselinjens forløp.",
+        "name": "grense",
+        "type": "GM_Curve"
+      },
+      {
+        "cardinality": "1",
+        "description": "Dato og tid for siste endring av objektet i datasettet.",
+        "name": "oppdateringsdato",
+        "type": "DateTime"
+      }
+    ],
+    "description": "Grenselinje som avgrenser en kommune.",
+    "name": "Kommunegrense"
+  }
+]
