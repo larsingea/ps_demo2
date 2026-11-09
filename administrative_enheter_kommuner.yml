@@ -2,6 +2,7 @@ metadataId: 041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
 output_directory: produktspesifikasjon
 product_slug: administrative_enheter_kommuner
 updated: '2026-11-09'
+outputs: geopackage,xsd,jsonschema,odcs
 scopes:
 - name: Forenklet inndeling
   url: inputs/administrative-enheter-kommuner/forenklet-inndeling.feature_types.json
