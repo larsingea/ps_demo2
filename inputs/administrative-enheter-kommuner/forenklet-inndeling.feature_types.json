@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Kommune",
+    "description": "Inndeling i kommuner i henhold til LAU",
+    "abstract": false,
+    "attributes": [
+      {
+        "name": "kommunenavn",
+        "type": "Kommunenavn",
+        "cardinality": "1",
+        "description": "Navn på kommunen",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "3305",
+              "label": "Ringerike",
+              "description": "Ringerike kommune"
+            },
+            {
+              "value": "3310",
+              "label": "Hole",
+              "description": "Hole kommune"
+            }
+          ],
+          "asDictionary": "false"
+        }
+      },
+      {
+        "name": "kommunenummer",
+        "type": "Kommunenummer",
+        "cardinality": "1",
+        "description": "Kommunensnummer, hvor de to første sifrene indikerer fylkestilhørighet ",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "3310",
+              "label": "Hole",
+              "description": "Hole kommune"
+            },
+            {
+              "value": "3305",
+              "label": "Ringerike",
+              "description": "Ringerike kommune"
+            }
+          ],
+          "asDictionary": "false"
+        }
+      }
+    ]
+  }
+]
