@@ -1,0 +1,161 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Nasjonalt grunnkart for arealanalyse - Datamodell for GPKG_skred - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class "Analyseområde" as Analyseomr_de <<featureType>> {
+    + identifikasjon_lokalId [1] : CharacterString
+    + identifikasjon_navnerom [1] : CharacterString
+    + identifikasjon_versjonId [0..1] : CharacterString
+    + datauttaksdato [0..1] : Date
+    + datafangstdato [0..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+    + prosjektURL [0..1] : CharacterString
+    + rapportURL [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+
+  class "AnalyseområdeGr" as Analyseomr_deGr <<featureType>> {
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class "Kartleggingsområde" as Kartleggingsomr_de <<featureType>> {
+    + kartleggingsområdeID [0..1] : CharacterString
+    + kartleggingsområdeNavn [0..1] : CharacterString
+    + kartleggingStatus [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+
+  class "Kartleggingsområdekant" as Kartleggingsomr_dekant <<featureType>> {
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class KvikkleireFaresoneAvgr <<featureType>> {
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class SkredFaregrense <<featureType>> {
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class SkredFaresone <<featureType>> {
+    + identifikasjon_lokalId [1] : CharacterString
+    + identifikasjon_navnerom [1] : CharacterString
+    + identifikasjon_versjonId [0..1] : CharacterString
+    + datauttaksdato [0..1] : Date
+    + datafangstdato [0..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+    + skredtype [1] : CharacterString
+    + skredStatistikkSannsynlighet [1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+
+  class SkredTypePunkt <<featureType>> {
+    + identifikasjon_lokalId [1] : CharacterString
+    + identifikasjon_navnerom [1] : CharacterString
+    + identifikasjon_versjonId [0..1] : CharacterString
+    + datauttaksdato [0..1] : Date
+    + datafangstdato [0..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+    + skredOmrID [1] : Integer
+    + skredtype [1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class UtlopOmr <<featureType>> {
+    + identifikasjon_lokalId [1] : CharacterString
+    + identifikasjon_navnerom [1] : CharacterString
+    + identifikasjon_versjonId [0..1] : CharacterString
+    + datauttaksdato [0..1] : Date
+    + datafangstdato [0..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+    + prosjektURL [0..1] : CharacterString
+    + rapportURL [0..1] : CharacterString
+    + skredOmrID [1] : Integer
+    + skredOmrNavn [0..1] : CharacterString
+    + arealKm2 [0..1] : Real
+    + skredFaregradKlasse [1] : CharacterString
+    + skredSkadeKonsekvensScore [0..1] : Integer
+    + skredRisikoKvikkleireKlasse [0..1] : CharacterString
+    + skredKvalKartlegging [1] : CharacterString
+    + skredFaregradScore [0..1] : Integer
+    + skredSkadeKonsekvensKlasse [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+
+  class UtlosningOmr <<featureType>> {
+    + identifikasjon_lokalId [1] : CharacterString
+    + identifikasjon_navnerom [1] : CharacterString
+    + identifikasjon_versjonId [0..1] : CharacterString
+    + datauttaksdato [0..1] : Date
+    + datafangstdato [0..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+    + prosjektURL [0..1] : CharacterString
+    + rapportURL [0..1] : CharacterString
+    + skredOmrID [1] : Integer
+    + skredOmrNavn [0..1] : CharacterString
+    + arealKm2 [0..1] : Real
+    + skredFaregradKlasse [1] : CharacterString
+    + skredSkadeKonsekvensScore [0..1] : Integer
+    + skredRisikoKvikkleireKlasse [0..1] : CharacterString
+    + skredKvalKartlegging [1] : CharacterString
+    + skredFaregradScore [0..1] : Integer
+    + skredSkadeKonsekvensKlasse [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+}
+
+@enduml

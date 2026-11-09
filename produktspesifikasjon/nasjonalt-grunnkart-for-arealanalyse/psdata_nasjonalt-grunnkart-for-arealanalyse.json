@@ -1,0 +1,367 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Nasjonalt grunnkart for arealanalyse",
+  "format": "text/html",
+  "date": {
+    "creation": "2024-02-13",
+    "revision": "2026-03-25"
+  },
+  "language": "nor",
+  "contact": {
+    "individualName": "Miljødirektoratet og SSB - post@miljodir.no",
+    "organizationName": "Statistisk sentralbyrå",
+    "logo": "https://register.geonorge.no/data/organizations/971526920_SSB_liten.png",
+    "electronicMailAddress": "GISressurssenter@ssb.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Nasjonalt grunnkart for arealanalyse",
+    "abstract": "Grunnkartet er utviklet i samarbeid mellom NIBIO, SSB, Kartverket og Miljødirektoratet, og er ment som et felles datagrunnlag for ulike typer arealanalyser.\n\nDatasettet bygger på eksisterende data fra det offentlige kartgrunnlaget (DOK), som viser arealressurs- og arealbruksdata, og innebærer ingen nykartlegging.  Kildedata som er brukt i denne versjonen var oppdatert per 01.01.2025. I tillegg til arealressurs- og arealbruksdata er det lagt inn økosysteminformasjon i henhold til Eurostats klassifikasjonssystem. Grunnkartet kan kobles med andre datakilder, som for eksempel arealplaner, og benyttes som grunnlag for ulike typer arealanalyser og arealregnskap. Les mer om datainnhold og metode under Prosesshistorie.\n\n\n**Rapporter**\n\nUtviklingen av Grunnkartet er dokumentert i flere rapporter, som beskriver metode, tilbakemeldinger og gjennomførte endringer.\n\n* Alle endringer som er implementert i Årsversjon 2025 er samlet i rapporten [Nasjonalt grunnkart for arealanalyse - Årsversjon 2025](https://doi.org/10.21350/4m2k-7z04)\n\n* Alle tilbakemeldinger til Testversjon 2 er samlet i rapporten [Nasjonalt grunnkart for arealanalyse, Testversjon 2 - Tilbakemeldinger og vurderinger](https://www.kartverket.no/globalassets/forskning-og-utvikling/rapporter/nasjonalt-grunnkart-for-arealanalyse-testversjon-2-tilbakemeldinger-og-vurderinger.pdf).\n\n* Alle endringer som er implementert i Testversjon 2 er samlet i rapporten [Testversjon 2 - Nasjonalt grunnkart for bruk i arealregnskap](https://hdl.handle.net/11250/3185743)\n\n* Alle tilbakemeldinger til Testversjon 1 er samlet i rapporten [Grunnkart for bruk i arealregnskap - Tilbakemeldinger, vurderinger og anbefalinger](https://www.kartverket.no/globalassets/forskning-og-utvikling/rapporter/rapport-grunnkart-for-bruk-i-arealregnskap-tilbakemeldinger-vurderinger-og-anbefalinger-2.pdf).\n\n* Les mer om metode og bruk av Grunnkartet i rapporten [Grunnkart for bruk i arealregnskap](https://hdl.handle.net/11250/3120510)",
+    "purpose": {
+      "summary": "Nasjonalt grunnkart for arealanalyse er en sammenstilling av grunnleggende datasett som danner basis for ulike typer arealregnskap. Formålet er å tilrettelegge data for kommunal og regional forvaltning, slik at blant annet kostnadskrevende dobbeltarbeid unngås. Et felles kartgrunnlag gjør det også enklere å sammenligne arealregnskap på tvers av sektorer. Dette gir kommuner og fylker, sammen med rådgivende firmaer, mulighet til å fokusere på å tilrettelegge supplerende temadata for å lage sektorspesifikke regnskap.",
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Grunnkartet kan brukes som grunnlag for etablering av arealanalyse, og kan suppleres med spesifikke data tilpasset ulike regnskapsformål, slik som kommuneplaner, miljødata eller jordegenskaper. \n\nKommunal- og distriktsdepartementet (KDD) publiserte i 2023 en veileder for arealregnskap i kommunene (https://www.regjeringen.no/no/dokumenter/arealregnskap-i-kommuneplan/id3017913/), som gir oversikt over relevante datakilder og metoder. Årsversjonen 2025 av Grunnkartet supplerer og delvis erstatter datakildene som er nevnt i denne veilederen. For andre typer arealregnskap må det utvikles egne metoder med tilhørende veiledere."
+      }
+    },
+    "spatialRepresentationType": "Vektor",
+    "spatialResolution": {
+      "equivalentScale": "1:500 - 1:50000"
+    },
+    "supplementalInformation": "Grunnkartet kan lastes ned kommunevis for Norge digitalt-parter. WMS-tjenesten er åpen og kan benyttes for innsyn av alle.\n\nHvis du har tilbakemeldinger om Grunnkartet, kan du gjerne sende oss en e-post. \nAlle samarbeidspartene i prosjektet kan kontaktes ved tilbakemeldinger og/eller spørsmål. \n\nFor generelle spørsmål og spørsmål til metode: gisdrift@nibio.no\n\nFor spørsmål knyttet til Arealbruk: GISressurssenter@ssb.no\n\nFor spørsmål knyttet til Arealdekke: gisdrift@nibio.no\n\nFor spørsmål knyttet til Økosystemtype: post@miljodir.no",
+    "uniqueId": "https://data.geonorge.no/sosi/arealbruk/nasjonalt_grunnkart_arealanalyse",
+    "keyword": [
+      "Grunnkart",
+      "Arealregnskap",
+      "Arealstatistikk",
+      "Økosystemtyper",
+      "Arealanalyse",
+      "Arealdekke",
+      "Arealbruk",
+      "Det offentlige kartgrunnlaget",
+      "geodataloven",
+      "arealplanerPBL",
+      "Plan"
+    ],
+    "restriction": {
+      "legalConstraints": {
+        "accessConstraints": "Norge digitalt begrenset",
+        "useConstraints": "Lisens",
+        "license": "Norge digitalt-lisens",
+        "licenseUrl": "https://www.kartverket.no/geodataarbeid/norge-digitalt/partsinformasjon/avtaler-og-vilkar/norge-digitalt-lisens",
+        "otherConstraints": "Wms-tjenesten er åpen for alle. Nedlastbare data er begrenset til Norge digitalt-parter."
+      }
+    },
+    "contact": [
+      {
+        "individualName": "Miljødirektoratet og SSB - post@miljodir.no",
+        "organizationName": "Statistisk sentralbyrå",
+        "electronicMailAddress": "GISressurssenter@ssb.no",
+        "role": "owner"
+      },
+      {
+        "individualName": "Kontakt Kartverket",
+        "organizationName": "Kartverket",
+        "electronicMailAddress": "post@kartverket.no",
+        "role": "pointOfContact"
+      },
+      {
+        "individualName": "NIBIO",
+        "organizationName": "Norsk institutt for bioøkonomi",
+        "electronicMailAddress": "gisdrift@nibio.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Årlig",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "2.0",
+        "eastBoundLongitude": "33.0",
+        "southBoundLatitude": "57.0",
+        "northBoundLatitude": "72.0"
+      },
+      "geographicDescription": [
+        "Norges fastland for landsdekkende datasett"
+      ],
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2024-02-13",
+          "endPosition": "2026-03-25"
+        }
+      }
+    },
+    "date": {
+      "creation": "2024-02-13",
+      "publication": "2024-02-13",
+      "revision": "2026-03-25"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Datamodell for GPKG_skred",
+        "level": "dataset",
+        "levelDescription": "Datamodell hentet fra GPKG skredfaresoner"
+      }
+    }
+  ],
+  "referenceSystemSection": {
+    "spatialReferenceSystem": [
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      },
+      {
+        "code": "EPSG:25833",
+        "name": "EUREF89 UTM sone 33, 2d"
+      },
+      {
+        "code": "EPSG:25835",
+        "name": "EUREF89 UTM sone 35, 2d"
+      },
+      {
+        "code": "EPSG:4258",
+        "name": "EUREF 89 Geografisk (ETRS 89) 2d"
+      },
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      }
+    ]
+  },
+  "dataQualitySection": {
+    "scope": {
+      "level": "dataset"
+    },
+    "report": [
+      {
+        "nameOfMeasure": "SOSI produktspesifikasjon: Nasjonalt grunnkart for arealanalyse",
+        "descriptiveResult": "Dataene er i henhold til produktspesifikasjonen"
+      },
+      {
+        "nameOfMeasure": "Sosi applikasjonsskjema",
+        "descriptiveResult": "GML-filer er i henhold til applikasjonsskjema"
+      },
+      {
+        "nameOfMeasure": "Prosentvis oppfyllelse av FAIR-prinsipper",
+        "measureDescription": "Angir fullstendighet i forhold til krav fra FAIR-prinsippene (The FAIR Guiding Principles for scientific data management and stewardship)",
+        "result": "95"
+      }
+    ]
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Årlig",
+    "maintenanceAndUpdateStatement": "Fullført"
+  },
+  "dataCaptureAndProductionSection": {
+    "DataAcquisitionAndProcessing": {
+      "dataCaptureStatement": "Arbeidet med Nasjonalt grunnkart for arealanalyse startet i 2023 som et samarbeid mellom NIBIO, SSB, Kartverket og Miljødirektoratet. Arbeidet med å etablere Grunnkartet tok utgangspunkt i metoder og datagrunnlag som allerede benyttes i arbeidet med den offentlige arealbruks- og arealressursstatistikken. Dette grunnlaget er ytterligere beriket ved å tilføre data fra andre offentlige kartdatabaser og registre, samt tilføre datasettet en økosystemkoding. \n\n*Testversjon 1* av Grunnkartet ble publisert i februar 2024. Våren 2024 ble det gjennomført brukerdialog gjennom møter med utvalgte brukere og spørreskjemaer. Tilbakemeldingene pekte på behov for retting av topologifeil, tematiske avklaringer og bedre brukerveiledning. \n\nTestversjon 1 inneholdt følgende egenskaper: Arealdekke, Arealbruk, Økosystemklasse, Grøntandel, Areal og Kommunenummer.\n\n*Testversjon 2* ble publisert 1. april 2025, og inkluderte forbedringer basert på tilbakemeldingene etter Testversjon 1. I arbeidet med Testversjon 2 har fokuset vært å lage et mer ryddig, enklere og mer intuitivt kart. Det er blant annet arbeidet med tematiske problemstillinger rundt nomenklaturen for arealdekke og arealbruk, og det er foretatt en mer systematisk topologi- og geometrirydding. I tillegg er det inkludert arealbruk i hav.\n\nTestversjon 2 inneholdt følgende egenskaper: Arealdekke, Arealbruk, Økosystemklasse, Areal, Kommunenummer, Kilde, Treslag, Grunnforhold og Arealbruk i hav (stedfast og ikke-stedfast).\n\nDet er gjennomført brukerinvolvering mot Testversjon 2 våren 2025. Innspill og endringer i Åsversjon 2025 er dokumentert i egne rapporter.\n\n*Årsversjon 2025* ble publisert som WMS-tjeneste 22. desember 2025. Årsversjon 2025 er dokumentert i rapporten ”Nasjonalt grunnkart for arealanalyse – Årsversjon 2025”. Videre vil datasettet dokumenteres i form av en standard produktspesifikasjon i løpet av første halvdel av 2026.\n\nÅrsversjon 2025 inneholder følgende egenskaper: ArealdekkeNiva1, ArealdekkeNiva2, ArealbrukLandHovedklasse, ArealbrukLandUnderklasse, ArealbrukHav, ØkosystemtypeNiva1, ØkosystemtypeNiva2, ØkosystemtypeNiva3, Kommunenummer, GrunnkartKilde, ArealbrukKilde, Skogbonitet, Grunnforhold samt ArealdekkeKode, GrunnforholdKode, SkogbonitetKode, ArealbrukLandKode, ArealbrukHavKode og OkosystemtypeKode.\n\n- - - \nTematiske detaljer\n\n**Arealdekke** baseres på klassifikasjonen av arealressurs i FKB-AR5, med tilleggsinformasjon om skog og snaumark. Temaet er delt inn i fire temalag; ArealdekkeNiva1, ArealdekkeNiva2,  Skogbonitet og Grunnforhold. Kodingen skal være gjenkjennbar for brukere som kjenner AR5-typologien, men med noen avvik og endringer. \n\n**Arealbruksklassifikasjonen** baseres på SSB-arealbruk, slik den er tilgjengelig på Geonorge. En grov inndeling av arealbruken på land er gitt i ArealbrukLandHovedklasse, mens en mer fininndelt klassifisering finnes i ArealbrukLandUnderklasse.  Kildedata for hver polygon er inkludert, noe som kan gi bedre innsikt i datakvalitet og gjør det enklere å spore og rette feil. Arealbruk er gitt for bebygde og opparbeida arealer, men for ubebygde områder vil disse kolonnene være blanke.\n\n**Arealbruk i hav** viser installasjoner, og annen klart stedbundet aktivitet.\n\n**Økosystemklassifikasjonen** følger, så langt det er mulig, Eurostats anbefalte klassifikasjon (3 nivåer). I bebygde områder følges den til nivå 3 så langt det har latt seg gjøre. Miljødirektoratet, med bistand fra NINA, har tilordnet Eurostat-klasser til kombinasjoner av arealdekke, arealbruk, treslag, grunnforhold, bonitet og kysttilhørighet. Som hovedregel overstyrer arealbruk arealdekke ved konflikt.\n\nEurostats økosystemklassifikasjon er beskrevet i [NIBIO rapport 9 (143) 2023 Hovedøkosystemkart for Norge](https://hdl.handle.net/11250/3106442)\n- - -"
+    }
+  },
+  "portrayal": {
+    "name": "Tegneregler",
+    "linkage": "https://register.geonorge.no/tegneregler/nasjonalt-grunnkart-for-arealanalyse-årsversjon-2025"
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Geonorge nedlastning",
+          "deliveryService": {
+            "serviceEndpoint": "https://nedlasting.geonorge.no/api/capabilities/28c28e3a-d88f-4a34-8c60-5efe6d56a44d",
+            "serviceProperty": {
+              "type": "Geonorge nedlastning",
+              "value": "GEONORGE:DOWNLOAD"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "FGDB"
+          },
+          {
+            "formatName": "GML"
+          },
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/GrunnkartArealanalyse_AtomFeedFGDB.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "FGDB"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/GrunnkartArealanalyse_AtomFeedGML.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GML"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "fylkesvis, kommunevis, landsfiler",
+          "deliveryMediumName": "Atom Feed",
+          "deliveryService": {
+            "serviceEndpoint": "http://nedlasting.geonorge.no/geonorge/ATOM-feeds/GrunnkartArealanalyse_AtomFeedGPKG.xml",
+            "serviceProperty": {
+              "type": "Atom Feed",
+              "value": "W3C:AtomFeed"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Nasjonalt grunnkart for arealanalyse WMS - årsversjon 2025",
+          "deliveryService": {
+            "serviceEndpoint": "https://wms.nibio.no/cgi-bin/grunnkart_arealanalyse?service=WMS&version=1.3.0&request=GetCapabilities",
+            "serviceProperty": {
+              "type": "Nasjonalt grunnkart for arealanalyse WMS - årsversjon 2025",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "OGC WMS",
+            "version": "1.3.0"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: datamodell-for-gpkg-skred",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred/datamodell-for-gpkg-skred.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: datamodell-for-gpkg-skred",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/nasjonalt-grunnkart-for-arealanalyse/datamodell-for-gpkg-skred/schema/jsonschema/INPUT/datamodellforgpkgskred/datamodell-for-gpkg-skred.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
+          }
+        ]
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2026-11-09",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Kartverket",
+      "individualName": "Kontakt Kartverket",
+      "logo": "https://register.geonorge.no/data/organizations/971526920_SSB_liten.png",
+      "electronicMailAddress": "post@kartverket.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "28c28e3a-d88f-4a34-8c60-5efe6d56a44d",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/28c28e3a-d88f-4a34-8c60-5efe6d56a44d"
+    }
+  },
+  "additionalReferences": [
+    {
+      "title": "Produktark",
+      "href": "https://register.geonorge.no/produktark/nasjonalt-grunnkart-for-arealanalyse-årsversjon-2025"
+    },
+    {
+      "title": "Produktside",
+      "href": "https://www.miljodirektoratet.no/ansvarsomrader/overvaking-arealplanlegging/arealplanlegging/nasjonalt-grunnkart-for-arealanalyse/"
+    }
+  ],
+  "chapterAutofill": {
+    "om_spesifikasjonen": 13,
+    "om_produktet": 278,
+    "formaal": 71,
+    "bruksomraade": 73,
+    "omfang": 31,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 31,
+    "datakvalitet": 44,
+    "datafangst_og_produksjon": 471,
+    "vedlikehold": 2,
+    "presentasjon": 2,
+    "leveranse": 78,
+    "metadata": 14,
+    "tilleggsinformasjon": 71,
+    "datamodell": 4990
+  },
+  "specificationContact": "Statistisk sentralbyrå, [GISressurssenter@ssb.no](mailto:GISressurssenter@ssb.no)"
+}
