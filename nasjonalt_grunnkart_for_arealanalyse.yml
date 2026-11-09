@@ -1,0 +1,11 @@
+metadataId: 28c28e3a-d88f-4a34-8c60-5efe6d56a44d
+output_directory: produktspesifikasjon
+product_slug: nasjonalt_grunnkart_for_arealanalyse
+updated: '2026-11-09'
+scopes:
+- name: Grunnkartarealanalyse_atomfeedgpkg.xml
+  url: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/GrunnkartArealanalyse_AtomFeedGPKG.xml
+  generator: geopackage
+  description: GeoPackage (Atom Feed)
+  username_secret: CLIENTID
+  password_secret: CLIENTKEY
