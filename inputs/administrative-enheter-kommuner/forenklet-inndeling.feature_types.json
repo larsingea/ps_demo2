@@ -3,6 +3,32 @@
     "abstract": false,
     "attributes": [
       {
+        "attributes": [
+          {
+            "cardinality": "1",
+            "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+            "name": "lokalId",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+            "name": "navnerom",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+            "name": "versjonId",
+            "type": "CharacterString"
+          }
+        ],
+        "cardinality": "1",
+        "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+        "name": "identifikasjon",
+        "type": "Identifikasjon"
+      },
+      {
         "cardinality": "1",
         "description": "Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.",
         "name": "kommunenummer",
@@ -44,6 +70,32 @@
   {
     "abstract": false,
     "attributes": [
+      {
+        "attributes": [
+          {
+            "cardinality": "1",
+            "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+            "name": "lokalId",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+            "name": "navnerom",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+            "name": "versjonId",
+            "type": "CharacterString"
+          }
+        ],
+        "cardinality": "1",
+        "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+        "name": "identifikasjon",
+        "type": "Identifikasjon"
+      },
       {
         "cardinality": "1",
         "description": "Grenselinjens forløp.",
