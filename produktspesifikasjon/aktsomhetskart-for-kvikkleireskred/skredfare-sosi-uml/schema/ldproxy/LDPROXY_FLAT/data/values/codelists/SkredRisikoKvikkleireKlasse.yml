@@ -1,0 +1,18 @@
+---
+label: SkredRisikoKvikkleireKlasse
+description: |-
+  risikoen for at et område kan bli påført skredskade, inndelt etter risikoklasser
+
+  Merknad: Denne egenskapen gjengir en klassifisering av risiko for at området vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se kapittel definisjoner og forkortelser.)
+
+
+  -- Definition - -
+  the risk that a landslide may inflict damage on an area, categorized according to risk classes  Note: This attribute cites a classification of risk that the area will be vulnerable to landslide damage. The classification method is based on a review of damage consequences and hazard levels
+entries:
+  Risikoklasse 0: Risikoklasse 0
+  Risikoklasse 1: Risikoklasse 1
+  Risikoklasse 2: Risikoklasse 2
+  Risikoklasse 3: Risikoklasse 3
+  Risikoklasse 4: Risikoklasse 4
+  Risikoklasse 5: Risikoklasse 5
+sourceType: TEMPLATES

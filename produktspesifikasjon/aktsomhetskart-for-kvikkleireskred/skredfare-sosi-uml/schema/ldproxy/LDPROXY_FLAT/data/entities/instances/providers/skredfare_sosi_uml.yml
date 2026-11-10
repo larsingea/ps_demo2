@@ -1,0 +1,388 @@
+---
+id: skredfare_sosi_uml
+enabled: true
+providerType: FEATURE
+providerSubType: SQL
+nativeCrs:
+  code: 25833
+  forceAxisOrder: NONE
+nativeTimeZone: Europe/Oslo
+connectionInfo:
+  database: FIXME
+  host: FIXME
+  user: FIXME
+  password: FIXME-base64-encoded
+  schemas:
+  - public
+sourcePathDefaults:
+  primaryKey: objid
+  sortKey: objid
+types:
+  analyseområde:
+    sourcePath: /analyseområde
+    type: OBJECT
+    objectType: Analyseområde
+    description: dekning av et område analysert med tanke på potensiell skredfare
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      område:
+        sourcePath: område
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        description: |-
+          objektets utstrekning
+
+          -- Definition --
+          area over which an object extends
+        constraints:
+          required: true
+      analyseområdeGrense:
+        sourcePath: "[objid=analyseområdeobjid]Analyseområde_analyseområdeGrense/[analyseområdegrobjid=objid]analyseområdegr"
+        type: OBJECT_ARRAY
+        objectType: Link
+        constraints:
+          required: true
+          minOccurrence: 1
+        properties:
+          title:
+            sourcePath: objid
+            type: STRING
+            label: AnalyseområdeGr-title
+          href:
+            sourcePath: objid
+            type: STRING
+            label: AnalyseområdeGr-ID
+            transformations:
+            - stringFormat: "{{serviceUrl}}/collections/analyseområdegr/items/{{value}}"
+  analyseområdegr:
+    sourcePath: /analyseområdegr
+    type: OBJECT
+    objectType: AnalyseområdeGr
+    description: avgrensningslinje for område analysert med tanke på potensiell skredfare
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      grense:
+        sourcePath: grense
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        description: |-
+          forløp som følger overgang mellom ulike fenomener
+
+          -- Definition --
+          course following the transition between different real world phenomena
+        constraints:
+          required: true
+  kartleggingsområde:
+    sourcePath: /kartleggingsområde
+    type: OBJECT
+    objectType: Kartleggingsområde
+    description: dekning av et område kartlagt med tanke på potensiell skredfare
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      område:
+        sourcePath: område
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        description: objektets utstrekning
+        constraints:
+          required: true
+      kartleggingsområdeID:
+        sourcePath: kartleggingsområdeid
+        type: STRING
+        description: kartleggingsområdets identifikator
+      kartleggingsområdeNavn:
+        sourcePath: kartleggingsområdenavn
+        type: STRING
+        description: navn på kartleggingsområde
+      kartleggingStatus:
+        sourcePath: kartleggingstatus
+        type: STRING
+        description: Status for kartleggingen av aktuelt område
+        constraints:
+          codelist: Prosjektstatus_NVE
+      områdekant:
+        sourcePath: "[objid=kartleggingsområdeobjid]Kartleggingsområde_områdekant/[kartleggingsområdekantobjid=objid]kartleggingsområdekant"
+        type: OBJECT_ARRAY
+        objectType: Link
+        constraints:
+          required: true
+          minOccurrence: 1
+        properties:
+          title:
+            sourcePath: objid
+            type: STRING
+            label: Kartleggingsområdekant-title
+          href:
+            sourcePath: objid
+            type: STRING
+            label: Kartleggingsområdekant-ID
+            transformations:
+            - stringFormat: "{{serviceUrl}}/collections/kartleggingsområdekant/items/{{value}}"
+  kartleggingsområdekant:
+    sourcePath: /kartleggingsområdekant
+    type: OBJECT
+    objectType: Kartleggingsområdekant
+    description: avgrensningslinje for et kartleggingsområde som dekker et nærmere angitt geografisk område.
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      grense:
+        sourcePath: grense
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        description: forløp som følger overgang mellom ulike fenomener
+        constraints:
+          required: true
+  kvikkleirefaresoneavgr:
+    sourcePath: /kvikkleirefaresoneavgr
+    type: OBJECT
+    objectType: KvikkleireFaresoneAvgr
+    description: |-
+      avgrensningslinje for areal med evaluering av risiko for kvikkleireskred basert på skadekonsekvens og faregrad
+
+
+      -- Definition --
+      line delimiting area for which quick clay slide hazard has been evaluated based on damage consequences and degree of hazard
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      grense:
+        sourcePath: grense
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        description: |-
+          forløp som følger overgang mellom ulike fenomener
+
+          -- Definition --
+          course following the transition between different real world phenomena
+        constraints:
+          required: true
+  skredfaregrense:
+    sourcePath: /skredfaregrense
+    type: OBJECT
+    objectType: SkredFaregrense
+    description: |-
+      grenselinje som viser rekkevidden for mulige skred
+
+      Merknad: Resten av faresonepolygonet er ofte avgrenset av dataavgrensningslinje
+
+
+      -- Definition --
+      boundary line which shows the extent of potential avalanches/landslides
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      grense:
+        sourcePath: grense
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: LINE_STRING
+        description: |-
+          forløp som følger overgang mellom ulike fenomener
+
+          -- Definition --
+          course following the transition between different real world phenomena
+        constraints:
+          required: true
+  skredfaresone:
+    sourcePath: /skredfaresone
+    type: OBJECT
+    objectType: SkredFaresone
+    description: |-
+      område hvor skredfaren er nærmere vurdert/kartlagt med hensyn til sannsynlighet og rekkevidde
+
+      Merknad: Skredfaresonen kan bestå av utløsningsområde og utløpsområde for skred
+
+
+      -- Definition --
+      area where the avalanche/landslide hazard has been evaluated/surveyed in more detail with regard to probability and extent
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      område:
+        sourcePath: område
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POLYGON
+        description: |-
+          objektets utstrekning
+
+          -- Definition --
+          area over which an object extends
+        constraints:
+          required: true
+      skredtype:
+        sourcePath: skredtype
+        type: STRING
+        description: |-
+          hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+          Merknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse
+
+          -- Definition --
+          what type of avalanche/landslide masses related to the avalanche/landslide hazard or event
+          Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these
+        constraints:
+          codelist: SkredtypeDetaljert
+          required: true
+      skredStatistikkSannsynlighet:
+        sourcePath: skredstatistikksannsynlighet
+        type: STRING
+        description: |-
+          statistisk sannsynlighet for at det går et skred
+
+          Betingelse: Egenskapen skredFaregradKlasse eller skredStatistikkSannsynlighet er påkrevet. skredFaregradKlasse benyttes ved kvikkleire og skredStatistikkSannsynlighet ved bratt terreng
+
+          Merknad: Oppgis som et skred per antall år. I plan og bygningsloven skal man ta hensyn til 1000 årsskredet.
+
+          -- Definition --
+          statistical probability that an avalanche  landslide will take place   Condition: The attribute landslideHazardLevelClass or avalancheStatisticProbability is mandatory. landslideHazardLevelClass is used in the case of quick clay and avalancheStatisticProbability in the case of steep terrain   Note:  Indicated as a yearly probability of avalanches/landslides. In the Planning and Building Act consideration must be given for the yearly probability of 1/1000
+        constraints:
+          codelist: SkredSannsynlighet
+          required: true
+      skredFaregrense:
+        sourcePath: "[objid=skredfaresoneobjid]SkredFaresone_skredFaregrense/[skredfaregrenseobjid=objid]skredfaregrense"
+        type: OBJECT_ARRAY
+        objectType: Link
+        constraints:
+          required: true
+          minOccurrence: 1
+        properties:
+          title:
+            sourcePath: objid
+            type: STRING
+            label: SkredFaregrense-title
+          href:
+            sourcePath: objid
+            type: STRING
+            label: SkredFaregrense-ID
+            transformations:
+            - stringFormat: "{{serviceUrl}}/collections/skredfaregrense/items/{{value}}"
+  skredtypepunkt:
+    sourcePath: /skredtypepunkt
+    type: OBJECT
+    objectType: SkredTypePunkt
+    description: Punkt som definerer den dimensjonerende skredtypen for en eller flere faresoner.
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      punkt:
+        sourcePath: punkt
+        type: GEOMETRY
+        role: PRIMARY_GEOMETRY
+        geometryType: POINT
+        description: sted som objektet eksisterer på
+        constraints:
+          required: true
+      skredOmrID:
+        sourcePath: skredomrid
+        type: INTEGER
+        description: |-
+          unikt id-nummer for skredområde/kvikkleirefaresone
+
+          -- Definition --
+          unique ID number for landslide area or quick clay hazard zone
+        constraints:
+          required: true
+      skredtype:
+        sourcePath: skredtype
+        type: STRING
+        description: |-
+          hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+          Merknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse
+
+          -- Definition --
+          what type of avalanche/landslide masses related to the avalanche/landslide hazard or event
+          Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these
+        constraints:
+          codelist: SkredtypeDetaljert
+          required: true
+  utlopomr:
+    sourcePath: /utlopomr
+    type: OBJECT
+    objectType: UtlopOmr
+    description: |-
+      areal som påvirkes eller dekkes av skredmassser når skred utløses
+
+
+      -- Definition --
+      area which is affected or covered by avalanche/landslide masses when an avalanche/landslide occurs
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      kvikkleireFaresoneAvgr:
+        sourcePath: "[objid=utlopomrobjid]UtlopOmr_kvikkleireFaresoneAvgr/[kvikkleirefaresoneavgrobjid=objid]kvikkleirefaresoneavgr"
+        type: OBJECT_ARRAY
+        objectType: Link
+        constraints:
+          required: true
+          minOccurrence: 1
+        properties:
+          title:
+            sourcePath: objid
+            type: STRING
+            label: KvikkleireFaresoneAvgr-title
+          href:
+            sourcePath: objid
+            type: STRING
+            label: KvikkleireFaresoneAvgr-ID
+            transformations:
+            - stringFormat: "{{serviceUrl}}/collections/kvikkleirefaresoneavgr/items/{{value}}"
+  utlosningomr:
+    sourcePath: /utlosningomr
+    type: OBJECT
+    objectType: UtlosningOmr
+    description: |-
+      område hvor skred kan utløses
+
+      Merknad: Alle typer skred
+    properties:
+      oid:
+        sourcePath: objid
+        type: INTEGER
+        role: ID
+      kvikkleireFaresoneAvgr:
+        sourcePath: "[objid=utlosningomrobjid]UtlosningOmr_kvikkleireFaresoneAvgr/[kvikkleirefaresoneavgrobjid=objid]kvikkleirefaresoneavgr"
+        type: OBJECT_ARRAY
+        objectType: Link
+        constraints:
+          required: true
+          minOccurrence: 1
+        properties:
+          title:
+            sourcePath: objid
+            type: STRING
+            label: KvikkleireFaresoneAvgr-title
+          href:
+            sourcePath: objid
+            type: STRING
+            label: KvikkleireFaresoneAvgr-ID
+            transformations:
+            - stringFormat: "{{serviceUrl}}/collections/kvikkleirefaresoneavgr/items/{{value}}"

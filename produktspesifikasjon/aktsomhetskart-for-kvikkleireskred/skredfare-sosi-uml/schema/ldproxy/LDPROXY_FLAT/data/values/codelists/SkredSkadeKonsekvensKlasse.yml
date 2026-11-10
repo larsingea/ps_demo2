@@ -1,0 +1,16 @@
+---
+label: SkredSkadeKonsekvensKlasse
+description: |-
+  hvilke økonomiske og samfunnsmessige følger et kvikkleireskred får og fare for tap av menneskeliv
+
+  Merknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt fare for at viktige samfunnsmessige funksjoner skal stoppe opp. For skredtypen
+
+
+  -- Definition - -
+  what economic and social consequences follow a quick clay slide, and risk of loss of human lives  Note: Qualitative classification of damage consequence in connection with risk of fatalities, personal injuries, financial loss, value reduction as well as the risk that  important social functions can be affected
+entries:
+  Alvorlig: Alvorlig
+  Ikke alvorlig: Ikke alvorlig
+  Meget alvorlig: Meget alvorlig
+  Mindre alvorlig: Mindre alvorlig
+sourceType: TEMPLATES

@@ -1,0 +1,14 @@
+---
+label: SkredKvalKartlegging
+description: |-
+  status og detaljeringsgrad vedrørende kartleggingsarbeidet
+
+
+  -- Definition - -
+  status, quality and degree of detail regarding the mapping work
+entries:
+  Enkel undersøkelse: Enkel undersøkelse
+  Ingen undersøkelse: Ingen undersøkelse
+  Sikringstiltak utført: Sikringstiltak utført
+  Supplerende undersøkelser / stabilitet: Supplerende undersøkelser / stabilitet
+sourceType: TEMPLATES

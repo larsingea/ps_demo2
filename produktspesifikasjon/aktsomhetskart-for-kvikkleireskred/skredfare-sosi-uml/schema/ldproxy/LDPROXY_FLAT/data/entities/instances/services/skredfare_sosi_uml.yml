@@ -1,0 +1,47 @@
+---
+id: skredfare_sosi_uml
+label: FIXME
+description: FIXME
+enabled: true
+serviceType: OGC_API
+collections:
+  analyseområde:
+    id: analyseområde
+    label: analyseområde
+    enabled: true
+  analyseområdegr:
+    id: analyseområdegr
+    label: analyseområdegr
+    enabled: true
+  kartleggingsområde:
+    id: kartleggingsområde
+    label: kartleggingsområde
+    enabled: true
+  kartleggingsområdekant:
+    id: kartleggingsområdekant
+    label: kartleggingsområdekant
+    enabled: true
+  kvikkleirefaresoneavgr:
+    id: kvikkleirefaresoneavgr
+    label: kvikkleirefaresoneavgr
+    enabled: true
+  skredfaregrense:
+    id: skredfaregrense
+    label: skredfaregrense
+    enabled: true
+  skredfaresone:
+    id: skredfaresone
+    label: skredfaresone
+    enabled: true
+  skredtypepunkt:
+    id: skredtypepunkt
+    label: skredtypepunkt
+    enabled: true
+  utlopomr:
+    id: utlopomr
+    label: utlopomr
+    enabled: true
+  utlosningomr:
+    id: utlosningomr
+    label: utlosningomr
+    enabled: true

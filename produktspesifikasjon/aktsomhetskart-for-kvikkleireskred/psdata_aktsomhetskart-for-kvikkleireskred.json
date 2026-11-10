@@ -309,6 +309,44 @@
         ],
         "deliveryScope": "Tjeneste"
       }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: skredfare-sosi-uml",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/skredfare-sosi-uml.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GML/XSD-skjema: skredfare-sosi-uml",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/xsd/INPUT/skredfare-sosi-uml.xsd",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "XSD"
+          }
+        ]
+      }
     }
   ],
   "metadataSection": {
@@ -352,7 +390,7 @@
     "datafangst_og_produksjon": 301,
     "vedlikehold": 3,
     "presentasjon": 2,
-    "leveranse": 65,
+    "leveranse": 77,
     "metadata": 20,
     "tilleggsinformasjon": 4,
     "datamodell": 3104

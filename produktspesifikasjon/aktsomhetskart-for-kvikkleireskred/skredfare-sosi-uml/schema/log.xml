@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><ShapeChangeResult xmlns="http://www.interactive-instruments.de/ShapeChange/Result" xmlns:r="http://www.interactive-instruments.de/ShapeChange/Result" config="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/shapechange-config.xml" end="Tue Nov 10 14:07:41 UTC 2026" resultCode="0" start="Tue Nov 10 14:07:32 UTC 2026" version="4.0.0">
+  <Messages>
+    <ProcessFlowInfo message="---------- Semantic validation of ShapeChange configuration: START ----------"/>
+    <Info message="Validating input parameters."/>
+    <Info message="Validation of input parameters completed."/>
+    <Info message="Validating log parameters."/>
+    <Info message="Validation of log parameters completed."/>
+    <ProcessFlowInfo message="--- Validating transformer with @id 'LDPROXY_FLAT' ..."/>
+    <ProcessFlowInfo message="--- Validating target with @class 'de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema' and @inputs 'INPUT' ..."/>
+    <ProcessFlowInfo message="--- Validating target with @class 'de.interactive_instruments.shapechange.core.target.ldproxy2.Ldproxy2Target' and @inputs 'LDPROXY_FLAT' ..."/>
+    <ProcessFlowInfo message="---------- Semantic validation of ShapeChange configuration: COMPLETE ----------"/>
+    <ProcessFlowInfo message="Application schema found, package name: 'skredfare-sosi-uml', target namespace: 'https://skjema.geonorge.no/SOSI/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/1.0'"/>
+    <ProcessFlowInfo message="Now processing target 'XML Schema' for input 'INPUT'."/>
+    <ProcessFlowInfo message="Executed target class 'de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema' for input ID: 'INPUT'.&#10;-------------------------------------------------"/>
+    <ProcessFlowInfo message="Now processing transformation 'LDPROXY_FLAT' for input ID: 'INPUT'."/>
+    <ProcessFlowInfo message="========== processing phase =========="/>
+    <ProcessFlowInfo message="---------- now processing: rule-trf-prop-flatten-types ----------"/>
+    <ProcessFlowInfo message="========== postprocessing phase =========="/>
+    <ProcessFlowInfo message="---------- TransformationManager postprocessing: validating constraints ----------"/>
+    <ProcessFlowInfo message="Performed transformation for transformer ID 'LDPROXY_FLAT' for input ID: 'INPUT'.&#10;-------------------------------------------------"/>
+    <ProcessFlowInfo message="Application schema found, package name: 'skredfare-sosi-uml', target namespace: 'https://skjema.geonorge.no/SOSI/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/1.0'"/>
+    <ProcessFlowInfo message="Now processing target 'Ldproxy (v2)' for input 'LDPROXY_FLAT'."/>
+    <Info message="The target configuration does not contain advanced process configuration infos."/>
+    <Error message="Type 'Analyseområde' has one or more supertypes. Conversion of inheritance relationships is only supported by this target if parameter 'enableFragments' is set to 'true'. The relationship will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::Analyseområde'"/>
+    </Error>
+    <Warning message="Type 'KvikkleireFaresone' is abstract. Conversion of abstract types is only supported by this target if parameter 'enableFragments' is set to 'true'. The type will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::KvikkleireFaresone'"/>
+    </Warning>
+    <Warning message="Type 'NVEFellesegenskaper' is abstract. Conversion of abstract types is only supported by this target if parameter 'enableFragments' is set to 'true'. The type will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::NVEFellesegenskaper'"/>
+    </Warning>
+    <Warning message="Type 'SkredFareområderFellesegenskaper' is abstract. Conversion of abstract types is only supported by this target if parameter 'enableFragments' is set to 'true'. The type will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::SkredFareområderFellesegenskaper'"/>
+    </Warning>
+    <Error message="Type 'SkredFaresone' has one or more supertypes. Conversion of inheritance relationships is only supported by this target if parameter 'enableFragments' is set to 'true'. The relationship will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::SkredFaresone'"/>
+    </Error>
+    <Error message="Type 'SkredTypePunkt' has one or more supertypes. Conversion of inheritance relationships is only supported by this target if parameter 'enableFragments' is set to 'true'. The relationship will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::SkredTypePunkt'"/>
+    </Error>
+    <Error message="Type 'UtlopOmr' has one or more supertypes. Conversion of inheritance relationships is only supported by this target if parameter 'enableFragments' is set to 'true'. The relationship will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::UtlopOmr'"/>
+    </Error>
+    <Error message="Type 'UtlosningOmr' has one or more supertypes. Conversion of inheritance relationships is only supported by this target if parameter 'enableFragments' is set to 'true'. The relationship will be ignored.">
+      <Detail message="Context: class 'skredfare-sosi-uml::Skredfareområder_1.3::UtlosningOmr'"/>
+    </Error>
+    <Info message="Could not compute a label for codelist/enumeration 'SkredFaregradKlasse'. A label is required for the ldproxy encoding as a codelist. Check the label template in the target configuration as well as the codelist/enumeration model, to ensure that a label can be created. Using the type name as label.">
+      <Detail message="Context: property 'skredfare-sosi-uml::SkredFaregradKlasse'"/>
+    </Info>
+    <Info message="Could not compute a label for codelist/enumeration 'SkredRisikoKvikkleireKlasse'. A label is required for the ldproxy encoding as a codelist. Check the label template in the target configuration as well as the codelist/enumeration model, to ensure that a label can be created. Using the type name as label.">
+      <Detail message="Context: property 'skredfare-sosi-uml::SkredRisikoKvikkleireKlasse'"/>
+    </Info>
+    <Info message="Could not compute a label for codelist/enumeration 'SkredKvalKartlegging'. A label is required for the ldproxy encoding as a codelist. Check the label template in the target configuration as well as the codelist/enumeration model, to ensure that a label can be created. Using the type name as label.">
+      <Detail message="Context: property 'skredfare-sosi-uml::SkredKvalKartlegging'"/>
+    </Info>
+    <Info message="Could not compute a label for codelist/enumeration 'SkredSkadeKonsekvensKlasse'. A label is required for the ldproxy encoding as a codelist. Check the label template in the target configuration as well as the codelist/enumeration model, to ensure that a label can be created. Using the type name as label.">
+      <Detail message="Context: property 'skredfare-sosi-uml::SkredSkadeKonsekvensKlasse'"/>
+    </Info>
+    <Info message="Could not compute a label for codelist/enumeration 'SkredtypeDetaljert'. A label is required for the ldproxy encoding as a codelist. Check the label template in the target configuration as well as the codelist/enumeration model, to ensure that a label can be created. Using the type name as label.">
+      <Detail message="Context: property 'skredfare-sosi-uml::SkredtypeDetaljert'"/>
+    </Info>
+    <Info message="Could not compute a label for codelist/enumeration 'Prosjektstatus_NVE'. A label is required for the ldproxy encoding as a codelist. Check the label template in the target configuration as well as the codelist/enumeration model, to ensure that a label can be created. Using the type name as label.">
+      <Detail message="Context: property 'skredfare-sosi-uml::Prosjektstatus_NVE'"/>
+    </Info>
+    <Info message="Could not compute a label for codelist/enumeration 'SkredSannsynlighet'. A label is required for the ldproxy encoding as a codelist. Check the label template in the target configuration as well as the codelist/enumeration model, to ensure that a label can be created. Using the type name as label.">
+      <Detail message="Context: property 'skredfare-sosi-uml::SkredSannsynlighet'"/>
+    </Info>
+    <ProcessFlowInfo message="Executed target class 'de.interactive_instruments.shapechange.core.target.ldproxy2.Ldproxy2Target' for input ID: 'LDPROXY_FLAT'.&#10;-------------------------------------------------"/>
+  </Messages>
+  <Results>
+    <Result href="file:/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/xsd/INPUT/skredfare-sosi-uml.xsd" scope="https://skjema.geonorge.no/SOSI/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/1.0" target="XML Schema">skredfare-sosi-uml.xsd</Result>
+  </Results>
+</ShapeChangeResult>

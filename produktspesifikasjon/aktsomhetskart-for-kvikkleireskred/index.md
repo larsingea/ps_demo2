@@ -186,6 +186,8 @@ Terrengkriteriene er beregnet automatisk i områder med mulig sammenhengende mar
 | Atom Feed | [Lenke](http://nedlasting.geonorge.no/geonorge/ATOM-feeds/KvikkleireAktsomhetskart_AtomFeedPostGIS.xml) | W3C:AtomFeed | PostGIS | fylkesvis, kommunevis, landsfiler |
 | Atom Feed | [Lenke](http://nedlasting.geonorge.no/geonorge/ATOM-feeds/KvikkleireAktsomhetskart_AtomFeedSOSI.xml) | W3C:AtomFeed | SOSI | fylkesvis, kommunevis, landsfiler |
 | Aktsomhetskart for kvikkleireskred WMS | [Lenke](https://kart.nve.no/enterprise/services/KvikkleireskredAktsomhet/MapServer/WMSServer?request=GetCapabilities&service=WMS) | WMS-tjeneste | PNG |  |
+| GeoPackage: skredfare-sosi-uml | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/skredfare-sosi-uml.gpkg) | Nedlasting | GPKG |  |
+| GML/XSD-skjema: skredfare-sosi-uml | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/xsd/INPUT/skredfare-sosi-uml.xsd) | Nedlasting | XSD |  |
 
 ## Metadata
 

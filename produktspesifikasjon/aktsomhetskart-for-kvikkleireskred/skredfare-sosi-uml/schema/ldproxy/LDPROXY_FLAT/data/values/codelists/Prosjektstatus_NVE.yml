@@ -1,0 +1,14 @@
+---
+label: Prosjektstatus_NVE
+description: Kodeliste for prosjektstatus brukt i NVE
+entries:
+  Ja: Ja
+  Nei: Nei
+  ajourført: ajourført
+  erstattet av ny: erstattet av ny
+  fjernet: fjernet
+  pågående: pågående
+  til ny vurdering: til ny vurdering
+  under planlegging: under planlegging
+  utført: utført
+sourceType: TEMPLATES

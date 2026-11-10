@@ -1,0 +1,17 @@
+---
+label: SkredFaregradKlasse
+description: |-
+  graden av sannsynlighet for at det skal gå et skred
+
+  Merknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold. Skredfaregradklassen er basert på en evaluering av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore (0-51)
+
+
+  -- Definition - -
+  the degree of probability that there will be an landslide
+  Note: Reflects the degree of hazard as regards the area's stability, based upon topographic conditions, geological/geotechnical conditions and erosion conditions. The landslideHazardLevelClass is based a weighed hazardfactorscore (0-51
+entries:
+  Høy: Høy
+  Ingen: Ingen
+  Lav: Lav
+  Middels: Middels
+sourceType: TEMPLATES
