@@ -2,6 +2,7 @@ metadataId: dabd2a2c-36d5-4ed7-a4c9-d49808a2b848
 output_directory: produktspesifikasjon
 product_slug: aktsomhetskart_for_kvikkleireskred
 updated: '2026-11-10'
+outputs: geopackage,xsd,odcs,ldproxy
 scopes:
 - name: skredfare_SOSI_UML
   url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Norges%20vassdrags-%20og%20energidirektorat/Skredfareomr%c3%a5der_1.3.xml
