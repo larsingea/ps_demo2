@@ -1,0 +1,2066 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sc:Model xmlns:sc="http://shapechange.net/model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="UTF-8" scxmlProducer="ps.editor.actions" scxmlProducerVersion="1.0" xsi:schemaLocation="http://shapechange.net/model http://shapechange.net/resources/schema/ShapeChangeExportedModel.xsd">
+ <sc:packages>
+  <sc:Package>
+   <sc:name>skredfare-sosi-uml</sc:name>
+   <sc:id>P1</sc:id>
+   <sc:stereotypes>
+    <sc:Stereotype>application schema</sc:Stereotype>
+   </sc:stereotypes>
+   <sc:taggedValues>
+    <sc:TaggedValue>
+     <sc:name>targetNamespace</sc:name>
+     <sc:values>
+      <sc:Value>https://skjema.geonorge.no/SOSI/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/1.0</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>xmlns</sc:name>
+     <sc:values>
+      <sc:Value>skredfaresosiuml</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>version</sc:name>
+     <sc:values>
+      <sc:Value>1.0</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>xsdDocument</sc:name>
+     <sc:values>
+      <sc:Value>skredfare-sosi-uml.xsd</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>jsonDocument</sc:name>
+     <sc:values>
+      <sc:Value>skredfare-sosi-uml.json</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+   </sc:taggedValues>
+   <sc:classes>
+    <sc:Class>
+     <sc:name>Identifikasjon</sc:name>
+     <sc:id>C14</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>datatype</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>lokalId</sc:name>
+       <sc:id>C14_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.
+
+NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>LOKALID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>navnerom</sc:name>
+       <sc:id>C14_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  ("_") dersom data produsenten ikke er assosiert med bare et land.
+
+NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i "INSPIRE external  Object Identifier Namespaces Register"
+
+Eksempel: NO for Norge.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>NAVNEROM</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>versjonId</sc:name>
+       <sc:id>C14_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.
+
+NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  "2007-02-12T12:12:12+05:30" som versjonId.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>VERSJONID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>0..1</sc:cardinality>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SkredFaregradKlasse</sc:name>
+     <sc:id>C15</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>graden av sannsynlighet for at det skal gå et skred
+
+Merknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold. Skredfaregradklassen er basert på en evaluering av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore (0-51)
+
+
+-- Definition - -
+the degree of probability that there will be an landslide
+Note: Reflects the degree of hazard as regards the area's stability, based upon topographic conditions, geological/geotechnical conditions and erosion conditions. The landslideHazardLevelClass is based a weighed hazardfactorscore (0-51</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Ingen</sc:name>
+       <sc:id>C15_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Påvist ikkje kvikkleire/sprøbruddmateriale, eller topografiske forhold som tilsier at kvikkleireskred ikke kan forekomme</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Lav</sc:name>
+       <sc:id>C15_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Gunstige topografiske forhold.  Grunnundersøkelser viser at grunnforholdene er akseptable.  Det er lite eller ingen aktiv erosjon i vassdraget.  Det har vært liten skredaktivitet i området.  Ingen terrenginngrep, terrenginngrep har hatt gunstig innvirkning på stabiliteten (faregradscore 0-17)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Middels</sc:name>
+       <sc:id>C15_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Mindre gunstig topografiske forhold.  Mangelfulle grunnundersøkelser, eller grunnundersøkelsene viser mindre gunstige grunnforhold.  Det er aktiv erosjon i vassdraget.  Det har vært betydelig skredaktivitet i området.  Eventuelle terrenginngrep har liten eller ingen stabilitetsforverrende virkning (faregradscore 18-25)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Høy</sc:name>
+       <sc:id>C15_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Ugunstige topografiske forhold.  Mangelfulle grunnundersøkelser eller grunnundersøkelsene viser ugunstige grunnforhold.  Det er betydelig aktiv erosjon i vassdraget.  Det har vært stor skredaktivitet i området.  Terrenginngrep med stabilitetsforverrende virkning (faregradscore 26-51)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SkredRisikoKvikkleireKlasse</sc:name>
+     <sc:id>C16</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>risikoen for at et område kan bli påført skredskade, inndelt etter risikoklasser
+
+Merknad: Denne egenskapen gjengir en klassifisering av risiko for at området vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se kapittel definisjoner og forkortelser.)
+
+
+-- Definition - -
+the risk that a landslide may inflict damage on an area, categorized according to risk classes  Note: This attribute cites a classification of risk that the area will be vulnerable to landslide damage. The classification method is based on a review of damage consequences and hazard levels</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Risikoklasse 0</sc:name>
+       <sc:id>C16_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Områder hvor det ikke er fare for kvikkleireskred.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Risikoklasse 1</sc:name>
+       <sc:id>C16_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Områder hvor det normalt ikke vil være aktuelt å foreta noen form for videre evaluering eller tiltak. Ved et eventuelt anleggsmessig inngrep vil det kreves dokumentasjon på at sikkerheten er tilfredsstillende.
+
+-- Definition --
+Areas where any further evaluation or action will normally not be relevant. For any intervention in the form of construction, documentation that safety is satisfactory will be required.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Risikoklasse 2</sc:name>
+       <sc:id>C16_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Som ved risikoklasse 1 vil det heller ikke her  normalt  være aktuelt å foreta noen form for videre evaluering eller tiltak. Ved et eventuelt anleggsmessig inngrep vil det kreves dokumentasjon på at sikkerheten er tilfredsstillende.
+
+-- Definition --
+As with Risk Class 1, neither will further evaluation or action normally be relevant here. For any intervention in the form of construction, documentation that safety is satisfactory will be required.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Risikoklasse 3</sc:name>
+       <sc:id>C16_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Omfatter soner med til dels tett bebyggelse.
+
+-- Definition --
+Includes zones that may in part be heavily built-up.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Risikoklasse 4</sc:name>
+       <sc:id>C16_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Omfatter for det meste soner med tett bebyggelse. Må gis høy prioritet i det videre arbeidet med sikring mot skred.
+
+-- Definition --
+Mainly comprising zones that are heavily built-up. Must be given high priority in the further work on preventive measures against landslide.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Risikoklasse 5</sc:name>
+       <sc:id>C16_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Omfatter soner med høyeste skadekonsekvens og høyeste faregrad. Må gis høy prioritet i det videre arbeidet med sikring mot skred.
+
+-- Definition --
+Comprising zones with the greatest injury consequences and highest hazard level. Must be given high priority in the ongoing work of landslide prevention.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SkredKvalKartlegging</sc:name>
+     <sc:id>C17</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>status og detaljeringsgrad vedrørende kartleggingsarbeidet
+
+
+-- Definition - -
+status, quality and degree of detail regarding the mapping work</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Ingen undersøkelse</sc:name>
+       <sc:id>C17_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Det er kun topografiske vurderinger som ligger til grunn for
+kvikkleirefaresonen, ingen befaring eller grunnundersøkelse. Denne kodeverdien må brukes dersom man skal utveksle soner som ikke er klassifisert</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Enkel undersøkelse</sc:name>
+       <sc:id>C17_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Enkel undersøkelse av sonen, oversiktskartlegging
+
+-- Definition --
+Simple investigation of the zone, overview mapping.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Supplerende undersøkelser / stabilitet</sc:name>
+       <sc:id>C17_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Utført supplerende undersøkelser og vurdering av stabilitet
+
+-- Definition --
+Supplementary investigation and assessment of stability carried out</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Sikringstiltak utført</sc:name>
+       <sc:id>C17_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sikringstiltak er utført</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SkredSkadeKonsekvensKlasse</sc:name>
+     <sc:id>C18</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>hvilke økonomiske og samfunnsmessige følger et kvikkleireskred får og fare for tap av menneskeliv
+
+Merknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt fare for at viktige samfunnsmessige funksjoner skal stoppe opp. For skredtypen
+
+
+-- Definition - -
+what economic and social consequences follow a quick clay slide, and risk of loss of human lives  Note: Qualitative classification of damage consequence in connection with risk of fatalities, personal injuries, financial loss, value reduction as well as the risk that  important social functions can be affected</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Ikke alvorlig</sc:name>
+       <sc:id>C18_1</sc:id>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Mindre alvorlig</sc:name>
+       <sc:id>C18_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Liten risiko for skade på mennesker, tap av liv, begrensede økonomiske og samfunnsmessige konsekvenser (0-6 poeng).
+
+-- Definition --
+Low risk of personal injuries, loss of life; limited economic and social consequences (0-6 points).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Alvorlig</sc:name>
+       <sc:id>C18_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Risiko for skade på mennesker/tap av liv eller betydelige økonomiske og samfunnsmessige konsekvenser (7-22 poeng).
+
+-- Definition --
+Risk of personal injuries/loss of life or substantial economic and social consequences (7-22 points).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Meget alvorlig</sc:name>
+       <sc:id>C18_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Stor risiko for skade på mennesker/tap av liv eller meget store økonomiske og samfunnsmessige konsekvenser (23-45 poeng).
+
+-- Definition --
+High risk of personal injuries/loss of life or very great economic and social consequences (23-45 points).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SkredtypeDetaljert</sc:name>
+     <sc:id>C19</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+Merknad 1: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse
+Merknad 2: Denne kodelisten er mer detaljert enn Skredtype definert i SOSI-standarden SKRED
+
+
+-- Definition - -
+what type of avalanche/landslide masses related to  the avalanche/landslide hazard or event  Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations of these</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Steinskred, uspesifisert</sc:name>
+       <sc:id>C19_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Steinskred, ikke nærmere bestemt type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steinsprang (&lt; 100 m3)</sc:name>
+       <sc:id>C19_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Steinsprang (steinblokker &lt; 100 m3)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Lite fjellskred (100 - 10 000 m3)</sc:name>
+       <sc:id>C19_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Lite fjellskred (steinblokker 100 - 10 000 m3)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fjellskred (&gt; 10 000 m3)</sc:name>
+       <sc:id>C19_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Fjellskred (steinblokker &gt; 10 000 m3)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Undervannsskred, uspesifisert</sc:name>
+       <sc:id>C19_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Undervannsskred, ikke nærmere bestemt type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Snøskred, uspesifisert</sc:name>
+       <sc:id>C19_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Snøskred, ikke nærmere bestemt type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Vått snøskred</sc:name>
+       <sc:id>C19_7</sc:id>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tørt snøskred</sc:name>
+       <sc:id>C19_8</sc:id>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Sørpeskred</sc:name>
+       <sc:id>C19_9</sc:id>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Løssnøskred, uspesifisert</sc:name>
+       <sc:id>C19_10</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Løssnøskred, ikke nærmere bestemt type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>10</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Vått løssnøskred</sc:name>
+       <sc:id>C19_11</sc:id>
+       <sc:sequenceNumber>11</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tørt løssnøskred</sc:name>
+       <sc:id>C19_12</sc:id>
+       <sc:sequenceNumber>12</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Flakskred, uspesifisert</sc:name>
+       <sc:id>C19_13</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Flakskred, ikke nærmere bestemt type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>13</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Vått flakskred</sc:name>
+       <sc:id>C19_14</sc:id>
+       <sc:sequenceNumber>14</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tørt flakskred</sc:name>
+       <sc:id>C19_15</sc:id>
+       <sc:sequenceNumber>15</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Løsmasseskred, uspesifisert</sc:name>
+       <sc:id>C19_16</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Løsmasseskred, ikke nærmere bestemt type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>16</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kvikkleireskred</sc:name>
+       <sc:id>C19_17</sc:id>
+       <sc:sequenceNumber>17</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Flomskred</sc:name>
+       <sc:id>C19_18</sc:id>
+       <sc:sequenceNumber>18</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Leirskred</sc:name>
+       <sc:id>C19_19</sc:id>
+       <sc:sequenceNumber>19</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jordskred</sc:name>
+       <sc:id>C19_20</sc:id>
+       <sc:sequenceNumber>20</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jordskred, uspesifisert</sc:name>
+       <sc:id>C19_21</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Jordskred, ikke nærmere bestemt type
+
+Merknad: Fra og med 2015 benyttes ikke denne verdien for nye data.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>21</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Isnedfall, uspesifisert</sc:name>
+       <sc:id>C19_22</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Isnedfall, ikke nærmere bestemt type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>22</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skavlfall</sc:name>
+       <sc:id>C19_23</sc:id>
+       <sc:sequenceNumber>23</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Utglidning av veg</sc:name>
+       <sc:id>C19_24</sc:id>
+       <sc:sequenceNumber>24</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ikke angitt</sc:name>
+       <sc:id>C19_25</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Skredtype ikke angitt</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>25</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ny, ikke-godkjent skredtype</sc:name>
+       <sc:id>C19_26</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Ny, ikke-godkjent skredtype
+
+Merknad: Fra og med 2015 benyttes ikke denne verdien for nye data.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>26</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>Prosjektstatus_NVE</sc:name>
+     <sc:id>C20</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>Kodeliste for prosjektstatus brukt i NVE</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>utført</sc:name>
+       <sc:id>C20_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Nei</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>til ny vurdering</sc:name>
+       <sc:id>C20_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Ja</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>erstattet av ny</sc:name>
+       <sc:id>C20_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Nei</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>fjernet</sc:name>
+       <sc:id>C20_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Nei</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>ajourført</sc:name>
+       <sc:id>C20_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Nei</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>under planlegging</sc:name>
+       <sc:id>C20_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Nei</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>pågående</sc:name>
+       <sc:id>C20_7</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Nei</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ja</sc:name>
+       <sc:id>C20_8</sc:id>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Nei</sc:name>
+       <sc:id>C20_9</sc:id>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SkredSannsynlighet</sc:name>
+     <sc:id>C21</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>sannsynlig gjentaksintervall for skredhendelse i området (antall år)</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>100</sc:name>
+       <sc:id>C21_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Gjentaksintervall: 100 år</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>1000</sc:name>
+       <sc:id>C21_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Gjentaksintervall: 1000 år</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>5000</sc:name>
+       <sc:id>C21_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Gjentaksintervall: 5000 år</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+   </sc:classes>
+   <sc:packages>
+    <sc:Package>
+     <sc:name>Skredfareområder_1.3</sc:name>
+     <sc:id>P2</sc:id>
+     <sc:classes>
+      <sc:Class>
+       <sc:name>Analyseområde</sc:name>
+       <sc:id>C1</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>dekning av et område analysert med tanke på potensiell skredfare</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:supertypes>
+        <sc:SupertypeId>C13</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>område</sc:name>
+         <sc:id>C1_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>objektets utstrekning
+
+-- Definition --
+area over which an object extends</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>Flate</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Surface</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>analyseområdeGrense</sc:name>
+         <sc:id>Sas1</sc:id>
+         <sc:cardinality>1..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeId>C8</sc:typeId>
+         <sc:typeName>AnalyseområdeGr</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as1</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>KvikkleireFaresone</sc:name>
+       <sc:id>C2</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>areal med evaluering av risiko for kvikkleireskred basert på skadekonsekvens og faregrad
+
+Merknad: Kvikkleiresonene inndeles deretter i 5 "risikoklasser" basert på skadekonsekvensen og faregraden
+
+
+-- Definition --
+area which has been reviewed for quick clay slide hazard based on damage consequences and degree of hazard</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:supertypes>
+        <sc:SupertypeId>C13</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>område</sc:name>
+         <sc:id>C2_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>objektets utstrekning
+
+-- Definition --
+area over which an object extends</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>Flate</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Surface</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredOmrID</sc:name>
+         <sc:id>C2_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>unikt id-nummer for skredområde/kvikkleirefaresone
+
+-- Definition --
+unique ID number for landslide area or quick clay hazard zone</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDOMRID</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredOmrNavn</sc:name>
+         <sc:id>C2_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>stedsnavn som brukes i forbindelse med en skredhendelse
+
+-- Definition --
+place name which is used in connection with a landslide event</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDOMRNAVN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>arealKm2</sc:name>
+         <sc:id>C2_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>faresonens areal i kvadratkilometer (km2)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>AREAL_KM2</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeName>Real</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredFaregradKlasse</sc:name>
+         <sc:id>C2_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>graden av sannsynlighet for at det skal gå et skred
+
+Merknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold. Skredfaregradklassen er for skredtypen kvikkleire basert på en evaluering av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore (0-51)
+
+-- Definition --
+the degree of probability that there will be a landslide
+Note: Reflects the degree of hazard as regards the area's stability,, based upon topographic conditions, geological/geotechnical conditions and erosion conditions. For quick clay landslides the landslideHazardLevelClass is based upon a weighed hazardfactorscore (0-51)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDFAREGR_KL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeId>C15</sc:typeId>
+         <sc:typeName>SkredFaregradKlasse</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredSkadeKonsekvensScore</sc:name>
+         <sc:id>C2_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>poengverdi basert på vektede faktorer for skadekonsekvensen
+
+Merknad: Se nærmere definisjon i kap. definisjoner og forkortelser.
+
+-- Definition --
+value (in points) based on weighted factors for the consequences of damage   Note: See more precise definition in chapter on definitions and abbreviations.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDKONSSCORE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredRisikoKvikkleireKlasse</sc:name>
+         <sc:id>C2_7</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>risikoen for at et område kan bli påført skredskade, inndelt etter risikoklasser
+
+Merknad: Denne egenskapen gjengir en klassifisering av risiko for at området vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se kapittel definisjoner og forkortelser)
+
+-- Definition --
+the risk that a landslide may inflict damage on an area, categorized according to risk classes   Note: This attribute cites a classification of risk that the area will be vulnerable to landslide damage. The classification method is based on a review of damage consequences and hazard levels</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDRISIKO_KL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>7</sc:sequenceNumber>
+         <sc:typeId>C16</sc:typeId>
+         <sc:typeName>SkredRisikoKvikkleireKlasse</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredKvalKartlegging</sc:name>
+         <sc:id>C2_8</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angir status og detaljeringsgrad  når det gjelder kartlegging av sonen
+
+-- Definition --
+indicates the status and degree of detail as regards the mapping of the zone</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDKVALKARTLEGGING</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>8</sc:sequenceNumber>
+         <sc:typeId>C17</sc:typeId>
+         <sc:typeName>SkredKvalKartlegging</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredFaregradScore</sc:name>
+         <sc:id>C2_9</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>tallverdi som er fremkommet ved at de viktigste kriteriene og faktorene som påvirker faregraden for kvikkleireskred er vurdert (jfr. Tabell 2 under kap.definisjoner og forkortelser.)
+
+-- Definition --
+numerical value which results from the evaluation of the influence of the most important criteria and factors on the degree of hazard of a quick clay slide (cf. Table 2 in the chapter on definitions and abbreviations.)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDFAREGRADSCORE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>9</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredSkadeKonsekvensKlasse</sc:name>
+         <sc:id>C2_10</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilke økonomiske og samfunnsmessige følger et kvikkleireskred får og fare for tap av menneskeliv
+
+Merknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt fare for at viktige samfunnsmessige funksjoner skal stoppe opp.  For skredtypen kvikkleire er inndelingen basert på beregningen av en poengverdi basert på vektede faktorer (se kap. definisjoner og forkortelser.) i kombinasjon med skadekonsekvensen
+
+-- Definition --
+what economic and social consequences follow a quick clay slide, and risk of loss of human lives   Note: Qualitative classification of consequences of damage in connection with risk of fatalities, personal injuries, financial loss, value reduction as well as the risk that important social functions can be affected</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>10</sc:sequenceNumber>
+         <sc:typeId>C18</sc:typeId>
+         <sc:typeName>SkredSkadeKonsekvensKlasse</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SkredTypePunkt</sc:name>
+       <sc:id>C3</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Punkt som definerer den dimensjonerende skredtypen for en eller flere faresoner.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>punkt</sc:name>
+         <sc:id>C3_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>sted som objektet eksisterer på</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>PUNKT</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Point</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredOmrID</sc:name>
+         <sc:id>C3_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>unikt id-nummer for skredområde/kvikkleirefaresone
+
+-- Definition --
+unique ID number for landslide area or quick clay hazard zone</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDOMRID</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredtype</sc:name>
+         <sc:id>C3_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+Merknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse
+
+-- Definition --
+what type of avalanche/landslide masses related to the avalanche/landslide hazard or event
+Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeId>C19</sc:typeId>
+         <sc:typeName>SkredtypeDetaljert</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>UtlopOmr</sc:name>
+       <sc:id>C4</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>areal som påvirkes eller dekkes av skredmassser når skred utløses
+
+
+-- Definition --
+area which is affected or covered by avalanche/landslide masses when an avalanche/landslide occurs</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:supertypes>
+        <sc:SupertypeId>C2</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>kvikkleireFaresoneAvgr</sc:name>
+         <sc:id>Sas2</sc:id>
+         <sc:cardinality>1..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C6</sc:typeId>
+         <sc:typeName>KvikkleireFaresoneAvgr</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as2</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>NVEFellesegenskaper</sc:name>
+       <sc:id>C5</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper
+
+Merknad:
+Spesielt i produktspesifikasjonsarbeid vil en velge egenskaper og av grensningslinjer fra denne klassen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>identifikasjon</sc:name>
+         <sc:id>C5_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper
+
+Merknad:
+Spesielt i produktspesifikasjonsarbeid vil en velge egenskaper og av grensningslinjer fra denne klassen.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>IDENT</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C14</sc:typeId>
+         <sc:typeName>Identifikasjon</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>datauttaksdato</sc:name>
+         <sc:id>C5_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato for uttak fra en database
+
+Merknad:
+Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>DATAUTTAKSDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>datafangstdato</sc:name>
+         <sc:id>C5_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato når objektet siste gang ble registrert/observert/målt i terrenget
+
+Merknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.
+Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>DATAFANGSTDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>førsteDigitaliseringsdato</sc:name>
+         <sc:id>C5_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato når en representasjon av objektet i digital form første gang ble etablert
+
+Merknad:
+førsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess.
+Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FØRSTEDIGITALISERINGSDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>oppdateringsdato</sc:name>
+         <sc:id>C5_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato for siste endring på objektetdataene
+
+Merknad:
+Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).
+
+-Definition-
+Date and time at which this version of the spatial object was inserted or changed in the spatial data set.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>OPPDATERINGSDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>opphav</sc:name>
+         <sc:id>C5_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+Merknad:
+Kan også beskrive navn på person og årsak til oppdatering</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>OPPHAV</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>KvikkleireFaresoneAvgr</sc:name>
+       <sc:id>C6</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>avgrensningslinje for areal med evaluering av risiko for kvikkleireskred basert på skadekonsekvens og faregrad
+
+
+-- Definition --
+line delimiting area for which quick clay slide hazard has been evaluated based on damage consequences and degree of hazard</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>grense</sc:name>
+         <sc:id>C6_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forløp som følger overgang mellom ulike fenomener
+
+-- Definition --
+course following the transition between different real world phenomena</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Curve</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>Kartleggingsområdekant</sc:name>
+       <sc:id>C7</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>avgrensningslinje for et kartleggingsområde som dekker et nærmere angitt geografisk område.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>grense</sc:name>
+         <sc:id>C7_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forløp som følger overgang mellom ulike fenomener</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Curve</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>AnalyseområdeGr</sc:name>
+       <sc:id>C8</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>avgrensningslinje for område analysert med tanke på potensiell skredfare</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>grense</sc:name>
+         <sc:id>C8_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forløp som følger overgang mellom ulike fenomener
+
+-- Definition --
+course following the transition between different real world phenomena</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Curve</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>Kartleggingsområde</sc:name>
+       <sc:id>C9</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>dekning av et område kartlagt med tanke på potensiell skredfare</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>område</sc:name>
+         <sc:id>C9_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>objektets utstrekning</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Surface</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>kartleggingsområdeID</sc:name>
+         <sc:id>C9_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>kartleggingsområdets identifikator</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>KARTLEGGINGSOMRÅDEID</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>kartleggingsområdeNavn</sc:name>
+         <sc:id>C9_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>navn på kartleggingsområde</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>KARTLEGGINGSOMRÅDENAVN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>kartleggingStatus</sc:name>
+         <sc:id>C9_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Status for kartleggingen av aktuelt område</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>KARTLEGGINGSTATUS</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeId>C20</sc:typeId>
+         <sc:typeName>Prosjektstatus_NVE</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>områdekant</sc:name>
+         <sc:id>Sas3</sc:id>
+         <sc:cardinality>1..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeId>C7</sc:typeId>
+         <sc:typeName>Kartleggingsområdekant</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as3</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>UtlosningOmr</sc:name>
+       <sc:id>C10</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>område hvor skred kan utløses
+
+Merknad: Alle typer skred</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:supertypes>
+        <sc:SupertypeId>C2</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>kvikkleireFaresoneAvgr</sc:name>
+         <sc:id>Sas4</sc:id>
+         <sc:cardinality>1..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C6</sc:typeId>
+         <sc:typeName>KvikkleireFaresoneAvgr</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as4</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SkredFaregrense</sc:name>
+       <sc:id>C11</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>grenselinje som viser rekkevidden for mulige skred
+
+Merknad: Resten av faresonepolygonet er ofte avgrenset av dataavgrensningslinje
+
+
+-- Definition --
+boundary line which shows the extent of potential avalanches/landslides</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>grense</sc:name>
+         <sc:id>C11_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forløp som følger overgang mellom ulike fenomener
+
+-- Definition --
+course following the transition between different real world phenomena</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Curve</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SkredFaresone</sc:name>
+       <sc:id>C12</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>område hvor skredfaren er nærmere vurdert/kartlagt med hensyn til sannsynlighet og rekkevidde
+
+Merknad: Skredfaresonen kan bestå av utløsningsområde og utløpsområde for skred
+
+
+-- Definition --
+area where the avalanche/landslide hazard has been evaluated/surveyed in more detail with regard to probability and extent</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>område</sc:name>
+         <sc:id>C12_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>objektets utstrekning
+
+-- Definition --
+area over which an object extends</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>Flate</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Surface</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredtype</sc:name>
+         <sc:id>C12_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+Merknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse
+
+-- Definition --
+what type of avalanche/landslide masses related to the avalanche/landslide hazard or event
+Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeId>C19</sc:typeId>
+         <sc:typeName>SkredtypeDetaljert</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredStatistikkSannsynlighet</sc:name>
+         <sc:id>C12_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>statistisk sannsynlighet for at det går et skred
+
+Betingelse: Egenskapen skredFaregradKlasse eller skredStatistikkSannsynlighet er påkrevet. skredFaregradKlasse benyttes ved kvikkleire og skredStatistikkSannsynlighet ved bratt terreng
+
+Merknad: Oppgis som et skred per antall år. I plan og bygningsloven skal man ta hensyn til 1000 årsskredet.
+
+-- Definition --
+statistical probability that an avalanche  landslide will take place   Condition: The attribute landslideHazardLevelClass or avalancheStatisticProbability is mandatory. landslideHazardLevelClass is used in the case of quick clay and avalancheStatisticProbability in the case of steep terrain   Note:  Indicated as a yearly probability of avalanches/landslides. In the Planning and Building Act consideration must be given for the yearly probability of 1/1000</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SKREDSTATSANN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeId>C21</sc:typeId>
+         <sc:typeName>SkredSannsynlighet</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>skredFaregrense</sc:name>
+         <sc:id>Sas5</sc:id>
+         <sc:cardinality>1..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeId>C11</sc:typeId>
+         <sc:typeName>SkredFaregrense</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as5</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SkredFareområderFellesegenskaper</sc:name>
+       <sc:id>C13</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>abstrakt objekt som bærer en egenskaper som benyttes i flere av fareområdeklassene. Benyttes til arv av egenskaper.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>prosjektURL</sc:name>
+         <sc:id>C13_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>URL-lenke til kartleggingsprosjektets informasjonsside</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>PROSJEKTURL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>rapportURL</sc:name>
+         <sc:id>C13_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>URL-lenke til rapport fra kartleggingsprosjektet</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RAPPORTURL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+     </sc:classes>
+    </sc:Package>
+   </sc:packages>
+  </sc:Package>
+ </sc:packages>
+ <sc:associations>
+  <sc:Association>
+   <sc:name>Analyseområde_AnalyseområdeGr</sc:name>
+   <sc:id>as1</sc:id>
+   <sc:end1 ref="Sas1" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas1</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C1</sc:typeId>
+     <sc:typeName>Analyseområde</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C8</sc:inClassId>
+     <sc:associationId>as1</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>UtlopOmr_KvikkleireFaresoneAvgr</sc:name>
+   <sc:id>as2</sc:id>
+   <sc:end1 ref="Sas2" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas2</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C4</sc:typeId>
+     <sc:typeName>UtlopOmr</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C6</sc:inClassId>
+     <sc:associationId>as2</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>Kartleggingsområde_Kartleggingsområdekant</sc:name>
+   <sc:id>as3</sc:id>
+   <sc:end1 ref="Sas3" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas3</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C9</sc:typeId>
+     <sc:typeName>Kartleggingsområde</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C7</sc:inClassId>
+     <sc:associationId>as3</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>UtlosningOmr_KvikkleireFaresoneAvgr</sc:name>
+   <sc:id>as4</sc:id>
+   <sc:end1 ref="Sas4" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas4</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C10</sc:typeId>
+     <sc:typeName>UtlosningOmr</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C6</sc:inClassId>
+     <sc:associationId>as4</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>SkredFaresone_SkredFaregrense</sc:name>
+   <sc:id>as5</sc:id>
+   <sc:end1 ref="Sas5" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas5</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C12</sc:typeId>
+     <sc:typeName>SkredFaresone</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C11</sc:inClassId>
+     <sc:associationId>as5</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+ </sc:associations>
+</sc:Model>

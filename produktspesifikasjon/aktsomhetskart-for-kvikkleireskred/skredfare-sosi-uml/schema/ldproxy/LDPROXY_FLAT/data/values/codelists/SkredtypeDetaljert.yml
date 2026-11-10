@@ -1,0 +1,39 @@
+---
+label: SkredtypeDetaljert
+description: |-
+  hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen
+
+  Merknad 1: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse
+  Merknad 2: Denne kodelisten er mer detaljert enn Skredtype definert i SOSI-standarden SKRED
+
+
+  -- Definition - -
+  what type of avalanche/landslide masses related to  the avalanche/landslide hazard or event  Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations of these
+entries:
+  Fjellskred (> 10 000 m3): Fjellskred (> 10 000 m3)
+  Flakskred, uspesifisert: "Flakskred, uspesifisert"
+  Flomskred: Flomskred
+  Ikke angitt: Ikke angitt
+  Isnedfall, uspesifisert: "Isnedfall, uspesifisert"
+  Jordskred: Jordskred
+  Jordskred, uspesifisert: "Jordskred, uspesifisert"
+  Kvikkleireskred: Kvikkleireskred
+  Leirskred: Leirskred
+  Lite fjellskred (100 - 10 000 m3): Lite fjellskred (100 - 10 000 m3)
+  Løsmasseskred, uspesifisert: "Løsmasseskred, uspesifisert"
+  Løssnøskred, uspesifisert: "Løssnøskred, uspesifisert"
+  Ny, ikke-godkjent skredtype: "Ny, ikke-godkjent skredtype"
+  Skavlfall: Skavlfall
+  Snøskred, uspesifisert: "Snøskred, uspesifisert"
+  Steinskred, uspesifisert: "Steinskred, uspesifisert"
+  Steinsprang (< 100 m3): Steinsprang (< 100 m3)
+  Sørpeskred: Sørpeskred
+  Tørt flakskred: Tørt flakskred
+  Tørt løssnøskred: Tørt løssnøskred
+  Tørt snøskred: Tørt snøskred
+  Undervannsskred, uspesifisert: "Undervannsskred, uspesifisert"
+  Utglidning av veg: Utglidning av veg
+  Vått flakskred: Vått flakskred
+  Vått løssnøskred: Vått løssnøskred
+  Vått snøskred: Vått snøskred
+sourceType: TEMPLATES

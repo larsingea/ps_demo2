@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ShapeChangeConfiguration xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 https://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+ <input id="INPUT">
+  <parameter name="inputModelType" value="SCXML" />
+  <parameter name="inputFile" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/model.scxml" />
+  <parameter name="appSchemaNameRegex" value="^skredfare-sosi-uml$" />
+  <parameter name="publicOnly" value="true" />
+  <parameter name="checkingConstraints" value="disabled" />
+  <parameter name="addTaggedValues" value="*" />
+  <parameter name="representTaggedValues" value="SOSI_navn,SOSI_verdi,NVDB_ID" />
+  <xi:include href="https://shapechange.net/resources/config/StandardAliases.xml" />
+ </input>
+ <log>
+  <parameter name="reportLevel" value="INFO" />
+  <parameter name="logFile" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/log.xml" />
+ </log>
+ <transformers>
+  <Transformer class="de.interactive_instruments.shapechange.core.transformation.flattening.Flattener" mode="enabled" id="LDPROXY_FLAT" input="INPUT">
+   <parameters>
+    <ProcessParameter name="separatorForPropertyFromNonUnion" value="_" />
+   </parameters>
+   <rules>
+    <ProcessRuleSet name="flattener">
+     <rule name="rule-trf-prop-flatten-types" />
+    </ProcessRuleSet>
+   </rules>
+  </Transformer>
+ </transformers>
+ <targets>
+  <TargetXmlSchema class="de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema" mode="enabled" inputs="INPUT">
+   <targetParameter name="outputDirectory" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/xsd" />
+   <targetParameter name="defaultEncodingRule" value="sosi" />
+   <targetParameter name="documentationTemplate" value="[[documentation]]" />
+   <targetParameter name="documentationNoValue" value="" />
+   <rules>
+    <EncodingRule name="sosi" extends="iso19136_2007">
+     <rule name="rule-xsd-prop-length-size-pattern" />
+     <rule name="rule-xsd-all-tagged-values" />
+     <rule name="rule-xsd-all-notEncoded" />
+     <rule name="rule-xsd-pkg-schematron" />
+     <rule name="rule-xsd-prop-nillable" />
+     <rule name="rule-xsd-prop-targetCodeListURI" />
+    </EncodingRule>
+   </rules>
+   <xi:include href="https://shapechange.net/resources/config/StandardRules.xml" />
+   <xi:include href="https://shapechange.net/resources/config/StandardNamespaces.xml" />
+   <xi:include href="https://shapechange.net/resources/config/StandardMapEntries.xml" />
+   <xi:include href="file:///home/runner/work/ps_demo2/ps_demo2/.psactions/shapechange/data/StandardMapEntries_sosi.xml" />
+  </TargetXmlSchema>
+  <Target class="de.interactive_instruments.shapechange.core.target.ldproxy2.Ldproxy2Target" mode="enabled" inputs="LDPROXY_FLAT">
+   <targetParameter name="outputDirectory" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfare-sosi-uml/schema/ldproxy" />
+   <targetParameter name="srid" value="25833" />
+   <targetParameter name="primaryKeyColumn" value="objid" />
+   <targetParameter name="nativeTimeZone" value="Europe/Oslo" />
+   <targetParameter name="defaultEncodingRule" value="ldproxy2" />
+   <targetParameter name="descriptionTemplate" value="[[documentation]]" />
+   <targetParameter name="descriptorNoValue" value="" />
+   <rules>
+    <EncodingRule name="ldproxy2" extends="*">
+     <rule name="rule-ldp2-all-associativeTablesWithSeparatePkField" />
+     <rule name="rule-ldp2-all-documentation" />
+    </EncodingRule>
+   </rules>
+   <xi:include href="https://shapechange.net/resources/config/StandardMapEntries_Ldproxy2.xml" />
+  </Target>
+ </targets>
+</ShapeChangeConfiguration>
