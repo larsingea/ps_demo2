@@ -1,0 +1,182 @@
+# Open Data Contract Standard (ODCS) v3.1.0 — generert fra datamodellen.
+apiVersion: v3.1.0
+kind: DataContract
+id: urn:odcs:konsesjonsomr-de-fjernvarme-lillestr-m-kommune-lokale-data-datamodell-fjernvarmekonsesjon:1.0.0
+version: 1.0.0
+status: active
+name: Konsesjonsområde fjernvarme Lillestrøm kommune - lokale data - Datamodell fjernvarmekonsesjon
+tags:
+- Plan og eiendom
+- Fjernvarme
+- Konsesjonsområde
+- Det offentlige kartgrunnlaget
+- fellesDatakatalog
+- Energi
+- Åpne data
+price:
+  priceAmount: 0
+  priceUnit: dataset
+description:
+  limitations: Åpne data. Lisens
+  purpose: Plan- og byggesaksbehandling
+authoritativeDefinitions:
+- url: https://kartkatalog.geonorge.no/metadata/95867501-5b48-402d-8cb9-1d8a9b1c7bfc
+  type: businessDefinition
+  description: Metadata i Kartkatalogen
+team:
+  members:
+  - username: geodata@lillestrom.kommune.no
+    name: Lillestrøm kommune
+    role: owner, pointOfContact, publisher
+support:
+- channel: Lillestrøm kommune
+  tool: email
+  url: mailto:geodata@lillestrom.kommune.no
+  scope: issues
+  description: Kontaktpunkt hos Lillestrøm kommune
+slaProperties:
+- property: frequency
+  value: Etter behov
+  driver: operational
+customProperties:
+- property: license
+  value: Norsk lisens for offentlige data (NLOD)
+- property: licenseUrl
+  value: http://data.norge.no/nlod/no/1.0
+- property: accessConstraints
+  value: Åpne data
+- property: useConstraints
+  value: Lisens
+- property: spatialRepresentationType
+  value: Vektor
+- property: language
+  value: nor
+servers:
+- server: egen-nedlastningsside
+  type: api
+  location: https://nedlasting.geonorge.no/geonorge/kommunaleDokData/95867501-5b48-402d-8cb9-1d8a9b1c7bfc.zip
+  description: Egen nedlastningsside - FGDB, SOSI, Shape
+schema:
+- name: Fjernvarmekonsesjonsområde
+  physicalName: fjernvarmekonsesjonsomr_de
+  logicalType: object
+  physicalType: table
+  description: Område der det er gitt konsesjon for fjernvarme etter energiloven,
+    i Lillestrøm kommune.
+  customProperties:
+  - property: sosiObjektType
+    value: Fjernvarmekonsesjonsområde
+  - property: associations
+    value:
+    - role: avgrensning
+      target: Konsesjonsgrense
+      cardinality: 0..*
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den
+        lokale identifikatoren er unik innenfor navnerommet.
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: Navnerom som unikt identifiserer datakilden til objektet.
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: Identifikasjon av en spesiell versjon av et geografisk objekt (instans).
+    description: Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter,
+      som kan benyttes av eksterne applikasjoner som referanse til objektet.
+    required: true
+  - name: område
+    logicalType: object
+    physicalType: geometry(Surface)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: Surface
+  - name: områdenavn
+    logicalType: string
+    description: Navn på konsesjonsområdet, f.eks. tettstedet området dekker.
+    required: true
+  - name: konsesjon
+    logicalType: boolean
+    description: Angir om det er gitt konsesjon for fjernvarme i området.
+    required: true
+  - name: målemetode
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/generelle-konsepter/5.1/målemetode
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Målemetode
+    - property: asDictionary
+      value: 'true'
+    description: Metode som ligger til grunn for registrering av posisjon.
+  - name: kommunenummer
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Kommunenummer
+    - property: asDictionary
+      value: 'true'
+    description: Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.
+    required: true
+  - name: informasjon
+    logicalType: string
+    description: Utfyllende informasjon om objektet, f.eks. hvem som har utarbeidet
+      dataene.
+  - name: opphav
+    logicalType: string
+    description: Kilde eller tidspunkt for etablering av dataene.
+  - name: datafangstdato
+    logicalType: date
+    description: Dato når objektet ble registrert/observert/målt første gang.
+- name: Konsesjonsgrense
+  physicalName: konsesjonsgrense
+  logicalType: object
+  physicalType: table
+  description: Grenselinje som avgrenser et fjernvarmekonsesjonsområde.
+  customProperties:
+  - property: sosiObjektType
+    value: Konsesjonsgrense
+  - property: associations
+    value:
+    - role: konsesjonsområde
+      target: Fjernvarmekonsesjonsområde
+      cardinality: 1..*
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den
+        lokale identifikatoren er unik innenfor navnerommet.
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: Navnerom som unikt identifiserer datakilden til objektet.
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: Identifikasjon av en spesiell versjon av et geografisk objekt (instans).
+    description: Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter,
+      som kan benyttes av eksterne applikasjoner som referanse til objektet.
+    required: true
+  - name: grense
+    logicalType: object
+    physicalType: geometry(LineString)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: LineString
+  - name: opphav
+    logicalType: string
+    description: Kilde eller tidspunkt for etablering av dataene.
