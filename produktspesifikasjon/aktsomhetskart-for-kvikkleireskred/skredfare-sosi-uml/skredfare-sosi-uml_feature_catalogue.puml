@@ -1,0 +1,127 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Aktsomhetskart for kvikkleireskred - skredfare_SOSI_UML - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class "Analyseområde" as Analyseomr_de <<featureType>> {
+    + område [1] : Flate
+  }
+
+  abstract class KvikkleireFaresone <<featureType>> {
+    + område [1] : Flate
+    + skredOmrID [1] : Integer
+    + skredOmrNavn [0..1] : CharacterString
+    + arealKm2 [0..1] : Real
+    + skredFaregradKlasse [1] : SkredFaregradKlasse
+    + skredSkadeKonsekvensScore [0..1] : Integer
+    + skredRisikoKvikkleireKlasse [0..1] : SkredRisikoKvikkleireKlasse
+    + skredKvalKartlegging [1] : SkredKvalKartlegging
+    + skredFaregradScore [0..1] : Integer
+    + skredSkadeKonsekvensKlasse [0..1] : SkredSkadeKonsekvensKlasse
+  }
+
+  class SkredTypePunkt <<featureType>> {
+    + punkt [1] : Punkt
+    + skredOmrID [1] : Integer
+    + skredtype [1] : SkredtypeDetaljert
+  }
+
+  class UtlopOmr <<featureType>> {
+    ' Ingen attributter
+  }
+
+  abstract class NVEFellesegenskaper <<featureType>> {
+    + identifikasjon [1] : Identifikasjon
+    + datauttaksdato [0..1] : Date
+    + datafangstdato [0..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+  }
+
+  class KvikkleireFaresoneAvgr <<featureType>> {
+    + grense [1] : Kurve
+  }
+
+  class "Kartleggingsområdekant" as Kartleggingsomr_dekant <<featureType>> {
+    + grense [1] : Kurve
+  }
+
+  class "AnalyseområdeGr" as Analyseomr_deGr <<featureType>> {
+    + grense [1] : Kurve
+  }
+
+  class "Kartleggingsområde" as Kartleggingsomr_de <<featureType>> {
+    + område [1] : Flate
+    + kartleggingsområdeID [0..1] : CharacterString
+    + kartleggingsområdeNavn [0..1] : CharacterString
+    + kartleggingStatus [0..1] : Prosjektstatus_NVE
+  }
+
+  class UtlosningOmr <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class SkredFaregrense <<featureType>> {
+    + grense [1] : Kurve
+  }
+
+  class SkredFaresone <<featureType>> {
+    + område [1] : Flate
+    + skredtype [1] : SkredtypeDetaljert
+    + skredStatistikkSannsynlighet [1] : SkredSannsynlighet
+  }
+
+  abstract class "SkredFareområderFellesegenskaper" as SkredFareomr_derFellesegenskaper <<featureType>> {
+    + prosjektURL [0..1] : CharacterString
+    + rapportURL [0..1] : CharacterString
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+}
+
+  SkredFareomr_derFellesegenskaper <|-- Analyseomr_de
+  Analyseomr_de --> Analyseomr_deGr : analyseområdeGrense [1..*]
+  SkredFareomr_derFellesegenskaper <|-- KvikkleireFaresone
+  NVEFellesegenskaper <|-- SkredTypePunkt
+  KvikkleireFaresone <|-- UtlopOmr
+  UtlopOmr --> KvikkleireFaresoneAvgr : kvikkleireFaresoneAvgr [1..*]
+  Kartleggingsomr_de --> Kartleggingsomr_dekant : områdekant [1..*]
+  KvikkleireFaresone <|-- UtlosningOmr
+  UtlosningOmr --> KvikkleireFaresoneAvgr : kvikkleireFaresoneAvgr [1..*]
+  NVEFellesegenskaper <|-- SkredFaresone
+  SkredFaresone --> SkredFaregrense : skredFaregrense [1..*]
+  NVEFellesegenskaper <|-- SkredFareomr_derFellesegenskaper
+
+@enduml

@@ -1,0 +1,884 @@
+[
+  {
+    "name": "Analyseområde",
+    "description": "dekning av et område analysert med tanke på potensiell skredfare",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "Flate",
+        "description": "objektets utstrekning\n\n-- Definition --\narea over which an object extends",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "Flate"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "SkredFareområderFellesegenskaper"
+      ],
+      "associations": [
+        {
+          "target": "AnalyseområdeGr",
+          "role": "analyseområdeGrense",
+          "cardinality": "1..*"
+        }
+      ]
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "KvikkleireFaresone",
+    "description": "areal med evaluering av risiko for kvikkleireskred basert på skadekonsekvens og faregrad\n\nMerknad: Kvikkleiresonene inndeles deretter i 5 \"risikoklasser\" basert på skadekonsekvensen og faregraden\n\n\n-- Definition --\narea which has been reviewed for quick clay slide hazard based on damage consequences and degree of hazard",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "Flate",
+        "description": "objektets utstrekning\n\n-- Definition --\narea over which an object extends",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "Flate"
+        }
+      },
+      {
+        "name": "skredOmrID",
+        "type": "Integer",
+        "description": "unikt id-nummer for skredområde/kvikkleirefaresone\n\n-- Definition --\nunique ID number for landslide area or quick clay hazard zone",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "SKREDOMRID"
+        }
+      },
+      {
+        "name": "skredOmrNavn",
+        "type": "CharacterString",
+        "description": "stedsnavn som brukes i forbindelse med en skredhendelse\n\n-- Definition --\nplace name which is used in connection with a landslide event",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "SKREDOMRNAVN"
+        }
+      },
+      {
+        "name": "arealKm2",
+        "type": "Real",
+        "description": "faresonens areal i kvadratkilometer (km2)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "AREAL_KM2"
+        }
+      },
+      {
+        "name": "skredFaregradKlasse",
+        "type": "SkredFaregradKlasse",
+        "description": "graden av sannsynlighet for at det skal gå et skred\n\nMerknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold. Skredfaregradklassen er for skredtypen kvikkleire basert på en evaluering av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore (0-51)\n\n-- Definition --\nthe degree of probability that there will be a landslide\nNote: Reflects the degree of hazard as regards the area's stability,, based upon topographic conditions, geological/geotechnical conditions and erosion conditions. For quick clay landslides the landslideHazardLevelClass is based upon a weighed hazardfactorscore (0-51)",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ingen",
+              "label": "Påvist ikkje kvikkleire/sprøbruddmateriale, eller topografiske forhold som tilsier at kvikkleireskred ikke kan forekomme"
+            },
+            {
+              "value": "Lav",
+              "label": "Gunstige topografiske forhold.  Grunnundersøkelser viser at grunnforholdene er akseptable.  Det er lite eller ingen aktiv erosjon i vassdraget.  Det har vært liten skredaktivitet i området.  Ingen terrenginngrep, terrenginngrep har hatt gunstig innvirkning på stabiliteten (faregradscore 0-17)"
+            },
+            {
+              "value": "Middels",
+              "label": "Mindre gunstig topografiske forhold.  Mangelfulle grunnundersøkelser, eller grunnundersøkelsene viser mindre gunstige grunnforhold.  Det er aktiv erosjon i vassdraget.  Det har vært betydelig skredaktivitet i området.  Eventuelle terrenginngrep har liten eller ingen stabilitetsforverrende virkning (faregradscore 18-25)"
+            },
+            {
+              "value": "Høy",
+              "label": "Ugunstige topografiske forhold.  Mangelfulle grunnundersøkelser eller grunnundersøkelsene viser ugunstige grunnforhold.  Det er betydelig aktiv erosjon i vassdraget.  Det har vært stor skredaktivitet i området.  Terrenginngrep med stabilitetsforverrende virkning (faregradscore 26-51)"
+            }
+          ],
+          "definition": "graden av sannsynlighet for at det skal gå et skred\n\nMerknad: Gjenspeiler graden av usikkerhet med hensyn til områdets stabilitet basert på topografiske forhold, geologiske/geotekniske forhold og erosjonsforhold. Skredfaregradklassen er basert på en evaluering av faregrad som fremkommer av at ulike vektede faktorer gir en faregradscore (0-51)\n\n\n-- Definition - -\nthe degree of probability that there will be an landslide\nNote: Reflects the degree of hazard as regards the area's stability, based upon topographic conditions, geological/geotechnical conditions and erosion conditions. The landslideHazardLevelClass is based a weighed hazardfactorscore (0-51"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDFAREGR_KL"
+        }
+      },
+      {
+        "name": "skredSkadeKonsekvensScore",
+        "type": "Integer",
+        "description": "poengverdi basert på vektede faktorer for skadekonsekvensen\n\nMerknad: Se nærmere definisjon i kap. definisjoner og forkortelser.\n\n-- Definition --\nvalue (in points) based on weighted factors for the consequences of damage   Note: See more precise definition in chapter on definitions and abbreviations.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "SKREDKONSSCORE"
+        }
+      },
+      {
+        "name": "skredRisikoKvikkleireKlasse",
+        "type": "SkredRisikoKvikkleireKlasse",
+        "description": "risikoen for at et område kan bli påført skredskade, inndelt etter risikoklasser\n\nMerknad: Denne egenskapen gjengir en klassifisering av risiko for at området vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se kapittel definisjoner og forkortelser)\n\n-- Definition --\nthe risk that a landslide may inflict damage on an area, categorized according to risk classes   Note: This attribute cites a classification of risk that the area will be vulnerable to landslide damage. The classification method is based on a review of damage consequences and hazard levels",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Risikoklasse 0",
+              "label": "Områder hvor det ikke er fare for kvikkleireskred."
+            },
+            {
+              "value": "Risikoklasse 1",
+              "label": "Områder hvor det normalt ikke vil være aktuelt å foreta noen form for videre evaluering eller tiltak. Ved et eventuelt anleggsmessig inngrep vil det kreves dokumentasjon på at sikkerheten er tilfredsstillende.\n\n-- Definition --\nAreas where any further evaluation or action will normally not be relevant. For any intervention in the form of construction, documentation that safety is satisfactory will be required."
+            },
+            {
+              "value": "Risikoklasse 2",
+              "label": "Som ved risikoklasse 1 vil det heller ikke her  normalt  være aktuelt å foreta noen form for videre evaluering eller tiltak. Ved et eventuelt anleggsmessig inngrep vil det kreves dokumentasjon på at sikkerheten er tilfredsstillende.\n\n-- Definition --\nAs with Risk Class 1, neither will further evaluation or action normally be relevant here. For any intervention in the form of construction, documentation that safety is satisfactory will be required."
+            },
+            {
+              "value": "Risikoklasse 3",
+              "label": "Omfatter soner med til dels tett bebyggelse.\n\n-- Definition --\nIncludes zones that may in part be heavily built-up."
+            },
+            {
+              "value": "Risikoklasse 4",
+              "label": "Omfatter for det meste soner med tett bebyggelse. Må gis høy prioritet i det videre arbeidet med sikring mot skred.\n\n-- Definition --\nMainly comprising zones that are heavily built-up. Must be given high priority in the further work on preventive measures against landslide."
+            },
+            {
+              "value": "Risikoklasse 5",
+              "label": "Omfatter soner med høyeste skadekonsekvens og høyeste faregrad. Må gis høy prioritet i det videre arbeidet med sikring mot skred.\n\n-- Definition --\nComprising zones with the greatest injury consequences and highest hazard level. Must be given high priority in the ongoing work of landslide prevention."
+            }
+          ],
+          "definition": "risikoen for at et område kan bli påført skredskade, inndelt etter risikoklasser\n\nMerknad: Denne egenskapen gjengir en klassifisering av risiko for at området vil bli utsatt for skredskade. Klassifiseringsmetoden er basert på en evaluering av skadekonsekvens og faregrad. Evalueringen foretas ved at det beregnes poeng for hver sone i henhold til utarbeidde klassifiseringskriterier (se kapittel definisjoner og forkortelser.)\n\n\n-- Definition - -\nthe risk that a landslide may inflict damage on an area, categorized according to risk classes  Note: This attribute cites a classification of risk that the area will be vulnerable to landslide damage. The classification method is based on a review of damage consequences and hazard levels"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDRISIKO_KL"
+        }
+      },
+      {
+        "name": "skredKvalKartlegging",
+        "type": "SkredKvalKartlegging",
+        "description": "angir status og detaljeringsgrad  når det gjelder kartlegging av sonen\n\n-- Definition --\nindicates the status and degree of detail as regards the mapping of the zone",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ingen undersøkelse",
+              "label": "Det er kun topografiske vurderinger som ligger til grunn for\nkvikkleirefaresonen, ingen befaring eller grunnundersøkelse. Denne kodeverdien må brukes dersom man skal utveksle soner som ikke er klassifisert"
+            },
+            {
+              "value": "Enkel undersøkelse",
+              "label": "Enkel undersøkelse av sonen, oversiktskartlegging\n\n-- Definition --\nSimple investigation of the zone, overview mapping."
+            },
+            {
+              "value": "Supplerende undersøkelser / stabilitet",
+              "label": "Utført supplerende undersøkelser og vurdering av stabilitet\n\n-- Definition --\nSupplementary investigation and assessment of stability carried out"
+            },
+            {
+              "value": "Sikringstiltak utført",
+              "label": "Sikringstiltak er utført"
+            }
+          ],
+          "definition": "status og detaljeringsgrad vedrørende kartleggingsarbeidet\n\n\n-- Definition - -\nstatus, quality and degree of detail regarding the mapping work"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDKVALKARTLEGGING"
+        }
+      },
+      {
+        "name": "skredFaregradScore",
+        "type": "Integer",
+        "description": "tallverdi som er fremkommet ved at de viktigste kriteriene og faktorene som påvirker faregraden for kvikkleireskred er vurdert (jfr. Tabell 2 under kap.definisjoner og forkortelser.)\n\n-- Definition --\nnumerical value which results from the evaluation of the influence of the most important criteria and factors on the degree of hazard of a quick clay slide (cf. Table 2 in the chapter on definitions and abbreviations.)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "SKREDFAREGRADSCORE"
+        }
+      },
+      {
+        "name": "skredSkadeKonsekvensKlasse",
+        "type": "SkredSkadeKonsekvensKlasse",
+        "description": "hvilke økonomiske og samfunnsmessige følger et kvikkleireskred får og fare for tap av menneskeliv\n\nMerknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt fare for at viktige samfunnsmessige funksjoner skal stoppe opp.  For skredtypen kvikkleire er inndelingen basert på beregningen av en poengverdi basert på vektede faktorer (se kap. definisjoner og forkortelser.) i kombinasjon med skadekonsekvensen\n\n-- Definition --\nwhat economic and social consequences follow a quick clay slide, and risk of loss of human lives   Note: Qualitative classification of consequences of damage in connection with risk of fatalities, personal injuries, financial loss, value reduction as well as the risk that important social functions can be affected",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Ikke alvorlig",
+              "label": "Ikke alvorlig"
+            },
+            {
+              "value": "Mindre alvorlig",
+              "label": "Liten risiko for skade på mennesker, tap av liv, begrensede økonomiske og samfunnsmessige konsekvenser (0-6 poeng).\n\n-- Definition --\nLow risk of personal injuries, loss of life; limited economic and social consequences (0-6 points)."
+            },
+            {
+              "value": "Alvorlig",
+              "label": "Risiko for skade på mennesker/tap av liv eller betydelige økonomiske og samfunnsmessige konsekvenser (7-22 poeng).\n\n-- Definition --\nRisk of personal injuries/loss of life or substantial economic and social consequences (7-22 points)."
+            },
+            {
+              "value": "Meget alvorlig",
+              "label": "Stor risiko for skade på mennesker/tap av liv eller meget store økonomiske og samfunnsmessige konsekvenser (23-45 poeng).\n\n-- Definition --\nHigh risk of personal injuries/loss of life or very great economic and social consequences (23-45 points)."
+            }
+          ],
+          "definition": "hvilke økonomiske og samfunnsmessige følger et kvikkleireskred får og fare for tap av menneskeliv\n\nMerknad: Kvalitativ klassifisering av skadekonsekvens i forbindelse med fare for liv, skade på mennesker, økonomiske tap, verdiforringelse samt fare for at viktige samfunnsmessige funksjoner skal stoppe opp. For skredtypen\n\n\n-- Definition - -\nwhat economic and social consequences follow a quick clay slide, and risk of loss of human lives  Note: Qualitative classification of damage consequence in connection with risk of fatalities, personal injuries, financial loss, value reduction as well as the risk that  important social functions can be affected"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [
+        "SkredFareområderFellesegenskaper"
+      ],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "SkredTypePunkt",
+    "description": "Punkt som definerer den dimensjonerende skredtypen for en eller flere faresoner.",
+    "attributes": [
+      {
+        "name": "punkt",
+        "type": "Punkt",
+        "description": "sted som objektet eksisterer på",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "PUNKT"
+        }
+      },
+      {
+        "name": "skredOmrID",
+        "type": "Integer",
+        "description": "unikt id-nummer for skredområde/kvikkleirefaresone\n\n-- Definition --\nunique ID number for landslide area or quick clay hazard zone",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "SKREDOMRID"
+        }
+      },
+      {
+        "name": "skredtype",
+        "type": "SkredtypeDetaljert",
+        "description": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\n\nMerknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\n\n-- Definition --\nwhat type of avalanche/landslide masses related to the avalanche/landslide hazard or event\nNote: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Steinskred, uspesifisert",
+              "label": "Steinskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Steinsprang (< 100 m3)",
+              "label": "Steinsprang (steinblokker < 100 m3)"
+            },
+            {
+              "value": "Lite fjellskred (100 - 10 000 m3)",
+              "label": "Lite fjellskred (steinblokker 100 - 10 000 m3)"
+            },
+            {
+              "value": "Fjellskred (> 10 000 m3)",
+              "label": "Fjellskred (steinblokker > 10 000 m3)"
+            },
+            {
+              "value": "Undervannsskred, uspesifisert",
+              "label": "Undervannsskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Snøskred, uspesifisert",
+              "label": "Snøskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Vått snøskred",
+              "label": "Vått snøskred"
+            },
+            {
+              "value": "Tørt snøskred",
+              "label": "Tørt snøskred"
+            },
+            {
+              "value": "Sørpeskred",
+              "label": "Sørpeskred"
+            },
+            {
+              "value": "Løssnøskred, uspesifisert",
+              "label": "Løssnøskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Vått løssnøskred",
+              "label": "Vått løssnøskred"
+            },
+            {
+              "value": "Tørt løssnøskred",
+              "label": "Tørt løssnøskred"
+            },
+            {
+              "value": "Flakskred, uspesifisert",
+              "label": "Flakskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Vått flakskred",
+              "label": "Vått flakskred"
+            },
+            {
+              "value": "Tørt flakskred",
+              "label": "Tørt flakskred"
+            },
+            {
+              "value": "Løsmasseskred, uspesifisert",
+              "label": "Løsmasseskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Kvikkleireskred",
+              "label": "Kvikkleireskred"
+            },
+            {
+              "value": "Flomskred",
+              "label": "Flomskred"
+            },
+            {
+              "value": "Leirskred",
+              "label": "Leirskred"
+            },
+            {
+              "value": "Jordskred",
+              "label": "Jordskred"
+            },
+            {
+              "value": "Jordskred, uspesifisert",
+              "label": "Jordskred, ikke nærmere bestemt type\n\nMerknad: Fra og med 2015 benyttes ikke denne verdien for nye data."
+            },
+            {
+              "value": "Isnedfall, uspesifisert",
+              "label": "Isnedfall, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Skavlfall",
+              "label": "Skavlfall"
+            },
+            {
+              "value": "Utglidning av veg",
+              "label": "Utglidning av veg"
+            },
+            {
+              "value": "Ikke angitt",
+              "label": "Skredtype ikke angitt"
+            },
+            {
+              "value": "Ny, ikke-godkjent skredtype",
+              "label": "Ny, ikke-godkjent skredtype\n\nMerknad: Fra og med 2015 benyttes ikke denne verdien for nye data."
+            }
+          ],
+          "definition": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\n\nMerknad 1: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\nMerknad 2: Denne kodelisten er mer detaljert enn Skredtype definert i SOSI-standarden SKRED\n\n\n-- Definition - -\nwhat type of avalanche/landslide masses related to  the avalanche/landslide hazard or event  Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations of these"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDTYPE"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "NVEFellesegenskaper"
+      ],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "UtlopOmr",
+    "description": "areal som påvirkes eller dekkes av skredmassser når skred utløses\n\n\n-- Definition --\narea which is affected or covered by avalanche/landslide masses when an avalanche/landslide occurs",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "KvikkleireFaresone"
+      ],
+      "associations": [
+        {
+          "target": "KvikkleireFaresoneAvgr",
+          "role": "kvikkleireFaresoneAvgr",
+          "cardinality": "1..*"
+        }
+      ]
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "NVEFellesegenskaper",
+    "description": "abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper\n\nMerknad:\nSpesielt i produktspesifikasjonsarbeid vil en velge egenskaper og av grensningslinjer fra denne klassen.",
+    "attributes": [
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "description": "abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper\n\nMerknad:\nSpesielt i produktspesifikasjonsarbeid vil en velge egenskaper og av grensningslinjer fra denne klassen.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "IDENT"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nNOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nNOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "DateTime",
+        "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "DATAUTTAKSDATO"
+        }
+      },
+      {
+        "name": "datafangstdato",
+        "type": "DateTime",
+        "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra Oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "DATAFANGSTDATO"
+        }
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "DateTime",
+        "description": "dato når en representasjon av objektet i digital form første gang ble etablert\n\nMerknad:\nførsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess.\nEventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FØRSTEDIGITALISERINGSDATO"
+        }
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).\n\n-Definition-\nDate and time at which this version of the spatial object was inserted or changed in the spatial data set.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDATERINGSDATO"
+        }
+      },
+      {
+        "name": "opphav",
+        "type": "CharacterString",
+        "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPHAV"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "KvikkleireFaresoneAvgr",
+    "description": "avgrensningslinje for areal med evaluering av risiko for kvikkleireskred basert på skadekonsekvens og faregrad\n\n\n-- Definition --\nline delimiting area for which quick clay slide hazard has been evaluated based on damage consequences and degree of hazard",
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "Kurve",
+        "description": "forløp som følger overgang mellom ulike fenomener\n\n-- Definition --\ncourse following the transition between different real world phenomena",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "Kartleggingsområdekant",
+    "description": "avgrensningslinje for et kartleggingsområde som dekker et nærmere angitt geografisk område.",
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "Kurve",
+        "description": "forløp som følger overgang mellom ulike fenomener",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "AnalyseområdeGr",
+    "description": "avgrensningslinje for område analysert med tanke på potensiell skredfare",
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "Kurve",
+        "description": "forløp som følger overgang mellom ulike fenomener\n\n-- Definition --\ncourse following the transition between different real world phenomena",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "Kartleggingsområde",
+    "description": "dekning av et område kartlagt med tanke på potensiell skredfare",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "Flate",
+        "description": "objektets utstrekning",
+        "cardinality": "1"
+      },
+      {
+        "name": "kartleggingsområdeID",
+        "type": "CharacterString",
+        "description": "kartleggingsområdets identifikator",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "KARTLEGGINGSOMRÅDEID"
+        }
+      },
+      {
+        "name": "kartleggingsområdeNavn",
+        "type": "CharacterString",
+        "description": "navn på kartleggingsområde",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "KARTLEGGINGSOMRÅDENAVN"
+        }
+      },
+      {
+        "name": "kartleggingStatus",
+        "type": "Prosjektstatus_NVE",
+        "description": "Status for kartleggingen av aktuelt område",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "utført",
+              "label": "Nei"
+            },
+            {
+              "value": "til ny vurdering",
+              "label": "Ja"
+            },
+            {
+              "value": "erstattet av ny",
+              "label": "Nei"
+            },
+            {
+              "value": "fjernet",
+              "label": "Nei"
+            },
+            {
+              "value": "ajourført",
+              "label": "Nei"
+            },
+            {
+              "value": "under planlegging",
+              "label": "Nei"
+            },
+            {
+              "value": "pågående",
+              "label": "Nei"
+            },
+            {
+              "value": "Ja",
+              "label": "Ja"
+            },
+            {
+              "value": "Nei",
+              "label": "Nei"
+            }
+          ],
+          "definition": "Kodeliste for prosjektstatus brukt i NVE"
+        },
+        "taggedValues": {
+          "SOSI_navn": "KARTLEGGINGSTATUS"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": [
+        {
+          "target": "Kartleggingsområdekant",
+          "role": "områdekant",
+          "cardinality": "1..*"
+        }
+      ]
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "UtlosningOmr",
+    "description": "område hvor skred kan utløses\n\nMerknad: Alle typer skred",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "KvikkleireFaresone"
+      ],
+      "associations": [
+        {
+          "target": "KvikkleireFaresoneAvgr",
+          "role": "kvikkleireFaresoneAvgr",
+          "cardinality": "1..*"
+        }
+      ]
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "SkredFaregrense",
+    "description": "grenselinje som viser rekkevidden for mulige skred\n\nMerknad: Resten av faresonepolygonet er ofte avgrenset av dataavgrensningslinje\n\n\n-- Definition --\nboundary line which shows the extent of potential avalanches/landslides",
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "Kurve",
+        "description": "forløp som følger overgang mellom ulike fenomener\n\n-- Definition --\ncourse following the transition between different real world phenomena",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "SkredFaresone",
+    "description": "område hvor skredfaren er nærmere vurdert/kartlagt med hensyn til sannsynlighet og rekkevidde\n\nMerknad: Skredfaresonen kan bestå av utløsningsområde og utløpsområde for skred\n\n\n-- Definition --\narea where the avalanche/landslide hazard has been evaluated/surveyed in more detail with regard to probability and extent",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "Flate",
+        "description": "objektets utstrekning\n\n-- Definition --\narea over which an object extends",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "Flate"
+        }
+      },
+      {
+        "name": "skredtype",
+        "type": "SkredtypeDetaljert",
+        "description": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\n\nMerknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\n\n-- Definition --\nwhat type of avalanche/landslide masses related to the avalanche/landslide hazard or event\nNote: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations these",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Steinskred, uspesifisert",
+              "label": "Steinskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Steinsprang (< 100 m3)",
+              "label": "Steinsprang (steinblokker < 100 m3)"
+            },
+            {
+              "value": "Lite fjellskred (100 - 10 000 m3)",
+              "label": "Lite fjellskred (steinblokker 100 - 10 000 m3)"
+            },
+            {
+              "value": "Fjellskred (> 10 000 m3)",
+              "label": "Fjellskred (steinblokker > 10 000 m3)"
+            },
+            {
+              "value": "Undervannsskred, uspesifisert",
+              "label": "Undervannsskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Snøskred, uspesifisert",
+              "label": "Snøskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Vått snøskred",
+              "label": "Vått snøskred"
+            },
+            {
+              "value": "Tørt snøskred",
+              "label": "Tørt snøskred"
+            },
+            {
+              "value": "Sørpeskred",
+              "label": "Sørpeskred"
+            },
+            {
+              "value": "Løssnøskred, uspesifisert",
+              "label": "Løssnøskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Vått løssnøskred",
+              "label": "Vått løssnøskred"
+            },
+            {
+              "value": "Tørt løssnøskred",
+              "label": "Tørt løssnøskred"
+            },
+            {
+              "value": "Flakskred, uspesifisert",
+              "label": "Flakskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Vått flakskred",
+              "label": "Vått flakskred"
+            },
+            {
+              "value": "Tørt flakskred",
+              "label": "Tørt flakskred"
+            },
+            {
+              "value": "Løsmasseskred, uspesifisert",
+              "label": "Løsmasseskred, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Kvikkleireskred",
+              "label": "Kvikkleireskred"
+            },
+            {
+              "value": "Flomskred",
+              "label": "Flomskred"
+            },
+            {
+              "value": "Leirskred",
+              "label": "Leirskred"
+            },
+            {
+              "value": "Jordskred",
+              "label": "Jordskred"
+            },
+            {
+              "value": "Jordskred, uspesifisert",
+              "label": "Jordskred, ikke nærmere bestemt type\n\nMerknad: Fra og med 2015 benyttes ikke denne verdien for nye data."
+            },
+            {
+              "value": "Isnedfall, uspesifisert",
+              "label": "Isnedfall, ikke nærmere bestemt type"
+            },
+            {
+              "value": "Skavlfall",
+              "label": "Skavlfall"
+            },
+            {
+              "value": "Utglidning av veg",
+              "label": "Utglidning av veg"
+            },
+            {
+              "value": "Ikke angitt",
+              "label": "Skredtype ikke angitt"
+            },
+            {
+              "value": "Ny, ikke-godkjent skredtype",
+              "label": "Ny, ikke-godkjent skredtype\n\nMerknad: Fra og med 2015 benyttes ikke denne verdien for nye data."
+            }
+          ],
+          "definition": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\n\nMerknad 1: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\nMerknad 2: Denne kodelisten er mer detaljert enn Skredtype definert i SOSI-standarden SKRED\n\n\n-- Definition - -\nwhat type of avalanche/landslide masses related to  the avalanche/landslide hazard or event  Note: Various types of avalanche/landslide masses, such as rock, snow, soil and combinations of these"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDTYPE"
+        }
+      },
+      {
+        "name": "skredStatistikkSannsynlighet",
+        "type": "SkredSannsynlighet",
+        "description": "statistisk sannsynlighet for at det går et skred\n\nBetingelse: Egenskapen skredFaregradKlasse eller skredStatistikkSannsynlighet er påkrevet. skredFaregradKlasse benyttes ved kvikkleire og skredStatistikkSannsynlighet ved bratt terreng\n\nMerknad: Oppgis som et skred per antall år. I plan og bygningsloven skal man ta hensyn til 1000 årsskredet.\n\n-- Definition --\nstatistical probability that an avalanche  landslide will take place   Condition: The attribute landslideHazardLevelClass or avalancheStatisticProbability is mandatory. landslideHazardLevelClass is used in the case of quick clay and avalancheStatisticProbability in the case of steep terrain   Note:  Indicated as a yearly probability of avalanches/landslides. In the Planning and Building Act consideration must be given for the yearly probability of 1/1000",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "100",
+              "label": "Gjentaksintervall: 100 år"
+            },
+            {
+              "value": "1000",
+              "label": "Gjentaksintervall: 1000 år"
+            },
+            {
+              "value": "5000",
+              "label": "Gjentaksintervall: 5000 år"
+            }
+          ],
+          "definition": "sannsynlig gjentaksintervall for skredhendelse i området (antall år)"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDSTATSANN"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "NVEFellesegenskaper"
+      ],
+      "associations": [
+        {
+          "target": "SkredFaregrense",
+          "role": "skredFaregrense",
+          "cardinality": "1..*"
+        }
+      ]
+    },
+    "package": "Skredfareområder_1.3"
+  },
+  {
+    "name": "SkredFareområderFellesegenskaper",
+    "description": "abstrakt objekt som bærer en egenskaper som benyttes i flere av fareområdeklassene. Benyttes til arv av egenskaper.",
+    "attributes": [
+      {
+        "name": "prosjektURL",
+        "type": "CharacterString",
+        "description": "URL-lenke til kartleggingsprosjektets informasjonsside",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "PROSJEKTURL"
+        }
+      },
+      {
+        "name": "rapportURL",
+        "type": "CharacterString",
+        "description": "URL-lenke til rapport fra kartleggingsprosjektet",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RAPPORTURL"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [
+        "NVEFellesegenskaper"
+      ],
+      "associations": []
+    },
+    "package": "Skredfareområder_1.3"
+  }
+]
