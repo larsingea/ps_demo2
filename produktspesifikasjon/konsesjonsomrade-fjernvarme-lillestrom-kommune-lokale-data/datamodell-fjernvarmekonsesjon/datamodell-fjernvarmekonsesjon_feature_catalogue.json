@@ -1,0 +1,158 @@
+[
+  {
+    "abstract": false,
+    "attributes": [
+      {
+        "attributes": [
+          {
+            "cardinality": "1",
+            "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+            "name": "lokalId",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+            "name": "navnerom",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+            "name": "versjonId",
+            "type": "CharacterString"
+          }
+        ],
+        "cardinality": "1",
+        "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+        "name": "identifikasjon",
+        "type": "Identifikasjon"
+      },
+      {
+        "cardinality": "1",
+        "description": "Konsesjonsområdets geografiske utstrekning som flate.",
+        "name": "område",
+        "type": "GM_Surface"
+      },
+      {
+        "cardinality": "1",
+        "description": "Navn på konsesjonsområdet, f.eks. tettstedet området dekker.",
+        "name": "områdenavn",
+        "type": "CharacterString"
+      },
+      {
+        "cardinality": "1",
+        "description": "Angir om det er gitt konsesjon for fjernvarme i området.",
+        "name": "konsesjon",
+        "type": "Boolean"
+      },
+      {
+        "cardinality": "0..1",
+        "description": "Metode som ligger til grunn for registrering av posisjon.",
+        "name": "målemetode",
+        "type": "Målemetode",
+        "valueDomain": {
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/generelle-konsepter/5.1/målemetode",
+          "kind": "codelist"
+        }
+      },
+      {
+        "cardinality": "1",
+        "description": "Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.",
+        "name": "kommunenummer",
+        "type": "Kommunenummer",
+        "valueDomain": {
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer",
+          "kind": "codelist"
+        }
+      },
+      {
+        "cardinality": "0..1",
+        "description": "Utfyllende informasjon om objektet, f.eks. hvem som har utarbeidet dataene.",
+        "name": "informasjon",
+        "type": "CharacterString"
+      },
+      {
+        "cardinality": "0..1",
+        "description": "Kilde eller tidspunkt for etablering av dataene.",
+        "name": "opphav",
+        "type": "CharacterString"
+      },
+      {
+        "cardinality": "0..1",
+        "description": "Dato når objektet ble registrert/observert/målt første gang.",
+        "name": "datafangstdato",
+        "type": "Date"
+      }
+    ],
+    "description": "Område der det er gitt konsesjon for fjernvarme etter energiloven, i Lillestrøm kommune.",
+    "name": "Fjernvarmekonsesjonsområde",
+    "relationships": {
+      "associations": [
+        {
+          "cardinality": "0..*",
+          "role": "avgrensning",
+          "target": "Konsesjonsgrense"
+        }
+      ],
+      "inheritance": []
+    }
+  },
+  {
+    "abstract": false,
+    "attributes": [
+      {
+        "attributes": [
+          {
+            "cardinality": "1",
+            "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+            "name": "lokalId",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+            "name": "navnerom",
+            "type": "CharacterString"
+          },
+          {
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+            "name": "versjonId",
+            "type": "CharacterString"
+          }
+        ],
+        "cardinality": "1",
+        "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+        "name": "identifikasjon",
+        "type": "Identifikasjon"
+      },
+      {
+        "cardinality": "1",
+        "description": "Grenselinjens forløp.",
+        "name": "grense",
+        "type": "GM_Curve"
+      },
+      {
+        "cardinality": "0..1",
+        "description": "Kilde eller tidspunkt for etablering av dataene.",
+        "name": "opphav",
+        "type": "CharacterString"
+      }
+    ],
+    "description": "Grenselinje som avgrenser et fjernvarmekonsesjonsområde.",
+    "name": "Konsesjonsgrense",
+    "relationships": {
+      "associations": [
+        {
+          "cardinality": "1..*",
+          "role": "konsesjonsområde",
+          "target": "Fjernvarmekonsesjonsområde"
+        }
+      ],
+      "inheritance": []
+    }
+  }
+]

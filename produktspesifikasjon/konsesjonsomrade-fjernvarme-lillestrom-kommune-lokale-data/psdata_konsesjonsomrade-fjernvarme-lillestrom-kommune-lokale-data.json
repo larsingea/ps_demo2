@@ -1,0 +1,199 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Konsesjonsområde fjernvarme Lillestrøm kommune - lokale data",
+  "format": "text/html",
+  "date": {
+    "creation": "2016-12-23",
+    "revision": "2021-10-01"
+  },
+  "language": "nor",
+  "contact": {
+    "organizationName": "Lillestrøm kommune",
+    "logo": "https://register.geonorge.no/data/organizations/820710592_lillestrom_liten.jpg",
+    "electronicMailAddress": "geodata@lillestrom.kommune.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Konsesjonsområde fjernvarme Lillestrøm kommune - lokale data",
+    "abstract": "Datasettet viser hvilke områder som omfattes av konsesjon for fjernvarme i Lillestrøm kommune.\nForeligger for nedlasting som Shape, Esri filgeodatabase og SOSI i UTM sone 32.",
+    "purpose": {
+      "summary": "Plan- og byggesaksbehandling",
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Plan- og byggesaksbehandling"
+      }
+    },
+    "topicCategory": [
+      "Plan og eiendom"
+    ],
+    "spatialRepresentationType": "Vektor",
+    "uniqueId": "95867501-5b48-402d-8cb9-1d8a9b1c7bfc",
+    "keyword": [
+      "Fjernvarme",
+      "Konsesjonsområde",
+      "Det offentlige kartgrunnlaget",
+      "fellesDatakatalog",
+      "Energi"
+    ],
+    "restriction": {
+      "legalConstraints": {
+        "accessConstraints": "Åpne data",
+        "useConstraints": "Lisens",
+        "license": "Norsk lisens for offentlige data (NLOD)",
+        "licenseUrl": "http://data.norge.no/nlod/no/1.0",
+        "otherConstraints": "otherRestrictions"
+      }
+    },
+    "contact": [
+      {
+        "organizationName": "Lillestrøm kommune",
+        "electronicMailAddress": "geodata@lillestrom.kommune.no",
+        "role": "owner"
+      },
+      {
+        "organizationName": "Lillestrøm kommune",
+        "electronicMailAddress": "geodata@lillestrom.kommune.no",
+        "role": "pointOfContact"
+      },
+      {
+        "organizationName": "Lillestrøm kommune",
+        "electronicMailAddress": "geodata@lillestrom.kommune.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Etter behov",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "10.933734",
+        "eastBoundLongitude": "11.439506",
+        "southBoundLatitude": "59.75385",
+        "northBoundLatitude": "60.077247"
+      },
+      "geographicDescription": [
+        "Lillestrøm kommune",
+        "Lillestrøm",
+        "Sørumsand",
+        "Skedsmokorset"
+      ],
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2016-12-23",
+          "endPosition": "2021-10-01"
+        }
+      }
+    },
+    "date": {
+      "creation": "2016-12-23",
+      "publication": "2016-12-23",
+      "revision": "2021-10-01"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Datamodell fjernvarmekonsesjon",
+        "level": "dataset",
+        "levelDescription": "Datamodell (Manuell datamodell)"
+      }
+    }
+  ],
+  "dataQualitySection": {
+    "scope": {
+      "level": "dataset"
+    }
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Etter behov"
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "kommunevis",
+          "deliveryMediumName": "Egen nedlastningsside",
+          "deliveryService": {
+            "serviceEndpoint": "https://nedlasting.geonorge.no/geonorge/kommunaleDokData/95867501-5b48-402d-8cb9-1d8a9b1c7bfc.zip",
+            "serviceProperty": {
+              "type": "Egen nedlastningsside",
+              "value": "WWW:DOWNLOAD-1.0-http--download"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "FGDB"
+          },
+          {
+            "formatName": "SOSI"
+          },
+          {
+            "formatName": "Shape"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: datamodell-fjernvarmekonsesjon",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/konsesjonsomrade-fjernvarme-lillestrom-kommune-lokale-data/datamodell-fjernvarmekonsesjon/datamodell-fjernvarmekonsesjon.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2024-01-03",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Lillestrøm kommune",
+      "logo": "https://register.geonorge.no/data/organizations/820710592_lillestrom_liten.jpg",
+      "electronicMailAddress": "geodata@lillestrom.kommune.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "95867501-5b48-402d-8cb9-1d8a9b1c7bfc",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/95867501-5b48-402d-8cb9-1d8a9b1c7bfc"
+    }
+  },
+  "chapterAutofill": {
+    "om_spesifikasjonen": 8,
+    "om_produktet": 71,
+    "formaal": 3,
+    "bruksomraade": 3,
+    "omfang": 28,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 0,
+    "datakvalitet": 1,
+    "datafangst_og_produksjon": 0,
+    "vedlikehold": 2,
+    "presentasjon": 0,
+    "leveranse": 16,
+    "metadata": 13,
+    "tilleggsinformasjon": 0,
+    "datamodell": 257
+  },
+  "specificationContact": "Lillestrøm kommune, [geodata@lillestrom.kommune.no](mailto:geodata@lillestrom.kommune.no)"
+}
