@@ -1,0 +1,310 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/administrativeenheterfilleveranse/administrative-enheter-filleveranse.json",
+  "definitions": {
+    "AdministrativEnhetNavn": {
+      "type": "object",
+      "properties": {
+        "navn": {
+          "description": "navnet på den administrative enheten i angitt språk.",
+          "type": "string"
+        },
+        "språk": {
+          "description": "angir språk for det administrative navnet.",
+          "$ref": "#/definitions/Språkkode"
+        },
+        "rekkefølge": {
+          "description": "angir presentasjonsrekkefølge i sammenstaninger av nav på administretiv enhet ved presentasjon på alle sprøkformer.",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "navn",
+        "språk"
+      ]
+    },
+    "Fylke": {
+      "description": "administrativ inndeling av nasjonen på regionalt nivå\n\nMerknad: Tilsvarer NUTS 3 på internasjonalt statistisk nivå",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SOSI_Objekt_flate"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "geometry": {
+              "$ref": "https://geojson.org/schema/MultiPolygon.json"
+            },
+            "administrativEnhetNavn": {
+              "description": "offisielt navn på en kommune, et fylke eller en nasjon",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/AdministrativEnhetNavn"
+              },
+              "uniqueItems": true
+            },
+            "fylkesnummer": {
+              "description": "nummerering av fylker i henhold til Statistisk sentralbyrå sin offisielle liste\n\nMerknad:\nDet presiseres at fylkesnummer alltid skal ha 2 sifre, dvs. eventuelt med ledende null. Fylkesnummer benyttes for kopling mot en rekke andre registre som også benytter 2 sifre.",
+              "$ref": "#/definitions/Fylkesnummer"
+            },
+            "fylkesnavn": {
+              "description": "Offisielt navn på et fylke. Merk: Hvis fylket har flere vedtatte parallellnavn, framstår disse i en sammenhengende tekststreng.",
+              "type": "string"
+            },
+            "samiskForvaltningsområde": {
+              "description": "angir om fylket er en del ac samisk forvaltningaområde",
+              "type": "boolean"
+            },
+            "avgrensesAvGrense": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "administrativEnhetNavn",
+            "fylkesnavn",
+            "fylkesnummer"
+          ]
+        }
+      ]
+    },
+    "Fylkesnummer": {
+      "description": "nummerering av fylker \u003cfont color\u003d\"#333333\"\u003e \u003c/font\u003e\n\u003cfont color\u003d\"#333333\"\u003e\n\u003c/font\u003e\u003cfont color\u003d\"#333333\"\u003eMerknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid ha 2 sifre, dvs. eventuelt med ledende null.\u003c/font\u003e\n\u003ci\u003eURI til ekstern kodeliste:\u003c/i\u003e https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer?",
+      "type": "string",
+      "format": "uri"
+    },
+    "Grense": {
+      "description": "Generell avgrensingslinje",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SOSI_Objekt_grense"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "geometry": {
+              "$ref": "https://geojson.org/schema/LineString.json"
+            },
+            "avgrensningstype": {
+              "description": "angir type avgreisningslinje. Ulike objekter avgrenses av ulike typer grenser.",
+              "$ref": "#/definitions/TypeAvgrensning"
+            }
+          },
+          "required": [
+            "avgrensningstype"
+          ]
+        }
+      ]
+    },
+    "Identifikasjon": {
+      "type": "object",
+      "properties": {
+        "lokalId": {
+          "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverandørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+          "type": "string"
+        },
+        "versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lokalId",
+        "navnerom"
+      ]
+    },
+    "Kommune": {
+      "description": "inndeling i administrative og politiske enheter innenfor fylket\n\nMerknad: Tilsvarer NUTS 5 og LAU 2 på internasjonalt statistisk nivå",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SOSI_Objekt_flate"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "geometry": {
+              "$ref": "https://geojson.org/schema/MultiPolygon.json"
+            },
+            "administrativEnhetNavn": {
+              "description": "offisielt navn på en kommune, et fylke eller en nasjon",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/AdministrativEnhetNavn"
+              },
+              "uniqueItems": true
+            },
+            "kommunenummer": {
+              "description": "nummerering av kommunen i henhold til Statistisk sentralbyrå sin offisielle liste\n\nMerknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer.",
+              "$ref": "#/definitions/Kommunenummer"
+            },
+            "kommunenavn": {
+              "description": "Offisielt navn på en kommune. Merk: Hvis kommunen har flere vedtatte parallellnavn, framstår disse i en sammenhengende tekststreng.",
+              "type": "string"
+            },
+            "samiskForvaltningsområde": {
+              "description": "angir om kommunen er en del ac samisk forvaltningaområde",
+              "type": "boolean"
+            },
+            "avgrensesAvGrense": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "administrativEnhetNavn",
+            "kommunenavn",
+            "kommunenummer"
+          ]
+        }
+      ]
+    },
+    "Kommunenummer": {
+      "description": "\u003cfont color\u003d\"#333333\"\u003enummerering av kommuner i henhold til SSB sin offisielle liste\u003c/font\u003e\nMerknad: \u003cfont color\u003d\"#333333\"\u003eInneholder fremtidige, gyldige og utgåtte kommunenummer. \u003c/font\u003eDet presiseres at kommune alltid skal ha 4 sifre, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 sifre.\n\n\u003ci\u003eURI til ekstern kodeliste:\u003c/i\u003e https://register.geonorge.no/sosi-kodelister/kommunenummer?page\u003d2",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer",
+      "type": "string",
+      "format": "uri"
+    },
+    "Målemetode": {
+      "description": "metode som ligger til grunn for registrering av posisjon\n\n\n-- Definition - -\nmethod on which registration of position is based",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode",
+      "type": "string",
+      "format": "uri"
+    },
+    "Posisjonskvalitet": {
+      "type": "object",
+      "properties": {
+        "målemetode": {
+          "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+          "$ref": "#/definitions/Målemetode"
+        },
+        "nøyaktighet": {
+          "description": "punktstandardavviket i grunnriss for punkter samt tverravvik for linjer\n\nMerknad:\nOppgitt i cm",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "målemetode"
+      ]
+    },
+    "SOSI_Fellesegenskaper": {
+      "description": "abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.\n\nMerknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "unik identifikasjon av et objekt",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "oppdateringsdato": {
+          "description": "tidspunkt for siste endring på objektet\n\nMerknad:\nOppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).",
+          "type": "string",
+          "format": "date"
+        },
+        "gyldigFra": {
+          "description": "Tidspunktet når objektet oppstod i den virkelige verden",
+          "type": "string",
+          "format": "date"
+        },
+        "gyldigTil": {
+          "description": "Tidspunktet når objektet opphørte å eksistere i den virkelige verden",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon",
+        "oppdateringsdato"
+      ]
+    },
+    "SOSI_Objekt_flate": {
+      "description": "abstrakt objekttype som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper\n\nMerknad:\nSpesielt i produktspesifikasjonsarbeid vil en velge egenskaper og avgrensningslinjer fra denne klassen.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SOSI_Fellesegenskaper"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "datafangstdato": {
+              "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+              "type": "string",
+              "format": "date"
+            },
+            "datauttaksdato": {
+              "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+              "type": "string",
+              "format": "date"
+            },
+            "opphav": {
+              "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "SOSI_Objekt_grense": {
+      "description": "abstrakt objekttype som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper\n\nMerknad:\nSpesielt i produktspesifikasjonsarbeid vil en velge egenskaper og avgrensningslinjer fra denne klassen.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SOSI_Fellesegenskaper"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "datafangstdato": {
+              "description": "dato når objektet siste gang ble registrert/observert/målt i terrenget\n\nMerknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.\nVed førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.",
+              "type": "string",
+              "format": "date"
+            },
+            "kvalitet": {
+              "description": "beskrivelse av kvaliteten på stedfestingen",
+              "$ref": "#/definitions/Posisjonskvalitet"
+            },
+            "datauttaksdato": {
+              "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+              "type": "string",
+              "format": "date"
+            },
+            "opphav": {
+              "description": "referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\n\nMerknad:\nKan også beskrive navn på person og årsak til oppdatering",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "Språkkode": {
+      "description": "ISO 639 del 3 språkkodetabell\n\nMerknad: ufullstendig kodeliste pga. importfeil\n\nlanguage code tables of ISO 639 part 3\n\nISO 639-3 is a code that aims to define three-letter identifiers for all known human languages. At the core of ISO 639-3 are the individual languages already accounted for in ISO 639-2.",
+      "type": "string",
+      "format": "uri"
+    },
+    "TypeAvgrensning": {
+      "description": "oversikt over ulike typer avgrensingslinjer.",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

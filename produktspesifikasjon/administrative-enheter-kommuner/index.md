@@ -96,6 +96,12 @@ Forvaltningsmessig saksbehandling. Analyse og presentasjon i et GIS-system. Pres
 
 **Nivåbeskrivelse**: Datamodell (Manuell datamodell)
 
+### Administrative Enheter Filleveranse
+
+**Nivå**: dataset
+
+**Nivåbeskrivelse**: Administrative enheter - fylker og kommuner v. 2024
+
 ## Datainnhold og struktur
 
 
@@ -109,6 +115,16 @@ Forvaltningsmessig saksbehandling. Analyse og presentasjon i et GIS-system. Pres
 
 
 ➡️ [Se full datamodell for omfang "Forenklet inndeling" (diagram per pakke og objektkatalog)](forenklet-inndeling/objektkatalog.html)
+
+### Datamodell - Administrative Enheter Filleveranse
+
+
+
+<a href="administrative-enheter-filleveranse/administrative-enheter-filleveranse_feature_catalogue.png" title="Klikk for stor visning"><img src="administrative-enheter-filleveranse/administrative-enheter-filleveranse_feature_catalogue.png" alt="Datamodell Administrative Enheter Filleveranse" style="max-width: 100%; height: auto;" /></a>
+
+
+
+➡️ [Se full datamodell for omfang "Administrative Enheter Filleveranse" (diagram per pakke og objektkatalog)](administrative-enheter-filleveranse/objektkatalog.html)
 
 ## Referansesystem
 
@@ -174,8 +190,11 @@ Forvaltningsmessig saksbehandling. Analyse og presentasjon i et GIS-system. Pres
 | Atom Feed | [Lenke](http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedPostGIS.xml) | W3C:AtomFeed | PostGIS | fylkesvis, kommunevis, landsfiler |
 | Atom Feed | [Lenke](http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedSOSI.xml) | W3C:AtomFeed | SOSI | fylkesvis, kommunevis, landsfiler |
 | Administrative enheter WMS | [Lenke](https://wms.geonorge.no/skwms1/wms.adm_enheter2?service=wms&request=GetCapabilities) | WMS-tjeneste | png |  |
+| GeoPackage: administrative-enheter-filleveranse | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/administrative-enheter-filleveranse.gpkg) | Nedlasting | GPKG |  |
 | GeoPackage: forenklet-inndeling | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/forenklet-inndeling.gpkg) | Nedlasting | GPKG |  |
+| GML/XSD-skjema: administrative-enheter-filleveranse | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/xsd/INPUT/administrative-enheter-filleveranse.xsd) | Nedlasting | XSD |  |
 | GML/XSD-skjema: forenklet-inndeling | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/schema/xsd/INPUT/forenklet-inndeling.xsd) | Nedlasting | XSD |  |
+| JSON Schema: administrative-enheter-filleveranse | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/jsonschema/INPUT/administrativeenheterfilleveranse/administrative-enheter-filleveranse.json) | Nedlasting | JSON Schema |  |
 | JSON Schema: forenklet-inndeling | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/schema/jsonschema/INPUT/forenkletinndeling/forenklet-inndeling.json) | Nedlasting | JSON Schema |  |
 
 ## Metadata
@@ -184,7 +203,7 @@ Forvaltningsmessig saksbehandling. Analyse og presentasjon i et GIS-system. Pres
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-11-09
+**Metadatadato**: 2026-11-12
 
 **språk**: nor
 

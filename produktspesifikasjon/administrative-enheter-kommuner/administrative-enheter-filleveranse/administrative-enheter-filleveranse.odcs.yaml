@@ -1,0 +1,605 @@
+# Open Data Contract Standard (ODCS) v3.1.0 — generert fra datamodellen.
+apiVersion: v3.1.0
+kind: DataContract
+id: urn:odcs:administrative-enheter-kommuner-administrative-enheter-filleveranse:1.0.0
+version: 1.0.0
+status: active
+name: Administrative enheter kommuner - Administrative Enheter Filleveranse
+tags:
+- Administrative grenser
+- Kommune
+- Administrativ inndeling
+- Kommunegrenser
+- Fylkesgrenser
+- Riksgrense
+- ABAS
+- Administrative enheter
+- Det offentlige kartgrunnlaget
+- Inspire
+- geodataloven
+- Norge digitalt
+- beredskapsbase
+- dataNorgeNo
+- fellesDatakatalog
+- Basis geodata
+- Norge
+- Åpne data
+- Ugradert
+price:
+  priceAmount: 0
+  priceUnit: dataset
+description:
+  usage: Ingen begrensninger på bruk er oppgitt. Se forøvrig lisens.
+  limitations: Åpne data. Lisens. Ugradert
+  purpose: Framstille den offisielle kommuneinndelingen.
+authoritativeDefinitions:
+- url: https://data.geonorge.no/sosi/administrativeenheter/kommuner
+  type: businessDefinition
+  description: Produktets identifikator
+- url: https://kartkatalog.geonorge.no/metadata/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
+  type: businessDefinition
+  description: Metadata i Kartkatalogen
+- url: https://register.geonorge.no/produktark/administrative-enheter-norge
+  type: businessDefinition
+  description: Produktark
+- url: https://register.geonorge.no/tegneregler/administrative-enheter-norge
+  type: implementation
+  description: Tegneregler
+team:
+  members:
+  - username: post@kartverket.no
+    name: Liv Mari Nesje
+    description: Kartverket
+    role: owner, pointOfContact, publisher
+support:
+- channel: Kartverket
+  tool: email
+  url: mailto:post@kartverket.no
+  scope: issues
+  description: Kontaktpunkt hos Kartverket
+slaProperties:
+- property: frequency
+  value: Årlig
+  driver: operational
+  description: Kontinuerlig oppdatert
+customProperties:
+- property: license
+  value: Creative Commons BY 4.0 (CC BY 4.0)
+- property: licenseUrl
+  value: https://creativecommons.org/licenses/by/4.0/
+- property: accessConstraints
+  value: Åpne data
+- property: useConstraints
+  value: Lisens
+- property: useLimitations
+  value: Ingen begrensninger på bruk er oppgitt. Se forøvrig lisens.
+- property: classification
+  value: Ugradert
+- property: equivalentScale
+  value: '5000'
+- property: spatialRepresentationType
+  value: Vektor
+- property: language
+  value: nor
+- property: maintenanceAndUpdateStatement
+  value: Kontinuerlig oppdatert
+servers:
+- server: geonorge-nedlastning
+  type: api
+  location: https://nedlasting.geonorge.no/api/capabilities/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
+  description: Geonorge nedlastning - FGDB, GeoJSON, GML, PostGIS, SOSI
+- server: atom-feed
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedFGDB.xml
+  description: Atom Feed - FGDB
+- server: atom-feed-gml
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedGML.xml
+  description: Atom Feed - GML
+- server: atom-feed-geojson
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedGeoJSON.xml
+  description: Atom Feed - GeoJSON
+- server: atom-feed-postgis
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedPostGIS.xml
+  description: Atom Feed - PostGIS
+- server: atom-feed-sosi
+  type: api
+  location: http://nedlasting.geonorge.no/geonorge/ATOM-feeds/AdministrativeEnheterKommuner_AtomFeedSOSI.xml
+  description: Atom Feed - SOSI
+- server: administrative-enheter-wms
+  type: api
+  location: https://wms.geonorge.no/skwms1/wms.adm_enheter2?service=wms&request=GetCapabilities
+  description: Administrative enheter WMS - png
+schema:
+- name: Kommune
+  physicalName: kommune
+  logicalType: object
+  physicalType: table
+  description: 'inndeling i administrative og politiske enheter innenfor fylket
+
+
+    Merknad: Tilsvarer NUTS 5 og LAU 2 på internasjonalt statistisk nivå'
+  customProperties:
+  - property: sosiObjektType
+    value: Kommune
+  - property: inheritsFrom
+    value: SOSI_Objekt_flate
+  - property: associations
+    value:
+    - role: avgrensesAvGrense
+      target: Grense
+      cardinality: 0..*
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: 'lokal identifikator av et objekt
+
+
+        Merknad: Det er dataleverandørens ansvar å sørge for at den lokale identifikatoren
+        er unik innenfor navnerommet.'
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales
+        å være en http-URI
+
+
+        Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+
+        Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar
+        for de unike identifikatorene og må være registrert i data.geonorge.no eller
+        data.norge.no'
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: identifikasjon av en spesiell versjon av et geografisk objekt (instans)
+    description: unik identifikasjon av et objekt
+    required: true
+  - name: oppdateringsdato
+    logicalType: timestamp
+    description: 'tidspunkt for siste endring på objektet
+
+
+      Merknad:
+
+      Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert
+      kan bufres en kortere eller lengre periode før disse legges inn i datasystemet
+      (databasen).'
+    required: true
+  - name: gyldigFra
+    logicalType: date
+    description: Tidspunktet når objektet oppstod i den virkelige verden
+  - name: gyldigTil
+    logicalType: date
+    description: Tidspunktet når objektet opphørte å eksistere i den virkelige verden
+  - name: datafangstdato
+    logicalType: timestamp
+    description: 'dato når objektet siste gang ble registrert/observert/målt i terrenget
+
+
+      Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte
+      endringer kan bufres i en kortere eller lengre periode før disse legges inn
+      i databasen.
+
+      Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+  - name: datauttaksdato
+    logicalType: timestamp
+    description: 'dato for uttak fra en database
+
+
+      Merknad:
+
+      Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase
+      eller en kopidatabase.'
+  - name: opphav
+    logicalType: string
+    description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+      Merknad:
+
+      Kan også beskrive navn på person og årsak til oppdatering'
+  - name: område
+    logicalType: object
+    physicalType: geometry(MultiSurface)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: MultiSurface
+  - name: administrativEnhetNavn
+    logicalType: array
+    items:
+      logicalType: object
+      properties:
+      - name: navn
+        logicalType: string
+        description: navnet på den administrative enheten i angitt språk.
+        required: true
+      - name: språk
+        logicalType: string
+        logicalTypeOptions:
+          pattern: ^(English|KvenFinnish|LuleSami|NorthernSami|Swedish|Finnish|Norwegian|SouthernSami)$
+        customProperties:
+        - property: allowedValues
+          value:
+          - value: English
+            label: English
+          - value: KvenFinnish
+            label: Kven Finnish
+          - value: LuleSami
+            label: Lule Sami
+          - value: NorthernSami
+            label: Northern Sami
+          - value: Swedish
+            label: Swedish
+          - value: Finnish
+            label: Finnish
+          - value: Norwegian
+            label: Norwegian
+          - value: SouthernSami
+            label: Southern Sami
+        description: angir språk for det administrative navnet.
+        required: true
+      - name: rekkefølge
+        logicalType: integer
+        description: angir presentasjonsrekkefølge i sammenstaninger av nav på administretiv
+          enhet ved presentasjon på alle sprøkformer.
+    description: offisielt navn på en kommune, et fylke eller en nasjon
+    required: true
+  - name: kommunenummer
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Kommunenummer
+    - property: asDictionary
+      value: 'true'
+    description: 'nummerering av kommunen i henhold til Statistisk sentralbyrå sin
+      offisielle liste
+
+
+      Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med
+      ledende null. Kommune benyttes for kopling mot en rekke andre registre som også
+      benytter 4 siffer.'
+    required: true
+  - name: kommunenavn
+    logicalType: string
+    description: 'Offisielt navn på en kommune. Merk: Hvis kommunen har flere vedtatte
+      parallellnavn, framstår disse i en sammenhengende tekststreng.'
+    required: true
+  - name: samiskForvaltningsområde
+    logicalType: boolean
+    description: angir om kommunen er en del ac samisk forvaltningaområde
+- name: Grense
+  physicalName: grense
+  logicalType: object
+  physicalType: table
+  description: Generell avgrensingslinje
+  customProperties:
+  - property: sosiObjektType
+    value: Grense
+  - property: inheritsFrom
+    value: SOSI_Objekt_grense
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: 'lokal identifikator av et objekt
+
+
+        Merknad: Det er dataleverandørens ansvar å sørge for at den lokale identifikatoren
+        er unik innenfor navnerommet.'
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales
+        å være en http-URI
+
+
+        Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+
+        Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar
+        for de unike identifikatorene og må være registrert i data.geonorge.no eller
+        data.norge.no'
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: identifikasjon av en spesiell versjon av et geografisk objekt (instans)
+    description: unik identifikasjon av et objekt
+    required: true
+  - name: oppdateringsdato
+    logicalType: timestamp
+    description: 'tidspunkt for siste endring på objektet
+
+
+      Merknad:
+
+      Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert
+      kan bufres en kortere eller lengre periode før disse legges inn i datasystemet
+      (databasen).'
+    required: true
+  - name: gyldigFra
+    logicalType: date
+    description: Tidspunktet når objektet oppstod i den virkelige verden
+  - name: gyldigTil
+    logicalType: date
+    description: Tidspunktet når objektet opphørte å eksistere i den virkelige verden
+  - name: datafangstdato
+    logicalType: timestamp
+    description: 'dato når objektet siste gang ble registrert/observert/målt i terrenget
+
+
+      Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte
+      endringer kan bufres i en kortere eller lengre periode før disse legges inn
+      i databasen.
+
+      Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+  - name: kvalitet
+    logicalType: object
+    properties:
+    - name: målemetode
+      logicalType: string
+      authoritativeDefinitions:
+      - url: https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode
+        type: businessDefinition
+      customProperties:
+      - property: sosiCodeList
+        value: Målemetode
+      - property: asDictionary
+        value: 'true'
+      description: metode for måling i grunnriss (x,y), og høyde (z) når metoden er
+        den samme som ved måling i grunnriss
+      required: true
+    - name: nøyaktighet
+      logicalType: integer
+      description: 'punktstandardavviket i grunnriss for punkter samt tverravvik for
+        linjer
+
+
+        Merknad:
+
+        Oppgitt i cm'
+    description: beskrivelse av kvaliteten på stedfestingen
+  - name: datauttaksdato
+    logicalType: timestamp
+    description: 'dato for uttak fra en database
+
+
+      Merknad:
+
+      Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase
+      eller en kopidatabase.'
+  - name: opphav
+    logicalType: string
+    description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+      Merknad:
+
+      Kan også beskrive navn på person og årsak til oppdatering'
+  - name: grense
+    logicalType: object
+    physicalType: geometry(LineString)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: LineString
+  - name: avgrensningstype
+    logicalType: string
+    logicalTypeOptions:
+      pattern: ^(Riksgrense|Territorialgrense|AvtaltAvgrensningslinje|Kommunegrense|Fylkesgrense|Grunnkretsgrense|Delområdegrense|Stemmekretsgrense)$
+    customProperties:
+    - property: allowedValues
+      value:
+      - value: Riksgrense
+        label: avgrensningen av nasjonen Norge på land mot andre nasjoner
+      - value: Territorialgrense
+        label: avgrensning i havet av statens suverenitetsområde, beregnet 12 nm (22
+          224 m) utenfor og parallelt med grunnlinjen
+      - value: AvtaltAvgrensningslinje
+        label: 'avtalt avgrensningslinje til havs basert på folkerettslig bindende
+          avtaler
+
+
+          Merknad:
+
+          Avtalt avgrensningslinje vil normalt gjelde alle aktuelle former for kyststatsjurisdiksjon.
+          Detaljene vil framgå av den aktuelle avgrensningsavtale.
+
+
+          Merknad 2:
+
+          Benyttes også som avgrensning av kontinentalsokkel i internasjonalt farvann,
+          der flere stater kan framlegge dokumentasjon om rettigheter til sokkelen,
+          men der statene har kommet til enighet om en avgrensningslinje.'
+      - value: Kommunegrense
+        label: avgrensing av kommune
+      - value: Fylkesgrense
+        label: avgrensning av fylke
+      - value: Grunnkretsgrense
+        label: avgrensning av grunnkrets
+      - value: Delområdegrense
+        label: avgrensning av delområde
+      - value: Stemmekretsgrense
+        label: avgrensing av Stemmekrets
+    description: angir type avgreisningslinje. Ulike objekter avgrenses av ulike typer
+      grenser.
+    required: true
+- name: Fylke
+  physicalName: fylke
+  logicalType: object
+  physicalType: table
+  description: 'administrativ inndeling av nasjonen på regionalt nivå
+
+
+    Merknad: Tilsvarer NUTS 3 på internasjonalt statistisk nivå'
+  customProperties:
+  - property: sosiObjektType
+    value: Fylke
+  - property: inheritsFrom
+    value: SOSI_Objekt_flate
+  - property: associations
+    value:
+    - role: avgrensesAvGrense
+      target: Grense
+      cardinality: 0..*
+  properties:
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: 'lokal identifikator av et objekt
+
+
+        Merknad: Det er dataleverandørens ansvar å sørge for at den lokale identifikatoren
+        er unik innenfor navnerommet.'
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales
+        å være en http-URI
+
+
+        Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+
+        Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar
+        for de unike identifikatorene og må være registrert i data.geonorge.no eller
+        data.norge.no'
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: identifikasjon av en spesiell versjon av et geografisk objekt (instans)
+    description: unik identifikasjon av et objekt
+    required: true
+  - name: oppdateringsdato
+    logicalType: timestamp
+    description: 'tidspunkt for siste endring på objektet
+
+
+      Merknad:
+
+      Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert
+      kan bufres en kortere eller lengre periode før disse legges inn i datasystemet
+      (databasen).'
+    required: true
+  - name: gyldigFra
+    logicalType: date
+    description: Tidspunktet når objektet oppstod i den virkelige verden
+  - name: gyldigTil
+    logicalType: date
+    description: Tidspunktet når objektet opphørte å eksistere i den virkelige verden
+  - name: datafangstdato
+    logicalType: timestamp
+    description: 'dato når objektet siste gang ble registrert/observert/målt i terrenget
+
+
+      Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte
+      endringer kan bufres i en kortere eller lengre periode før disse legges inn
+      i databasen.
+
+      Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+  - name: datauttaksdato
+    logicalType: timestamp
+    description: 'dato for uttak fra en database
+
+
+      Merknad:
+
+      Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase
+      eller en kopidatabase.'
+  - name: opphav
+    logicalType: string
+    description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+
+
+      Merknad:
+
+      Kan også beskrive navn på person og årsak til oppdatering'
+  - name: område
+    logicalType: object
+    physicalType: geometry(MultiSurface)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: MultiSurface
+  - name: administrativEnhetNavn
+    logicalType: array
+    items:
+      logicalType: object
+      properties:
+      - name: navn
+        logicalType: string
+        description: navnet på den administrative enheten i angitt språk.
+        required: true
+      - name: språk
+        logicalType: string
+        logicalTypeOptions:
+          pattern: ^(English|KvenFinnish|LuleSami|NorthernSami|Swedish|Finnish|Norwegian|SouthernSami)$
+        customProperties:
+        - property: allowedValues
+          value:
+          - value: English
+            label: English
+          - value: KvenFinnish
+            label: Kven Finnish
+          - value: LuleSami
+            label: Lule Sami
+          - value: NorthernSami
+            label: Northern Sami
+          - value: Swedish
+            label: Swedish
+          - value: Finnish
+            label: Finnish
+          - value: Norwegian
+            label: Norwegian
+          - value: SouthernSami
+            label: Southern Sami
+        description: angir språk for det administrative navnet.
+        required: true
+      - name: rekkefølge
+        logicalType: integer
+        description: angir presentasjonsrekkefølge i sammenstaninger av nav på administretiv
+          enhet ved presentasjon på alle sprøkformer.
+    description: offisielt navn på en kommune, et fylke eller en nasjon
+    required: true
+  - name: fylkesnummer
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer?
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Fylkesnummer
+    - property: asDictionary
+      value: 'true'
+    description: 'nummerering av fylker i henhold til Statistisk sentralbyrå sin offisielle
+      liste
+
+
+      Merknad:
+
+      Det presiseres at fylkesnummer alltid skal ha 2 sifre, dvs. eventuelt med ledende
+      null. Fylkesnummer benyttes for kopling mot en rekke andre registre som også
+      benytter 2 sifre.'
+    required: true
+  - name: fylkesnavn
+    logicalType: string
+    description: 'Offisielt navn på et fylke. Merk: Hvis fylket har flere vedtatte
+      parallellnavn, framstår disse i en sammenhengende tekststreng.'
+    required: true
+  - name: samiskForvaltningsområde
+    logicalType: boolean
+    description: angir om fylket er en del ac samisk forvaltningaområde
