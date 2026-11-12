@@ -1,0 +1,206 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Bopliktområder",
+  "format": "text/html",
+  "date": {
+    "creation": "2025-12-11",
+    "revision": "2025-12-11"
+  },
+  "language": "nor",
+  "contact": {
+    "individualName": "Vibeke Godal",
+    "organizationName": "Landbruksdirektoratet",
+    "logo": "https://register.geonorge.no/data/organizations/981544315_Landbruksdirektoratet_liten.png",
+    "electronicMailAddress": "vibeke.godal@landbruksdirektoratet.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Bopliktområder",
+    "abstract": "Datasettet er under etablering.\n\nBopliktområder er områder med nedsatt konsesjonsgrense fastsatt med forskrift (nullgrenseforskrift). Dette er lokale regler som medfører at det er boplikt på eiendom som det etter konsesjonsloven i utgangspunktet ikke er boplikt på. Boplikten oppfylles ved at eier eller andre er registrerer seg som bosatt på eiendommen i Folkeregisteret. Formålet med slike forskrifter er å hindre at eiendommer som bør brukes til helårsbolig blir brukt til fritidsformål. Kommuner med nullgrenseforskrift har bestemt at reglene om konsesjonsfrihet uten boplikt helt eller delvis ikke gjelder.\n\nEt bopliktområde kan gjelde en hel kommune, eller deler av denne, slik som angitt i datasettet.\n\nEn forskrift om nedsatt konsesjonsgrense kan innenfor bopliktområdet gjelde følgende eiendommer:\n\n- bebygd eiendom som er eller har vært i bruk som helårsbolig\n- eiendom med bebyggelse som ikke er tatt i bruk som helårsbolig herunder eiendom under oppføring regulert til boligformål\n- ubebygd tomt regulert til boligformål\n\nKommunens forskrift kan fastsettes for ett eller flere av alternativene.\n\nNullgrenseforskriften kan også sette slektskapsunntaket ut av kraft. Det betyr at nær slekt heller ikke kan overta konsesjonsfritt uten krav om boplikt.\n\nForskriftene gjelder ikke der man har en bebygd eiendom som er større enn 100 dekar eller har mer enn 35 dekar fulldyrka eller overflatedyrka jord.\n\nDatasettet er en del av tjenester for digitalisering av konsesjonsavklaringer og automatiserte tjenester knyttet til dette.",
+    "purpose": {
+      "summary": "Bopliktområdene er hjemlet i konsesjonsloven (https://lovdata.no/dokument/NL/lov/2003-11-28-98) og er fastsatt ved kommunale forskrifter (https://www.landbruksdirektoratet.no/nb/eiendom/konsesjon-paa-eiendom/kommuner-med-nedsatt-konsesjonsgrense-nullgrense). \n\nFormålet med datasettet er å ha en nasjonal oversikt og tilgang til områder med nedsatt konsesjonsgrense.",
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Bopliktområder er en del av de egenskaper knyttet til en eiendom som avgjør om denne kan omsettes konsesjonsfritt ved oppfyllelse av vilkår og innsendelse av egenerklæringsskjema, eller om det må søkes konsesjon. Datasettet kan brukes i innsynsløsninger for å informere om status for en eiendom, ved saksbehandling hos kommuner og Kartverket og ved automatiserte skjemaer for egenerklæring / konsesjonssøknad."
+      }
+    },
+    "spatialRepresentationType": "Vektor",
+    "spatialResolution": {
+      "equivalentScale": "5000"
+    },
+    "supplementalInformation": "Datasettet består av bopliktområder slik disse er definert i forskrifter. Forskriftene vedtas i hver enkelt kommune og fastsettes av Landbruksdirektoratet. Datasettet oppdateres når nye forskrifter fastsettes og publiseres på Lovdata. \n\nI tillegg til selve bopliktområdene inneholder datasettet informasjon om materielle vilkår knyttet til boplikten. \n\nI enkelte kommuner er forskriften formulert slik at en automatisk bekreftelse av hvorvidt en eiendom er omfattet av nedsatt konsesjonsgrense ikke er mulig. Disse områdene er gitt egenskapen \"usikker = 1\". I disse områdene forutsettes det en manuell verifisering av bopliktens geografiske avgrensning.",
+    "uniqueId": "https://data.geonorge.no/sosi/plan/bopliktomrader",
+    "keyword": [
+      "Bopliktsområde",
+      "Bopliktsområdegrense",
+      "bopliktsomrade",
+      "forskriftsreferanse",
+      "ikrafttredelse",
+      "opphevelse",
+      "kommunenavn",
+      "kommunenummer",
+      "gjelderKunDelAvKommunen",
+      "harUsikkerAvgrensning",
+      "gjelderForBruktSomHelarsbolig",
+      "gjelderForBoligIkkeTattIBruk",
+      "gjelderForUbebygdBoligtomt",
+      "harUnntakFraSlektskapsunntak",
+      "andreLokaleAvgrensninger"
+    ],
+    "restriction": {
+      "legalConstraints": {
+        "accessConstraints": "Beskyttet",
+        "useConstraints": "Lisens",
+        "license": "No conditions apply to access and use",
+        "licenseUrl": "http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/noConditionsApply",
+        "otherConstraints": "Når datasettet er ferdig vil dataene bli åpne"
+      }
+    },
+    "contact": [
+      {
+        "individualName": "Vibeke Godal",
+        "organizationName": "Landbruksdirektoratet",
+        "electronicMailAddress": "vibeke.godal@landbruksdirektoratet.no",
+        "role": "owner"
+      },
+      {
+        "organizationName": "Kartverket",
+        "electronicMailAddress": "kundesenter@kartverket.no",
+        "role": "pointOfContact"
+      },
+      {
+        "organizationName": "Kartverket",
+        "electronicMailAddress": "kundesenter@kartverket.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Etter behov",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "2.0",
+        "eastBoundLongitude": "33.0",
+        "southBoundLatitude": "57.0",
+        "northBoundLatitude": "72.0"
+      },
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2025-12-11",
+          "endPosition": "2025-12-11"
+        }
+      }
+    },
+    "date": {
+      "creation": "2025-12-11",
+      "publication": "2025-12-11",
+      "revision": "2025-12-11"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Bopliktsområder",
+        "level": "dataset",
+        "levelDescription": "Datamodell (SOSI UML (XMI))"
+      }
+    }
+  ],
+  "dataQualitySection": {
+    "scope": {
+      "level": "dataset"
+    },
+    "report": [
+      {
+        "nameOfMeasure": "SOSI produktspesifikasjon: Bopliktsområder",
+        "descriptiveResult": "Dataene er ikke vurdert iht produktspesifikasjonen"
+      }
+    ]
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Etter behov"
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "unitsOfDelivery": "landsfiler",
+          "deliveryMediumName": "OGC API-Features",
+          "deliveryService": {
+            "serviceEndpoint": "https://inndelinger.api.kartverket.no/",
+            "serviceProperty": {
+              "type": "OGC API-Features",
+              "value": "OGC:API-Features"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GeoJSON"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: bopliktsomrader",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/bopliktomrader/bopliktsomrader/bopliktsomrader.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2026-08-31",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Kartverket",
+      "logo": "https://register.geonorge.no/data/organizations/981544315_Landbruksdirektoratet_liten.png",
+      "electronicMailAddress": "kundesenter@kartverket.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "49415185-d99f-4546-b976-18cfbf167827",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/49415185-d99f-4546-b976-18cfbf167827"
+    }
+  },
+  "chapterAutofill": {
+    "om_spesifikasjonen": 9,
+    "om_produktet": 275,
+    "formaal": 29,
+    "bruksomraade": 59,
+    "omfang": 28,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 0,
+    "datakvalitet": 10,
+    "datafangst_og_produksjon": 0,
+    "vedlikehold": 2,
+    "presentasjon": 0,
+    "leveranse": 14,
+    "metadata": 12,
+    "tilleggsinformasjon": 87,
+    "datamodell": 417
+  },
+  "specificationContact": "Landbruksdirektoratet, [vibeke.godal@landbruksdirektoratet.no](mailto:vibeke.godal@landbruksdirektoratet.no)"
+}

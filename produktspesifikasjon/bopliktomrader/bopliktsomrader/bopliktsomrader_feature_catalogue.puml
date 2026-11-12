@@ -1,0 +1,65 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Bopliktområder - Bopliktsområder - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class "Bopliktområde" as Bopliktomr_de <<featureType>> {
+    + bopliktomrade [1] : GM_MultiSurface
+    + forskriftsreferanse [1] : CharacterString
+    + ikrafttredelse [1] : Date
+    + opphevelse [0..1] : Date
+    + kommunenavn [1] : CharacterString
+    + kommunenummer [1] : Kommunenummer
+    + gjelderKunDelAvKommunen [1] : Boolean
+    + harUsikkerAvgrensning [1] : Boolean
+    + malemetode [1] : Målemetode
+    + gjelderForBruktSomHelarsbolig [1] : Boolean
+    + gjelderForBoligIkkeTattIBruk [1] : Boolean
+    + gjelderForUbebygdBoligtomt [1] : Boolean
+    + harUnntakFraSlektskapsunntak [1] : Boolean
+    + andreLokaleAvgrensninger [0..1] : CharacterString
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+  }
+
+  class "Bopliktområdegrense" as Bopliktomr_degrense <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+}
+
+  Bopliktomr_de --> Bopliktomr_degrense : avgrensesAvBopliktområdegrense [0..*]
+
+@enduml
