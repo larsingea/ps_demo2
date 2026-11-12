@@ -1,0 +1,10 @@
+metadataId: 49415185-d99f-4546-b976-18cfbf167827
+output_directory: produktspesifikasjon
+product_slug: bopliktomrader
+updated: '2026-11-12'
+outputs: geopackage
+scopes:
+- name: Bopliktsområder
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Landbruksdirektoratet/Bopliktsomr%c3%a5der_20260101.xml
+  generator: xmi
+  description: Datamodell (SOSI UML (XMI))
