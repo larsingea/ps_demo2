@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Bopliktområde",
+    "description": "Bopliktområde i en kommune",
+    "attributes": [
+      {
+        "name": "bopliktomrade",
+        "type": "GM_MultiSurface",
+        "description": "Flate(r) som avgrenser og angir bopliktområde i en kommune",
+        "cardinality": "1"
+      },
+      {
+        "name": "forskriftsreferanse",
+        "type": "CharacterString",
+        "description": "URL til forskrift (Lovdata)",
+        "cardinality": "1"
+      },
+      {
+        "name": "ikrafttredelse",
+        "type": "Date",
+        "description": "Dato for forskriftens ikrafttredelse",
+        "cardinality": "1"
+      },
+      {
+        "name": "opphevelse",
+        "type": "Date",
+        "description": "Dato for forskriftens opphevelse",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "kommunenavn",
+        "type": "CharacterString",
+        "description": "Navn på kommune",
+        "cardinality": "1"
+      },
+      {
+        "name": "kommunenummer",
+        "type": "Kommunenummer",
+        "description": "Kommunenummer",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "<font color=\"#333333\">nummerering av kommuner i henhold til SSB sin offisielle liste</font>\nMerknad: <font color=\"#333333\">Inneholder fremtidige, gyldige og utgåtte kommunenummer. </font>Det presiseres at kommune alltid skal ha 4 sifre, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 sifre.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer"
+        }
+      },
+      {
+        "name": "gjelderKunDelAvKommunen",
+        "type": "Boolean",
+        "description": "Angir om bopliktområdet kun gjelder deler av kommunen. Verdi = True: Gjelder deler av kommunen. Verdi = False: Gjelder hele kommunen.",
+        "cardinality": "1"
+      },
+      {
+        "name": "harUsikkerAvgrensning",
+        "type": "Boolean",
+        "description": "Angir om bopliktområdets geometriske avgrensning er usikker og må vurderes manuelt i tråd med forskriften. Verdi = True: Avgrensningen er usikker. Verdi = False: Avgrensningen er ikke usikker.",
+        "cardinality": "1"
+      },
+      {
+        "name": "malemetode",
+        "type": "Målemetode",
+        "description": "Metode som ligger til grunn for registrering av bopliktområdene. Fast verdi er = \"fastsatt\" med referanse til at bopliktområdene er fastsatt ved forskrift.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "metode som ligger til grunn for registrering av posisjon",
+          "asDictionary": "true",
+          "codeList": "http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.1/Målemetode"
+        },
+        "taggedValues": {
+          "SOSI_navn": "MÅLEMETODE"
+        }
+      },
+      {
+        "name": "gjelderForBruktSomHelarsbolig",
+        "type": "Boolean",
+        "description": "Angir om nedsatt konsesjonsgrense med boplikt gjelder for bebygd eiendom som er eller har vært brukt som helårsbolig.",
+        "cardinality": "1"
+      },
+      {
+        "name": "gjelderForBoligIkkeTattIBruk",
+        "type": "Boolean",
+        "description": "Angir om nedsatt konsesjonsgrense med boplikt gjelder for bolig under oppføring eller bolig som ikke er tatt i bruk som helårsbolig.",
+        "cardinality": "1"
+      },
+      {
+        "name": "gjelderForUbebygdBoligtomt",
+        "type": "Boolean",
+        "description": "Angir om nedsatt konsesjonsgrense med boplikt gjelder for ubebygd tomt regulert til boligformål.",
+        "cardinality": "1"
+      },
+      {
+        "name": "harUnntakFraSlektskapsunntak",
+        "type": "Boolean",
+        "description": "Angir om kommunen har innført unntak fra slektskapsunntaket.",
+        "cardinality": "1"
+      },
+      {
+        "name": "andreLokaleAvgrensninger",
+        "type": "CharacterString",
+        "description": "Andre lokale begrensninger eller vilkår som ikke dekkes av de andre feltene.",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "IDENT"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans)",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "tidspunkt for siste endring på objektet\n\nMerknad:\nOppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDATERINGSDATO"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": [
+        {
+          "target": "Bopliktområdegrense",
+          "role": "avgrensesAvBopliktområdegrense",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Bopliktområder_20260101"
+  },
+  {
+    "name": "Bopliktområdegrense",
+    "description": "Avgrensning av Bopliktområde.",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Bopliktområder_20260101"
+  }
+]
