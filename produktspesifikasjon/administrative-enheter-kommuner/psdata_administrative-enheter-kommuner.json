@@ -124,6 +124,13 @@
         "level": "dataset",
         "levelDescription": "Datamodell (Manuell datamodell)"
       }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Administrative Enheter Filleveranse",
+        "level": "dataset",
+        "levelDescription": "Administrative enheter - fylker og kommuner v. 2024"
+      }
     }
   ],
   "referenceSystemSection": {
@@ -351,6 +358,25 @@
     {
       "delivery": {
         "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: administrative-enheter-filleveranse",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/administrative-enheter-filleveranse.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
           "deliveryMediumName": "GeoPackage: forenklet-inndeling",
           "deliveryService": {
             "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/forenklet-inndeling.gpkg",
@@ -370,6 +396,25 @@
     {
       "delivery": {
         "deliveryMedium": {
+          "deliveryMediumName": "GML/XSD-skjema: administrative-enheter-filleveranse",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/xsd/INPUT/administrative-enheter-filleveranse.xsd",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "XSD"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
           "deliveryMediumName": "GML/XSD-skjema: forenklet-inndeling",
           "deliveryService": {
             "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/forenklet-inndeling/schema/xsd/INPUT/forenklet-inndeling.xsd",
@@ -382,6 +427,25 @@
         "deliveryFormat": [
           {
             "formatName": "XSD"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: administrative-enheter-filleveranse",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/jsonschema/INPUT/administrativeenheterfilleveranse/administrative-enheter-filleveranse.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
           }
         ]
       }
@@ -409,7 +473,7 @@
   "metadataSection": {
     "metadataStandard": "ISO19115",
     "metadataStandardVersion": "2003",
-    "metadataDate": "2026-11-09",
+    "metadataDate": "2026-11-12",
     "language": "nor",
     "contact": {
       "organizationName": "Kartverket",
@@ -436,17 +500,17 @@
     "om_produktet": 224,
     "formaal": 4,
     "bruksomraade": 29,
-    "omfang": 28,
+    "omfang": 40,
     "datainnhold_og_struktur": 0,
     "referansesystem": 36,
     "datakvalitet": 104,
     "datafangst_og_produksjon": 0,
     "vedlikehold": 3,
     "presentasjon": 2,
-    "leveranse": 94,
+    "leveranse": 114,
     "metadata": 15,
     "tilleggsinformasjon": 24,
-    "datamodell": 218
+    "datamodell": 1428
   },
   "specificationContact": "Kartverket, [post@kartverket.no](mailto:post@kartverket.no)"
 }

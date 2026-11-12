@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ShapeChangeConfiguration xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 https://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+ <input id="INPUT">
+  <parameter name="inputModelType" value="SCXML" />
+  <parameter name="inputFile" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/model.scxml" />
+  <parameter name="appSchemaNameRegex" value="^administrative-enheter-filleveranse$" />
+  <parameter name="publicOnly" value="true" />
+  <parameter name="checkingConstraints" value="disabled" />
+  <parameter name="addTaggedValues" value="*" />
+  <parameter name="representTaggedValues" value="SOSI_navn,SOSI_verdi,NVDB_ID" />
+  <xi:include href="https://shapechange.net/resources/config/StandardAliases.xml" />
+ </input>
+ <log>
+  <parameter name="reportLevel" value="INFO" />
+  <parameter name="logFile" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/log.xml" />
+ </log>
+ <targets>
+  <TargetXmlSchema class="de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema" mode="enabled" inputs="INPUT">
+   <targetParameter name="outputDirectory" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/xsd" />
+   <targetParameter name="defaultEncodingRule" value="sosi" />
+   <targetParameter name="documentationTemplate" value="[[documentation]]" />
+   <targetParameter name="documentationNoValue" value="" />
+   <rules>
+    <EncodingRule name="sosi" extends="iso19136_2007">
+     <rule name="rule-xsd-prop-length-size-pattern" />
+     <rule name="rule-xsd-all-tagged-values" />
+     <rule name="rule-xsd-all-notEncoded" />
+     <rule name="rule-xsd-pkg-schematron" />
+     <rule name="rule-xsd-prop-nillable" />
+     <rule name="rule-xsd-prop-targetCodeListURI" />
+    </EncodingRule>
+   </rules>
+   <xi:include href="https://shapechange.net/resources/config/StandardRules.xml" />
+   <xi:include href="https://shapechange.net/resources/config/StandardNamespaces.xml" />
+   <xi:include href="https://shapechange.net/resources/config/StandardMapEntries.xml" />
+   <xi:include href="file:///home/runner/work/ps_demo2/ps_demo2/.psactions/shapechange/data/StandardMapEntries_sosi.xml" />
+  </TargetXmlSchema>
+  <Target class="de.interactive_instruments.shapechange.core.target.json.JsonSchemaTarget" mode="enabled" inputs="INPUT">
+   <advancedProcessConfigurations>
+    <JsonSchemaAnnotations>
+     <annotations>
+      <SimpleAnnotation annotation="description" descriptorOrTaggedValue="documentation" noValueBehavior="ignore" />
+      <SimpleAnnotation annotation="title" descriptorOrTaggedValue="alias" noValueBehavior="ignore" />
+      <SimpleAnnotation annotation="codelist" descriptorOrTaggedValue="TV:codeList" noValueBehavior="ignore" />
+     </annotations>
+    </JsonSchemaAnnotations>
+   </advancedProcessConfigurations>
+   <targetParameter name="outputDirectory" value="/home/runner/work/ps_demo2/ps_demo2/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse/schema/jsonschema" />
+   <targetParameter name="jsonSchemaVersion" value="draft-07" />
+   <targetParameter name="jsonBaseUri" value="https://skjema.geonorge.no/SOSI/produktspesifikasjon/administrative-enheter-kommuner/administrative-enheter-filleveranse" />
+   <targetParameter name="entityTypeName" value="@type" />
+   <targetParameter name="defaultEncodingRule" value="sosiJson" />
+   <rules>
+    <EncodingRule name="sosiJson">
+     <rule name="rule-json-cls-basictype" />
+     <rule name="rule-json-cls-codelist-uri-format" />
+     <rule name="rule-json-cls-name-as-entityType" />
+     <rule name="rule-json-cls-primaryGeometry" />
+     <rule name="rule-json-cls-identifierForTypeWithIdentity" />
+     <rule name="rule-json-cls-union-propertyCount" />
+     <rule name="rule-json-cls-valueTypeOptions" />
+     <rule name="rule-json-all-documentation" />
+     <rule name="rule-json-cls-documentation-enumDescription" />
+    </EncodingRule>
+   </rules>
+   <mapEntries>
+    <MapEntry type="Punkt" rule="*" targetType="https://geojson.org/schema/Point.json" param="geometry" />
+    <MapEntry type="Kurve" rule="*" targetType="https://geojson.org/schema/LineString.json" param="geometry" />
+    <MapEntry type="Flate" rule="*" targetType="https://geojson.org/schema/Polygon.json" param="geometry" />
+    <MapEntry type="Sverm" rule="*" targetType="https://geojson.org/schema/MultiPoint.json" param="geometry" />
+   </mapEntries>
+   <xi:include href="https://shapechange.net/resources/config/StandardMapEntries_JSON.xml" />
+  </Target>
+ </targets>
+</ShapeChangeConfiguration>
