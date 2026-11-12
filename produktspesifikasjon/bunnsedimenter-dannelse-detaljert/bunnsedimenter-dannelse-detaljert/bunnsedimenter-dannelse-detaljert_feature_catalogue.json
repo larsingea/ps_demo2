@@ -1,0 +1,2320 @@
+[
+  {
+    "name": "Dataavgrensning",
+    "description": "Generell avgrensningslinje, f.eks. mellom datasett med ulik kvalitet, innhold eller detaljering",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/4258",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "lokalid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.<br/>NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\r\n<br/>NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"<br/>Eksempel: NO for Norge."
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen. <br/>NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId."
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPavisningstype",
+        "type": "GeolPavisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPavisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen."
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "cardinality": "0..1",
+            "description": "Kode på metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "valueDomain": {
+              "type": "enumeration",
+              "listedValues": [
+                {
+                  "value": "10",
+                  "label": "10"
+                },
+                {
+                  "value": "11",
+                  "label": "11"
+                },
+                {
+                  "value": "12",
+                  "label": "12"
+                },
+                {
+                  "value": "13",
+                  "label": "13"
+                },
+                {
+                  "value": "14",
+                  "label": "14"
+                },
+                {
+                  "value": "15",
+                  "label": "15"
+                },
+                {
+                  "value": "18",
+                  "label": "18"
+                },
+                {
+                  "value": "19",
+                  "label": "19"
+                },
+                {
+                  "value": "20",
+                  "label": "20"
+                },
+                {
+                  "value": "21",
+                  "label": "21"
+                },
+                {
+                  "value": "22",
+                  "label": "22"
+                },
+                {
+                  "value": "23",
+                  "label": "23"
+                },
+                {
+                  "value": "24",
+                  "label": "24"
+                },
+                {
+                  "value": "30",
+                  "label": "30"
+                },
+                {
+                  "value": "31",
+                  "label": "31"
+                },
+                {
+                  "value": "32",
+                  "label": "32"
+                },
+                {
+                  "value": "33",
+                  "label": "33"
+                },
+                {
+                  "value": "34",
+                  "label": "34"
+                },
+                {
+                  "value": "35",
+                  "label": "35"
+                },
+                {
+                  "value": "36",
+                  "label": "36"
+                },
+                {
+                  "value": "37",
+                  "label": "37"
+                },
+                {
+                  "value": "38",
+                  "label": "38"
+                },
+                {
+                  "value": "40",
+                  "label": "40"
+                },
+                {
+                  "value": "41",
+                  "label": "41"
+                },
+                {
+                  "value": "42",
+                  "label": "42"
+                },
+                {
+                  "value": "43",
+                  "label": "43"
+                },
+                {
+                  "value": "44",
+                  "label": "44"
+                },
+                {
+                  "value": "45",
+                  "label": "45"
+                },
+                {
+                  "value": "46",
+                  "label": "46"
+                },
+                {
+                  "value": "47",
+                  "label": "47"
+                },
+                {
+                  "value": "48",
+                  "label": "48"
+                },
+                {
+                  "value": "49",
+                  "label": "49"
+                },
+                {
+                  "value": "50",
+                  "label": "50"
+                },
+                {
+                  "value": "51",
+                  "label": "51"
+                },
+                {
+                  "value": "52",
+                  "label": "52"
+                },
+                {
+                  "value": "53",
+                  "label": "53"
+                },
+                {
+                  "value": "54",
+                  "label": "54"
+                },
+                {
+                  "value": "55",
+                  "label": "55"
+                },
+                {
+                  "value": "56",
+                  "label": "56"
+                },
+                {
+                  "value": "60",
+                  "label": "60"
+                },
+                {
+                  "value": "61",
+                  "label": "61"
+                },
+                {
+                  "value": "62",
+                  "label": "62"
+                },
+                {
+                  "value": "63",
+                  "label": "63"
+                },
+                {
+                  "value": "64",
+                  "label": "64"
+                },
+                {
+                  "value": "65",
+                  "label": "65"
+                },
+                {
+                  "value": "66",
+                  "label": "66"
+                },
+                {
+                  "value": "67",
+                  "label": "67"
+                },
+                {
+                  "value": "68",
+                  "label": "68"
+                },
+                {
+                  "value": "69",
+                  "label": "69"
+                },
+                {
+                  "value": "70",
+                  "label": "70"
+                },
+                {
+                  "value": "71",
+                  "label": "71"
+                },
+                {
+                  "value": "72",
+                  "label": "72"
+                },
+                {
+                  "value": "73",
+                  "label": "73"
+                },
+                {
+                  "value": "74",
+                  "label": "74"
+                },
+                {
+                  "value": "77",
+                  "label": "77"
+                },
+                {
+                  "value": "78",
+                  "label": "78"
+                },
+                {
+                  "value": "79",
+                  "label": "79"
+                },
+                {
+                  "value": "80",
+                  "label": "80"
+                },
+                {
+                  "value": "81",
+                  "label": "81"
+                },
+                {
+                  "value": "82",
+                  "label": "82"
+                },
+                {
+                  "value": "90",
+                  "label": "90"
+                },
+                {
+                  "value": "91",
+                  "label": "91"
+                },
+                {
+                  "value": "92",
+                  "label": "92"
+                },
+                {
+                  "value": "93",
+                  "label": "93"
+                },
+                {
+                  "value": "94",
+                  "label": "94"
+                },
+                {
+                  "value": "95",
+                  "label": "95"
+                },
+                {
+                  "value": "96",
+                  "label": "96"
+                },
+                {
+                  "value": "97",
+                  "label": "97"
+                },
+                {
+                  "value": "99",
+                  "label": "99"
+                }
+              ]
+            }
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navn på metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "B",
+              "label": "B"
+            },
+            {
+              "value": "D",
+              "label": "D"
+            },
+            {
+              "value": "I",
+              "label": "I"
+            },
+            {
+              "value": "J",
+              "label": "J"
+            },
+            {
+              "value": "L",
+              "label": "L"
+            },
+            {
+              "value": "O",
+              "label": "O"
+            },
+            {
+              "value": "S",
+              "label": "S"
+            },
+            {
+              "value": "T",
+              "label": "T"
+            },
+            {
+              "value": "U",
+              "label": "U"
+            },
+            {
+              "value": "V",
+              "label": "V"
+            },
+            {
+              "value": "W",
+              "label": "W"
+            },
+            {
+              "value": "X",
+              "label": "X"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      }
+    ]
+  },
+  {
+    "name": "FiktivDelelinje",
+    "description": "Linje for å dele opp store flateobjekter<br/>Merknad: <br/>En del produktspesifikasjoner benytter spesifikke fiktive delelinjer.",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/4258",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "lokalid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "ogcRole": "id"
+      }
+    ]
+  },
+  {
+    "name": "GeolAvgrLinje",
+    "description": "Generell avgrensning av geologisk objekt<br/>-- Definition -- <br/>General delimitation of geological object",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/4258",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "lokalid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.<br/>NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\r\n<br/>NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"<br/>Eksempel: NO for Norge."
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen. <br/>NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId."
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPavisningstype",
+        "type": "GeolPavisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPavisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen."
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "cardinality": "0..1",
+            "description": "Kode på metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "valueDomain": {
+              "type": "enumeration",
+              "listedValues": [
+                {
+                  "value": "10",
+                  "label": "10"
+                },
+                {
+                  "value": "11",
+                  "label": "11"
+                },
+                {
+                  "value": "12",
+                  "label": "12"
+                },
+                {
+                  "value": "13",
+                  "label": "13"
+                },
+                {
+                  "value": "14",
+                  "label": "14"
+                },
+                {
+                  "value": "15",
+                  "label": "15"
+                },
+                {
+                  "value": "18",
+                  "label": "18"
+                },
+                {
+                  "value": "19",
+                  "label": "19"
+                },
+                {
+                  "value": "20",
+                  "label": "20"
+                },
+                {
+                  "value": "21",
+                  "label": "21"
+                },
+                {
+                  "value": "22",
+                  "label": "22"
+                },
+                {
+                  "value": "23",
+                  "label": "23"
+                },
+                {
+                  "value": "24",
+                  "label": "24"
+                },
+                {
+                  "value": "30",
+                  "label": "30"
+                },
+                {
+                  "value": "31",
+                  "label": "31"
+                },
+                {
+                  "value": "32",
+                  "label": "32"
+                },
+                {
+                  "value": "33",
+                  "label": "33"
+                },
+                {
+                  "value": "34",
+                  "label": "34"
+                },
+                {
+                  "value": "35",
+                  "label": "35"
+                },
+                {
+                  "value": "36",
+                  "label": "36"
+                },
+                {
+                  "value": "37",
+                  "label": "37"
+                },
+                {
+                  "value": "38",
+                  "label": "38"
+                },
+                {
+                  "value": "40",
+                  "label": "40"
+                },
+                {
+                  "value": "41",
+                  "label": "41"
+                },
+                {
+                  "value": "42",
+                  "label": "42"
+                },
+                {
+                  "value": "43",
+                  "label": "43"
+                },
+                {
+                  "value": "44",
+                  "label": "44"
+                },
+                {
+                  "value": "45",
+                  "label": "45"
+                },
+                {
+                  "value": "46",
+                  "label": "46"
+                },
+                {
+                  "value": "47",
+                  "label": "47"
+                },
+                {
+                  "value": "48",
+                  "label": "48"
+                },
+                {
+                  "value": "49",
+                  "label": "49"
+                },
+                {
+                  "value": "50",
+                  "label": "50"
+                },
+                {
+                  "value": "51",
+                  "label": "51"
+                },
+                {
+                  "value": "52",
+                  "label": "52"
+                },
+                {
+                  "value": "53",
+                  "label": "53"
+                },
+                {
+                  "value": "54",
+                  "label": "54"
+                },
+                {
+                  "value": "55",
+                  "label": "55"
+                },
+                {
+                  "value": "56",
+                  "label": "56"
+                },
+                {
+                  "value": "60",
+                  "label": "60"
+                },
+                {
+                  "value": "61",
+                  "label": "61"
+                },
+                {
+                  "value": "62",
+                  "label": "62"
+                },
+                {
+                  "value": "63",
+                  "label": "63"
+                },
+                {
+                  "value": "64",
+                  "label": "64"
+                },
+                {
+                  "value": "65",
+                  "label": "65"
+                },
+                {
+                  "value": "66",
+                  "label": "66"
+                },
+                {
+                  "value": "67",
+                  "label": "67"
+                },
+                {
+                  "value": "68",
+                  "label": "68"
+                },
+                {
+                  "value": "69",
+                  "label": "69"
+                },
+                {
+                  "value": "70",
+                  "label": "70"
+                },
+                {
+                  "value": "71",
+                  "label": "71"
+                },
+                {
+                  "value": "72",
+                  "label": "72"
+                },
+                {
+                  "value": "73",
+                  "label": "73"
+                },
+                {
+                  "value": "74",
+                  "label": "74"
+                },
+                {
+                  "value": "77",
+                  "label": "77"
+                },
+                {
+                  "value": "78",
+                  "label": "78"
+                },
+                {
+                  "value": "79",
+                  "label": "79"
+                },
+                {
+                  "value": "80",
+                  "label": "80"
+                },
+                {
+                  "value": "81",
+                  "label": "81"
+                },
+                {
+                  "value": "82",
+                  "label": "82"
+                },
+                {
+                  "value": "90",
+                  "label": "90"
+                },
+                {
+                  "value": "91",
+                  "label": "91"
+                },
+                {
+                  "value": "92",
+                  "label": "92"
+                },
+                {
+                  "value": "93",
+                  "label": "93"
+                },
+                {
+                  "value": "94",
+                  "label": "94"
+                },
+                {
+                  "value": "95",
+                  "label": "95"
+                },
+                {
+                  "value": "96",
+                  "label": "96"
+                },
+                {
+                  "value": "97",
+                  "label": "97"
+                },
+                {
+                  "value": "99",
+                  "label": "99"
+                }
+              ]
+            }
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navn på metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "B",
+              "label": "B"
+            },
+            {
+              "value": "D",
+              "label": "D"
+            },
+            {
+              "value": "I",
+              "label": "I"
+            },
+            {
+              "value": "J",
+              "label": "J"
+            },
+            {
+              "value": "L",
+              "label": "L"
+            },
+            {
+              "value": "O",
+              "label": "O"
+            },
+            {
+              "value": "S",
+              "label": "S"
+            },
+            {
+              "value": "T",
+              "label": "T"
+            },
+            {
+              "value": "U",
+              "label": "U"
+            },
+            {
+              "value": "V",
+              "label": "V"
+            },
+            {
+              "value": "W",
+              "label": "W"
+            },
+            {
+              "value": "X",
+              "label": "X"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      }
+    ]
+  },
+  {
+    "name": "LosmasseFlate",
+    "description": "Areal hvor løsmasser/sedimenter har samme kornstørrelse<br/>Merknad: <br/>Kornstørrelseflate må ha enten sedKornstorrelse eller losmKornstorrelse, sedKornstorrelse gjelder for kartlegging marint/i sjø - mens losmKornstorrelse gjelder for kartlegging på land.",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-polygon",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/4258",
+      "format": "geometry-polygon",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "lokalid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.<br/>NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\r\n<br/>NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"<br/>Eksempel: NO for Norge."
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen. <br/>NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId."
+          }
+        ]
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet."
+      },
+      {
+        "name": "losmassetype",
+        "type": "Losmassetype",
+        "cardinality": "1..1",
+        "description": "Kvartærgeologiske løsmassetyper (jordartstyper)",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "100",
+              "label": "100"
+            },
+            {
+              "value": "101",
+              "label": "101"
+            },
+            {
+              "value": "102",
+              "label": "102"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "110",
+              "label": "110"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "120",
+              "label": "120"
+            },
+            {
+              "value": "121",
+              "label": "121"
+            },
+            {
+              "value": "122",
+              "label": "122"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "130",
+              "label": "130"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "140",
+              "label": "140"
+            },
+            {
+              "value": "15",
+              "label": "15"
+            },
+            {
+              "value": "150",
+              "label": "150"
+            },
+            {
+              "value": "16",
+              "label": "16"
+            },
+            {
+              "value": "17",
+              "label": "17"
+            },
+            {
+              "value": "20",
+              "label": "20"
+            },
+            {
+              "value": "200",
+              "label": "200"
+            },
+            {
+              "value": "201",
+              "label": "201"
+            },
+            {
+              "value": "202",
+              "label": "202"
+            },
+            {
+              "value": "203",
+              "label": "203"
+            },
+            {
+              "value": "204",
+              "label": "204"
+            },
+            {
+              "value": "205",
+              "label": "205"
+            },
+            {
+              "value": "206",
+              "label": "206"
+            },
+            {
+              "value": "207",
+              "label": "207"
+            },
+            {
+              "value": "208",
+              "label": "208"
+            },
+            {
+              "value": "209",
+              "label": "209"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "210",
+              "label": "210"
+            },
+            {
+              "value": "211",
+              "label": "211"
+            },
+            {
+              "value": "212",
+              "label": "212"
+            },
+            {
+              "value": "213",
+              "label": "213"
+            },
+            {
+              "value": "214",
+              "label": "214"
+            },
+            {
+              "value": "215",
+              "label": "215"
+            },
+            {
+              "value": "216",
+              "label": "216"
+            },
+            {
+              "value": "217",
+              "label": "217"
+            },
+            {
+              "value": "218",
+              "label": "218"
+            },
+            {
+              "value": "219",
+              "label": "219"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "220",
+              "label": "220"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "230",
+              "label": "230"
+            },
+            {
+              "value": "231",
+              "label": "231"
+            },
+            {
+              "value": "240",
+              "label": "240"
+            },
+            {
+              "value": "241",
+              "label": "241"
+            },
+            {
+              "value": "242",
+              "label": "242"
+            },
+            {
+              "value": "250",
+              "label": "250"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "301",
+              "label": "301"
+            },
+            {
+              "value": "302",
+              "label": "302"
+            },
+            {
+              "value": "303",
+              "label": "303"
+            },
+            {
+              "value": "304",
+              "label": "304"
+            },
+            {
+              "value": "305",
+              "label": "305"
+            },
+            {
+              "value": "306",
+              "label": "306"
+            },
+            {
+              "value": "307",
+              "label": "307"
+            },
+            {
+              "value": "308",
+              "label": "308"
+            },
+            {
+              "value": "309",
+              "label": "309"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "310",
+              "label": "310"
+            },
+            {
+              "value": "311",
+              "label": "311"
+            },
+            {
+              "value": "312",
+              "label": "312"
+            },
+            {
+              "value": "313",
+              "label": "313"
+            },
+            {
+              "value": "314",
+              "label": "314"
+            },
+            {
+              "value": "315",
+              "label": "315"
+            },
+            {
+              "value": "316",
+              "label": "316"
+            },
+            {
+              "value": "317",
+              "label": "317"
+            },
+            {
+              "value": "318",
+              "label": "318"
+            },
+            {
+              "value": "320",
+              "label": "320"
+            },
+            {
+              "value": "321",
+              "label": "321"
+            },
+            {
+              "value": "35",
+              "label": "35"
+            },
+            {
+              "value": "36",
+              "label": "36"
+            },
+            {
+              "value": "37",
+              "label": "37"
+            },
+            {
+              "value": "40",
+              "label": "40"
+            },
+            {
+              "value": "41",
+              "label": "41"
+            },
+            {
+              "value": "42",
+              "label": "42"
+            },
+            {
+              "value": "43",
+              "label": "43"
+            },
+            {
+              "value": "44",
+              "label": "44"
+            },
+            {
+              "value": "45",
+              "label": "45"
+            },
+            {
+              "value": "50",
+              "label": "50"
+            },
+            {
+              "value": "51",
+              "label": "51"
+            },
+            {
+              "value": "52",
+              "label": "52"
+            },
+            {
+              "value": "53",
+              "label": "53"
+            },
+            {
+              "value": "54",
+              "label": "54"
+            },
+            {
+              "value": "55",
+              "label": "55"
+            },
+            {
+              "value": "56",
+              "label": "56"
+            },
+            {
+              "value": "57",
+              "label": "57"
+            },
+            {
+              "value": "60",
+              "label": "60"
+            },
+            {
+              "value": "70",
+              "label": "70"
+            },
+            {
+              "value": "71",
+              "label": "71"
+            },
+            {
+              "value": "72",
+              "label": "72"
+            },
+            {
+              "value": "73",
+              "label": "73"
+            },
+            {
+              "value": "80",
+              "label": "80"
+            },
+            {
+              "value": "81",
+              "label": "81"
+            },
+            {
+              "value": "82",
+              "label": "82"
+            },
+            {
+              "value": "88",
+              "label": "88"
+            },
+            {
+              "value": "90",
+              "label": "90"
+            }
+          ]
+        }
+      },
+      {
+        "name": "losmassetypeNavn",
+        "type": "string",
+        "cardinality": "1..1",
+        "description": "Kvartærgeologiske løsmassetyper (jordartstyper)"
+      }
+    ]
+  },
+  {
+    "name": "LosmasseGrense",
+    "description": "Avgrensning av ulike typer løsmasser (jordarter)",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/4258",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "lokalid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.<br/>NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\r\n<br/>NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"<br/>Eksempel: NO for Norge."
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen. <br/>NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId."
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPavisningstype",
+        "type": "GeolPavisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPavisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen."
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "cardinality": "0..1",
+            "description": "Kode på metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "valueDomain": {
+              "type": "enumeration",
+              "listedValues": [
+                {
+                  "value": "10",
+                  "label": "10"
+                },
+                {
+                  "value": "11",
+                  "label": "11"
+                },
+                {
+                  "value": "12",
+                  "label": "12"
+                },
+                {
+                  "value": "13",
+                  "label": "13"
+                },
+                {
+                  "value": "14",
+                  "label": "14"
+                },
+                {
+                  "value": "15",
+                  "label": "15"
+                },
+                {
+                  "value": "18",
+                  "label": "18"
+                },
+                {
+                  "value": "19",
+                  "label": "19"
+                },
+                {
+                  "value": "20",
+                  "label": "20"
+                },
+                {
+                  "value": "21",
+                  "label": "21"
+                },
+                {
+                  "value": "22",
+                  "label": "22"
+                },
+                {
+                  "value": "23",
+                  "label": "23"
+                },
+                {
+                  "value": "24",
+                  "label": "24"
+                },
+                {
+                  "value": "30",
+                  "label": "30"
+                },
+                {
+                  "value": "31",
+                  "label": "31"
+                },
+                {
+                  "value": "32",
+                  "label": "32"
+                },
+                {
+                  "value": "33",
+                  "label": "33"
+                },
+                {
+                  "value": "34",
+                  "label": "34"
+                },
+                {
+                  "value": "35",
+                  "label": "35"
+                },
+                {
+                  "value": "36",
+                  "label": "36"
+                },
+                {
+                  "value": "37",
+                  "label": "37"
+                },
+                {
+                  "value": "38",
+                  "label": "38"
+                },
+                {
+                  "value": "40",
+                  "label": "40"
+                },
+                {
+                  "value": "41",
+                  "label": "41"
+                },
+                {
+                  "value": "42",
+                  "label": "42"
+                },
+                {
+                  "value": "43",
+                  "label": "43"
+                },
+                {
+                  "value": "44",
+                  "label": "44"
+                },
+                {
+                  "value": "45",
+                  "label": "45"
+                },
+                {
+                  "value": "46",
+                  "label": "46"
+                },
+                {
+                  "value": "47",
+                  "label": "47"
+                },
+                {
+                  "value": "48",
+                  "label": "48"
+                },
+                {
+                  "value": "49",
+                  "label": "49"
+                },
+                {
+                  "value": "50",
+                  "label": "50"
+                },
+                {
+                  "value": "51",
+                  "label": "51"
+                },
+                {
+                  "value": "52",
+                  "label": "52"
+                },
+                {
+                  "value": "53",
+                  "label": "53"
+                },
+                {
+                  "value": "54",
+                  "label": "54"
+                },
+                {
+                  "value": "55",
+                  "label": "55"
+                },
+                {
+                  "value": "56",
+                  "label": "56"
+                },
+                {
+                  "value": "60",
+                  "label": "60"
+                },
+                {
+                  "value": "61",
+                  "label": "61"
+                },
+                {
+                  "value": "62",
+                  "label": "62"
+                },
+                {
+                  "value": "63",
+                  "label": "63"
+                },
+                {
+                  "value": "64",
+                  "label": "64"
+                },
+                {
+                  "value": "65",
+                  "label": "65"
+                },
+                {
+                  "value": "66",
+                  "label": "66"
+                },
+                {
+                  "value": "67",
+                  "label": "67"
+                },
+                {
+                  "value": "68",
+                  "label": "68"
+                },
+                {
+                  "value": "69",
+                  "label": "69"
+                },
+                {
+                  "value": "70",
+                  "label": "70"
+                },
+                {
+                  "value": "71",
+                  "label": "71"
+                },
+                {
+                  "value": "72",
+                  "label": "72"
+                },
+                {
+                  "value": "73",
+                  "label": "73"
+                },
+                {
+                  "value": "74",
+                  "label": "74"
+                },
+                {
+                  "value": "77",
+                  "label": "77"
+                },
+                {
+                  "value": "78",
+                  "label": "78"
+                },
+                {
+                  "value": "79",
+                  "label": "79"
+                },
+                {
+                  "value": "80",
+                  "label": "80"
+                },
+                {
+                  "value": "81",
+                  "label": "81"
+                },
+                {
+                  "value": "82",
+                  "label": "82"
+                },
+                {
+                  "value": "90",
+                  "label": "90"
+                },
+                {
+                  "value": "91",
+                  "label": "91"
+                },
+                {
+                  "value": "92",
+                  "label": "92"
+                },
+                {
+                  "value": "93",
+                  "label": "93"
+                },
+                {
+                  "value": "94",
+                  "label": "94"
+                },
+                {
+                  "value": "95",
+                  "label": "95"
+                },
+                {
+                  "value": "96",
+                  "label": "96"
+                },
+                {
+                  "value": "97",
+                  "label": "97"
+                },
+                {
+                  "value": "99",
+                  "label": "99"
+                }
+              ]
+            }
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navn på metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "B",
+              "label": "B"
+            },
+            {
+              "value": "D",
+              "label": "D"
+            },
+            {
+              "value": "I",
+              "label": "I"
+            },
+            {
+              "value": "J",
+              "label": "J"
+            },
+            {
+              "value": "L",
+              "label": "L"
+            },
+            {
+              "value": "O",
+              "label": "O"
+            },
+            {
+              "value": "S",
+              "label": "S"
+            },
+            {
+              "value": "T",
+              "label": "T"
+            },
+            {
+              "value": "U",
+              "label": "U"
+            },
+            {
+              "value": "V",
+              "label": "V"
+            },
+            {
+              "value": "W",
+              "label": "W"
+            },
+            {
+              "value": "X",
+              "label": "X"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      }
+    ]
+  }
+]
