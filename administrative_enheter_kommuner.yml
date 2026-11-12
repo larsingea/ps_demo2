@@ -8,3 +8,7 @@ scopes:
   url: inputs/administrative-enheter-kommuner/forenklet-inndeling.feature_types.json
   generator: custom
   description: Datamodell (Manuell datamodell)
+- name: Administrative Enheter Filleveranse
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Statens%20kartverk/AdministrativeEnheter_FylkerOgKommuner-20240101.xml
+  generator: xmi
+  description: Administrative enheter - fylker og kommuner v. 2024
