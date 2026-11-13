@@ -1,0 +1,9 @@
+metadataId: f15b7383-0b47-45f6-9ad2-7736534e5a4d
+output_directory: produktspesifikasjon
+product_slug: konsesjonsomrade_for_fjernvarme_nordre_follo
+updated: '2026-11-13'
+scopes:
+- name: Konsesjonsområde
+  url: inputs/konsesjonsomrade-for-fjernvarme-nordre-follo/konsesjonsomrade.feature_types.json
+  generator: custom
+  description: Datamodell (Manuell datamodell)
