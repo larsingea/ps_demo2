@@ -1,0 +1,119 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Bunnsedimenter (dannelse), detaljert - Bunnsedimenter dannelse detaljert - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class Dataavgrensning <<featureType>> {
+    + lokalid [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [0..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + geolPavisningstype [0..1] : GeolPavisningstype
+    + geolPavisningstypeNavn [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class FiktivDelelinje <<featureType>> {
+    + lokalid [0..1] : Integer
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class GeolAvgrLinje <<featureType>> {
+    + lokalid [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [0..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + geolPavisningstype [0..1] : GeolPavisningstype
+    + geolPavisningstypeNavn [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class LosmasseFlate <<featureType>> {
+    + lokalid [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + datauttaksdato [1..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + losmassetype [1..1] : Losmassetype
+    + losmassetypeNavn [1..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+
+  class LosmasseGrense <<featureType>> {
+    + lokalid [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [0..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + geolPavisningstype [0..1] : GeolPavisningstype
+    + geolPavisningstypeNavn [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [0..1] : CharacterString
+    + navnerom [0..1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class Posisjonskvalitet <<dataType>> {
+    + målemetode [0..1] : Målemetode
+    + målemetodeNavn [0..1] : CharacterString
+    + nøyaktighet [0..1] : Integer
+  }
+}
+
+@enduml
