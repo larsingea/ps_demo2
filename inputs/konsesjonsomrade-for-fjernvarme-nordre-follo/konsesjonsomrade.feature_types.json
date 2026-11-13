@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Fjernvarmekonsesjonsområde",
+    "description": "Område der det er gitt konsesjon for fjernvarme etter energiloven, i Lillestrøm kommune.",
+    "abstract": false,
+    "attributes": [
+      {
+        "name": "område",
+        "type": "GM_Surface",
+        "cardinality": "1",
+        "description": "Konsesjonsområdets geografiske utstrekning som flate."
+      },
+      {
+        "name": "områdenavn",
+        "type": "Områdenavn",
+        "cardinality": "1",
+        "description": "Navn på konsesjonsområdet, f.eks. tettstedet området dekker.",
+        "valueDomain": {
+          "kind": "enumeration",
+          "listedValues": [
+            {
+              "value": "3212",
+              "label": "Nordsia",
+              "description": "Hønefoss nord - Nordsia"
+            },
+            {
+              "value": "3213",
+              "label": "Sentrum",
+              "description": "Hønefoss sentrum"
+            }
+          ],
+          "asDictionary": "false"
+        }
+      }
+    ]
+  }
+]
