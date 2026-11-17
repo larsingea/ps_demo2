@@ -3,7 +3,11 @@ output_directory: produktspesifikasjon
 product_slug: omrader_med_nedsatt_konsesjon
 updated: '2026-11-17'
 scopes:
-- name: Bopliktsområder_Innlesing_20260101
+- name: Bopliktområder_Innlesing
   url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Landbruksdirektoratet/Bopliktsomr%c3%a5der_Innlesing_20260101.xml
   generator: xmi
-  description: Datamodell (SOSI UML (XMI))
+  description: Datamodell for innlesing av data
+- name: Bopliktområder_utlevering
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Landbruksdirektoratet/Bopliktsomr%c3%a5der_20260101.xml
+  generator: xmi
+  description: Datamodell for filleveranser
