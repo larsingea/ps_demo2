@@ -147,6 +147,120 @@
           }
         }
       }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: bopliktomrader-innlesing",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/bopliktomrader-innlesing.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: bopliktomrader-utlevering",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/bopliktomrader-utlevering.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GML/XSD-skjema: bopliktomrader-innlesing",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/schema/xsd/INPUT/bopliktomrader-innlesing.xsd",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "XSD"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GML/XSD-skjema: bopliktomrader-utlevering",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/schema/xsd/INPUT/bopliktomrader-utlevering.xsd",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "XSD"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: bopliktomrader-innlesing",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/schema/jsonschema/INPUT/bopliktomraderinnlesing/bopliktomrader-innlesing.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: bopliktomrader-utlevering",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/schema/jsonschema/INPUT/bopliktomraderutlevering/bopliktomrader-utlevering.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
+          }
+        ]
+      }
     }
   ],
   "metadataSection": {
@@ -179,7 +293,7 @@
     "datafangst_og_produksjon": 0,
     "vedlikehold": 2,
     "presentasjon": 0,
-    "leveranse": 7,
+    "leveranse": 47,
     "metadata": 12,
     "tilleggsinformasjon": 97,
     "datamodell": 861
