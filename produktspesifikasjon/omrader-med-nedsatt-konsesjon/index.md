@@ -142,6 +142,12 @@ Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom
 | Tjeneste | Endepunkt | Type | Format | Leveranseenheter |
 | --- | --- | --- | --- | --- |
 | OGC API-Features | [Lenke](https://inndelinger.api.kartverket.no/v1) | OGC:API-Features |  | landsfiler |
+| GeoPackage: bopliktomrader-innlesing | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/bopliktomrader-innlesing.gpkg) | Nedlasting | GPKG |  |
+| GeoPackage: bopliktomrader-utlevering | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/bopliktomrader-utlevering.gpkg) | Nedlasting | GPKG |  |
+| GML/XSD-skjema: bopliktomrader-innlesing | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/schema/xsd/INPUT/bopliktomrader-innlesing.xsd) | Nedlasting | XSD |  |
+| GML/XSD-skjema: bopliktomrader-utlevering | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/schema/xsd/INPUT/bopliktomrader-utlevering.xsd) | Nedlasting | XSD |  |
+| JSON Schema: bopliktomrader-innlesing | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/schema/jsonschema/INPUT/bopliktomraderinnlesing/bopliktomrader-innlesing.json) | Nedlasting | JSON Schema |  |
+| JSON Schema: bopliktomrader-utlevering | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/schema/jsonschema/INPUT/bopliktomraderutlevering/bopliktomrader-utlevering.json) | Nedlasting | JSON Schema |  |
 
 ## Metadata
 
