@@ -148,7 +148,24 @@ Avgrensning av Bopliktområde.
 
 Egenskaper
 
-(ingen)
+<table class="feature-attribute-table">
+  <thead>
+    <tr>
+      <th>Egenskap</th>
+      <th>Beskrivelse</th>
+      <th>Type</th>
+      <th>Multiplisitet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grense</td>
+      <td>Geometri for avgrensingslinjer</td>
+      <td>GM_<wbr />Curve</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Kodelister
 

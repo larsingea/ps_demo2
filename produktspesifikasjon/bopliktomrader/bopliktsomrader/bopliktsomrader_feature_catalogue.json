@@ -166,7 +166,17 @@
   {
     "name": "Bopliktområdegrense",
     "description": "Avgrensning av Bopliktområde.",
-    "attributes": [],
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "GM_Curve",
+        "description": "Geometri for avgrensingslinjer",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "GRENSE"
+        }
+      }
+    ],
     "abstract": false,
     "relationships": {
       "inheritance": [],

@@ -1,17 +1,15 @@
 ---
-title: "Bopliktområder"
+title: "Områder med nedsatt konsesjon"
 updated: "2026-11-12"
 organization: "Landbruksdirektoratet"
 logo: "https://register.geonorge.no/data/organizations/981544315_Landbruksdirektoratet_liten.png"
 ---
 
-# Produktspesifikasjon: Bopliktområder
+# Produktspesifikasjon: Områder med nedsatt konsesjon
 
-*Datasettet er under etablering.
+*Områder med nedsatt konsesjonsgrense er fastsatt med forskrift (nullgrenseforskrift). Dette er lokale regler som medfører at det er boplikt på eiendom som det etter konsesjonsloven i utgangspunktet ikke er boplikt på. Boplikten oppfylles ved at eier eller andre er registrerer seg som bosatt på eiendommen i Folkeregisteret. Formålet med slike forskrifter er å hindre at eiendommer som bør brukes til helårsbolig blir brukt til fritidsformål. Kommuner med nullgrenseforskrift har bestemt at reglene om konsesjonsfrihet uten boplikt helt eller delvis ikke gjelder.
 
-Bopliktområder er områder med nedsatt konsesjonsgrense fastsatt med forskrift (nullgrenseforskrift). Dette er lokale regler som medfører at det er boplikt på eiendom som det etter konsesjonsloven i utgangspunktet ikke er boplikt på. Boplikten oppfylles ved at eier eller andre er registrerer seg som bosatt på eiendommen i Folkeregisteret. Formålet med slike forskrifter er å hindre at eiendommer som bør brukes til helårsbolig blir brukt til fritidsformål. Kommuner med nullgrenseforskrift har bestemt at reglene om konsesjonsfrihet uten boplikt helt eller delvis ikke gjelder.
-
-Et bopliktområde kan gjelde en hel kommune, eller deler av denne, slik som angitt i datasettet.
+Et område med nedsatt konsesjon kan gjelde en hel kommune, eller deler av denne, slik som angitt i datasettet.
 
 En forskrift om nedsatt konsesjonsgrense kan innenfor bopliktområdet gjelde følgende eiendommer:
 
@@ -53,7 +51,7 @@ Datasettet er en del av tjenester for digitalisering av konsesjonsavklaringer og
 > **Språk:** nor<br>
 > **Kontaktinformasjon:** Landbruksdirektoratet, [vibeke.godal@landbruksdirektoratet.no](mailto:vibeke.godal@landbruksdirektoratet.no)
 
-## Om produktet Bopliktområder
+## Om produktet Områder med nedsatt konsesjon
 
 
 > **Romlig representasjonstype:** Vektor<br>
@@ -68,21 +66,20 @@ Datasettet er en del av tjenester for digitalisering av konsesjonsavklaringer og
 >
 > **Juridiske begrensninger**:
 >
-> - **Tilgangsbegrensninger**: Beskyttet
+> - **Tilgangsbegrensninger**: Åpne data
 > - **Bruksbegrensninger**: Lisens
 > - **Lisens**: No conditions apply to access and use
 > - **Lisenslenke**: <http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/noConditionsApply>
-> - **Andre begrensninger**: Når datasettet er ferdig vil dataene bli åpne
 
 ### Formål
 
-Bopliktområdene er hjemlet i konsesjonsloven (https://lovdata.no/dokument/NL/lov/2003-11-28-98) og er fastsatt ved kommunale forskrifter (https://www.landbruksdirektoratet.no/nb/eiendom/konsesjon-paa-eiendom/kommuner-med-nedsatt-konsesjonsgrense-nullgrense). 
+Områder med nedsatt konsesjon er hjemlet i konsesjonsloven (https://lovdata.no/dokument/NL/lov/2003-11-28-98) og er fastsatt ved kommunale forskrifter (https://www.landbruksdirektoratet.no/nb/eiendom/konsesjon-paa-eiendom/kommuner-med-nedsatt-konsesjonsgrense-nullgrense). 
 
 Formålet med datasettet er å ha en nasjonal oversikt og tilgang til områder med nedsatt konsesjonsgrense.
 
 ### Bruksområde
 
-Bopliktområder er en del av de egenskaper knyttet til en eiendom som avgjør om denne kan omsettes konsesjonsfritt ved oppfyllelse av vilkår og innsendelse av egenerklæringsskjema, eller om det må søkes konsesjon. Datasettet kan brukes i innsynsløsninger for å informere om status for en eiendom, ved saksbehandling hos kommuner og Kartverket og ved automatiserte skjemaer for egenerklæring / konsesjonssøknad.
+Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom som avgjør om denne kan omsettes konsesjonsfritt ved oppfyllelse av vilkår og innsendelse av egenerklæringsskjema, eller om det må søkes konsesjon. Datasettet kan brukes i innsynsløsninger for å informere om status for en eiendom, ved saksbehandling hos kommuner og Kartverket og ved automatiserte skjemaer for egenerklæring / konsesjonssøknad.
 
 ## Omfang
 
@@ -128,8 +125,10 @@ Bopliktområder er en del av de egenskaper knyttet til en eiendom som avgjør om
 
 | Tjeneste | Endepunkt | Type | Format | Leveranseenheter |
 | --- | --- | --- | --- | --- |
-| OGC API-Features | [Lenke](https://inndelinger.api.kartverket.no/) | OGC:API-Features | GeoJSON | landsfiler |
+| OGC API-Features | [Lenke](https://inndelinger.api.kartverket.no/v1) | OGC:API-Features |  | landsfiler |
 | GeoPackage: bopliktsomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/bopliktomrader/bopliktsomrader/bopliktsomrader.gpkg) | Nedlasting | GPKG |  |
+| GML/XSD-skjema: bopliktsomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/bopliktomrader/bopliktsomrader/schema/xsd/INPUT/bopliktsomrader.xsd) | Nedlasting | XSD |  |
+| JSON Schema: bopliktsomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/bopliktomrader/bopliktsomrader/schema/jsonschema/INPUT/bopliktsomrader/bopliktsomrader.json) | Nedlasting | JSON Schema |  |
 
 ## Metadata
 
@@ -137,7 +136,7 @@ Bopliktområder er en del av de egenskaper knyttet til en eiendom som avgjør om
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-08-31
+**Metadatadato**: 2026-11-17
 
 **språk**: nor
 
@@ -157,9 +156,9 @@ Bopliktområder er en del av de egenskaper knyttet til en eiendom som avgjør om
 
 ## Tilleggsinformasjon
 
-Datasettet består av bopliktområder slik disse er definert i forskrifter. Forskriftene vedtas i hver enkelt kommune og fastsettes av Landbruksdirektoratet. Datasettet oppdateres når nye forskrifter fastsettes og publiseres på Lovdata. 
+Datasettet består av områder med nedsatt konsesjon slik disse er definert i forskrifter. Forskriftene vedtas i hver enkelt kommune og fastsettes av Landbruksdirektoratet. Datasettet oppdateres når nye forskrifter fastsettes og publiseres på Lovdata.
 
-I tillegg til selve bopliktområdene inneholder datasettet informasjon om materielle vilkår knyttet til boplikten. 
+I tillegg til selve områder med nedsatt konsesjon inneholder datasettet informasjon om materielle vilkår knyttet til områdene som har nedsatt konsesjon.
 
 I enkelte kommuner er forskriften formulert slik at en automatisk bekreftelse av hvorvidt en eiendom er omfattet av nedsatt konsesjonsgrense ikke er mulig. Disse områdene er gitt egenskapen "usikker = 1". I disse områdene forutsettes det en manuell verifisering av bopliktens geografiske avgrensning.
 
