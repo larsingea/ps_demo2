@@ -4,7 +4,7 @@
 ' default PlantUML 4096px size limit from cropping the diagram.
 scale max 4000*4000
 
-title Bopliktområder - Bopliktsområder - Objekttyper
+title Områder med nedsatt konsesjon - Bopliktsområder - Objekttyper
 
 skinparam backgroundColor #F5F5F5
 skinparam shadowing false
@@ -50,7 +50,7 @@ package "Objekttyper" {
   }
 
   class "Bopliktområdegrense" as Bopliktomr_degrense <<featureType>> {
-    ' Ingen attributter
+    + grense [1] : GM_Curve
   }
 
   class Identifikasjon <<dataType>> {
