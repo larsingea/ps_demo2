@@ -4,11 +4,11 @@ product_slug: omrader_med_nedsatt_konsesjon
 updated: '2026-11-17'
 outputs: geopackage,xsd,jsonschema,odcs
 scopes:
-- name: Bopliktområder_Innlesing
+- name: Bopliktomrader
   url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Landbruksdirektoratet/Bopliktsomr%c3%a5der_Innlesing_20260101.xml
   generator: xmi
   description: Datamodell for innlesing av data
-- name: Bopliktområder_utlevering
+- name: Bopliktområder_multipolygon
   url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Landbruksdirektoratet/Bopliktsomr%c3%a5der_20260101.xml
   generator: xmi
   description: Datamodell for filleveranser
