@@ -1,0 +1,134 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-multipolygon/bopliktomradermultipolygon/bopliktomrader-multipolygon.json",
+  "definitions": {
+    "Bopliktområde": {
+      "description": "Bopliktområde i en kommune",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/MultiPolygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "forskriftsreferanse": {
+          "description": "URL til forskrift (Lovdata)",
+          "type": "string"
+        },
+        "ikrafttredelse": {
+          "description": "Dato for forskriftens ikrafttredelse",
+          "type": "string",
+          "format": "date"
+        },
+        "opphevelse": {
+          "description": "Dato for forskriftens opphevelse",
+          "type": "string",
+          "format": "date"
+        },
+        "kommunenavn": {
+          "description": "Navn på kommune",
+          "type": "string"
+        },
+        "kommunenummer": {
+          "description": "Kommunenummer",
+          "$ref": "#/definitions/Kommunenummer"
+        },
+        "gjelderKunDelAvKommunen": {
+          "description": "Angir om bopliktområdet kun gjelder deler av kommunen. Verdi \u003d True: Gjelder deler av kommunen. Verdi \u003d False: Gjelder hele kommunen.",
+          "type": "boolean"
+        },
+        "harUsikkerAvgrensning": {
+          "description": "Angir om bopliktområdets geometriske avgrensning er usikker og må vurderes manuelt i tråd med forskriften. Verdi \u003d True: Avgrensningen er usikker. Verdi \u003d False: Avgrensningen er ikke usikker.",
+          "type": "boolean"
+        },
+        "malemetode": {
+          "description": "Metode som ligger til grunn for registrering av bopliktområdene. Fast verdi er \u003d \"fastsatt\" med referanse til at bopliktområdene er fastsatt ved forskrift.",
+          "$ref": "#/definitions/Målemetode"
+        },
+        "gjelderForBruktSomHelarsbolig": {
+          "description": "Angir om nedsatt konsesjonsgrense med boplikt gjelder for bebygd eiendom som er eller har vært brukt som helårsbolig.",
+          "type": "boolean"
+        },
+        "gjelderForBoligIkkeTattIBruk": {
+          "description": "Angir om nedsatt konsesjonsgrense med boplikt gjelder for bolig under oppføring eller bolig som ikke er tatt i bruk som helårsbolig.",
+          "type": "boolean"
+        },
+        "gjelderForUbebygdBoligtomt": {
+          "description": "Angir om nedsatt konsesjonsgrense med boplikt gjelder for ubebygd tomt regulert til boligformål.",
+          "type": "boolean"
+        },
+        "harUnntakFraSlektskapsunntak": {
+          "description": "Angir om kommunen har innført unntak fra slektskapsunntaket.",
+          "type": "boolean"
+        },
+        "andreLokaleAvgrensninger": {
+          "description": "Andre lokale begrensninger eller vilkår som ikke dekkes av de andre feltene.",
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "unik identifikasjon av et objekt",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "oppdateringsdato": {
+          "description": "tidspunkt for siste endring på objektet\n\nMerknad:\nOppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "@type",
+        "forskriftsreferanse",
+        "gjelderForBoligIkkeTattIBruk",
+        "gjelderForBruktSomHelarsbolig",
+        "gjelderForUbebygdBoligtomt",
+        "gjelderKunDelAvKommunen",
+        "harUnntakFraSlektskapsunntak",
+        "harUsikkerAvgrensning",
+        "identifikasjon",
+        "ikrafttredelse",
+        "kommunenavn",
+        "kommunenummer",
+        "malemetode",
+        "oppdateringsdato"
+      ]
+    },
+    "Identifikasjon": {
+      "type": "object",
+      "properties": {
+        "lokalId": {
+          "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+          "type": "string"
+        },
+        "versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lokalId",
+        "navnerom"
+      ]
+    },
+    "Kommunenummer": {
+      "description": "\u003cfont color\u003d\"#333333\"\u003enummerering av kommuner i henhold til SSB sin offisielle liste\u003c/font\u003e\nMerknad: \u003cfont color\u003d\"#333333\"\u003eInneholder fremtidige, gyldige og utgåtte kommunenummer. \u003c/font\u003eDet presiseres at kommune alltid skal ha 4 sifre, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 sifre.",
+      "codelist": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer",
+      "type": "string",
+      "format": "uri"
+    },
+    "Målemetode": {
+      "description": "metode som ligger til grunn for registrering av posisjon",
+      "codelist": "http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.1/Målemetode",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

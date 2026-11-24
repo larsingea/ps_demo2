@@ -89,13 +89,13 @@ Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom
 
 **Nivåbeskrivelse**: Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser
 
-### Bopliktområder_Innlesing
+### Bopliktomrader
 
 **Nivå**: dataset
 
 **Nivåbeskrivelse**: Datamodell for innlesing av data
 
-### Bopliktområder_utlevering
+### Bopliktområder_multipolygon
 
 **Nivå**: dataset
 
@@ -105,25 +105,25 @@ Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom
 
 
 
-### Datamodell - Bopliktområder_Innlesing
+### Datamodell - Bopliktomrader
 
 
 
-<a href="bopliktomrader-innlesing/bopliktomrader-innlesing_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader-innlesing/bopliktomrader-innlesing_feature_catalogue.png" alt="Datamodell Bopliktområder_Innlesing" style="max-width: 100%; height: auto;" /></a>
+<a href="bopliktomrader/bopliktomrader_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader/bopliktomrader_feature_catalogue.png" alt="Datamodell Bopliktomrader" style="max-width: 100%; height: auto;" /></a>
 
 
 
-➡️ [Se full datamodell for omfang "Bopliktområder_Innlesing" (diagram per pakke og objektkatalog)](bopliktomrader-innlesing/objektkatalog.html)
+➡️ [Se full datamodell for omfang "Bopliktomrader" (diagram per pakke og objektkatalog)](bopliktomrader/objektkatalog.html)
 
-### Datamodell - Bopliktområder_utlevering
-
-
-
-<a href="bopliktomrader-utlevering/bopliktomrader-utlevering_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader-utlevering/bopliktomrader-utlevering_feature_catalogue.png" alt="Datamodell Bopliktområder_utlevering" style="max-width: 100%; height: auto;" /></a>
+### Datamodell - Bopliktområder_multipolygon
 
 
 
-➡️ [Se full datamodell for omfang "Bopliktområder_utlevering" (diagram per pakke og objektkatalog)](bopliktomrader-utlevering/objektkatalog.html)
+<a href="bopliktomrader-multipolygon/bopliktomrader-multipolygon_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader-multipolygon/bopliktomrader-multipolygon_feature_catalogue.png" alt="Datamodell Bopliktområder_multipolygon" style="max-width: 100%; height: auto;" /></a>
+
+
+
+➡️ [Se full datamodell for omfang "Bopliktområder_multipolygon" (diagram per pakke og objektkatalog)](bopliktomrader-multipolygon/objektkatalog.html)
 
 ## Datakvalitet
 
@@ -142,11 +142,17 @@ Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom
 | Tjeneste | Endepunkt | Type | Format | Leveranseenheter |
 | --- | --- | --- | --- | --- |
 | OGC API-Features | [Lenke](https://inndelinger.api.kartverket.no/v1) | OGC:API-Features |  | landsfiler |
+| GeoPackage: bopliktomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader/bopliktomrader.gpkg) | Nedlasting | GPKG |  |
 | GeoPackage: bopliktomrader-innlesing | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/bopliktomrader-innlesing.gpkg) | Nedlasting | GPKG |  |
+| GeoPackage: bopliktomrader-multipolygon | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-multipolygon/bopliktomrader-multipolygon.gpkg) | Nedlasting | GPKG |  |
 | GeoPackage: bopliktomrader-utlevering | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/bopliktomrader-utlevering.gpkg) | Nedlasting | GPKG |  |
+| GML/XSD-skjema: bopliktomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader/schema/xsd/INPUT/bopliktomrader.xsd) | Nedlasting | XSD |  |
 | GML/XSD-skjema: bopliktomrader-innlesing | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/schema/xsd/INPUT/bopliktomrader-innlesing.xsd) | Nedlasting | XSD |  |
+| GML/XSD-skjema: bopliktomrader-multipolygon | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-multipolygon/schema/xsd/INPUT/bopliktomrader-multipolygon.xsd) | Nedlasting | XSD |  |
 | GML/XSD-skjema: bopliktomrader-utlevering | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/schema/xsd/INPUT/bopliktomrader-utlevering.xsd) | Nedlasting | XSD |  |
+| JSON Schema: bopliktomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader/schema/jsonschema/INPUT/bopliktomrader/bopliktomrader.json) | Nedlasting | JSON Schema |  |
 | JSON Schema: bopliktomrader-innlesing | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-innlesing/schema/jsonschema/INPUT/bopliktomraderinnlesing/bopliktomrader-innlesing.json) | Nedlasting | JSON Schema |  |
+| JSON Schema: bopliktomrader-multipolygon | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-multipolygon/schema/jsonschema/INPUT/bopliktomradermultipolygon/bopliktomrader-multipolygon.json) | Nedlasting | JSON Schema |  |
 | JSON Schema: bopliktomrader-utlevering | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo2/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-utlevering/schema/jsonschema/INPUT/bopliktomraderutlevering/bopliktomrader-utlevering.json) | Nedlasting | JSON Schema |  |
 
 ## Metadata

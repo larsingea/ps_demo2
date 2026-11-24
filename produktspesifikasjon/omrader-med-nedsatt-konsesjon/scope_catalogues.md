@@ -1,19 +1,19 @@
-### Datamodell - Bopliktområder_Innlesing
+### Datamodell - Bopliktomrader
 
 
 
-<a href="bopliktomrader-innlesing/bopliktomrader-innlesing_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader-innlesing/bopliktomrader-innlesing_feature_catalogue.png" alt="Datamodell Bopliktområder_Innlesing" style="max-width: 100%; height: auto;" /></a>
+<a href="bopliktomrader/bopliktomrader_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader/bopliktomrader_feature_catalogue.png" alt="Datamodell Bopliktomrader" style="max-width: 100%; height: auto;" /></a>
 
 
 
-➡️ [Se full datamodell for omfang "Bopliktområder_Innlesing" (diagram per pakke og objektkatalog)](bopliktomrader-innlesing/objektkatalog.html)
+➡️ [Se full datamodell for omfang "Bopliktomrader" (diagram per pakke og objektkatalog)](bopliktomrader/objektkatalog.html)
 
-### Datamodell - Bopliktområder_utlevering
-
-
-
-<a href="bopliktomrader-utlevering/bopliktomrader-utlevering_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader-utlevering/bopliktomrader-utlevering_feature_catalogue.png" alt="Datamodell Bopliktområder_utlevering" style="max-width: 100%; height: auto;" /></a>
+### Datamodell - Bopliktområder_multipolygon
 
 
 
-➡️ [Se full datamodell for omfang "Bopliktområder_utlevering" (diagram per pakke og objektkatalog)](bopliktomrader-utlevering/objektkatalog.html)
+<a href="bopliktomrader-multipolygon/bopliktomrader-multipolygon_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktomrader-multipolygon/bopliktomrader-multipolygon_feature_catalogue.png" alt="Datamodell Bopliktområder_multipolygon" style="max-width: 100%; height: auto;" /></a>
+
+
+
+➡️ [Se full datamodell for omfang "Bopliktområder_multipolygon" (diagram per pakke og objektkatalog)](bopliktomrader-multipolygon/objektkatalog.html)
