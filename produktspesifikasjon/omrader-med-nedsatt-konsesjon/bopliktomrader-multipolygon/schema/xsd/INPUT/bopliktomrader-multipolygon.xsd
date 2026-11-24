@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:bopliktomradermultipolygon="https://skjema.geonorge.no/SOSI/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-multipolygon/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="https://skjema.geonorge.no/SOSI/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktomrader-multipolygon/1.0" version="1.0">
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="https://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="Bopliktområde" substitutionGroup="gml:AbstractFeature" type="bopliktomradermultipolygon:BopliktområdeType">
+    <annotation>
+      <documentation>Bopliktområde i en kommune</documentation>
+    </annotation>
+  </element>
+  <complexType name="BopliktområdeType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="bopliktomrade" type="gml:MultiSurfacePropertyType">
+            <annotation>
+              <documentation>Flate(r) som avgrenser og angir bopliktområde i en kommune</documentation>
+            </annotation>
+          </element>
+          <element name="forskriftsreferanse" type="string">
+            <annotation>
+              <documentation>URL til forskrift (Lovdata)</documentation>
+            </annotation>
+          </element>
+          <element name="ikrafttredelse" type="date">
+            <annotation>
+              <documentation>Dato for forskriftens ikrafttredelse</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="opphevelse" type="date">
+            <annotation>
+              <documentation>Dato for forskriftens opphevelse</documentation>
+            </annotation>
+          </element>
+          <element name="kommunenavn" type="string">
+            <annotation>
+              <documentation>Navn på kommune</documentation>
+            </annotation>
+          </element>
+          <element name="kommunenummer" type="gml:CodeType">
+            <annotation>
+              <documentation>Kommunenummer</documentation>
+              <appinfo>
+                <sc:targetCodeListURI>https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer</sc:targetCodeListURI>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="gjelderKunDelAvKommunen" type="boolean">
+            <annotation>
+              <documentation>Angir om bopliktområdet kun gjelder deler av kommunen. Verdi = True: Gjelder deler av kommunen. Verdi = False: Gjelder hele kommunen.</documentation>
+            </annotation>
+          </element>
+          <element name="harUsikkerAvgrensning" type="boolean">
+            <annotation>
+              <documentation>Angir om bopliktområdets geometriske avgrensning er usikker og må vurderes manuelt i tråd med forskriften. Verdi = True: Avgrensningen er usikker. Verdi = False: Avgrensningen er ikke usikker.</documentation>
+            </annotation>
+          </element>
+          <element name="malemetode" type="gml:CodeType">
+            <annotation>
+              <documentation>Metode som ligger til grunn for registrering av bopliktområdene. Fast verdi er = "fastsatt" med referanse til at bopliktområdene er fastsatt ved forskrift.</documentation>
+              <appinfo>
+                <sc:targetCodeListURI>http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.1/Målemetode</sc:targetCodeListURI>
+                <sc:taggedValue tag="SOSI_navn">MÅLEMETODE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="gjelderForBruktSomHelarsbolig" type="boolean">
+            <annotation>
+              <documentation>Angir om nedsatt konsesjonsgrense med boplikt gjelder for bebygd eiendom som er eller har vært brukt som helårsbolig.</documentation>
+            </annotation>
+          </element>
+          <element name="gjelderForBoligIkkeTattIBruk" type="boolean">
+            <annotation>
+              <documentation>Angir om nedsatt konsesjonsgrense med boplikt gjelder for bolig under oppføring eller bolig som ikke er tatt i bruk som helårsbolig.</documentation>
+            </annotation>
+          </element>
+          <element name="gjelderForUbebygdBoligtomt" type="boolean">
+            <annotation>
+              <documentation>Angir om nedsatt konsesjonsgrense med boplikt gjelder for ubebygd tomt regulert til boligformål.</documentation>
+            </annotation>
+          </element>
+          <element name="harUnntakFraSlektskapsunntak" type="boolean">
+            <annotation>
+              <documentation>Angir om kommunen har innført unntak fra slektskapsunntaket.</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="andreLokaleAvgrensninger" type="string">
+            <annotation>
+              <documentation>Andre lokale begrensninger eller vilkår som ikke dekkes av de andre feltene.</documentation>
+            </annotation>
+          </element>
+          <element name="identifikasjon" type="bopliktomradermultipolygon:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>unik identifikasjon av et objekt</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">IDENT</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="oppdateringsdato" type="date">
+            <annotation>
+              <documentation>tidspunkt for siste endring på objektet
+
+Merknad:
+Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">OPPDATERINGSDATO</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BopliktområdePropertyType">
+    <sequence minOccurs="0">
+      <element ref="bopliktomradermultipolygon:Bopliktområde"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="bopliktomradermultipolygon:IdentifikasjonType"/>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.</documentation>
+          <appinfo>
+            <sc:taggedValue tag="SOSI_navn">LOKALID</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+          <appinfo>
+            <sc:taggedValue tag="SOSI_navn">NAVNEROM</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>identifikasjon av en spesiell versjon av et geografisk objekt (instans)</documentation>
+          <appinfo>
+            <sc:taggedValue tag="SOSI_navn">VERSJONID</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="bopliktomradermultipolygon:Identifikasjon"/>
+    </sequence>
+  </complexType>
+</schema>

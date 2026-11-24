@@ -1,0 +1,211 @@
+# Open Data Contract Standard (ODCS) v3.1.0 — generert fra datamodellen.
+apiVersion: v3.1.0
+kind: DataContract
+id: urn:odcs:omr-der-med-nedsatt-konsesjon-bopliktomrader:1.0.0
+version: 1.0.0
+status: active
+name: Områder med nedsatt konsesjon - Bopliktomrader
+tags:
+- Bopliktsområde
+- Bopliktsområdegrense
+- bopliktsomrade
+- forskriftsreferanse
+- ikrafttredelse
+- opphevelse
+- kommunenavn
+- kommunenummer
+- gjelderKunDelAvKommunen
+- harUsikkerAvgrensning
+- gjelderForBruktSomHelarsbolig
+- gjelderForBoligIkkeTattIBruk
+- gjelderForUbebygdBoligtomt
+- harUnntakFraSlektskapsunntak
+- andreLokaleAvgrensninger
+- Åpne data
+price:
+  priceAmount: 0
+  priceUnit: dataset
+description:
+  limitations: Åpne data. Lisens
+  purpose: "Områder med nedsatt konsesjon er hjemlet i konsesjonsloven (https://lovdata.no/dokument/NL/lov/2003-11-28-98)\
+    \ og er fastsatt ved kommunale forskrifter (https://www.landbruksdirektoratet.no/nb/eiendom/konsesjon-paa-eiendom/kommuner-med-nedsatt-konsesjonsgrense-nullgrense).\
+    \ \n\nFormålet med datasettet er å ha en nasjonal oversikt og tilgang til områder\
+    \ med nedsatt konsesjonsgrense."
+authoritativeDefinitions:
+- url: https://data.geonorge.no/sosi/plan/bopliktomrader
+  type: businessDefinition
+  description: Produktets identifikator
+- url: https://kartkatalog.geonorge.no/metadata/49415185-d99f-4546-b976-18cfbf167827
+  type: businessDefinition
+  description: Metadata i Kartkatalogen
+team:
+  members:
+  - username: vibeke.godal@landbruksdirektoratet.no
+    name: Vibeke Godal
+    description: Landbruksdirektoratet
+    role: owner
+  - username: kundesenter@kartverket.no
+    name: Kartverket
+    role: pointOfContact, publisher
+support:
+- channel: Landbruksdirektoratet
+  tool: email
+  url: mailto:vibeke.godal@landbruksdirektoratet.no
+  scope: issues
+  description: Kontaktpunkt hos Landbruksdirektoratet
+slaProperties:
+- property: frequency
+  value: Etter behov
+  driver: operational
+customProperties:
+- property: license
+  value: No conditions apply to access and use
+- property: licenseUrl
+  value: http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/noConditionsApply
+- property: accessConstraints
+  value: Åpne data
+- property: useConstraints
+  value: Lisens
+- property: equivalentScale
+  value: '5000'
+- property: spatialRepresentationType
+  value: Vektor
+- property: language
+  value: nor
+servers:
+- server: ogc-api-features
+  type: api
+  location: https://inndelinger.api.kartverket.no/v1
+  description: OGC API-Features
+schema:
+- name: Bopliktområde
+  physicalName: bopliktomr_de
+  logicalType: object
+  physicalType: table
+  description: Bopliktområde i en kommune
+  customProperties:
+  - property: sosiObjektType
+    value: Bopliktområde
+  properties:
+  - name: bopliktomrade
+    logicalType: object
+    physicalType: geometry(Surface)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: Surface
+  - name: forskriftsreferanse
+    logicalType: string
+    description: URL til forskrift (Lovdata)
+    required: true
+  - name: ikrafttredelse
+    logicalType: date
+    description: Dato for forskriftens ikrafttredelse
+    required: true
+  - name: opphevelse
+    logicalType: date
+    description: Dato for forskriftens opphevelse
+  - name: kommunenavn
+    logicalType: string
+    description: Navn på kommune
+    required: true
+  - name: kommunenummer
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Kommunenummer
+    - property: asDictionary
+      value: 'true'
+    description: Kommunenummer
+    required: true
+  - name: gjelderKunDelAvKommunen
+    logicalType: boolean
+    description: 'Angir om bopliktområdet kun gjelder deler av kommunen. Verdi = True:
+      Gjelder deler av kommunen. Verdi = False: Gjelder hele kommunen.'
+    required: true
+  - name: harUsikkerAvgrensning
+    logicalType: boolean
+    description: 'Angir om bopliktområdets geometriske avgrensning er usikker og må
+      vurderes manuelt i tråd med forskriften. Verdi = True: Avgrensningen er usikker.
+      Verdi = False: Avgrensningen er ikke usikker.'
+    required: true
+  - name: gjelderForBruktSomHelarsbolig
+    logicalType: boolean
+    description: Angir om nedsatt konsesjonsgrense med boplikt gjelder for bebygd
+      eiendom som er eller har vært brukt som helårsbolig.
+    required: true
+  - name: gjelderForBoligIkkeTattIBruk
+    logicalType: boolean
+    description: Angir om nedsatt konsesjonsgrense med boplikt gjelder for bolig under
+      oppføring eller bolig som ikke er tatt i bruk som helårsbolig.
+    required: true
+  - name: gjelderForUbebygdBoligtomt
+    logicalType: boolean
+    description: Angir om nedsatt konsesjonsgrense med boplikt gjelder for ubebygd
+      tomt regulert til boligformål.
+    required: true
+  - name: harUnntakFraSlektskapsunntak
+    logicalType: boolean
+    description: Angir om kommunen har innført unntak fra slektskapsunntaket.
+    required: true
+  - name: andreLokaleAvgrensninger
+    logicalType: string
+    description: Andre lokale begrensninger eller vilkår som ikke dekkes av de andre
+      feltene.
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: 'lokal identifikator av et objekt
+
+
+        Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren
+        er unik innenfor navnerommet.'
+      required: true
+    - name: navnerom
+      logicalType: string
+      description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales
+        å være en http-URI
+
+
+        Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+
+        Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar
+        for de unike identifikatorene og må være registrert i data.geonorge.no eller
+        data.norge.no'
+      required: true
+    - name: versjonId
+      logicalType: string
+      description: identifikasjon av en spesiell versjon av et geografisk objekt (instans)
+    description: unik identifikasjon av et objekt
+    required: true
+  - name: oppdateringsdato
+    logicalType: timestamp
+    description: 'tidspunkt for siste endring på objektet
+
+
+      Merknad:
+
+      Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert
+      kan bufres en kortere eller lengre periode før disse legges inn i datasystemet
+      (databasen).'
+    required: true
+  - name: malemetode
+    logicalType: string
+    authoritativeDefinitions:
+    - url: https://register.geonorge.no/sosi-kodelister/generelle-konsepter/5.1/m%C3%A5lemetode
+      type: businessDefinition
+    customProperties:
+    - property: sosiCodeList
+      value: Målemetode
+    - property: asDictionary
+      value: 'true'
+    description: Metode som ligger til grunn for registrering av bopliktområdene.
+      Fast verdi er = "fastsatt" med referanse til at bopliktområdene er fastsatt
+      ved forskrift.
+    required: true
