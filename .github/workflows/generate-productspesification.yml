@@ -154,12 +154,18 @@ jobs:
               scopes.append(current_scope)
 
           required_map = {
-              "metadataId": "metadata-id",
               "output_directory": "output-directory",
               "product_slug": "product-slug",
               "updated": "updated",
           }
+          # metadataId er valgfri: et datasett som ikke er registrert i kartkatalogen
+          # ennå beskrives midlertidig med dataset_title/-abstract/-organization, og
+          # kobles til Geonorge senere ved å sette metadataId.
           optional_map = {
+              "metadataId": "metadata-id",
+              "dataset_title": "dataset-title",
+              "dataset_abstract": "dataset-abstract",
+              "dataset_organization": "dataset-organization",
               "ogc_feature_api": "ogc-feature-api",
               "xmi_url": "xmi-model",
           }
@@ -173,6 +179,11 @@ jobs:
               raise SystemExit(
                   "Missing required keys in config.yml: "
                   + ", ".join(missing)
+              )
+          if not values.get("metadataId") and not values.get("dataset_title"):
+              raise SystemExit(
+                  "config.yml must have either metadataId (Geonorge UUID) or "
+                  "dataset_title (dataset not registered in kartkatalogen yet)"
               )
 
           feature_filter = []
@@ -345,6 +356,9 @@ jobs:
         with:
           feature-type-filter: ${{ steps.config.outputs.feature-type-filter }}
           metadata-id: ${{ steps.config.outputs.metadata-id }}
+          dataset-title: ${{ steps.config.outputs.dataset-title }}
+          dataset-abstract: ${{ steps.config.outputs.dataset-abstract }}
+          dataset-organization: ${{ steps.config.outputs.dataset-organization }}
           ogc-feature-api: ${{ steps.config.outputs.ogc-feature-api }}
           # Slår opp secret-verdien dynamisk fra navnet i config (single-secret,
           # ingen toJSON). Faller tilbake på CLIENTID/CLIENTKEY hvis config ikke
