@@ -3,15 +3,29 @@ title: ProductSpecificationConfig
 type: object
 additionalProperties: false
 required:
-  - metadataId
   - output_directory
   - product_slug
   - updated
+anyOf:
+  - required: [metadataId]
+  - required: [dataset_title]
 properties:
   metadataId:
     type: string
     format: uuid
-    description: Unik identifikator for produktet (UUID brukt i metadata på geonorge)
+    description: >-
+      Unik identifikator for produktet (UUID brukt i metadata på geonorge). Kan utelates
+      når datasettet ikke er registrert i kartkatalogen ennå — oppgi da dataset_title.
+  dataset_title:
+    type: string
+    minLength: 1
+    description: Midlertidig tittel på datasettet, brukes når metadataId mangler
+  dataset_abstract:
+    type: string
+    description: Midlertidig sammendrag av datasettet, brukes når metadataId mangler (én linje)
+  dataset_organization:
+    type: string
+    description: Midlertidig eierorganisasjon for datasettet, brukes når metadataId mangler
   output_directory:
     type: string
     minLength: 1
